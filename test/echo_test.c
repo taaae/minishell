@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   echo_test.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/09 17:39:32 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/09 17:54:03 by lporoshi         ###   ########.fr       */
+/*   Created: 2023/12/09 18:02:21 by lporoshi          #+#    #+#             */
+/*   Updated: 2023/12/09 18:06:37 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "../include/minishell.h"
+#include "../include/builtins.h"
+#include <string.h>
 
-typedef enum e_bool{
-	false,
-	true
-}	t_bool;
-
-#endif
+//"", false
+//
+int	main(int argc, char **argv)
+{
+	argv[1] = strdup("lol\c");
+	echo(argv, false);
+}

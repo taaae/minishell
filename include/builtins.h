@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   builtins.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/09 17:39:32 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/09 17:54:03 by lporoshi         ###   ########.fr       */
+/*   Created: 2023/12/09 17:31:39 by lporoshi          #+#    #+#             */
+/*   Updated: 2023/12/09 18:03:30 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#ifndef BUILTINS_H
+# define BUILTINS_H
 
-typedef enum e_bool{
-	false,
-	true
-}	t_bool;
+# include <stdio.h>
+# include <stdlib.h>
+
+int	echo(char **argv, t_bool no_newline);
 
 #endif
