@@ -6,11 +6,12 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 15:15:07 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/09 16:51:19 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/09 17:06:18 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/reader.h"
+#include "../../config.h"
 
 void	init_reader(void)
 {
@@ -26,7 +27,7 @@ char	*get_line(void)
 {
 	char			*line;
 
-	line = readline("minishell$ ");
+	line = readline(SHELL_PROMPT);
 	if (line == NULL || line[0] == '\0')
 		return (NULL);
 	add_history(line);
