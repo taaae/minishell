@@ -9,7 +9,6 @@ SOURCE_FILES := \
 SOURCES := $(addprefix $(SRCDIR)/,$(SOURCE_FILES))
 MAINSOURCE := $(SRCDIR)/minishell.c
 
-
 LIBFTDIR=libft
 LIBFT=$(LIBFTDIR)/libft.a
 
