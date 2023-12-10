@@ -6,15 +6,15 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:32:34 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/10 14:52:05 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/10 14:54:18 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "../../include/minishell.h"
-#include "../../include/builtins.h"
+#include "minishell.h"
+#include "builtins.h"
 #include "../../libft/libft.h"
 
 int	echo(char **argv, bool no_newline_flag)
