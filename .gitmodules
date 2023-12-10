@@ -1,3 +1,6 @@
 [submodule "minunit"]
 	path = minunit
 	url = https://github.com/siu/minunit.git
+[submodule "libft"]
+	path = libft
+	url = https://github.com/poroshinleonid/libft.git
