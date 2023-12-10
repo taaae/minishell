@@ -54,3 +54,5 @@ dkms.conf
 # Additional
 .vscode
 .DS_Store
+minishell
+minishell_test

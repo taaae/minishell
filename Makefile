@@ -4,21 +4,20 @@ SRCDIR := src
 INCDIR := include
 CFLAGS := -Wall -Wextra -Werror
 SOURCE_FILES := \
-
+					reader/reader.c
 SOURCES := $(addprefix $(SRCDIR)/,$(SOURCE_FILES))
 MAINSOURCE := $(SRCDIR)/minishell.c
 
 INCLUDE_FILES := \
-
+					reader.h \
+					config.h
 INCLUDES := $(addprefix $(INCDIR)/,$(INCLUDE_FILES))
-INC_FLAGS := -I ./$(INCDIR)
+INC_FLAGS := -I ./$(INCDIR) -lreadline
 
 TESTNAME := minishell_test
 TESTFLAGS := -lm -I ./minunit
 TESTDIR := test
-TEST_FILES := \
-
-TESTS := $(addprefix $(TESTDIR)/,$(TEST_FILES))
+TESTS := $(TESTDIR)/test.c
 
 all: $(NAME)
 
@@ -36,3 +35,5 @@ clean:
 fclean: clean
 
 re: fclean all
+
+.PHONY: all test clean fclean re
