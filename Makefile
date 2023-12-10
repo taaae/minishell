@@ -4,7 +4,8 @@ SRCDIR := src
 INCDIR := include
 CFLAGS := -Wall -Wextra -Werror
 SOURCE_FILES := \
-					reader/reader.c
+					reader/reader.c \
+					builtins/echo.c
 SOURCES := $(addprefix $(SRCDIR)/,$(SOURCE_FILES))
 MAINSOURCE := $(SRCDIR)/minishell.c
 
@@ -12,7 +13,7 @@ INCLUDE_FILES := \
 					reader.h \
 					config.h
 INCLUDES := $(addprefix $(INCDIR)/,$(INCLUDE_FILES))
-INC_FLAGS := -I ./$(INCDIR) -lreadline
+INC_FLAGS := -I ./$(INCDIR) -I ./libft -L ./libft -lft -lreadline
 
 TESTNAME := minishell_test
 TESTFLAGS := -lm -I ./minunit
