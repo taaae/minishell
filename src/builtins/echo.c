@@ -6,13 +6,13 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:32:34 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/10 16:10:03 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/10 16:22:21 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdbool.h>
-#include "../../libft/libft.h"
+#include "libft.h"
 
 int	echo(char **argv, bool no_newline_flag)
 {
