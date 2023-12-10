@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:32:34 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/10 14:54:18 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/10 15:05:06 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,12 @@ int	echo(char **argv, bool no_newline_flag)
 	char	*output_string;
 
 	output_string = strjoin_str_arr(argv, ' ');
-	if (output_string != NULL)
-		ft_putstr_fd(output_string, stdout);
+	if (output_string == NULL)
+		return (FT_ERROR);
+	if (ft_putstr_fd(output_string, stdout) == FT_ERROR)
+		return (FT_ERROR);
 	if (no_newline_flag == false)
-		ft_putchar_fd('\n', stdout);
+		if (ft_putchar_fd('\n', stdout) == FT_ERROR)
+			return (FT_ERROR);
+	return (FT_SUCCESS);
 }
