@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:31:39 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/10 14:44:50 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/10 17:51:13 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 # define BUILTINS_H
 
 int	echo(char **argv, bool no_newline_flag);
+int	pwd(char **argv);
 
 #endif
