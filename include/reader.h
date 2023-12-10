@@ -6,17 +6,12 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:48:50 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/09 16:53:27 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/10 13:46:40 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef READER_H
 # define READER_H
-
-# include <stdio.h>
-# include <stdlib.h>
-# include <readline/readline.h>
-# include <readline/history.h>
 
 /**
  * @brief Initialize the reader before reading lines
