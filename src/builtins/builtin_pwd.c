@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 16:30:09 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/10 19:45:27 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/10 19:48:16 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	builtin_pwd(char **argv)
 		return (FT_ERROR);
 	if (*argv != NULL)
 	{
-		ft_putstr_fd("pwd: too many arguments\n", STDOUT_FILENO);
+		ft_putstr_fd("pwd: too many arguments\n", STDERR_FILENO);
 		return (1);
 	}
 	current_dir = getcwd(NULL, 0);
