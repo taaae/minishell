@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 16:30:09 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/10 17:47:54 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/10 17:57:08 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,16 @@ int	pwd(char **argv)
 	current_dir = getcwd(NULL, 0);
 	if (current_dir == NULL)
 		return (FT_ERROR);
-	ft_putstr_fd(current_dir, STDOUT_FILENO);
-	ft_putchar_fd('\n', STDOUT_FILENO);
+	if (ft_putstr_fd(current_dir, STDOUT_FILENO) == FT_ERROR)
+	{
+		free(current_dir);
+		return (FT_ERROR);
+	}
+	if (ft_putchar_fd('\n', STDOUT_FILENO) == FT_ERROR)
+	{
+		free(current_dir);
+		return (FT_ERROR);
+	}
 	free(current_dir);
 	return (FT_SUCCESS);
 }
