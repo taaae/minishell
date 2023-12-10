@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reader.c                                           :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/09 15:15:07 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/10 14:03:00 by trusanov         ###   ########.fr       */
+/*   Created: 2023/12/10 13:57:24 by trusanov          #+#    #+#             */
+/*   Updated: 2023/12/10 14:32:52 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <readline/readline.h>
-#include <readline/history.h>
-#include "reader.h"
-#include "config.h"
+#include "minunit.h"
 
-void	init_reader(void)
+void test_setup(void)
 {
-	using_history();
+    /* Nothing */
 }
 
-void	close_reader(void)
+void test_teardown(void)
 {
-	rl_clear_history();
+	/* Nothing */
 }
 
-char	*get_line(void)
+MU_TEST_SUITE(test_suite) 
 {
-	char			*line;
+	MU_SUITE_CONFIGURE(&test_setup, &test_teardown);
+}
 
-	line = readline(SHELL_PROMPT);
-	if (line == NULL || line[0] == '\0')
-		return (NULL);
-	add_history(line);
-	return (line);
+int main()
+{
+	MU_RUN_SUITE(test_suite);
+	MU_REPORT();
+	return (MU_EXIT_CODE);
 }
