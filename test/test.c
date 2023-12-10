@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 13:57:24 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/10 17:54:13 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/10 19:45:08 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 void test_setup(void)
 {
-    /* Nothing */
+    /* Nothing */ //
 }
 
 void test_teardown(void)
@@ -26,7 +26,8 @@ void test_teardown(void)
 	/* Nothing */
 }
 
-MU_TEST(test_pwd)
+
+MU_TEST(test_builtin_pwd)
 {
 	char **ss;
 	ss = calloc(3, sizeof(char*));
@@ -36,22 +37,22 @@ MU_TEST(test_pwd)
 
 	printf("builtins.pwd() tests:\n");
 	printf("argv = NULL:\n");
-	mu_assert_int_eq(FT_ERROR, pwd(NULL));
+	mu_assert_int_eq(FT_ERROR, builtin_pwd(NULL));
 
 	printf("argv is not an empty string array\n");
-	mu_assert_int_eq(1, pwd(ss));
+	mu_assert_int_eq(1, builtin_pwd(ss));
 
 	free(ss[0]);
 	ss[0] = NULL;
 	printf("argv is empty\n");
-	mu_assert_int_eq(FT_SUCCESS, pwd(ss));
+	mu_assert_int_eq(FT_SUCCESS, builtin_pwd(ss));
 	free(ss[1]);
 	free(ss[2]);
 	free(ss);
 	
 }
 
-MU_TEST(test_echo)
+MU_TEST(test_builtin_echo)
 {
 	char **ss;
 	ss = calloc(3, sizeof(char*));
@@ -61,27 +62,27 @@ MU_TEST(test_echo)
 
 	printf("builtins.echo() tests:\n");
 	printf("array,true:\n");
-	mu_assert_int_eq(FT_SUCCESS, echo(ss, true));
+	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, true));
 	printf("array,false:\n");
-	mu_assert_int_eq(FT_SUCCESS, echo(ss, false));
+	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, false));
 
 	free(ss[0]);
 	ss[0] = NULL;
 	printf("empty array, true:\n");
-	mu_assert_int_eq(FT_SUCCESS, echo(ss, true));
+	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, true));
 	printf("empty array, false:\n");
-	mu_assert_int_eq(FT_SUCCESS, echo(ss, false));
+	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, false));
 
 	printf("NULL, true:\n");
-	mu_assert_int_eq(FT_ERROR, echo(NULL, true));
+	mu_assert_int_eq(FT_ERROR, builtin_echo(NULL, true));
 	printf("NULL, false:\n");
-	mu_assert_int_eq(FT_ERROR, echo(NULL, false));
+	mu_assert_int_eq(FT_ERROR, builtin_echo(NULL, false));
 
 	ss[0] = strdup("");
 	printf("empty string as 1st arg, true:\n");
-	mu_assert_int_eq(FT_SUCCESS, echo(ss, true));
+	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, true));
 	printf("empty string as 1st arg, false:\n");
-	mu_assert_int_eq(FT_SUCCESS, echo(ss, false));
+	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, false));
 	free(ss[0]);
 	free(ss[1]);
 	free(ss[2]);
@@ -92,8 +93,8 @@ MU_TEST(test_echo)
 MU_TEST_SUITE(test_suite) 
 {
 	MU_SUITE_CONFIGURE(&test_setup, &test_teardown);
-	MU_RUN_TEST(test_echo);
-	MU_RUN_TEST(test_pwd);
+	MU_RUN_TEST(test_builtin_echo);
+	MU_RUN_TEST(test_builtin_pwd);
 }
 
 int main()

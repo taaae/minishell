@@ -1,42 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pwd.c                                              :+:      :+:    :+:   */
+/*   builtin_echo.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/10 16:30:09 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/10 17:57:08 by lporoshi         ###   ########.fr       */
+/*   Created: 2023/12/09 17:32:34 by lporoshi          #+#    #+#             */
+/*   Updated: 2023/12/10 19:45:56 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
+#include <stdbool.h>
 #include "libft.h"
 
-int	pwd(char **argv)
+int	builtin_echo(char **argv, bool no_newline_flag)
 {
-	char	*current_dir;
+	char	*output_string;
 
-	if (argv == NULL)
+	output_string = strjoin_str_arr(argv, ' ');
+	if (output_string == NULL)
 		return (FT_ERROR);
-	if (*argv != NULL)
+	if (ft_putstr_fd(output_string, STDOUT_FILENO) == FT_ERROR)
 	{
-		ft_putstr_fd("pwd: too many arguments\n", STDOUT_FILENO);
-		return (1);
-	}
-	current_dir = getcwd(NULL, 0);
-	if (current_dir == NULL)
-		return (FT_ERROR);
-	if (ft_putstr_fd(current_dir, STDOUT_FILENO) == FT_ERROR)
-	{
-		free(current_dir);
+		free(output_string);
 		return (FT_ERROR);
 	}
-	if (ft_putchar_fd('\n', STDOUT_FILENO) == FT_ERROR)
+	if (no_newline_flag == false)
 	{
-		free(current_dir);
-		return (FT_ERROR);
+		if (ft_putchar_fd('\n', STDOUT_FILENO) == FT_ERROR)
+		{
+			free(output_string);
+			return (FT_ERROR);
+		}
 	}
-	free(current_dir);
+	free(output_string);
 	return (FT_SUCCESS);
 }

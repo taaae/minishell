@@ -5,8 +5,8 @@ INCDIR := include
 CFLAGS := -Wall -Wextra -Werror
 SOURCE_FILES := \
 					reader/reader.c \
-					builtins/echo.c \
-					builtins/pwd.c
+					builtins/builtin_echo.c \
+					builtins/builtin_pwd.c
 SOURCES := $(addprefix $(SRCDIR)/,$(SOURCE_FILES))
 MAINSOURCE := $(SRCDIR)/minishell.c
 
