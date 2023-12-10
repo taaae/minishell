@@ -9,6 +9,10 @@ SOURCE_FILES := \
 SOURCES := $(addprefix $(SRCDIR)/,$(SOURCE_FILES))
 MAINSOURCE := $(SRCDIR)/minishell.c
 
+
+LIBFTDIR=libft
+LIBFT=$(LIBFTDIR)/libft.a
+
 INCLUDE_FILES := \
 					reader.h \
 					config.h
@@ -22,18 +26,22 @@ TESTS := $(TESTDIR)/test.c
 
 all: $(NAME)
 
-$(NAME): $(SOURCES) $(MAINSOURCE) $(INCLUDES)
+$(NAME): $(SOURCES) $(MAINSOURCE) $(INCLUDES) $(LIBFT)
 	$(CC) $(CFLAGS) $(INC_FLAGS) $(SOURCES) $(MAINSOURCE) -o $(NAME)
 
 test: $(TESTNAME)
 
-$(TESTNAME): $(SOURCES) $(TESTS) $(INCLUDES)
+$(TESTNAME): $(SOURCES) $(TESTS) $(INCLUDES) $(LIBFT)
 	$(CC) $(CFLAGS) $(INC_FLAGS) $(TESTFLAGS) $(SOURCES) $(TESTS) -o $(TESTNAME)
 
+$(LIBFT):
+	make -C $(LIBFTDIR)
+
 clean:
-	rm -f $(NAME) $(TESTNAME)
+	make -C $(LIBFTDIR) fclean
 
 fclean: clean
+	rm -f $(NAME) $(TESTNAME)
 
 re: fclean all
 
