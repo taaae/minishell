@@ -6,48 +6,24 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:32:34 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/10 13:19:28 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/10 14:52:05 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
 #include "../../include/minishell.h"
 #include "../../include/builtins.h"
+#include "../../libft/libft.h"
 
-//Echo will behave like a program w/ main() function probably
-//So it'll have argc, argv as args (?)
-
-// static size_t	get_str_arr_size(char **lines)
-// {
-// 	size_t	count;
-
-// 	if (lines == NULL || (*lines) == NULL)
-// 		return (0);
-// 	count = 0;
-// 	while (lines[count])
-// 		count++;
-// 	return (count);
-// }
-
-static int	echo_arg(char *s)
+int	echo(char **argv, bool no_newline_flag)
 {
-	return (printf("%s", s));
-}
+	char	*output_string;
 
-int	echo(char **argv, t_bool no_newline)
-{
-	if (argv == NULL || *argv == NULL)
-		return (-1);
-	while (1)
-	{
-		echo_arg(*argv);
-		argv++;
-		if (*argv != NULL)
-			printf(" ");
-		else
-		{
-			if (!no_newline)
-				printf("\n");
-			return (true);
-		}
-	}
+	output_string = strjoin_str_arr(argv, ' ');
+	if (output_string != NULL)
+		ft_putstr_fd(output_string, stdout);
+	if (no_newline_flag == false)
+		ft_putchar_fd('\n', stdout);
 }
