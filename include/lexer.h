@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:15:35 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/11 18:24:11 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/11 18:41:14 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 # define LEXER_H
 
 typedef enum e_token_type {
-	ERROR = 0,
-	WORD,
-	WORD_IN_QUOTES,
-	WORD_IN_DQUOTES,
-	READ_FROM_FILE_SYM,
-	WRITE_TO_FILE_SYM,
-	APPEND_TO_FILE_SYM,
-	HEREDOC_SYM,
-	PIPE_SYM,
-	AND_SYM,
-	OR_SYM,
-	OPEN_PARENTH,
-	CLOSE_PARTNTH	
+	TOK_ERROR = 0,
+	TOK_WORD,
+	TOK_WORD_IN_QUOTES,
+	TOK_WORD_IN_DQUOTES,
+	TOK_READ_FROM_FILE_SYM,
+	TOK_WRITE_TO_FILE_SYM,
+	TOK_APPEND_TO_FILE_SYM,
+	TOK_HEREDOC_SYM,
+	TOK_PIPE_SYM,
+	TOK_AND_SYM,
+	TOK_OR_SYM,
+	TOK_OPEN_PARENTH,
+	TOK_CLOSE_PARTNTH	
 }	t_token_type;
 
 typedef struct s_token {
