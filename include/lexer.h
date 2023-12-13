@@ -6,12 +6,15 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:15:35 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/11 18:41:14 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/13 16:19:16 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LEXER_H
 # define LEXER_H
+
+# define ONE_SYM_WORDS "()"
+# define TWO_SYM_WORDS "|&<>"
 
 typedef enum e_token_type {
 	TOK_ERROR = 0,
@@ -33,7 +36,6 @@ typedef struct s_token {
 	char			*token_string;
 	int				token_len;
 	t_token_type	type;
-	t_token			*next;
 }	t_token;
 
 /**
@@ -42,6 +44,10 @@ typedef struct s_token {
  * @param line 
  * @return t_token* 
  */
-t_token	*tokenize(char *line);
+t_list	*tokenize(char *line);
+void	del_token(void *token);
+char	*str_to_tok_str(char **line);
+t_token	*tok_str_to_token(char *tok_str);
+t_list	*token_to_list_entry(t_token *token);
 
 #endif

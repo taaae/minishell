@@ -6,28 +6,37 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:15:04 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/12 18:45:18 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/13 15:56:16 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "lexer.h"
 #include "libft.h"
+#include <stdbool.h>
 
-t_token	*tokenize(char *line)
+t_list	*tokenize(char *line)
 {
-	t_token	*token_list;
-	t_token	*cur_token;
+	t_list	*token_list;
+	t_list	*current_entry;
 
-	token_list = (t_token *)ft_calloc(1, sizeof(t_token));
-	if (token_list == NULL)
+	if (line == NULL)
 		return (NULL);
-	cur_token = token_list;
-	while (1)
+	while (ft_isspace(*line))
+		line++;
+	token_list = NULL;
+	while (*line != '\0')
 	{
-		get_token(cur_token, line);
-		if (cur_token == NULL)
-			return (token_list);
+		current_entry = token_to_list_entry (\
+		tok_str_to_token(str_to_tok_str(&line)));
+		if (current_entry == NULL)
+		{
+			ft_lstclear(&token_list, del_token);
+			return (NULL);
+		}
+		ft_lstadd_back(&token_list, current_entry);
+		while (ft_isspace(*line))
+			line++;
 	}
-	return (NULL);
+	return (token_list);
 }
