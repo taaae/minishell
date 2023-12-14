@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:54:34 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/14 15:14:50 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/14 17:36:07 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,6 @@ int	get_token_type_len_1(const char c)
 	return (TOK_WORD);
 }
 
-/**
- * @brief Get the token type object
- * 
- * TODO
- * @param tok_str 
- * @param tok_len 
- * @return int 
- */
 int	get_token_type(char *tok_str, int tok_len)
 {
 	if (tok_len == 1)
@@ -71,17 +63,6 @@ int	get_token_type(char *tok_str, int tok_len)
 	return (TOK_WORD);
 }
 
-/**
- * @brief Get the next tok len object
- * 
- * Cant possibly get ' ' or '\0'!
- * @param line 
- * @return int 
- */
-// for "$" if next is not alnum, interpret as "$" // if ? then you know
-	// if (ft_isalnum(line[i]) || line[i] == '*' || line[i] == '-' \
-	// 	|| line[i] == '_' || line[i] == '\\')
-	// 	return (parse_word(line + i));
 int	get_next_tok_len(char *line)
 {
 	int	i;
@@ -99,24 +80,3 @@ int	get_next_tok_len(char *line)
 		return (parse_var(line + i));
 	return (parse_word(line + i));
 }
-
-/*
-What entities can I encounter?
-1. \0 - return 0
-2. quotes: "/'
-3. parenth : (/)
-4. <
-5. >
-6. |
-7. alnum
-8. space - after the word
-9. 
-*/
-
-/*
-States:
-found 1sym-token - immediate return
-
-inside a word
-inside a <</>>
-*/

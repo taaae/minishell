@@ -6,22 +6,13 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 13:12:42 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/14 15:21:56 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/14 17:35:16 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// for "$" if next is not alnum, interpret as "$" // if ? then you know
-/*
-	if (line[i] == '\'')
-		return (parse_quotes(line));
-	if (line[i] == '\"')
-		return (parse_dquotes(line));
-	if (ft_isalnum(line[i]) || line[i] == '*' || line == '-')
-		return (parse_word(line));
-	if (line[i] == '$')
-		return (parse_var(line));
-*/
+#include "lexer.h"
+
 int	parse_double_sym_word(char *line)
 {
 	if (line[0] == line[1])
@@ -58,7 +49,8 @@ int	parse_word(char *line)
 	int	i;
 
 	i = 1;
-	while (line[i] != '\0' && !ft_isspace(line[i]))
+	while (line[i] != '\0' && !ft_isspace(line[i]) \
+		&& !ft_in(line[i], WORD_CHARS))
 		i++;
 	return (i);
 }

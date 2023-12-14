@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:15:04 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/14 15:09:51 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/14 17:34:49 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ t_list	*tokenize(char *line)
 	token_list = NULL;
 	while (*line != '\0')
 	{
-		if (DEBUG)
-			printf("PARSING LINE THAT IS %s\n", line);
 		current_entry = token_to_list_entry (\
 		tok_str_to_token(str_to_tok_str(&line)));
 		if (current_entry == NULL)
