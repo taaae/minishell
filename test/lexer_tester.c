@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 13:45:03 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/14 17:49:22 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/14 17:52:52 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	print_list_item_w_token(t_list	*item)
 
 int	main(int argc, char **argv)
 {
+	write(1, "[", 1);
 	t_list	*l;
 
 	//printf("LINE=[%s]\n", argv[1]);
@@ -48,6 +49,6 @@ int	main(int argc, char **argv)
 		print_list_item_w_token(l);
 		l = l->next;
 	}
-	write(1, "\n", 1);
+	write(1, "]\n", 2);
 	return (0);
 }
