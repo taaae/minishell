@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 13:45:03 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/14 17:44:23 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/14 17:49:22 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ int	main(int argc, char **argv)
 		print_list_item_w_token(l);
 		l = l->next;
 	}
+	write(1, "\n", 1);
 	return (0);
 }
