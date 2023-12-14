@@ -6,11 +6,12 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:34:51 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/13 15:56:06 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/14 15:09:14 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "config.h"
 #include "lexer.h"
 #include "libft.h"
 
@@ -31,13 +32,16 @@ char	*str_to_tok_str(char **line)
 	int		tok_len;
 
 	tok_len = get_next_tok_len(*line);
+	printf("Token len firsr: %d\n", tok_len);
 	if (tok_len == 0)
 		return (NULL);
 	tok_str = (char *)ft_calloc(tok_len + 1, sizeof(char));
 	if (tok_str == NULL)
 		return (NULL);
-	tok_str = ft_strncpy(tok_str, line, tok_len + 1);
+	printf("Inner1: %s\n", tok_str);
+	tok_str = ft_strncpy(tok_str, *line, tok_len);
 	(*line) += tok_len;
+	printf("Inner2: %s\n", tok_str);
 	return (tok_str);
 }
 
@@ -54,8 +58,12 @@ t_token	*tok_str_to_token(char *tok_str)
 		return (NULL);
 	}
 	token->token_len = ft_strlen(tok_str);
-	token->type = get_token_type(tok_str);
+	if (DEBUG)
+		printf("token len = %d\n", token->token_len);
+	token->type = get_token_type(tok_str, token->token_len);
 	token->token_string = tok_str;
+	if (DEBUG)
+		printf("Second layer[type=%d], str:%s\n", token->type, token->token_string);
 	return (token);
 }
 
@@ -65,8 +73,17 @@ t_list	*token_to_list_entry(t_token *token)
 
 	if (token == NULL)
 		return (NULL);
+	if (token->type == TOK_ERROR)
+	{
+		del_token(token);
+		return (NULL);
+	}
 	entry = ft_lstnew(token);
 	if (entry == NULL)
 		del_token(token);
+	if (DEBUG)
+		printf("Third Layer: %p, %p, t=%d, l=%d, s=[%s]\n", entry, entry->content, \
+		((t_token *)(entry->content))->type, ((t_token *)(entry->content))->token_len, \
+		((t_token *)(entry->content))->token_string);
 	return (entry);
 }
