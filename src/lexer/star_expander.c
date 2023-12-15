@@ -6,11 +6,12 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 12:55:50 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/15 13:56:46 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/15 17:26:55 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "lexer.h"
 
 static int	ordered_substrings_match(char *s, char **substrings)
 {
@@ -20,6 +21,8 @@ static int	ordered_substrings_match(char *s, char **substrings)
 
 	pos = 0;
 	i = 0;
+	if (ft_in('\"', s) && ft_in('\'', s))
+		return (FT_FALSE);
 	end = ft_strlen(s);
 	while (substrings[i] != NULL)
 	{
@@ -38,6 +41,8 @@ static int	match_wildcard(char *str, char *pattern)
 	char	**substrings;
 	int		matched;
 
+	if (!ft_in('*', pattern))
+		return (FT_ERROR);
 	substrings = ft_split(pattern, '*');
 	if (substrings == NULL)
 		return (FT_ERROR);
@@ -50,6 +55,12 @@ static int	append_expansion_str(char **expansion, char *appendix)
 {
 	char	*temp;
 
+	if (ft_in('\'', appendix))
+		appendix = ft_str_surround(&appendix, '\"');
+	else if (ft_in('\"', appendix))
+		appendix = ft_str_surround(&appendix, '\'');
+	if (appendix == NULL)
+		return (FT_ERROR);
 	temp = ft_strjoin(*expansion, appendix);
 	free(*expansion);
 	*expansion = temp;
@@ -84,3 +95,29 @@ char	*compose_expansion_str(char *pattern, char **candidates)
 	}
 	return (expansion);
 }
+
+char	*expand_string(char *pattern)
+{
+	char	**files;
+	char	*expansion;
+
+	files = get_files_in_cur_dir();
+	if (files == NULL)
+		return (NULL);
+	expansion = compose_expansion_str(pattern, files);
+	free_str_arr(&files);
+	return (expansion);
+}
+
+// int main(void) {
+//   DIR *d;
+//   struct dirent *dir;
+//   d = opendir(".");
+//   if (d) {
+//     while ((dir = readdir(d)) != NULL) {
+//       printf("%s\n", dir->d_name);
+//     }
+//     closedir(d);
+//   }
+//   return(0);
+// }
