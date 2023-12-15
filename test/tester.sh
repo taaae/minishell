@@ -4,7 +4,7 @@
 PROGRAM=".././a.out"
 
 # Input file with 100 lines (replace "input.txt" with your actual file name)
-INPUT_FILE="suites/suite_1.txt"
+INPUT_FILE="suites/at_2.txt"
 
 # Loop through each line in the file and run the program
 while IFS= read -r line; do
