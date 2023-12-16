@@ -6,12 +6,14 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 12:55:50 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/15 17:26:55 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/16 13:50:11 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "lexer.h"
+
+int	match_start_and_end(char *str, char *pattern, char **substrings);
 
 static int	ordered_substrings_match(char *s, char **substrings)
 {
@@ -41,11 +43,17 @@ static int	match_wildcard(char *str, char *pattern)
 	char	**substrings;
 	int		matched;
 
+	if (str[0] == '.')
+		return (FT_FALSE);
 	if (!ft_in('*', pattern))
 		return (FT_ERROR);
 	substrings = ft_split(pattern, '*');
 	if (substrings == NULL)
 		return (FT_ERROR);
+	if (substrings[0] == NULL)
+		return (FT_TRUE);
+	if (match_start_and_end(str, pattern, substrings) == FT_FALSE)
+		return (FT_FALSE);
 	matched = ordered_substrings_match(str, substrings);
 	free_str_arr(&substrings);
 	return (matched);
