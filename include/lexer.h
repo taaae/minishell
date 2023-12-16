@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:15:35 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/15 17:26:07 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/16 13:57:54 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,9 @@ int		parse_var(char *line);
 int		count_files_in_cur_dir(void);
 void	scan_dir(char ***files, int files_count, DIR *d, struct dirent *dir);
 char	**get_files_in_cur_dir(void);
+
+t_list	*line_to_tokens(char *line);
+int		expand_all_tokens(t_list **tok_lst);
 
 /**
  * @brief Get the token type object

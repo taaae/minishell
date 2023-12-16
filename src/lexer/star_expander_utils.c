@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 15:03:29 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/16 13:34:48 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/16 15:12:18 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,14 +112,19 @@ int	expand_all_tokens(t_list **tok_lst)
 	{
 		if (ft_in('*', ((t_token *)(cur->content))->token_string))
 		{
-			expanded = tokenize(((t_token *)(cur->content))->token_string);
+			expanded = expand_token((t_token *)(cur->content));
 			if (expanded == NULL)
 				((t_token *)(cur->content))->type = TOK_ERROR;
 			else
+			{
 				cur = lst_replace_node_to_list(prev, &cur, expanded);
+				if (prev == NULL)
+					*tok_lst = expanded;
+			}
 		}
 		prev = cur;
-		cur = cur->next;
+		if (cur != NULL)
+			cur = cur->next;
 	}
 	return (FT_SUCCESS);
 }
