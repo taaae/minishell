@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 15:03:29 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/15 17:27:27 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/16 12:39:10 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,8 +100,30 @@ t_list	*expand_token(t_token *tok)
  * @param tok_lst
  * @return int
  */
-int		expand_all_tokens(t_token *tok_lst);
+int	expand_all_tokens(t_list **tok_lst)
+{
+	t_list	*prev;
+	t_list	*cur;
+	t_list	*expanded;
 
+	prev = NULL;
+	cur = *tok_lst;
+	while (cur != NULL)
+	{
+		if (ft_in('*', ((t_token *)(cur->content))->token_string))
+		{
+			expanded = tokenize(((t_token *)(cur->content))->token_string);
+			if (expanded == NULL)
+				((t_token *)(cur->content))->type - TOK_ERROR;
+			else
+				cur = lst_replace_node_to_list(prev, cur, expanded);
+		}
+		prev = cur;
+		cur = cur->next;
+	}
+}
+
+// t_list	*lst_replace_node_to_list(prev, dst, source); // returns the pointer to cur->next
 // 4) Написать функцию, которая идёт по списку, и если находит токен со звездой,
 // запускает токен_экспандер,
 //    и вставляет возвращённый список в лист, не забыв осободить память токена,
