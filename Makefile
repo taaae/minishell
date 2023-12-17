@@ -2,7 +2,7 @@ NAME := minishell
 CC := cc
 SRCDIR := src
 INCDIR := include
-CFLAGS := -Wall -Wextra -Werror
+CFLAGS := -Wall -Wextra -Werror -fsanitize=address
 SOURCE_FILES := \
 					reader/reader.c \
 					builtins/builtin_echo.c \
