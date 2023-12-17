@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 13:57:24 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/10 19:45:08 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/17 16:08:31 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <string.h>
 #include "libft.h"
 #include "builtins.h"
+#include "environment.h"
 
 void test_setup(void)
 {
@@ -87,7 +88,35 @@ MU_TEST(test_builtin_echo)
 	free(ss[1]);
 	free(ss[2]);
 	free(ss);
-	
+}
+
+MU_TEST(test_environment)
+{
+	char *to_free;
+	char *envp[] = {"PATH=/usr/local/bin:/usr/bin", "COLORTERM=truecolor", NULL};
+	ft_initenv(envp);
+	mu_assert_string_eq("/usr/local/bin:/usr/bin", to_free = ft_getenv("PATH"));
+	free(to_free);
+	mu_assert_string_eq("truecolor", to_free = ft_getenv("COLORTERM"));
+	free(to_free);
+	mu_assert_string_eq(NULL, ft_getenv("missing"));
+	ft_setenv("newvar", "newval");
+	mu_assert_string_eq("newval", to_free = ft_getenv("newvar"));
+	free(to_free);
+	ft_unsetenv("COLORTERM");
+	mu_assert_string_eq(NULL, ft_getenv("COLORTERM"));
+	mu_assert_int_eq(-1, ft_setenv("a=b", "c"));
+	mu_assert_string_eq(NULL, ft_getenv("a=b"));
+	char **environ = get_environ();
+	int i = 0;
+	for (; environ[i] != NULL; i++) {}
+	mu_assert_int_eq(2, i);
+	mu_assert_int_eq(0, ft_unsetenv("missign"));
+	mu_assert_int_eq(-1, ft_unsetenv("inva=lid"));
+	mu_assert_int_eq(-1, ft_unsetenv(""));
+	ft_unsetenv("PATH");
+	ft_unsetenv("newvar");
+	mu_assert(environ[0] == NULL, "environ should be empty now");
 }
 
 MU_TEST_SUITE(test_suite) 
@@ -95,6 +124,7 @@ MU_TEST_SUITE(test_suite)
 	MU_SUITE_CONFIGURE(&test_setup, &test_teardown);
 	MU_RUN_TEST(test_builtin_echo);
 	MU_RUN_TEST(test_builtin_pwd);
+	MU_RUN_TEST(test_environment);
 }
 
 int main()
