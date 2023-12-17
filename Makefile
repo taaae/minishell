@@ -6,9 +6,7 @@ CFLAGS := -Wall -Wextra -Werror
 SOURCE_FILES := \
 					reader/reader.c \
 					builtins/builtin_echo.c \
-					builtins/builtin_pwd.c \
-					environment/environment.c \
-					environment/environment_utils.c
+					builtins/builtin_pwd.c
 SOURCES := $(addprefix $(SRCDIR)/,$(SOURCE_FILES))
 MAINSOURCE := $(SRCDIR)/minishell.c
 
@@ -16,10 +14,8 @@ LIBFTDIR=libft
 LIBFT=$(LIBFTDIR)/libft.a
 
 INCLUDE_FILES := \
-					builtins.h \
-					config.h \
-					environment.h \
-					reader.h
+					reader.h \
+					config.h
 INCLUDES := $(addprefix $(INCDIR)/,$(INCLUDE_FILES))
 INC_FLAGS := -I ./$(INCDIR) -I ./libft -L ./libft -lft -lreadline
 
