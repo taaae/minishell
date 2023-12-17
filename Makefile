@@ -7,6 +7,7 @@ SOURCE_FILES := \
 					reader/reader.c \
 					builtins/builtin_echo.c \
 					builtins/builtin_pwd.c \
+					builtins/builtin_env.c \
 					environment/environment.c \
 					environment/environment_utils.c
 SOURCES := $(addprefix $(SRCDIR)/,$(SOURCE_FILES))

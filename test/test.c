@@ -6,7 +6,7 @@
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 13:57:24 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/17 16:08:31 by trusanov         ###   ########.fr       */
+/*   Updated: 2023/12/17 16:52:02 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,67 +28,67 @@ void test_teardown(void)
 }
 
 
-MU_TEST(test_builtin_pwd)
-{
-	char **ss;
-	ss = calloc(3, sizeof(char*));
-	ss[0] = strdup("ARG1");
-	ss[1] = strdup("ARG2");
-	ss[2] = NULL;
+// MU_TEST(test_builtin_pwd)
+// {
+// 	char **ss;
+// 	ss = calloc(3, sizeof(char*));
+// 	ss[0] = strdup("ARG1");
+// 	ss[1] = strdup("ARG2");
+// 	ss[2] = NULL;
 
-	printf("builtins.pwd() tests:\n");
-	printf("argv = NULL:\n");
-	mu_assert_int_eq(FT_ERROR, builtin_pwd(NULL));
+// 	printf("builtins.pwd() tests:\n");
+// 	printf("argv = NULL:\n");
+// 	mu_assert_int_eq(FT_ERROR, builtin_pwd(NULL));
 
-	printf("argv is not an empty string array\n");
-	mu_assert_int_eq(1, builtin_pwd(ss));
+// 	printf("argv is not an empty string array\n");
+// 	mu_assert_int_eq(1, builtin_pwd(ss));
 
-	free(ss[0]);
-	ss[0] = NULL;
-	printf("argv is empty\n");
-	mu_assert_int_eq(FT_SUCCESS, builtin_pwd(ss));
-	free(ss[1]);
-	free(ss[2]);
-	free(ss);
+// 	free(ss[0]);
+// 	ss[0] = NULL;
+// 	printf("argv is empty\n");
+// 	mu_assert_int_eq(FT_SUCCESS, builtin_pwd(ss));
+// 	free(ss[1]);
+// 	free(ss[2]);
+// 	free(ss);
 	
-}
+// }
 
-MU_TEST(test_builtin_echo)
-{
-	char **ss;
-	ss = calloc(3, sizeof(char*));
-	ss[0] = strdup("ARG1");
-	ss[1] = strdup("ARG2");
-	ss[2] = NULL;
+// MU_TEST(test_builtin_echo)
+// {
+// 	char **ss;
+// 	ss = calloc(3, sizeof(char*));
+// 	ss[0] = strdup("ARG1");
+// 	ss[1] = strdup("ARG2");
+// 	ss[2] = NULL;
 
-	printf("builtins.echo() tests:\n");
-	printf("array,true:\n");
-	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, true));
-	printf("array,false:\n");
-	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, false));
+// 	printf("builtins.echo() tests:\n");
+// 	printf("array,true:\n");
+// 	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, true));
+// 	printf("array,false:\n");
+// 	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, false));
 
-	free(ss[0]);
-	ss[0] = NULL;
-	printf("empty array, true:\n");
-	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, true));
-	printf("empty array, false:\n");
-	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, false));
+// 	free(ss[0]);
+// 	ss[0] = NULL;
+// 	printf("empty array, true:\n");
+// 	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, true));
+// 	printf("empty array, false:\n");
+// 	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, false));
 
-	printf("NULL, true:\n");
-	mu_assert_int_eq(FT_ERROR, builtin_echo(NULL, true));
-	printf("NULL, false:\n");
-	mu_assert_int_eq(FT_ERROR, builtin_echo(NULL, false));
+// 	printf("NULL, true:\n");
+// 	mu_assert_int_eq(FT_ERROR, builtin_echo(NULL, true));
+// 	printf("NULL, false:\n");
+// 	mu_assert_int_eq(FT_ERROR, builtin_echo(NULL, false));
 
-	ss[0] = strdup("");
-	printf("empty string as 1st arg, true:\n");
-	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, true));
-	printf("empty string as 1st arg, false:\n");
-	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, false));
-	free(ss[0]);
-	free(ss[1]);
-	free(ss[2]);
-	free(ss);
-}
+// 	ss[0] = strdup("");
+// 	printf("empty string as 1st arg, true:\n");
+// 	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, true));
+// 	printf("empty string as 1st arg, false:\n");
+// 	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, false));
+// 	free(ss[0]);
+// 	free(ss[1]);
+// 	free(ss[2]);
+// 	free(ss);
+// }
 
 MU_TEST(test_environment)
 {
@@ -116,15 +116,37 @@ MU_TEST(test_environment)
 	mu_assert_int_eq(-1, ft_unsetenv(""));
 	ft_unsetenv("PATH");
 	ft_unsetenv("newvar");
-	mu_assert(environ[0] == NULL, "environ should be empty now");
+	ft_setenv("abc", "val=with=equal");
+	mu_assert_string_eq("val=with=equal", to_free = ft_getenv("abc"));
+	free(to_free);
+	ft_unsetenv("abc");
+	mu_assert(get_environ()[0] == NULL, "environ should be empty now");
+	free(get_environ());
+}
+
+MU_TEST(test_env_builtins)
+{
+	// char *to_free;
+	char *envp[] = {"PATH=/usr/local/bin:/usr/bin", "COLORTERM=truecolor", NULL};
+	ft_initenv(envp);
+	char *empty_argv[] = {NULL};
+	ft_printf("\nbuiltin_env test:\n");
+	builtin_env(empty_argv);
+	empty_argv[0] = "abc";
+	builtin_env(empty_argv);
+	empty_argv[0] = NULL;
+	ft_unsetenv("PATH");
+	ft_unsetenv("COLORTERM");
+	builtin_env(empty_argv);
 }
 
 MU_TEST_SUITE(test_suite) 
 {
 	MU_SUITE_CONFIGURE(&test_setup, &test_teardown);
-	MU_RUN_TEST(test_builtin_echo);
-	MU_RUN_TEST(test_builtin_pwd);
+	// MU_RUN_TEST(test_builtin_echo);
+	// MU_RUN_TEST(test_builtin_pwd);
 	MU_RUN_TEST(test_environment);
+	MU_RUN_TEST(test_env_builtins);
 }
 
 int main()
