@@ -6,7 +6,7 @@
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 13:57:24 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/17 16:52:02 by trusanov         ###   ########.fr       */
+/*   Updated: 2023/12/17 17:04:53 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,9 +124,8 @@ MU_TEST(test_environment)
 	free(get_environ());
 }
 
-MU_TEST(test_env_builtins)
+MU_TEST(test_builtin_env)
 {
-	// char *to_free;
 	char *envp[] = {"PATH=/usr/local/bin:/usr/bin", "COLORTERM=truecolor", NULL};
 	ft_initenv(envp);
 	char *empty_argv[] = {NULL};
@@ -140,13 +139,32 @@ MU_TEST(test_env_builtins)
 	builtin_env(empty_argv);
 }
 
+MU_TEST(test_builtin_unset)
+{
+	char *envp[] = {"PATH=/usr/local/bin:/usr/bin", "COLORTERM=truecolor", "USER=root", NULL};
+	ft_initenv(envp);
+	char *empty_argv[] = {NULL};
+	ft_printf("\n\n\nbuiltin_unset test:\n");
+	char *unset_argv[] = {"nonexisting", "er=ror", NULL};
+	mu_assert_int_eq(1, builtin_unset(unset_argv));
+	builtin_env(empty_argv);
+	unset_argv[0] = "PATH";
+	unset_argv[1] = "USER";
+	ft_printf("\n");
+	mu_assert_int_eq(0, builtin_unset(unset_argv));
+	builtin_env(empty_argv);
+	unset_argv[0] = "";
+	mu_assert_int_eq(1, builtin_unset(unset_argv));
+}
+
 MU_TEST_SUITE(test_suite) 
 {
 	MU_SUITE_CONFIGURE(&test_setup, &test_teardown);
 	// MU_RUN_TEST(test_builtin_echo);
 	// MU_RUN_TEST(test_builtin_pwd);
 	MU_RUN_TEST(test_environment);
-	MU_RUN_TEST(test_env_builtins);
+	MU_RUN_TEST(test_builtin_env);
+	MU_RUN_TEST(test_builtin_unset);
 }
 
 int main()

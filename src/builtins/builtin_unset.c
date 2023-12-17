@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   builtin_env.c                                      :+:      :+:    :+:   */
+/*   builtin_unset.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/17 16:16:53 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/17 16:55:07 by trusanov         ###   ########.fr       */
+/*   Created: 2023/12/17 16:54:57 by trusanov          #+#    #+#             */
+/*   Updated: 2023/12/17 17:00:48 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,18 @@
 #include "environment.h"
 #include "builtins.h"
 
-int	builtin_env(char **argv)
+int	builtin_unset(char **argv)
 {
-	char	**environ;
+	int	res;
 
 	if (argv == NULL)
-		return (FT_ERROR);
-	if (argv[0] != NULL)
+			return (FT_ERROR);
+	res = 0;
+	while (*argv)
 	{
-		ft_putstr_fd("env with arguments is not supported", STDERR_FILENO);
-		return (FT_ERROR);
+		if (ft_unsetenv(*argv) == -1)
+			res = 1;
+		argv++;
 	}
-	environ = get_environ();
-	while (*environ != NULL)
-	{
-		ft_printf("%s\n", *environ);
-		environ++;
-	}
-	return (0);
+	return (res);
 }

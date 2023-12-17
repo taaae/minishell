@@ -6,7 +6,7 @@
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 12:44:11 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/17 13:03:54 by trusanov         ###   ########.fr       */
+/*   Updated: 2023/12/17 16:54:08 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	**get_environ(void);
 char	*ft_getenv(const char *name);
 
 /**
- * @brief The setenv() function inserts or resets the environment variable name
+ * @brief The ft_setenv() function inserts or resets the environment variable name
  * in the current environment list. If the variable name does not exist
  * in the list, it is inserted with the given value.
  * If the variable does exist, it is reset to the given value.
