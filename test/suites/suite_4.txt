@@ -6,7 +6,7 @@ echo 'bye *' bo*s bye
 echo 'bye *' mini* bye
 echo *ME*
 echo "*"
-"*"
+*
 manual*
 echo * | awk -v RS=" " '{print}' | sort
 <*.txt
@@ -95,7 +95,7 @@ $EMPTY echo hi
 ./test_files/invalid_permission
 ./missing.out
 missing.out
-"aaa"
+aaa
 test_files
 ./test_files
 /test_files

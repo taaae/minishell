@@ -896,7 +896,7 @@ cd $IETSONBESTAANDS
 cd $POEP $MEERPOEP ..
 cd poep
 ls
-"ls"
+ls
 test
 /bin/ls
 /binn/ls
@@ -909,7 +909,7 @@ hallo\$USER
 \$?
 $USER
 \$USER
-"\$USER"
+\$USER
 \poep
 poep
 poep"
@@ -917,7 +917,7 @@ poep\'
 hallo"\poep
 hallo
 maran
-'$USER'
+$USER
 $USER
 123"456
 \poep
@@ -939,7 +939,7 @@ hallo$\abc
 halloUSER
 halloPOEP
 halloUSER
-"hallo$USER"
+hallo$USER
 hallo$abc
 “$rewtwet”
 $"
@@ -1120,7 +1120,7 @@ echo
 echo hoi
 cd poep
 ls
-"ls"
+ls
 test
 exit
 exit 99
@@ -1147,7 +1147,7 @@ $USER
 echo '\$USER'
 \$USER
 echo '"\$USER"'
-"\$USER"
+\$USER
 echo "hallo"maran"
 echo "\poep"
 \poep
@@ -1166,7 +1166,7 @@ echo "hoi$USERmaran"
 echo "$USER"
 maran
 echo "'\$USER'"
-'$USER'
+$USER
 echo "\$USER"							
 $USER
 echo "123\"456"
@@ -1245,7 +1245,7 @@ echo "$_poep"
 echo "$a5aap"
 echo "$halllo###"
 echo "$USER9582309582529"
-"hallo$USER"
+hallo$USER
 echo "$"						
 echo hallo"$"abc				
 hallo$abc

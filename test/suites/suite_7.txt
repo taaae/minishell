@@ -469,8 +469,8 @@ cat << '$USER' > tmp1
 bonjour
 je
 suis
-'$USER'
-"$USER"
+$USER
+$USER
 $USER
 cat tmp1
 
@@ -479,8 +479,8 @@ cat << $USER > tmp1
 bonjour
 je
 suis
-'$USER'
-"$USER"
+$USER
+$USER
 $USER
 cat tmp1
 
@@ -489,8 +489,8 @@ cat << $AAAAAAAA > tmp1
 bonjour
 je
 suis
-'$USER'
-"$USER"
+$USER
+$USER
 $USER
 $AAAAAAAAAAAAAAAAAA
 $AAAAAAAA
@@ -501,8 +501,8 @@ cat << "hello'ksdcksd'ckdsc'""""""'"kjbsdckj'"fddvdf"vdfvdfv'bsdc > tmp1
 bonjour
 je
 suis
-'$USER'
-"$USER"
+$USER
+$USER
 $USER
 $AAAAAAAAAAAAAAAAAA
 $AAAAAAAA
@@ -518,13 +518,13 @@ cat << "b$" > tmp1
 bonjour
 je
 suis
-'$USER'
-"$USER"
+$USER
+$USER
 $USER
 $AAAAAAAAAAAAAAAAAA
 $AAAAAAAA
-"$"
-""
+$
+
 $
 b$
 cat tmp1
@@ -563,7 +563,7 @@ echo $?
 echo << >echo $?
 rm tmp1 tmp2 tmp3 tmp4 tmp5
 echo -------------------000-------------------
-""
+
 echo $?
 sleep 0.1
 echo -------------------00-------------------
@@ -821,7 +821,7 @@ echo $var $a
 echo $?
 
 echo --------parsing---------
-""
+
 echo $?
 echo "\s"
 echo $?

@@ -338,22 +338,22 @@ echo '|$USE|'
 echo '|$USER_|'
 'echo' hi
 '''echo' hi
-'echo' 'hi'
-'echo' 'hi'''
-'echo' 'hi' ''
+echo' 'hi
+echo' 'hi''
+echo' 'hi' '
 "echo" hi
 """echo" hi
-"echo" "hi"
-"echo" "hi"""
-"echo" "hi" ""
+echo" "hi
+echo" "hi""
+echo" "hi" "
 echo '""""""""""""'
 'echo' "hi"'' " ' "' "' "" ''''''""
 echo hi"hi" hi'h"i'
 echo "hi" "hi"
 echo "hi"  "hi"
 echo "hi"\t"hi"@echo "hi"tab"hi"
-" echo"
-' echo'
+ echo
+ echo
 ""echo
 " "echo
 ''echo
@@ -378,8 +378,8 @@ echo hi > 'fi le';rm 'fi le'@echo hi > 'fi le'
 echo $ANA_VAR@echo $ANA_VAR with spaces in var value
 echo "$ANA_VAR"@echo "$ANA_VAR" with spaces in var value
 echo '$ANA_VAR'@echo '$ANA_VAR' with spaces in var value
-""
-" "
+
+ 
   
 	echo hi@\\techo hi
 echo	hi@echo\\thi
@@ -524,7 +524,7 @@ echo $SHLVL 'entry value 5000000'
 echo $SHLVL 'unset SHLVL before ./minishell'
 echo $SLVL 'export SHLVL='' before ./minishell'
 " ";echo $?
-" "
+ 
 echo $?
 cat < noexiste;echo $?
 cat < noexiste
