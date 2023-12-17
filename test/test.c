@@ -6,7 +6,7 @@
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 13:57:24 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/17 17:29:09 by trusanov         ###   ########.fr       */
+/*   Updated: 2023/12/17 17:41:13 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,7 @@ MU_TEST(test_builtin_env)
 	empty_argv[0] = NULL;
 	ft_unsetenv("PATH");
 	ft_unsetenv("COLORTERM");
+	free(get_environ());
 	builtin_env(empty_argv);
 }
 
@@ -155,6 +156,9 @@ MU_TEST(test_builtin_unset)
 	builtin_env(empty_argv);
 	unset_argv[0] = "";
 	mu_assert_int_eq(1, builtin_unset(unset_argv));
+	unset_argv[0] = "COLORTERM";
+	builtin_unset(unset_argv);
+	free(get_environ());
 }
 
 MU_TEST(test_builtin_export)
