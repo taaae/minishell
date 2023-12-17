@@ -6,7 +6,7 @@
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 13:57:24 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/17 17:04:53 by trusanov         ###   ########.fr       */
+/*   Updated: 2023/12/17 17:29:09 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,6 +157,27 @@ MU_TEST(test_builtin_unset)
 	mu_assert_int_eq(1, builtin_unset(unset_argv));
 }
 
+MU_TEST(test_builtin_export)
+{
+	char *envp[] = {"PATH=/usr/local/bin:/usr/bin", "COLORTERM=truecolor", "USER=root", NULL};
+	ft_initenv(envp);
+	char *empty_argv[] = {NULL};
+	ft_printf("\n\n\nbuiltin_export test:\n");
+	char *argv[] = {"aaa=bbb", "ccc", NULL};
+	mu_assert_int_eq(0, builtin_export(argv));
+	builtin_env(empty_argv);
+	argv[0] = "PATH";
+	argv[1] = "COLORTERM";
+	builtin_unset(argv);
+	ft_printf("\n");
+	builtin_env(empty_argv);
+	argv[0] = "USER=grot";
+	argv[1] = "";
+	mu_assert_int_eq(1, builtin_export(argv));
+	ft_printf("\n");
+	builtin_env(empty_argv);
+}
+
 MU_TEST_SUITE(test_suite) 
 {
 	MU_SUITE_CONFIGURE(&test_setup, &test_teardown);
@@ -165,6 +186,7 @@ MU_TEST_SUITE(test_suite)
 	MU_RUN_TEST(test_environment);
 	MU_RUN_TEST(test_builtin_env);
 	MU_RUN_TEST(test_builtin_unset);
+	MU_RUN_TEST(test_builtin_export);
 }
 
 int main()

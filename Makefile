@@ -9,6 +9,7 @@ SOURCE_FILES := \
 					builtins/builtin_pwd.c \
 					builtins/builtin_env.c \
 					builtins/builtin_unset.c \
+					builtins/builtin_export.c \
 					environment/environment.c \
 					environment/environment_utils.c
 SOURCES := $(addprefix $(SRCDIR)/,$(SOURCE_FILES))
