@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:15:04 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/14 17:34:49 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/16 14:46:58 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,16 @@ t_list	*tokenize(char *line)
 			line++;
 	}
 	return (token_list);
+}
+
+t_list	*line_to_tokens(char *line)
+{
+	t_list	*tokens;
+
+	tokens = tokenize(line);
+	if (tokens == NULL)
+		return (tokens);
+	expand_all_tokens(&tokens);
+	// expand_variables(&tokens);
+	return (tokens);
 }

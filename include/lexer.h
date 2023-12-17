@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:15:35 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/14 17:38:14 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/16 13:57:54 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LEXER_H
 
 # include "libft.h"
+# include <dirent.h>
 
 # define ONE_SYM_WORDS "()"
 # define TWO_SYM_WORDS "|&<>"
@@ -67,6 +68,13 @@ int		parse_quotes(char *line);
 int		parse_dquotes(char *line);
 int		parse_word(char *line);
 int		parse_var(char *line);
+
+int		count_files_in_cur_dir(void);
+void	scan_dir(char ***files, int files_count, DIR *d, struct dirent *dir);
+char	**get_files_in_cur_dir(void);
+
+t_list	*line_to_tokens(char *line);
+int		expand_all_tokens(t_list **tok_lst);
 
 /**
  * @brief Get the token type object
