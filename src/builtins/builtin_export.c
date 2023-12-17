@@ -6,7 +6,7 @@
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:05:42 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/17 17:29:39 by trusanov         ###   ########.fr       */
+/*   Updated: 2023/12/17 18:29:12 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,13 @@
 #include "environment.h"
 #include "builtins.h"
 
-// todo change it so ft_setenv checks whether name is valid identifier and also add error output for builtin_unset and builtin_export
+static void	invalid_identifier_message(char *name)
+{
+	ft_putstr_fd("export: `", STDERR_FILENO);
+	ft_putstr_fd(name, STDERR_FILENO);
+	ft_putstr_fd("': not a valid identifier\n", STDERR_FILENO);
+}
+
 int	builtin_export(char **argv)
 {
 	int		res;
@@ -30,16 +36,12 @@ int	builtin_export(char **argv)
 	}
 	while (*argv)
 	{
-		if (ft_strrchr(*argv, '=') == NULL)
-		{
-			if (*argv[0] == '\0')
-				res = 1;
-			argv++;
-			continue ;
-		}
 		split_res = ft_splitone(*argv, '=');
 		if (ft_setenv(split_res[0], split_res[1]) == -1)
+		{
+			invalid_identifier_message(*argv);
 			res = 1;
+		}
 		free_str_arr(&split_res);
 		argv++;
 	}

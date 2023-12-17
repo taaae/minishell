@@ -6,7 +6,7 @@
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 13:57:24 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/17 17:41:13 by trusanov         ###   ########.fr       */
+/*   Updated: 2023/12/17 18:35:05 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,8 +136,8 @@ MU_TEST(test_builtin_env)
 	empty_argv[0] = NULL;
 	ft_unsetenv("PATH");
 	ft_unsetenv("COLORTERM");
-	free(get_environ());
 	builtin_env(empty_argv);
+	free(get_environ());
 }
 
 MU_TEST(test_builtin_unset)
@@ -182,6 +182,19 @@ MU_TEST(test_builtin_export)
 	builtin_env(empty_argv);
 }
 
+MU_TEST(test_env_error_messages)
+{
+	ft_printf("\n\ntest env error messages:\n");
+	ft_printf("for unset:\n");
+	char *argv[] = {" ", "", "a=b", "=2", "=", " a", "2a", "_", "?^@", NULL};
+	builtin_unset(argv);
+	ft_printf("\nfor export:\n");
+	char *argv2[] = {" ", "", "2a=b", " a=b", " b", "_a=b=c", " _a", "?^", NULL};
+	builtin_export(argv2);
+	char *empty_argv[] = {NULL};
+	builtin_env(empty_argv);
+}
+
 MU_TEST_SUITE(test_suite) 
 {
 	MU_SUITE_CONFIGURE(&test_setup, &test_teardown);
@@ -191,6 +204,7 @@ MU_TEST_SUITE(test_suite)
 	MU_RUN_TEST(test_builtin_env);
 	MU_RUN_TEST(test_builtin_unset);
 	MU_RUN_TEST(test_builtin_export);
+	MU_RUN_TEST(test_env_error_messages);
 }
 
 int main()

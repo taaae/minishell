@@ -6,7 +6,7 @@
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:55:56 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/17 15:46:26 by trusanov         ###   ########.fr       */
+/*   Updated: 2023/12/17 18:28:44 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,11 @@ int	ft_setenv(const char *name, const char *val)
 	char	**env;
 	char	*full_name;
 
-	if (name == NULL || name[0] == '\0' || ft_strchr(name, '=') != NULL)
+	if (name == NULL || name[0] == '\0' || ft_strchr(name, '=') != NULL ||
+		(!ft_isalpha(name[0]) && name[0] != '_'))
 		return (-1);
+	if (val == NULL)
+		return (0);
 	full_name = ft_calloc(ft_strlen(name) + ft_strlen(val) + 2, sizeof(char));
 	ft_strncpy(full_name, (char *)name, ft_strlen(name) + 1);
 	full_name[ft_strlen(name)] = '=';
@@ -95,7 +98,8 @@ int	ft_unsetenv(const char *name)
 {
 	char	**env;
 
-	if (name == NULL || name[0] == '\0' || ft_strrchr(name, '=') != NULL)
+	if (name == NULL || name[0] == '\0' || ft_strrchr(name, '=') != NULL ||
+		(!ft_isalpha(name[0]) && name[0] != '_'))
 		return (-1);
 	env = __find_env(name);
 	if (env == NULL)
