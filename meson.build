@@ -4,8 +4,6 @@ unity_dep = dependency('unity')
 readline_dep = dependency('readline')
 dep = [unity_dep, readline_dep]
 
-message(meson.current_source_dir() + '/libft/')
-
 cc = meson.get_compiler('c')
 libft = cc.find_library('ft', dirs: meson.current_source_dir() + '/libft/')
 dep += libft
