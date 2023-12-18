@@ -13,7 +13,7 @@ make -C libft && make -C libft clean
 meson setup build
 ```
 
-Running test (in built directory):
+Running tests (in built directory):
 ```bash
 meson compile
 ```
