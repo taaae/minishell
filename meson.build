@@ -24,3 +24,8 @@ executable('example_test',
            dependencies: dep,
 )
 
+executable('environment_test',
+           sources: [src, unity_gen_runner.process('test' / 'environment_test.c'), 'test/environment_test.c'],
+           include_directories: inc,
+           dependencies: dep,
+)
