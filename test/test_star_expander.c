@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 13:55:33 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/15 17:13:24 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/18 15:10:48 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	ordered_substrings_match(char *s, char **substrings);
 static int	match_wildcard(char *str, char *pattern);
 static int	append_expansion_str(char **expansion, char *appendix);
 char		*compose_expansion_str(char *pattern, char **candidates);
-char		*expand_string(char *pattern);
+char		*expand_star_string(char *pattern);
 
 int	main(int argc, char **argv)
 {

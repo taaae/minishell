@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 13:57:24 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/18 13:19:34 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/18 15:08:51 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,27 +30,7 @@ void test_teardown(void)
 
 MU_TEST(test_builtin_pwd)
 {
-	char **ss;
-	ss = calloc(3, sizeof(char*));
-	ss[0] = strdup("ARG1");
-	ss[1] = strdup("ARG2");
-	ss[2] = NULL;
-
-	printf("builtins.pwd() tests:\n");
-	printf("argv = NULL:\n");
-	mu_assert_int_eq(FT_ERROR, builtin_pwd(NULL));
-
-	printf("argv is not an empty string array\n");
-	mu_assert_int_eq(1, builtin_pwd(ss));
-
-	free(ss[0]);
-	ss[0] = NULL;
-	printf("argv is empty\n");
-	mu_assert_int_eq(FT_SUCCESS, builtin_pwd(ss));
-	free(ss[1]);
-	free(ss[2]);
-	free(ss);
-	
+	mu_assert_int_eq(FT_SUCCESS, builtin_pwd());
 }
 
 MU_TEST(test_builtin_echo)

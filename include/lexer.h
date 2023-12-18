@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:15:35 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/18 13:27:27 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/18 15:48:59 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ typedef enum e_token_type {
 	TOK_AND_SYM = 9,
 	TOK_OR_SYM = 10,
 	TOK_OPEN_PARENTH = 11,
-	TOK_CLOSE_PARENTH = 12	
+	TOK_CLOSE_PARENTH = 12,
+	TOK_EXPANDED_STAR = 13,
+	TOK_VAR = 14,
 }	t_token_type;
 
 typedef struct s_token {
@@ -50,8 +52,6 @@ typedef struct s_token {
  * @return t_token*
  */
 t_list	*tokenize(char *line);
-void	del_token(void *token);
-char	*str_to_tok_str(char **line);
 t_token	*tok_str_to_token(char *tok_str);
 t_list	*token_to_list_entry(t_token *token);
 
@@ -63,38 +63,28 @@ t_list	*token_to_list_entry(t_token *token);
  * @return int
  */
 int		get_next_tok_len(char *line);
-int		parse_double_sym_word(char *line);
-int		parse_quotes(char *line, const char quote);
-int		parse_dquotes(char *line);
-int		parse_word(char *line);
-int		parse_var(char *line);
 
 int		count_files_in_cur_dir(void);
-void	scan_dir(char ***files, int files_count, DIR *d, struct dirent *dir);
-char	**get_files_in_cur_dir(void);
-
+void	scan_files_in_dir(char ***files, int files_count, \
+DIR *d, struct dirent *dir);
+char	*str_to_tok_str(char **line);
 t_list	*line_to_tokens(char *line);
+int		expand_all_vars(t_list **tokens);
+int		match_wildcard(char *str, char *pattern);
 
 /**
- * @brief Takes token list, returns tok list with all stars expanded
+ * @brief Takes tok list, returns tok list with all stars expanded
  *
  * Every time it finds a token node that has * in its str_repr,
  * it expands it to a token list, and replaces the node with this list.
  * It should be able to expand 1st and last node of the list.
+ * If it couldn't resolve expansion of a token (no matches) or an error occurred,
+ * it just sets the type of existing token to TOK_ERROR.
  * @param tok_lst
  * @return int
  */
 int		expand_all_stars(t_list **tok_lst);
-char	*expand_star_string(char *pattern);
-
-/**
- * @brief Get the token type object
- *
- * TODO
- * @param tok_str
- * @param tok_len
- * @return int
- */
-int		get_token_type(char *tok_str, int tok_len);
+void	del_token(void *token);
+t_list	*expanded_star_to_token(char *s);
 
 #endif

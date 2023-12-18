@@ -6,7 +6,15 @@ CFLAGS := -Wall -Wextra -Werror
 SOURCE_FILES := \
 					reader/reader.c \
 					builtins/builtin_echo.c \
-					builtins/builtin_pwd.c
+					builtins/builtin_pwd.c \
+					lexer/lexer.c \
+					lexer/star_expand_file_utils.c \
+					lexer/star_expand_match_utils.c \
+					lexer/star_expand.c \
+					lexer/token_composer.c \
+					lexer/token_string_utils.c \
+					lexer/tokenize.c \
+					lexer/var_expand.c
 SOURCES := $(addprefix $(SRCDIR)/,$(SOURCE_FILES))
 MAINSOURCE := $(SRCDIR)/minishell.c
 

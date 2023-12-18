@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   star_expander_match_utils.c                        :+:      :+:    :+:   */
+/*   star_expand_match_utils.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:43:08 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/18 13:33:47 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/18 15:48:29 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "lexer.h"
 
-int	match_start_and_end(char *str, char *pattern, char **substrings)
+static int	match_start_and_end(char *str, char *pattern, char **substrings)
 {
 	char	*cur_substr;
 	int		i;
@@ -40,8 +41,6 @@ static int	ordered_substrings_match(char *s, char **substrings)
 
 	pos = 0;
 	i = 0;
-	if (ft_in('\"', s) && ft_in('\'', s))
-		return (FT_FALSE);
 	end = ft_strlen(s);
 	while (substrings[i] != NULL)
 	{
@@ -55,7 +54,7 @@ static int	ordered_substrings_match(char *s, char **substrings)
 	return (FT_TRUE);
 }
 
-static int	match_wildcard(char *str, char *pattern)
+int	match_wildcard(char *str, char *pattern)
 {
 	char	**substrings;
 	int		matched;
@@ -76,20 +75,24 @@ static int	match_wildcard(char *str, char *pattern)
 	return (matched);
 }
 
-static int	append_expansion_str(char **expansion, char *appendix)
+t_list	*expanded_star_to_token(char *s)
 {
-	char	*temp;
+	t_token	*tok;
+	t_list	*tok_entry;
 
-	if (ft_in('\'', appendix))
-		appendix = ft_str_surround(&appendix, '\"');
-	else if (ft_in('\"', appendix))
-		appendix = ft_str_surround(&appendix, '\'');
-	if (appendix == NULL)
-		return (FT_ERROR);
-	temp = ft_strjoin(*expansion, appendix);
-	free(*expansion);
-	*expansion = temp;
-	if (*expansion == NULL)
-		return (FT_ERROR);
-	return (FT_SUCCESS);
+	tok = (t_token *)ft_calloc(1, sizeof(t_token));
+	if (tok == NULL)
+		return (NULL);
+	tok_entry = (t_list *)ft_calloc(1, sizeof(t_list));
+	if (tok_entry == NULL)
+	{
+		free(tok);
+		return (NULL);
+	}
+	tok->token_string = ft_strdup(s);
+	tok->token_len = ft_strlen(s);
+	tok->type = TOK_EXPANDED_STAR;
+	tok_entry->next = NULL;
+	tok_entry->content = (void *)tok;
+	return (tok_entry);
 }

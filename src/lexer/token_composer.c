@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:20:45 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/18 13:54:56 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/18 15:42:25 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,12 @@ static int	get_token_type(char *tok_str, int tok_len)
 		return (TOK_WORD_IN_DQUOTES);
 	if (tok_str[0] == '\'')
 		return (TOK_WORD_IN_QUOTES);
+	if (tok_str[0] == '$')
+		return (TOK_VAR);
 	return (TOK_WORD);
 }
 
-static char	*str_to_tok_str(char **line)
+char	*str_to_tok_str(char **line)
 {
 	char	*tok_str;
 	int		tok_len;

@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:55:32 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/18 11:38:28 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/18 15:11:44 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "lexer.h"
 
 static int	ordered_substrings_match(char *s, char **substrings);
-static int	match_wildcard(char *str, char *pattern);
+int			match_wildcard(char *str, char *pattern);
 static int	append_expansion_str(char **expansion, char *appendix);
 char		*compose_expansion_str(char *pattern, char **candidates);
 char		*expand_string(char *pattern);

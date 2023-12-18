@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tokenizer.c                                        :+:      :+:    :+:   */
+/*   tokenize.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:24:45 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/18 13:26:01 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/18 15:06:06 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "libft.h"
 #include <stdbool.h>
 
-static void	del_token(void *token)
+void	del_token(void *token)
 {
 	t_token	*tok;
 

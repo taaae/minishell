@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lexer.c                                            :+:      :+:    :+:   */
+/*   signal.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 18:15:04 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/18 15:37:42 by lporoshi         ###   ########.fr       */
+/*   Created: 2023/12/17 14:10:06 by lporoshi          #+#    #+#             */
+/*   Updated: 2023/12/17 14:22:17 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <signal.h>
+#include <stdio.h>
 #include <stdlib.h>
-#include "config.h"
-#include "lexer.h"
+#include <readline/readline.h>
+#include <readline/history.h>
 #include "libft.h"
-#include <stdbool.h>
 
-t_list	*line_to_tokens(char *line)
+void	sigint_handler(int sig)
 {
-	t_list	*tokens;
+	if (sig == SIGINT)
+	{
+		rl_redisplay();
+		write(1, "\n", 1);
+		rl_on_new_line();
+		rl_replace_line("", 0);
+		rl_redisplay();
+	}
+	return ;
+}
 
-	tokens = tokenize(line);
-	if (tokens == NULL)
-		return (tokens);
-	expand_all_stars(&tokens);
-	expand_all_vars(&tokens);
-	return (tokens);
+void	init_signal_handlers(void)
+{
+	rl_catch_signals = 0;
+	signal(SIGINT, sigint_handler);
+	signal(SIGQUIT, SIG_IGN);
 }

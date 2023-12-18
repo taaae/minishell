@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   star_expander.c                                    :+:      :+:    :+:   */
+/*   star_expand.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 12:55:50 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/18 13:31:36 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/18 15:34:22 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ static char	**get_files_in_cur_dir(void)
 	struct dirent	*dir;
 	char			**files;
 	int				files_count;
-	int				i;
 
+	dir = NULL;
 	files_count = count_files_in_cur_dir();
 	d = opendir(".");
 	if (!d)
@@ -33,55 +33,70 @@ static char	**get_files_in_cur_dir(void)
 	return (files);
 }
 
-static char	*compose_expansion_str(char *pattern, char **candidates)
+static char	**compose_expansion_arr(char *pattern, char **candidates)
 {
-	char	*expansion;
-	char	*temp;
+	char	**expansion;
+	char	**expansion_orig;
 	int		i;
+	int		sz;
 
-	expansion = ft_strdup("");
+	i = 0;
+	sz = 0;
+	while (candidates[i] != NULL)
+		if (match_wildcard(candidates[i++], pattern) == FT_TRUE)
+			sz++;
+	expansion = (char **)ft_calloc(sz + 2, sizeof(char *));
 	if (expansion == NULL)
 		return (NULL);
+	expansion_orig = expansion;
 	i = 0;
 	while (candidates[i] != NULL)
 	{
 		if (match_wildcard(candidates[i], pattern) == FT_TRUE)
-		{
-			if (append_expansion_str(&expansion, candidates[i]) == FT_ERROR)
-				return (NULL);
-			if (candidates[i + 1] != NULL)
-			{
-				if (append_expansion_str(&expansion, " ") == FT_ERROR)
-					return (NULL);
-			}
-		}
+			*(expansion++) = ft_strdup(candidates[i]);
 		i++;
 	}
-	return (expansion);
+	return (expansion_orig);
 }
 
-static char	*expand_star_string(char *pattern)
+static char	**expand_star_string(char *pattern)
 {
 	char	**files;
-	char	*expansion;
+	char	**expansion;
 
 	files = get_files_in_cur_dir();
 	if (files == NULL)
 		return (NULL);
-	expansion = compose_expansion_str(pattern, files);
+	expansion = compose_expansion_arr(pattern, files);
 	free_str_arr(&files);
 	return (expansion);
 }
 
 static t_list	*expand_star_token(t_token *tok)
 {
-	t_list	*new_tok_lst;
-	char	*expanded_str;
+	t_list	*expanded_lst;
+	t_list	*expanded_entry;
+	char	**expansion_list;
+	int		i;
 
-	expanded_str = expand_star_string(tok->token_string);
-	if (expanded_str == NULL)
+	expanded_lst = NULL;
+	expansion_list = expand_star_string(tok->token_string);
+	if (expansion_list == NULL)
 		return (NULL);
-	return (tokenize(expanded_str));
+	i = 0;
+	while (expansion_list[i] != NULL)
+	{
+		expanded_entry = expanded_star_to_token(expansion_list[i++]);
+		if (expanded_entry == NULL)
+		{
+			ft_lstclear(&expanded_lst, del_token);
+			free_str_arr(&expansion_list);
+			return (NULL);
+		}
+		ft_lstadd_back(&expanded_lst, expanded_entry);
+	}
+	free_str_arr(&expansion_list);
+	return (expanded_lst);
 }
 
 int	expand_all_stars(t_list **tok_lst)
