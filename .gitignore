@@ -56,3 +56,4 @@ dkms.conf
 .DS_Store
 minishell
 minishell_test
+.idea
