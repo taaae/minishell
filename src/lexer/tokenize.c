@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   token.c                                            :+:      :+:    :+:   */
+/*   tokenizer.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 14:34:51 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/16 15:05:02 by lporoshi         ###   ########.fr       */
+/*   Created: 2023/12/18 13:24:45 by lporoshi          #+#    #+#             */
+/*   Updated: 2023/12/18 13:26:01 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 #include "config.h"
 #include "lexer.h"
 #include "libft.h"
+#include <stdbool.h>
 
-void	del_token(void *token)
+static void	del_token(void *token)
 {
 	t_token	*tok;
 
@@ -24,40 +25,6 @@ void	del_token(void *token)
 		free(tok->token_string);
 	free(tok);
 	return ;
-}
-
-char	*str_to_tok_str(char **line)
-{
-	char	*tok_str;
-	int		tok_len;
-
-	tok_len = get_next_tok_len(*line);
-	if (tok_len == 0)
-		return (NULL);
-	tok_str = (char *)ft_calloc(tok_len + 1, sizeof(char));
-	if (tok_str == NULL)
-		return (NULL);
-	tok_str = ft_strncpy(tok_str, *line, tok_len);
-	(*line) += tok_len;
-	return (tok_str);
-}
-
-t_token	*tok_str_to_token(char *tok_str)
-{
-	t_token	*token;
-
-	if (tok_str == NULL)
-		return (NULL);
-	token = (t_token *)ft_calloc(1, sizeof(t_token));
-	if (token == NULL)
-	{
-		free(tok_str);
-		return (NULL);
-	}
-	token->token_len = ft_strlen(tok_str);
-	token->type = get_token_type(tok_str, token->token_len);
-	token->token_string = tok_str;
-	return (token);
 }
 
 t_list	*token_to_list_entry(t_token *token)
@@ -75,4 +42,30 @@ t_list	*token_to_list_entry(t_token *token)
 	if (entry == NULL)
 		del_token(token);
 	return (entry);
+}
+
+t_list	*tokenize(char *line)
+{
+	t_list	*token_list;
+	t_list	*current_entry;
+
+	if (line == NULL)
+		return (NULL);
+	while (ft_isspace(*line))
+		line++;
+	token_list = NULL;
+	while (*line != '\0')
+	{
+		current_entry = token_to_list_entry (\
+		tok_str_to_token(str_to_tok_str(&line)));
+		if (current_entry == NULL)
+		{
+			ft_lstclear(&token_list, del_token);
+			return (NULL);
+		}
+		ft_lstadd_back(&token_list, current_entry);
+		while (ft_isspace(*line))
+			line++;
+	}
+	return (token_list);
 }

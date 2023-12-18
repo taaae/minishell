@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:55:32 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/16 15:08:26 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/18 11:38:28 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,17 @@ int	print_tok_list(t_list *tok)
 {
 	t_token	*t;
 
-	ft_printf("Testing...\n");
+	//ft_printf("[");
 	while (tok != NULL && tok->content != NULL)
 	{
 		t = (t_token *)tok->content;
-		ft_printf("\t[%d]\t", t->token_len);
-		ft_printf("\t[%d]\t", t->type);
-		ft_printf("[%s]\n", t->token_string);
+		//ft_printf("\t[%d]\t", t->token_len);
+		//ft_printf("\t[%d]\t", t->type);
+		ft_printf("%s", t->token_string);
+		ft_printf("\033[31m|\e[0m");
 		tok = tok->next;
 	}
+	ft_printf("\n");
 	return (FT_SUCCESS);
 }
 
@@ -41,9 +43,9 @@ int	main(int argc, char **argv)
 	char	**res;
 	t_list	*toks;
 
-	printf("[%s]\n", argv[1]);
+	//printf("[%s]\n", argv[1]);
 	toks = line_to_tokens(argv[1]);
-	printf("%p\n", toks);
+	//printf("%p\n", toks);
 	print_tok_list(toks);
 	return (0);
 }

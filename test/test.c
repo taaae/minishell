@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 13:57:24 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/10 19:45:08 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/18 13:19:34 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <string.h>
 #include "libft.h"
 #include "builtins.h"
+#include "lexer.h"
 
 void test_setup(void)
 {
@@ -90,11 +91,47 @@ MU_TEST(test_builtin_echo)
 	
 }
 
+MU_TEST(test_token_string_utils)
+{
+	char *s;
+#if 0
+
+| || < << > >> & &&
+
+#endif
+	s = ft_strdup("|");
+	mu_assert_int_eq(1, get_next_tok_len(s));
+	free(s);
+	s = ft_strdup("||");
+	mu_assert_int_eq(2, get_next_tok_len(s));
+	free(s);
+	s = ft_strdup("<");
+	mu_assert_int_eq(1, get_next_tok_len(s));
+	free(s);
+	s = ft_strdup("<<");
+	mu_assert_int_eq(2, get_next_tok_len(s));
+	free(s);
+	s = ft_strdup(">");
+	mu_assert_int_eq(1, get_next_tok_len(s));
+	free(s);
+	s = ft_strdup(">>");
+	mu_assert_int_eq(2, get_next_tok_len(s));
+	free(s);
+	s = ft_strdup("&");
+	mu_assert_int_eq(1, get_next_tok_len(s));
+	free(s);
+	s = ft_strdup("&&");
+	mu_assert_int_eq(2, get_next_tok_len(s));
+	free(s);
+		
+}
+
 MU_TEST_SUITE(test_suite) 
 {
 	MU_SUITE_CONFIGURE(&test_setup, &test_teardown);
 	MU_RUN_TEST(test_builtin_echo);
 	MU_RUN_TEST(test_builtin_pwd);
+	MU_RUN_TEST(test_token_string_utils);
 }
 
 int main()

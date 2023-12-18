@@ -1,19 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   star_expander.c                                    :+:      :+:    :+:   */
+/*   star_expander_match_utils.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/15 12:55:50 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/16 13:50:11 by lporoshi         ###   ########.fr       */
+/*   Created: 2023/12/16 13:43:08 by lporoshi          #+#    #+#             */
+/*   Updated: 2023/12/18 13:33:47 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "lexer.h"
 
-int	match_start_and_end(char *str, char *pattern, char **substrings);
+int	match_start_and_end(char *str, char *pattern, char **substrings)
+{
+	char	*cur_substr;
+	int		i;
+
+	cur_substr = substrings[0];
+	if (pattern[0] != '*' && \
+		ft_strncmp(str, cur_substr, ft_strlen(cur_substr)) != 0)
+		return (FT_FALSE);
+	i = 0;
+	while (substrings[i + 1] != NULL)
+		i++;
+	cur_substr = substrings[i];
+	if (pattern[ft_strlen(pattern) - 1] != '*' && \
+		ft_strncmp(str + ft_strlen(str) - ft_strlen(cur_substr), \
+				cur_substr, ft_strlen(cur_substr)) != 0)
+		return (FT_FALSE);
+	return (FT_TRUE);
+}
 
 static int	ordered_substrings_match(char *s, char **substrings)
 {
@@ -76,56 +93,3 @@ static int	append_expansion_str(char **expansion, char *appendix)
 		return (FT_ERROR);
 	return (FT_SUCCESS);
 }
-
-char	*compose_expansion_str(char *pattern, char **candidates)
-{
-	char	*expansion;
-	char	*temp;
-	int		i;
-
-	expansion = ft_strdup("");
-	if (expansion == NULL)
-		return (NULL);
-	i = 0;
-	while (candidates[i] != NULL)
-	{
-		if (match_wildcard(candidates[i], pattern) == FT_TRUE)
-		{
-			if (append_expansion_str(&expansion, candidates[i]) == FT_ERROR)
-				return (NULL);
-			if (candidates[i + 1] != NULL)
-			{
-				if (append_expansion_str(&expansion, " ") == FT_ERROR)
-					return (NULL);
-			}
-		}
-		i++;
-	}
-	return (expansion);
-}
-
-char	*expand_string(char *pattern)
-{
-	char	**files;
-	char	*expansion;
-
-	files = get_files_in_cur_dir();
-	if (files == NULL)
-		return (NULL);
-	expansion = compose_expansion_str(pattern, files);
-	free_str_arr(&files);
-	return (expansion);
-}
-
-// int main(void) {
-//   DIR *d;
-//   struct dirent *dir;
-//   d = opendir(".");
-//   if (d) {
-//     while ((dir = readdir(d)) != NULL) {
-//       printf("%s\n", dir->d_name);
-//     }
-//     closedir(d);
-//   }
-//   return(0);
-// }

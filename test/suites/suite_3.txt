@@ -25,26 +25,26 @@ EchO bonjour
 eCHo bonjour
 EcHo bonjour
 eChO bonjour
-"Echo bonjour", exports={"PATH": "/bin:/usr/bin"}
-"eCho bonjour", exports={"PATH": "/bin:/usr/bin"}
-"ecHo bonjour", exports={"PATH": "/bin:/usr/bin"}
-"echO bonjour", exports={"PATH": "/bin:/usr/bin"}
-"EchO bonjour", exports={"PATH": "/bin:/usr/bin"}
-"eCHo bonjour", exports={"PATH": "/bin:/usr/bin"}
-"EcHo bonjour", exports={"PATH": "/bin:/usr/bin"}
-"eChO bonjour", exports={"PATH": "/bin:/usr/bin"}
-"eChO -e 'bonjo\\nur'", exports={"PATH": "/bin:/usr/bin"}
+Echo bonjour
+eCho bonjour
+ecHo bonjour
+echO bonjour
+EchO bonjour
+eCHo bonjour
+EcHo bonjour
+eChO bonjour
+eChO -e 'bonjo\\nur'
 echo -n -n -n -n bonjour
 echo -nnnnnnnnnnnnnnnnnnnnn bonjour
 echo -nnnnnnnnnnnnnnnnnnnnn -n -n -n bonjour -n -n
-"export", hook=hooks.export_singleton
-"export", exports={"A": ""}, hook=hooks.export_singleton
-"export", exports={"A": "\""}, hook=hooks.export_singleton
-"export", exports={"A": "\\"}, hook=hooks.export_singleton
-"export", exports={"A": "$"}, hook=hooks.export_singleton
-"export", exports={"A": "\t"}, hook=hooks.export_singleton
-"export", exports={"A": "'"}, hook=hooks.export_singleton
-"export", exports={"A": "a"}, hook=hooks.export_singleton
+export
+export
+export
+export
+export
+export
+export
+export
 export A=a; echo $A
 export A=a B=b C=c; echo $A$B$C
 "export A=a B=b C=c D=d E=e F=f G=g H=h I=i J=j K=k L=l
@@ -85,7 +85,7 @@ export A 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf ' C; echo $A$B$C
 export 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf ' C; echo $A$B$C
 export A 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf '; echo $A$B$C
 export A B C; echo $A$B$C
-"export A B C; env", hook=hooks.sort_lines
+export A B C; env
 export 'AH@'=nop
 export \"AH'\"=nop
 export 'AH\"'=nop
@@ -95,7 +95,7 @@ export 'AH|'=nop
 export 'AH;'=nop
 export 'AH&'=nop
 export 'AH\\'=nop
-"export $TEST", exports={"TEST": "A=a"}
+export $TEST
 export BONJOUR\\JESUIS
 export BONJOUR\'JESUIS
 export BONJOUR\"JESUIS
@@ -107,8 +107,8 @@ export BONJOUR\_JESUIS
 export BONJOUR\0JESUIS
 Export B=bonjour
 exporT B=bonjour
-"Export B=bonjour", exports={"PATH": "/bin:/usr/bin"}
-"exporT B=bonjour", exports={"PATH": "/bin:/usr/bin"}
+Export B=bonjour
+exporT B=bonjour
 echo $PWD; echo $OLDPWD; cd .; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd ..; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd ../..; pwd; echo $PWD; echo $OLDPWD
@@ -118,96 +118,96 @@ echo $PWD; echo $OLDPWD; cd ../../../../..; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd ../../../../../..; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd /; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd ''; pwd; echo $PWD; echo $OLDPWD
-"echo $PWD; echo $OLDPWD; cd '' ''; pwd; echo $PWD; echo $OLDPWD", hook=linux_discard
-"echo $PWD; echo $OLDPWD; cd '' '' ''; pwd; echo $PWD; echo $OLDPWD", hook=linux_discard
+echo $PWD; echo $OLDPWD; cd '' ''; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd '' '' ''; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd ' '; pwd; echo $PWD; echo $OLDPWD
-"echo $PWD; echo $OLDPWD; cd d ''; pwd; echo $PWD; echo $OLDPWD", setup="mkdir d", hook=linux_discard
-"echo $PWD; echo $OLDPWD; cd d d; pwd; echo $PWD; echo $OLDPWD", setup="mkdir d", hook=linux_discard
-"echo $PWD; echo $OLDPWD; cd d ' '; pwd; echo $PWD; echo $OLDPWD", setup="mkdir d", hook=linux_discard
-"echo $PWD; echo $OLDPWD; cd $HOME; pwd; echo $PWD; echo $OLDPWD", exports={"HOME": os.getenv("HOME")}
+echo $PWD; echo $OLDPWD; cd d ''; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d d; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d ' '; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd $HOME; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd /; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd /.; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd /./; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd /././././; pwd; echo $PWD; echo $OLDPWD
-"echo $PWD; echo $OLDPWD; cd //; pwd; echo $PWD; echo $OLDPWD", hook=hooks.replace_double("/")
+echo $PWD; echo $OLDPWD; cd //; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd ///; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd ////; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd //////////////////////////////////////////////////////; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd; echo $OLDPWD
-"echo $PWD; echo $OLDPWD; cd; echo $PWD; echo $OLDPWD", exports={"HOME": os.getenv("HOME")}
+echo $PWD; echo $OLDPWD; cd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd ' /'; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd ' / '; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd '                  /'; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd '                  /              '; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd ' // '; pwd; echo $PWD; echo $OLDPWD
-"echo $PWD; echo $OLDPWD; cd //home; pwd; echo $PWD; echo $OLDPWD", hook=hooks.replace_double("/")
+echo $PWD; echo $OLDPWD; cd //home; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd ' //home'; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd '     //home    '; pwd; echo $PWD; echo $OLDPWD
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 000 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 001 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 002 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 003 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 004 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 005 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 006 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 007 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 010 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 020 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 030 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 040 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 050 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 060 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 070 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 100 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 200 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 300 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 400 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 500 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 600 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 700 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 755 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 644 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 311 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 111 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 222 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 333 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 0777 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 1000 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 2000 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 3000 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 4000 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 5000 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 6000 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 7000 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 1777 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 2777 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 3777 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 4777 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 5777 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 6777 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 7777 d
-echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 0000 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
 echo $PWD; echo $OLDPWD; cd /; echo $PWD; echo $OLDPWD; unset PWD; cd /dev; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd /; echo $PWD; echo $OLDPWD; export PWD=bonjour; cd /dev; echo $OLDPWD
 Cd .
 cD .
-"Cd .", exports={"PATH": "/bin:/usr/bin"}
-"cD .", exports={"PATH": "/bin:/usr/bin"}
+Cd .
+cD .
 unset
-"unset A; echo $A", exports={"A": "a"}
-"unset 'A '; echo $A", exports={"A": "a"}
-"unset 'A='; echo $A", exports={"A": "a"}
-"unset A B C; echo $A$B$C", exports={"A": "a", "B": "b", "C": "c"}
+unset A; echo $A
+unset 'A '; echo $A
+unset 'A='; echo $A
+unset A B C; echo $A$B$C
 unset A 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf ' C; echo $A$B$C
 unset 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf ' C; echo $A$B$C
 unset A 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf '; echo $A$B$C
-"unset A; echo $A$B$C", exports={"A": "a", "B": "b", "C": "c"}
-"unset C; echo $A$B$C", exports={"A": "a", "B": "b", "C": "c"}
-"unset A B C", exports={"A": "a", "B": "b", "C": "c"}
+unset A; echo $A$B$C
+unset C; echo $A$B$C
+unset A B C
 unset A 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf ' C
 unset 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf ' C
 unset A 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf '
-"unset A", exports={"A": "a", "B": "b", "C": "c"}
+unset A
 unset 'AH@'=nop
 unset \"AH'\"=nop
 unset 'AH\"'=nop
@@ -219,30 +219,30 @@ unset 'AH&'=nop
 unset 'AH\\'=nop
 Unset TERM
 unseT TERM
-"Unset TERM", exports={"PATH": "/bin:/usr/bin"}
-"unseT TERM", exports={"PATH": "/bin:/usr/bin"}
+Unset TERM
+unseT TERM
 pwd
-pwd", setup="cd ..
-pwd", setup="cd ../..
-pwd", setup="cd ../../..
-pwd", setup="cd /
-pwd", setup="cd $HOME
+pwd"
+pwd"
+pwd"
+pwd"
+pwd"
 pwd | cat -e
-"pwd", exports={"PWD": "/etc"}
+pwd
 unset PWD; pwd; echo $PWD
 export PWD=foo; pwd; echo $PWD
 Pwd
 pwD
-"Pwd", exports={"PATH": "/bin:/usr/bin"}
-"pwD", exports={"PATH": "/bin:/usr/bin"}
-"env", hook=[hooks.sort_lines, hooks.shlvl_0_to_1]
-"env", setup="export A=a", hook=[hooks.sort_lines, hooks.shlvl_0_to_1]
-"env", setup="export A=a B=b C=c", hook=[hooks.sort_lines, hooks.shlvl_0_to_1]
-"env | cat -e", setup="export A=a B=b C=c", hook=[hooks.sort_lines, hooks.shlvl_0_to_1]
+Pwd
+pwD
+env
+env
+env
+env | cat -e
 Env
 enV
-"Env", exports={"PATH": "/bin:/usr/bin"}
-"enV", exports={"PATH": "/bin:/usr/bin"}
+Env
+enV
 exit
 exit 1
 exit 2
@@ -322,73 +322,73 @@ exit 0 1 2 3 4 5 6 7 8 9
 exit 9999; echo should have exited
 Exit; echo a
 exiT; echo a
-"Exit; echo a", exports={"PATH": "/bin:/usr/bin"}
-"exiT; echo a", exports={"PATH": "/bin:/usr/bin"}
-"echo bonjour > test", setup="", files=["test"]
-"echo > test bonjour", setup="", files=["test"]
-"> test echo bonjour", setup="", files=["test"]
-"echo bonjour >> test", setup="", files=["test"]
-"echo >> test bonjour", setup="", files=["test"]
-">> test echo bonjour", setup="", files=["test"]
-cat < test", setup="echo bonjour > test
-"echo bonjour > test", setup="", files=["test"]
-"echo > test'sticked' bonjour", setup="", files=["teststicked"]
-"> test'sticked' echo bonjour", setup="", files=["teststicked"]
-"echo bonjour >> test'sticked'", setup="", files=["teststicked"]
-"echo >> test'sticked' bonjour", setup="", files=["teststicked"]
-">> test'sticked' echo bonjour", setup="", files=["teststicked"]
-cat < test'sticked'", setup="echo bonjour > test'sticked'
-< test'sticked' cat", setup="echo bonjour > test'sticked'
-"echo > test\"sticked\" bonjour", setup="", files=["teststicked"]
-"> test\"sticked\" echo bonjour", setup="", files=["teststicked"]
-"echo bonjour >> test\"sticked\"", setup="", files=["teststicked"]
-"echo >> test\"sticked\" bonjour", setup="", files=["teststicked"]
-">> test\"sticked\" echo bonjour", setup="", files=["teststicked"]
-cat < test\"sticked\"", setup="echo bonjour > test\"sticked\"
-< test\"sticked\" cat", setup="echo bonjour > test\"sticked\"
-"echo > test'yo'\"sticked\" bonjour", setup="", files=["testyosticked"]
-"> test'yo'\"sticked\" echo bonjour", setup="", files=["testyosticked"]
-"echo bonjour >> test'yo'\"sticked\"", setup="", files=["testyosticked"]
-"echo >> test'yo'\"sticked\" bonjour", setup="", files=["testyosticked"]
-">> test'yo'\"sticked\" echo bonjour", setup="", files=["testyosticked"]
-cat < test'yo'\"sticked\"", setup="echo bonjour > test'yo'\"sticked\"
-< test'yo'\"sticked\" cat", setup="echo bonjour > test'yo'\"sticked\"
-"echo bonjour > test > je > suis", setup="", files=["test", "je", "suis"]
-"echo > test > je bonjour > suis", setup="", files=["test", "je", "suis"]
-"> test echo bonjour > je > suis", setup="", files=["test", "je", "suis"]
-"echo bonjour >> test > je >> suis", setup="", files=["test", "je", "suis"]
-"echo >> test bonjour > je > suis", setup="", files=["test", "je", "suis"]
-">> test echo > je bonjour > suis", setup="", files=["test", "je", "suis"]
-cat < test < je", setup="echo bonjour > test; echo salut > je
-"echo bonjour>test>je>suis", setup="", files=["test", "je", "suis"]
-">test echo bonjour>je>suis", setup="", files=["test", "je", "suis"]
-"echo bonjour>>test>je>>suis", setup="", files=["test", "je", "suis"]
-cat<test<je", setup="echo bonjour > test; echo salut > je
+Exit; echo a
+exiT; echo a
+echo bonjour > test
+echo > test bonjour
+> test echo bonjour
+echo bonjour >> test
+echo >> test bonjour
+>> test echo bonjour
+cat < test"
+echo bonjour > test
+echo > test'sticked' bonjour
+> test'sticked' echo bonjour
+echo bonjour >> test'sticked'
+echo >> test'sticked' bonjour
+>> test'sticked' echo bonjour
+cat < test'sticked'"
+< test'sticked' cat"
+echo > test\"sticked\" bonjour
+> test\"sticked\" echo bonjour
+echo bonjour >> test\"sticked\"
+echo >> test\"sticked\" bonjour
+>> test\"sticked\" echo bonjour
+cat < test\"sticked\""
+< test\"sticked\" cat"
+echo > test'yo'\"sticked\" bonjour
+> test'yo'\"sticked\" echo bonjour
+echo bonjour >> test'yo'\"sticked\"
+echo >> test'yo'\"sticked\" bonjour
+>> test'yo'\"sticked\" echo bonjour
+cat < test'yo'\"sticked\""
+< test'yo'\"sticked\" cat"
+echo bonjour > test > je > suis
+echo > test > je bonjour > suis
+> test echo bonjour > je > suis
+echo bonjour >> test > je >> suis
+echo >> test bonjour > je > suis
+>> test echo > je bonjour > suis
+cat < test < je"
+echo bonjour>test>je>suis
+>test echo bonjour>je>suis
+echo bonjour>>test>je>>suis
+cat<test<je"
 echo bonjour > a'b'c'd'e'f'g'h'i'j'k'l'm'n'o'p'q'r's't'u'v'w'x'y'z'
 echo bonjour > a"b"c"d"e"f"g"h"i"j"k"l"m"n"o"p"q"r"s"t"u"v"w"x"y"z"
 echo bonjour > a\'b\'c"d"e\'f\'g"h"i\'j\'k"l"m\'n\'o"p\'q\'r"s\'t\'u"v"w"x"y\'z\'
 "> file", files=["file"]
-< file", setup="echo bonjour > file
-">", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
-">>", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
-"<", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
-"echo >", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
-"echo >>", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
-"echo <", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
+< file"
+>
+>>
+<
+echo >
+echo >>
+echo <
 "> test", files=["test"]
 ">> test", files=["test"]
-< test", setup="touch test
-"echo foo >>> bar", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
-"echo foo >>>> bar", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
-"echo foo >>>>> bar", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
-"cat << < bar", setup="echo bonjour > bar", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
-"cat << << bar", setup="echo bonjour > bar", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
-"cat <<<<< bar", setup="echo bonjour > bar", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
+< test"
+echo foo >>> bar
+echo foo >>>> bar
+echo foo >>>>> bar
+cat << < bar
+cat << << bar
+cat <<<<< bar
 cat < doesnotexist
-"echo bonjour >> a", setup="echo a > a", files=["a"]
-"echo bonjour >> a >> a", setup="echo a > a", files=["a"]
-"echo bonjour > a", setup="echo a > a", files=["a"]
-"echo bonjour > a >> a", setup="echo a > a", files=["a"]
+echo bonjour >> a
+echo bonjour >> a >> a
+echo bonjour > a
+echo bonjour > a >> a
 notfound
 notfound a b c
 'echo "\\"" >>a"b""c"  ', files=["abc"]
@@ -404,167 +404,167 @@ echo $?
 echo; echo $?
 notfound; echo $?
 cat < doesntexist; echo $?
-cat < noperm; echo $?", setup="echo bonjour > noperm; chmod 000 noperm
+cat < noperm; echo $?"
 echo
 notfound
 cat < doesntexist
-cat < noperm", setup="echo bonjour > noperm; chmod 000 noperm
-ls_path, setup="touch a b c"
-ls_path + " -l", setup="touch a b c"
-"./bonjour", setup="touch a b c; cp {} bonjour".format(ls_path)
-"./bonjour -l", setup="touch a b c; cp {} bonjour".format(ls_path)
+cat < noperm"
+ls_path
+ls_path + " -l"
+./bonjour
+./bonjour -l
 ./somedir/bonjour -l
 ./ls . a b c
 ls . a b c
-./somefile", setup="echo > somefile; chmod 000 somefile
-./somefile", setup="echo > somefile; chmod 001 somefile
-./somefile", setup="echo > somefile; chmod 002 somefile
-./somefile", setup="echo > somefile; chmod 003 somefile
-./somefile", setup="echo > somefile; chmod 004 somefile
-./somefile", setup="echo > somefile; chmod 005 somefile
-./somefile", setup="echo > somefile; chmod 006 somefile
-./somefile", setup="echo > somefile; chmod 007 somefile
-./somefile", setup="echo > somefile; chmod 010 somefile
-./somefile", setup="echo > somefile; chmod 020 somefile
-./somefile", setup="echo > somefile; chmod 030 somefile
-./somefile", setup="echo > somefile; chmod 040 somefile
-./somefile", setup="echo > somefile; chmod 050 somefile
-./somefile", setup="echo > somefile; chmod 060 somefile
-./somefile", setup="echo > somefile; chmod 070 somefile
-./somefile", setup="echo > somefile; chmod 100 somefile
-./somefile", setup="echo > somefile; chmod 200 somefile
-./somefile", setup="echo > somefile; chmod 300 somefile
-./somefile", setup="echo > somefile; chmod 400 somefile
-./somefile", setup="echo > somefile; chmod 500 somefile
-./somefile", setup="echo > somefile; chmod 600 somefile
-./somefile", setup="echo > somefile; chmod 700 somefile
-./somefile", setup="echo > somefile; chmod 755 somefile
-./somefile", setup="echo > somefile; chmod 644 somefile
-./somefile", setup="echo > somefile; chmod 311 somefile
-./somefile", setup="echo > somefile; chmod 111 somefile
-./somefile", setup="echo > somefile; chmod 222 somefile
-./somefile", setup="echo > somefile; chmod 333 somefile
-"somedir/",   setup="mkdir somedir", hook=hooks.is_directory
-"./somedir/", setup="mkdir somedir", hook=hooks.is_directory
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+somedir/",   setup="mkdir somedir
+./somedir/
 somedir",    setup="mkdir somedir
-"./somedir",  setup="mkdir somedir", hook=hooks.is_directory
+./somedir",  setup="mkdir somedir
 somedir",    setup="mkdir somedir
-"somedirsoftlink/",   setup="mkdir somedir; ln -s somedir somedirsoftlink", hook=hooks.is_directory
-"./somedirsoftlink/", setup="mkdir somedir; ln -s somedir somedirsoftlink", hook=hooks.is_directory
+somedirsoftlink/",   setup="mkdir somedir; ln -s somedir somedirsoftlink
+./somedirsoftlink/
 somedirsoftlink",    setup="mkdir somedir; ln -s somedir somedirsoftlink
-"./somedirsoftlink",  setup="mkdir somedir; ln -s somedir somedirsoftlink", hook=hooks.is_directory
+./somedirsoftlink",  setup="mkdir somedir; ln -s somedir somedirsoftlink
 somedirsoftlink",    setup="mkdir somedir; ln -s somedir somedirsoftlink
 ./someremovedlink",  setup="touch somefile; ln -s somefile someremovedlink; rm -f somefile
-./somelink2", setup="touch somefile; ln -s somefile somelink1; ln -s somelink1 somelink2
-"./somelink3", setup="touch somefile; ln -s somefile somelink1; ln -s somelink1 somelink2;
-"./somelink4", setup="touch somefile; ln -s somefile somelink1; ln -s somelink1 somelink2;
-"./somelink2ls", setup="cp " + ls_path + " somefile;
-"./somelink3ls", setup="cp " + ls_path + " somefile;
-"./somelink4ls", setup="cp " + ls_path + " somefile;
-_", setup="touch _
-'-'", setup="touch -
-./_", setup="touch _
-./-", setup="touch a; mv a ./-
-"./.", setup="touch .", hook=hooks.is_directory
-"./..", setup="touch ..", hook=hooks.is_directory
-"./somefile", setup='echo > somefile && chmod 0777 somefile'
-"./somefile", setup='echo > somefile && chmod 1000 somefile'
-"./somefile", setup='echo > somefile && chmod 2000 somefile'
-"./somefile", setup='echo > somefile && chmod 3000 somefile'
-"./somefile", setup='echo > somefile && chmod 4000 somefile'
-"./somefile", setup='echo > somefile && chmod 5000 somefile'
-"./somefile", setup='echo > somefile && chmod 6000 somefile'
-"./somefile", setup='echo > somefile && chmod 7000 somefile'
-"./somefile", setup='echo > somefile && chmod 1777 somefile'
-"./somefile", setup='echo > somefile && chmod 2777 somefile'
-"./somefile", setup='echo > somefile && chmod 3777 somefile'
-"./somefile", setup='echo > somefile && chmod 4777 somefile'
-"./somefile", setup='echo > somefile && chmod 5777 somefile'
-"./somefile", setup='echo > somefile && chmod 6777 somefile'
-"./somefile", setup='echo > somefile && chmod 7777 somefile'
-"./somefile", setup='echo > somefile && chmod 0000 somefile'
-"./somedir", setup='mkdir -m 0777 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 1000 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 2000 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 3000 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 4000 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 5000 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 6000 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 7000 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 1777 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 2777 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 3777 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 4777 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 5777 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 6777 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 0000 somedir', hook=hooks.is_directory
-"./Somefile", setup='echo > somefile && chmod 000 somefile'
-"./someFILE", setup='echo > somefile && chmod 000 somefile'
-"echo bonjour > test", setup="", files=["test"]
-"echo > test bonjour", setup="", files=["test"]
-"> test echo bonjour", setup="", files=["test"]
-"echo bonjour >> test", setup="", files=["test"]
-"echo >> test bonjour", setup="", files=["test"]
-">> test echo bonjour", setup="", files=["test"]
-cat < test", setup="echo bonjour > test
-"echo bonjour > test", setup="", files=["test"]
-"echo > test'sticked' bonjour", setup="", files=["teststicked"]
-"> test'sticked' echo bonjour", setup="", files=["teststicked"]
-"echo bonjour >> test'sticked'", setup="", files=["teststicked"]
-"echo >> test'sticked' bonjour", setup="", files=["teststicked"]
-">> test'sticked' echo bonjour", setup="", files=["teststicked"]
-cat < test'sticked'", setup="echo bonjour > test'sticked'
-< test'sticked' cat", setup="echo bonjour > test'sticked'
-"echo > test\"sticked\" bonjour", setup="", files=["teststicked"]
-"> test\"sticked\" echo bonjour", setup="", files=["teststicked"]
-"echo bonjour >> test\"sticked\"", setup="", files=["teststicked"]
-"echo >> test\"sticked\" bonjour", setup="", files=["teststicked"]
-">> test\"sticked\" echo bonjour", setup="", files=["teststicked"]
-cat < test\"sticked\"", setup="echo bonjour > test\"sticked\"
-< test\"sticked\" cat", setup="echo bonjour > test\"sticked\"
-"echo > test'yo'\"sticked\" bonjour", setup="", files=["testyosticked"]
-"> test'yo'\"sticked\" echo bonjour", setup="", files=["testyosticked"]
-"echo bonjour >> test'yo'\"sticked\"", setup="", files=["testyosticked"]
-"echo >> test'yo'\"sticked\" bonjour", setup="", files=["testyosticked"]
-">> test'yo'\"sticked\" echo bonjour", setup="", files=["testyosticked"]
-cat < test'yo'\"sticked\"", setup="echo bonjour > test'yo'\"sticked\"
-< test'yo'\"sticked\" cat", setup="echo bonjour > test'yo'\"sticked\"
-"echo bonjour > test > je > suis", setup="", files=["test", "je", "suis"]
-"echo > test > je bonjour > suis", setup="", files=["test", "je", "suis"]
-"> test echo bonjour > je > suis", setup="", files=["test", "je", "suis"]
-"echo bonjour >> test > je >> suis", setup="", files=["test", "je", "suis"]
-"echo >> test bonjour > je > suis", setup="", files=["test", "je", "suis"]
-">> test echo > je bonjour > suis", setup="", files=["test", "je", "suis"]
-cat < test < je", setup="echo bonjour > test; echo salut > je
-"echo bonjour>test>je>suis", setup="", files=["test", "je", "suis"]
-">test echo bonjour>je>suis", setup="", files=["test", "je", "suis"]
-"echo bonjour>>test>je>>suis", setup="", files=["test", "je", "suis"]
-cat<test<je", setup="echo bonjour > test; echo salut > je
+./somelink2"
+./somelink3
+./somelink4
+./somelink2ls
+./somelink3ls
+./somelink4ls
+_"
+'-'"
+./_"
+./-"
+./.
+./..
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./Somefile
+./someFILE
+echo bonjour > test
+echo > test bonjour
+> test echo bonjour
+echo bonjour >> test
+echo >> test bonjour
+>> test echo bonjour
+cat < test"
+echo bonjour > test
+echo > test'sticked' bonjour
+> test'sticked' echo bonjour
+echo bonjour >> test'sticked'
+echo >> test'sticked' bonjour
+>> test'sticked' echo bonjour
+cat < test'sticked'"
+< test'sticked' cat"
+echo > test\"sticked\" bonjour
+> test\"sticked\" echo bonjour
+echo bonjour >> test\"sticked\"
+echo >> test\"sticked\" bonjour
+>> test\"sticked\" echo bonjour
+cat < test\"sticked\""
+< test\"sticked\" cat"
+echo > test'yo'\"sticked\" bonjour
+> test'yo'\"sticked\" echo bonjour
+echo bonjour >> test'yo'\"sticked\"
+echo >> test'yo'\"sticked\" bonjour
+>> test'yo'\"sticked\" echo bonjour
+cat < test'yo'\"sticked\""
+< test'yo'\"sticked\" cat"
+echo bonjour > test > je > suis
+echo > test > je bonjour > suis
+> test echo bonjour > je > suis
+echo bonjour >> test > je >> suis
+echo >> test bonjour > je > suis
+>> test echo > je bonjour > suis
+cat < test < je"
+echo bonjour>test>je>suis
+>test echo bonjour>je>suis
+echo bonjour>>test>je>>suis
+cat<test<je"
 echo bonjour > a'b'c'd'e'f'g'h'i'j'k'l'm'n'o'p'q'r's't'u'v'w'x'y'z'
 echo bonjour > a"b"c"d"e"f"g"h"i"j"k"l"m"n"o"p"q"r"s"t"u"v"w"x"y"z"
 echo bonjour > a\'b\'c"d"e\'f\'g"h"i\'j\'k"l"m\'n\'o"p\'q\'r"s\'t\'u"v"w"x"y\'z\'
 "> file", files=["file"]
-< file", setup="echo bonjour > file
-">", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
-">>", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
-"<", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
-"echo >", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
-"echo >>", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
-"echo <", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
+< file"
+>
+>>
+<
+echo >
+echo >>
+echo <
 "> test", files=["test"]
 ">> test", files=["test"]
-< test", setup="touch test
-"echo foo >>> bar", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
-"echo foo >>>> bar", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
-"echo foo >>>>> bar", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
-"cat << < bar", setup="echo bonjour > bar", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
-"cat << << bar", setup="echo bonjour > bar", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
-"cat <<<<< bar", setup="echo bonjour > bar", hook=hooks.error_line0, hook_status=hooks.platform_status(1, 2)
+< test"
+echo foo >>> bar
+echo foo >>>> bar
+echo foo >>>>> bar
+cat << < bar
+cat << << bar
+cat <<<<< bar
 cat < doesnotexist
-"echo bonjour >> a", setup="echo a > a", files=["a"]
-"echo bonjour >> a >> a", setup="echo a > a", files=["a"]
-"echo bonjour > a", setup="echo a > a", files=["a"]
-"echo bonjour > a >> a", setup="echo a > a", files=["a"]
+echo bonjour >> a
+echo bonjour >> a >> a
+echo bonjour > a
+echo bonjour > a >> a
 notfound
 notfound a b c
 'echo "\\"" >>a"b""c"  ', files=["abc"]
@@ -580,168 +580,168 @@ echo $?
 echo; echo $?
 notfound; echo $?
 cat < doesntexist; echo $?
-cat < noperm; echo $?", setup="echo bonjour > noperm; chmod 000 noperm
+cat < noperm; echo $?"
 echo
 notfound
 cat < doesntexist
-cat < noperm", setup="echo bonjour > noperm; chmod 000 noperm
-ls_path, setup="touch a b c"
-ls_path + " -l", setup="touch a b c"
-"./bonjour", setup="touch a b c; cp {} bonjour".format(ls_path)
-"./bonjour -l", setup="touch a b c; cp {} bonjour".format(ls_path)
+cat < noperm"
+ls_path
+ls_path + " -l"
+./bonjour
+./bonjour -l
 ./somedir/bonjour -l
 ./ls . a b c
 ls . a b c
-./somefile", setup="echo > somefile; chmod 000 somefile
-./somefile", setup="echo > somefile; chmod 001 somefile
-./somefile", setup="echo > somefile; chmod 002 somefile
-./somefile", setup="echo > somefile; chmod 003 somefile
-./somefile", setup="echo > somefile; chmod 004 somefile
-./somefile", setup="echo > somefile; chmod 005 somefile
-./somefile", setup="echo > somefile; chmod 006 somefile
-./somefile", setup="echo > somefile; chmod 007 somefile
-./somefile", setup="echo > somefile; chmod 010 somefile
-./somefile", setup="echo > somefile; chmod 020 somefile
-./somefile", setup="echo > somefile; chmod 030 somefile
-./somefile", setup="echo > somefile; chmod 040 somefile
-./somefile", setup="echo > somefile; chmod 050 somefile
-./somefile", setup="echo > somefile; chmod 060 somefile
-./somefile", setup="echo > somefile; chmod 070 somefile
-./somefile", setup="echo > somefile; chmod 100 somefile
-./somefile", setup="echo > somefile; chmod 200 somefile
-./somefile", setup="echo > somefile; chmod 300 somefile
-./somefile", setup="echo > somefile; chmod 400 somefile
-./somefile", setup="echo > somefile; chmod 500 somefile
-./somefile", setup="echo > somefile; chmod 600 somefile
-./somefile", setup="echo > somefile; chmod 700 somefile
-./somefile", setup="echo > somefile; chmod 755 somefile
-./somefile", setup="echo > somefile; chmod 644 somefile
-./somefile", setup="echo > somefile; chmod 311 somefile
-./somefile", setup="echo > somefile; chmod 111 somefile
-./somefile", setup="echo > somefile; chmod 222 somefile
-./somefile", setup="echo > somefile; chmod 333 somefile
-"somedir/",   setup="mkdir somedir", hook=hooks.is_directory
-"./somedir/", setup="mkdir somedir", hook=hooks.is_directory
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+somedir/",   setup="mkdir somedir
+./somedir/
 somedir",    setup="mkdir somedir
-"./somedir",  setup="mkdir somedir", hook=hooks.is_directory
+./somedir",  setup="mkdir somedir
 somedir",    setup="mkdir somedir
-"somedirsoftlink/",   setup="mkdir somedir; ln -s somedir somedirsoftlink", hook=hooks.is_directory
-"./somedirsoftlink/", setup="mkdir somedir; ln -s somedir somedirsoftlink", hook=hooks.is_directory
+somedirsoftlink/",   setup="mkdir somedir; ln -s somedir somedirsoftlink
+./somedirsoftlink/
 somedirsoftlink",    setup="mkdir somedir; ln -s somedir somedirsoftlink
-"./somedirsoftlink",  setup="mkdir somedir; ln -s somedir somedirsoftlink", hook=hooks.is_directory
+./somedirsoftlink",  setup="mkdir somedir; ln -s somedir somedirsoftlink
 somedirsoftlink",    setup="mkdir somedir; ln -s somedir somedirsoftlink
 ./someremovedlink",  setup="touch somefile; ln -s somefile someremovedlink; rm -f somefile
-./somelink2", setup="touch somefile; ln -s somefile somelink1; ln -s somelink1 somelink2
-"./somelink3", setup="touch somefile; ln -s somefile somelink1; ln -s somelink1 somelink2;
-"./somelink4", setup="touch somefile; ln -s somefile somelink1; ln -s somelink1 somelink2;
-"./somelink2ls", setup="cp " + ls_path + " somefile;
-"./somelink3ls", setup="cp " + ls_path + " somefile;
-"./somelink4ls", setup="cp " + ls_path + " somefile;
-_", setup="touch _
-'-'", setup="touch -
-./_", setup="touch _
-./-", setup="touch a; mv a ./-
-"./.", setup="touch .", hook=hooks.is_directory
-"./..", setup="touch ..", hook=hooks.is_directory
-"./somefile", setup='echo > somefile && chmod 0777 somefile'
-"./somefile", setup='echo > somefile && chmod 1000 somefile'
-"./somefile", setup='echo > somefile && chmod 2000 somefile'
-"./somefile", setup='echo > somefile && chmod 3000 somefile'
-"./somefile", setup='echo > somefile && chmod 4000 somefile'
-"./somefile", setup='echo > somefile && chmod 5000 somefile'
-"./somefile", setup='echo > somefile && chmod 6000 somefile'
-"./somefile", setup='echo > somefile && chmod 7000 somefile'
-"./somefile", setup='echo > somefile && chmod 1777 somefile'
-"./somefile", setup='echo > somefile && chmod 2777 somefile'
-"./somefile", setup='echo > somefile && chmod 3777 somefile'
-"./somefile", setup='echo > somefile && chmod 4777 somefile'
-"./somefile", setup='echo > somefile && chmod 5777 somefile'
-"./somefile", setup='echo > somefile && chmod 6777 somefile'
-"./somefile", setup='echo > somefile && chmod 7777 somefile'
-"./somefile", setup='echo > somefile && chmod 0000 somefile'
-"./somedir", setup='mkdir -m 0777 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 1000 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 2000 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 3000 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 4000 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 5000 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 6000 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 7000 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 1777 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 2777 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 3777 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 4777 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 5777 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 6777 somedir', hook=hooks.is_directory
-"./somedir", setup='mkdir -m 0000 somedir', hook=hooks.is_directory
-"./Somefile", setup='echo > somefile && chmod 000 somefile'
-"./someFILE", setup='echo > somefile && chmod 000 somefile'
+./somelink2"
+./somelink3
+./somelink4
+./somelink2ls
+./somelink3ls
+./somelink4ls
+_"
+'-'"
+./_"
+./-"
+./.
+./..
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./Somefile
+./someFILE
 echo $SHLVL
-"echo $SHLVL", exports={"SHLVL": ""}
-"echo $SHLVL", exports={"SHLVL": " 1"}
-"echo $SHLVL", exports={"SHLVL": " 2"}
-"echo $SHLVL", exports={"SHLVL": " 3"}
-"echo $SHLVL", exports={"SHLVL": " ' 3'"}
-"echo $SHLVL", exports={"SHLVL": " '\t3'"}
-"echo $SHLVL", exports={"SHLVL": " '\t\f\r 3'"}
-"echo $SHLVL", exports={"SHLVL": " '3 '"}
-"echo $SHLVL", exports={"SHLVL": " '3\t'"}
-"echo $SHLVL", exports={"SHLVL": " '3\r'"}
-"echo $SHLVL", exports={"SHLVL": " '3\t\f\r '"}
-"echo $SHLVL", exports={"SHLVL": " '3     a'"}
-"echo $SHLVL", exports={"SHLVL": " '3\t\t\ta'"}
-"echo $SHLVL", exports={"SHLVL": " 0"}
-"echo $SHLVL", exports={"SHLVL": " -0"}
-"echo $SHLVL", exports={"SHLVL": " -1"}
-"echo $SHLVL", exports={"SHLVL": " 255"}
-"echo $SHLVL", exports={"SHLVL": " 256"}
-"echo $SHLVL", exports={"SHLVL": " 2000000"}
-"echo $SHLVL", exports={"SHLVL": " -2000000"}
-"echo $SHLVL", exports={"SHLVL": " 2147483647"}
-"echo $SHLVL", exports={"SHLVL": " -2147483648"}
-"echo $SHLVL", exports={"SHLVL": " 2147483648"}
-"echo $SHLVL", exports={"SHLVL": " -2147483649"}
-"echo $SHLVL", exports={"SHLVL": " 3147483648"}
-"echo $SHLVL", exports={"SHLVL": " -3147483649"}
-"echo $SHLVL", exports={"SHLVL": " 4294967295"}
-"echo $SHLVL", exports={"SHLVL": " 4294967296"}
-"echo $SHLVL", exports={"SHLVL": " -9223372036854775808"}
-"echo $SHLVL", exports={"SHLVL": " 9223372036854775807"}
-"echo $SHLVL", exports={"SHLVL": " -9223372036854775809"}
-"echo $SHLVL", exports={"SHLVL": " 9223372036854775808"}
-"echo $SHLVL", exports={"SHLVL": " 18446744073709551615"}
-"echo $SHLVL", exports={"SHLVL": " 18446744073709551616"}
-"echo $SHLVL", exports={"SHLVL": " +1"}
-"echo $SHLVL", exports={"SHLVL": " +2"}
-"echo $SHLVL", exports={"SHLVL": " +3"}
-"echo $SHLVL", exports={"SHLVL": " +0"}
-"echo $SHLVL", exports={"SHLVL": " +255"}
-"echo $SHLVL", exports={"SHLVL": " +256"}
-"echo $SHLVL", exports={"SHLVL": " +2000000"}
-"echo $SHLVL", exports={"SHLVL": " +2147483647"}
-"echo $SHLVL", exports={"SHLVL": " ++1"}
-"echo $SHLVL", exports={"SHLVL": " ++2"}
-"echo $SHLVL", exports={"SHLVL": " ++3"}
-"echo $SHLVL", exports={"SHLVL": " ++0"}
-"echo $SHLVL", exports={"SHLVL": " ++255"}
-"echo $SHLVL", exports={"SHLVL": " ++256"}
-"echo $SHLVL", exports={"SHLVL": " ++2000000"}
-"echo $SHLVL", exports={"SHLVL": " ++2147483647"}
-"echo $SHLVL", exports={"SHLVL": " --1"}
-"echo $SHLVL", exports={"SHLVL": " --2"}
-"echo $SHLVL", exports={"SHLVL": " --3"}
-"echo $SHLVL", exports={"SHLVL": " --0"}
-"echo $SHLVL", exports={"SHLVL": " --255"}
-"echo $SHLVL", exports={"SHLVL": " --256"}
-"echo $SHLVL", exports={"SHLVL": " --2000000"}
-"echo $SHLVL", exports={"SHLVL": " --2147483647"}
-"echo $SHLVL", exports={"SHLVL": " bonjour"}
-"echo $SHLVL", exports={"SHLVL": " 0_"}
-"echo $SHLVL", exports={"SHLVL": " _0"}
-"echo $SHLVL", exports={"SHLVL": " 0123456789"}
-"echo $SHLVL", exports={"SHLVL": " -0123456789"}
-"echo $SHLVL", exports={"SHLVL": " 00000000000000000000000000000000000000000000001"}
-"echo $SHLVL", exports={"SHLVL": " 00000000000000000000000000000000000000000000000
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
 echo $_
 echo; echo $_
 env; echo $_
@@ -752,109 +752,109 @@ cat -e /etc/shells; echo $_
 echo a; echo \"$_\"
 echo a; echo '$_'
 echo a; echo \"@$_@\"
-"a", setup=mode_fmt.format("000"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("001"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("002"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("003"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("004"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("005"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("006"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("007"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("010"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("020"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("030"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("040"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("050"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("060"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("070"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("100"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("200"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("300"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("400"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("500"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("600"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("700"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("755"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("644"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("311"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("111"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("222"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("333"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("0777"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("1000"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("2000"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("3000"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("4000"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("5000"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("6000"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("7000"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("1777"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("2777"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("3777"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("4777"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("5777"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("6777"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("7777"), exports={"PATH": "path"}
-"a", setup=mode_fmt.format("0000"), exports={"PATH": "path"}
-"A", setup=mode_fmt.format("000"), exports={"PATH": "path"}
-"b", setup="mkdir path && ln -s " + whoami_path + " ./path/b", exports={"PATH": "path"}
-a", setup="mkdir path && mkfifo path/a
-a", setup="mkdir path && mkfifo path/a && chmod 777 path/a
-"a", setup="mkdir path1 path2 && cp " + whoami_path + " path1/a
-"a/b", setup="mkdir -p path/a; cp " + whoami_path + " path/a/b", exports={"PATH": "path"}
-"echo $PATH", exports={"PATH": "doesnotexits"}
-"echo $PATH", exports={"PATH": "doesnotexits:asdfasdfas"}
-"echo $PATH", exports={"PATH": "a:b:c:d:e:f:g:h:i:j:k:l:m:n:o:p:q:r:s:t:u:v:w:x:y:z"}
-"echo $PATH", exports={"PATH": "________"}
-"echo $PATH", exports={"PATH": "        "}
-"echo $PATH", exports={"PATH": "   :    "}
-"echo $PATH", exports={"PATH": "     /bin      "}
-"echo $PATH", exports={"PATH": "     /sbin      "}
-"echo $PATH", exports={"PATH": "/bin:/bin:/bin:/bin"}
-"echo $PATH", exports={"PATH": "/sbin:/sbin:/sbin:/sbin"}
-"echo $PATH", exports={"PATH": ""}
-"echo $PATH", exports={"PATH": ":"}
-"echo $PATH", exports={"PATH": ":::::::::::::::::::"}
-"echo $PATH", exports={"PATH": "/asdfasdf"}
-"echo $PATH", exports={"PATH": "/usr/asdf:/usr/lib/asdfasdf"}
-"whoami", exports={"PATH": "doesnotexits"}
-"whoami", exports={"PATH": "doesnotexits:asdfasdfas"}
-"whoami", exports={"PATH": "a:b:c:d:e:f:g:h:i:j:k:l:m:n:o:p:q:r:s:t:u:v:w:x:y:z"}
-"whoami", exports={"PATH": "________"}
-"whoami", exports={"PATH": "        "}
-"whoami", exports={"PATH": "   :    "}
-"whoami", exports={"PATH": "     /usr/bin      "}
-"whoami", exports={"PATH": "/usr/bin:/usr/bin:/usr/bin:/usr/bin"}
-"whoami", exports={"PATH": "     /sbin      "}
-"whoami", exports={"PATH": "/sbin:/sbin:/sbin:/sbin"}
-"whoami", exports={"PATH": ""})  # error message explicit enoug
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+A
+b
+a"
+a"
+a
+a/b
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+whoami
+whoami
+whoami
+whoami
+whoami
+whoami
+whoami
+whoami
+whoami
+whoami
+whoami
 "unset PATH; whoami")  # error message explicit enoug
-"whoami", exports={"PATH": ":"}
-"whoami", exports={"PATH": ":::::::::::::::::::"}
-"whoami", exports={"PATH": "/asdfasdf"}
-"whoami", exports={"PATH": "/usr/asdf:/usr/lib/asdfasdf"}
-whoami", setup="unset PATH
-"somecmd", setup=create_cmd_setup, exports={"PATH": ""}
-"somecmd", setup=create_cmd_setup, exports={"PATH": ":"}
-"somecmd", setup=create_cmd_setup, exports={"PATH": "::::::::"}
-"somecmd", setup=create_cmd_setup, exports={"PATH": "/asdfasdf"}
-"somecmd", setup=create_cmd_setup, exports={"PATH": "/usr/asdf:/usr/lib/asdfasdf"}
-somecmd", setup=create_cmd_setup + "; unset PATH
-"somecmd", setup=create_cmd_setup, exports={"PATH": "/bin:"}
-"somecmd", setup=create_cmd_setup, exports={"PATH": ":/bin"}
-"somecmd", setup=create_cmd_setup, exports={"PATH": ":/bin:"}
-"Whoami", exports={"PATH": "/usr/bin"}
-"wHoAMi", exports={"PATH": "/usr/bin"}
-"whoami", exports={"PATH": "/usr/bIn"}
-"whoami", exports={"PATH": "/Usr/bin"}
-"Whoami", exports={"PATH": "/usr/bIn"}
-"wHoami", exports={"PATH": "/Usr/bin"}
-"Whoami", exports={"PATH": ""}
-"wHoami", exports={"PATH": ""}
+whoami
+whoami
+whoami
+whoami
+whoami"
+somecmd
+somecmd
+somecmd
+somecmd
+somecmd
+somecmd"
+somecmd
+somecmd
+somecmd
+Whoami
+wHoAMi
+whoami
+whoami
+Whoami
+wHoami
+Whoami
+wHoami
 echo' 'bonjour
 echo' 'je' 'suis' 'charles
-"echo" "bonjour"
-"echo" "je" "suis" "charles"
+echo" "bonjour
+echo" "je" "suis" "charles
 echo je\'suis\'"charles"
 echo "je"suis\'charles\'
 echo \'je\'"suis"charles
@@ -889,18 +889,18 @@ echo '\"'
 echo '\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"'
 echo "\'"
 echo "\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'"
-"echo '", hook=hooks.error_line0, hook_status=hooks.platform_status(2, 1)
-'echo "', hook=hooks.error_line0, hook_status=hooks.platform_status(2, 1)
-"echo '''", hook=hooks.error_line0, hook_status=hooks.platform_status(2, 1)
-'echo """', hook=hooks.error_line0, hook_status=hooks.platform_status(2, 1)
-"echo '''''''''''''''''''''''''''''''''''''''''''", hook=hooks.error_line0, hook_status=hooks.platform_status(2, 1)
-'echo """""""""""""""""""""""""""""""""""""""""""', hook=hooks.error_line0, hook_status=hooks.platform_status(2, 1)
+echo '
+echo "
+echo '''
+echo """
+echo '''''''''''''''''''''''''''''''''''''''''''
+echo """""""""""""""""""""""""""""""""""""""""""
 echo 'AH\\'
-'echo "AH\\"', hook=hooks.error_line0, hook_status=hooks.platform_status(2, 1)
+echo "AH\\"
 echo "AH\\""
-"echo '\\''", hook=hooks.error_line0, hook_status=hooks.platform_status(2, 1)
+echo '\\''
 echo "\\""
-'echo "\\\\""', hook=hooks.error_line0, hook_status=hooks.platform_status(2, 1)
+echo "\\\\""
 'echo bonjour > "fi le"', files=['fi le']
 "echo bonjour > 'fi le'", files=['fi le']
 "echo $TEST",             exports={"TEST": "bonjour"}
@@ -918,28 +918,28 @@ echo "\\""
 "echo $A,$B,$C",          exports={"A": "foo", "B": "bar", "C": "baz"}
 'echo "$A,$B,$C"',        exports={"A": "foo", "B": "bar", "C": "baz"}
 "echo '$A,$B,$C'",        exports={"A": "foo", "B": "bar", "C": "baz"}
-'echo $A"$B"$C"A"$B"$C"', exports={"A": "foo", "B": "bar", "C": "baz"}
-"echo $A'$B'$C'A'$B'$C'", exports={"A": "foo", "B": "bar", "C": "baz"}
-'echo $A"$B"$C"A"$B"$C"', exports={"A": "foo ", "B": " bar  ", "C": "baz "}
-"echo $A'$B'$C'A'$B'$C'", exports={"A": "foo ", "B": " bar  ", "C": "baz "}
+echo $A"$B"$C"A"$B"$C"
+echo $A'$B'$C'A'$B'$C'
+echo $A"$B"$C"A"$B"$C"
+echo $A'$B'$C'A'$B'$C'
 echo $A
 echo $A$B
 echo $A$B$C
 echo $A$B$C$D
-"echo [$A]", exports={"A": r"bonjour\je"}
-"echo [$A]", exports={"A": r"\b\\o\\\nj\\\\\\\our\\je\\\\"}
-"echo [$A]", exports={"A": r"   \b\\o\\\nj\\\\\\\our\\je\\\\"}
-"echo [$A]", exports={"A": r"\b\\o\\\nj\\\\\\\our\\je\\\\   "}
-"echo [$A]", exports={"A": r"  \b\\o\\\nj\\\\\\\our\\je\\\\ "}
-"echo [$A]", exports={"A": r"a  \b\\o\\\nj\\\\\\\our\\je\\\\ b"}
-"echo [$A]", exports={"A": r" a  \b\\o\\\nj\\\\\\\our\\je\\\\ b "}
-"echo [$A]", exports={"A": r" "}
-"echo [$A]", exports={"A": r"    "}
-"echo [$A]", exports={"A": r"\ "}
-"echo [$A]", exports={"A": r" \  "}
-"echo \ \ \ \ \ \ \ $A\ \ \ \ \ \ ", exports={"A": "bonjour"}
-"echo \ \ \ \ \ \ \ $A\ \ \ \ \ \ ", exports={"A": "bonjour je suis"}
-"echo \ \ \ \ \ \ \ $A\ \ \ \ \ \ ", exports={"A": "  bonjour je suis  "}
+echo [$A]
+echo [$A]
+echo [$A]
+echo [$A]
+echo [$A]
+echo [$A]
+echo [$A]
+echo [$A]
+echo [$A]
+echo [$A]
+echo [$A]
+echo \ \ \ \ \ \ \ $A\ \ \ \ \ \ 
+echo \ \ \ \ \ \ \ $A\ \ \ \ \ \ 
+echo \ \ \ \ \ \ \ $A\ \ \ \ \ \ 
 'echo $A',      exports={"A": "bonjour je suis splited"}
 'echo $A',      exports={"A": "bonjour     je     suis    splited"}
 'echo $A',      exports={"A": "   bonjour     je     suis    splited   "}
@@ -960,8 +960,8 @@ echo $A$B$C$D
 'echo "$A"',    exports={"A": "'" + Config.lorem + "'"}
 "echo '$A'",    exports={"A": "'" + Config.lorem + "'"}
 "$ECHO $ECHO",  exports={"ECHO": "echo"}
-"$A$B bonjour", exports={"A": "ec", "B": "ho"}
-$LS",          exports={"LS": "ls -l"}, setup="touch a b c
+$A$B bonjour
+$LS",          exports={"LS": "ls -l"}
 echo $
 echo \\$
 echo \\$\\$\\$\\$
@@ -997,9 +997,9 @@ echo \\$$\\$$
 'echo "@""$A" "@"',    exports={"A": " "}
 'echo $A$B$C',         exports={"A": "", "B": "", "C": ""}
 'echo bonjour > $A',   exports={"A": 'file'}, files=['file']
-'echo bonjour > $A',   exports={"A": 'fi le'}, files=['fi le'], hook=hooks.error_line0
-'echo bonjour > "$A"', exports={"A": 'fi le'}, files=['fi le']
-"echo bonjour > '$A'", exports={"A": 'fi le'}, files=['fi le']
+'echo bonjour > $A',   exports={"A": 'fi le'}, files=['fi le']
+echo bonjour > "$A"
+echo bonjour > '$A'
 echo \a
 \e\c\h\o bonjour
 echo charles\ 
@@ -1049,7 +1049,7 @@ echo\ bonjour
 /bin/echo ' \$? '
 /bin/echo ' \\ '
 /bin/echo ' \\\ '
-"echo \\", hook=hooks.delete_escape
+echo \\
 echo \"\\\"\"'bonjour'
 echo foo
 echo                    foo
@@ -1060,11 +1060,11 @@ echo\t\t\t\t\t\t\t\t\t\tfoo
 \t\t\t\t\t\techo\tfoo
 echo\tfoo\t\t\t\t\t\t
 \t\t\t\techo\t\t\t\tfoo\t\t\t\t
-"\fecho\ffoo", hook=hooks.should_not_be("foo\n")
-"\necho\nfoo", hook=hooks.should_not_be("foo\n")
-"\recho\rfoo", hook=hooks.should_not_be("foo\n")
-"\vecho\vfoo", hook=hooks.should_not_be("foo\n")
-"\t\r\v\fecho\v\t\r\vfoo", hook=hooks.should_not_be("foo\n")
+\fecho\ffoo
+\necho\nfoo
+\recho\rfoo
+\vecho\vfoo
+\t\r\v\fecho\v\t\r\vfoo
 
                                           
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t

@@ -2602,7 +2602,7 @@
 ["echo -nnnnnnnnnnnnnnnnnnnnn -n -n -n bonjour -n -n"[1;31m¦[0m]
 ["export"[1;31m¦[0m,[1;31m¦[0mhook=hooks.export_singleton[1;31m¦[0m]
 ["export"[1;31m¦[0m,[1;31m¦[0mexports={[1;31m¦[0m"A"[1;31m¦[0m:[1;31m¦[0m""[1;31m¦[0m},[1;31m¦[0mhook=hooks.export_singleton[1;31m¦[0m]
-["export"[1;31m¦[0m,[1;31m¦[0mexports={[1;31m¦[0m"A"[1;31m¦[0m:[1;31m¦[0m"\"[1;31m¦[0m"}, hook=hooks.export_singleton[1;31m¦[0m]
+["export"[1;31m¦[0m,[1;31m¦[0mexports={[1;31m¦[0m"A"[1;31m¦[0m:[1;31m¦[0m"\"[1;31m¦[0m"}
 ["export"[1;31m¦[0m,[1;31m¦[0mexports={[1;31m¦[0m"A"[1;31m¦[0m:[1;31m¦[0m"\\"[1;31m¦[0m},[1;31m¦[0mhook=hooks.export_singleton[1;31m¦[0m]
 ["export"[1;31m¦[0m,[1;31m¦[0mexports={[1;31m¦[0m"A"[1;31m¦[0m:[1;31m¦[0m"$"[1;31m¦[0m},[1;31m¦[0mhook=hooks.export_singleton[1;31m¦[0m]
 ["export"[1;31m¦[0m,[1;31m¦[0mexports={[1;31m¦[0m"A"[1;31m¦[0m:[1;31m¦[0m"\t"[1;31m¦[0m},[1;31m¦[0mhook=hooks.export_singleton[1;31m¦[0m]

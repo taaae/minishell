@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:15:35 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/16 13:57:54 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/18 13:27:27 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ t_list	*token_to_list_entry(t_token *token);
  */
 int		get_next_tok_len(char *line);
 int		parse_double_sym_word(char *line);
-int		parse_quotes(char *line);
+int		parse_quotes(char *line, const char quote);
 int		parse_dquotes(char *line);
 int		parse_word(char *line);
 int		parse_var(char *line);
@@ -74,7 +74,18 @@ void	scan_dir(char ***files, int files_count, DIR *d, struct dirent *dir);
 char	**get_files_in_cur_dir(void);
 
 t_list	*line_to_tokens(char *line);
-int		expand_all_tokens(t_list **tok_lst);
+
+/**
+ * @brief Takes token list, returns tok list with all stars expanded
+ *
+ * Every time it finds a token node that has * in its str_repr,
+ * it expands it to a token list, and replaces the node with this list.
+ * It should be able to expand 1st and last node of the list.
+ * @param tok_lst
+ * @return int
+ */
+int		expand_all_stars(t_list **tok_lst);
+char	*expand_star_string(char *pattern);
 
 /**
  * @brief Get the token type object

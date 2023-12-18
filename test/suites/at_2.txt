@@ -26,7 +26,7 @@ ls '\"
 ls \"\'
 ls " "
 ls \" ' \"
-"ls"
+ls
 l"s"
 $USER
 ls $HOME
