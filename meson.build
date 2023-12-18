@@ -1,20 +1,26 @@
 project('minishell_test', 'c')
 
-unity_dep = dependency('unity')
 readline_dep = dependency('readline')
-dep = [unity_dep, readline_dep]
 
 cc = meson.get_compiler('c')
 libft = cc.find_library('ft', dirs: meson.current_source_dir() + '/libft/')
-dep += libft
+
+unity_subproject = subproject('unity')
+unity_dependency = unity_subproject.get_variable('unity_dep')
+unity_gen_runner = unity_subproject.get_variable('gen_test_runner')
+
+dep = [readline_dep, libft, unity_dependency]
 
 c = run_command('glob.sh')
-sources = c.stdout().strip().split('\n')
+src = c.stdout().strip().split('\n')
 
 inc_dirs = ['include', 'libft']
-include = include_directories(inc_dirs)
+inc = include_directories(inc_dirs)
 
-executable('minishell_test', sources,
-           include_directories: include,
+# copy-paste these lines, replace 'minishell_test' and 'example_test.c' and 'test/example_test.c'
+executable('example_test',
+           sources: [src, unity_gen_runner.process('test' / 'example_test.c'), 'test/example_test.c'],
+           include_directories: inc,
            dependencies: dep,
 )
+
