@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 13:57:24 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/18 15:08:51 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/18 17:17:43 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "libft.h"
 #include "builtins.h"
 #include "lexer.h"
+#include "environment.h"
 
 void test_setup(void)
 {
@@ -33,42 +34,75 @@ MU_TEST(test_builtin_pwd)
 	mu_assert_int_eq(FT_SUCCESS, builtin_pwd());
 }
 
-MU_TEST(test_builtin_echo)
+MU_TEST(test_builtin_env)
 {
-	char **ss;
-	ss = calloc(3, sizeof(char*));
-	ss[0] = strdup("ARG1");
-	ss[1] = strdup("ARG2");
-	ss[2] = NULL;
+	char *envp[] = {"PATH=/usr/local/bin:/usr/bin", "COLORTERM=truecolor", NULL};
+	ft_initenv(envp);
+	char *empty_argv[] = {NULL};
+	ft_printf("\nbuiltin_env test:\n");
+	builtin_env(empty_argv);
+	empty_argv[0] = "abc";
+	builtin_env(empty_argv);
+	empty_argv[0] = NULL;
+	ft_unsetenv("PATH");
+	ft_unsetenv("COLORTERM");
+	builtin_env(empty_argv);
+	free(get_environ());
+}
 
-	printf("builtins.echo() tests:\n");
-	printf("array,true:\n");
-	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, true));
-	printf("array,false:\n");
-	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, false));
+MU_TEST(test_builtin_unset)
+{
+	char *envp[] = {"PATH=/usr/local/bin:/usr/bin", "COLORTERM=truecolor", "USER=root", NULL};
+	ft_initenv(envp);
+	char *empty_argv[] = {NULL};
+	ft_printf("\n\n\nbuiltin_unset test:\n");
+	char *unset_argv[] = {"nonexisting", "er=ror", NULL};
+	mu_assert_int_eq(1, builtin_unset(unset_argv));
+	builtin_env(empty_argv);
+	unset_argv[0] = "PATH";
+	unset_argv[1] = "USER";
+	ft_printf("\n");
+	mu_assert_int_eq(0, builtin_unset(unset_argv));
+	builtin_env(empty_argv);
+	unset_argv[0] = "";
+	mu_assert_int_eq(1, builtin_unset(unset_argv));
+	unset_argv[0] = "COLORTERM";
+	builtin_unset(unset_argv);
+	free(get_environ());
+}
 
-	free(ss[0]);
-	ss[0] = NULL;
-	printf("empty array, true:\n");
-	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, true));
-	printf("empty array, false:\n");
-	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, false));
+MU_TEST(test_builtin_export)
+{
+	char *envp[] = {"PATH=/usr/local/bin:/usr/bin", "COLORTERM=truecolor", "USER=root", NULL};
+	ft_initenv(envp);
+	char *empty_argv[] = {NULL};
+	ft_printf("\n\n\nbuiltin_export test:\n");
+	char *argv[] = {"aaa=bbb", "ccc", NULL};
+	mu_assert_int_eq(0, builtin_export(argv));
+	builtin_env(empty_argv);
+	argv[0] = "PATH";
+	argv[1] = "COLORTERM";
+	builtin_unset(argv);
+	ft_printf("\n");
+	builtin_env(empty_argv);
+	argv[0] = "USER=grot";
+	argv[1] = "";
+	mu_assert_int_eq(1, builtin_export(argv));
+	ft_printf("\n");
+	builtin_env(empty_argv);
+}
 
-	printf("NULL, true:\n");
-	mu_assert_int_eq(FT_ERROR, builtin_echo(NULL, true));
-	printf("NULL, false:\n");
-	mu_assert_int_eq(FT_ERROR, builtin_echo(NULL, false));
-
-	ss[0] = strdup("");
-	printf("empty string as 1st arg, true:\n");
-	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, true));
-	printf("empty string as 1st arg, false:\n");
-	mu_assert_int_eq(FT_SUCCESS, builtin_echo(ss, false));
-	free(ss[0]);
-	free(ss[1]);
-	free(ss[2]);
-	free(ss);
-	
+MU_TEST(test_env_error_messages)
+{
+	ft_printf("\n\ntest env error messages:\n");
+	ft_printf("for unset:\n");
+	char *argv[] = {" ", "", "a=b", "=2", "=", " a", "2a", "_", "?^@", NULL};
+	builtin_unset(argv);
+	ft_printf("\nfor export:\n");
+	char *argv2[] = {" ", "", "2a=b", " a=b", " b", "_a=b=c", " _a", "?^", NULL};
+	builtin_export(argv2);
+	char *empty_argv[] = {NULL};
+	builtin_env(empty_argv);
 }
 
 MU_TEST(test_token_string_utils)
@@ -112,6 +146,11 @@ MU_TEST_SUITE(test_suite)
 	MU_RUN_TEST(test_builtin_echo);
 	MU_RUN_TEST(test_builtin_pwd);
 	MU_RUN_TEST(test_token_string_utils);
+	MU_RUN_TEST(test_environment);
+	MU_RUN_TEST(test_builtin_env);
+	MU_RUN_TEST(test_builtin_unset);
+	MU_RUN_TEST(test_builtin_export);
+	MU_RUN_TEST(test_env_error_messages);
 }
 
 int main()
