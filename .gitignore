@@ -55,7 +55,6 @@ dkms.conf
 .vscode
 .DS_Store
 minishell
-minishell_test
 .idea
 build
 unity
