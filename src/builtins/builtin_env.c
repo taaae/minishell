@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtin_env.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 16:16:53 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/17 16:55:07 by trusanov         ###   ########.fr       */
+/*   Updated: 2023/12/19 15:56:36 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 #include "environment.h"
 #include "builtins.h"
 
-int	builtin_env(char **argv)
+int	builtin_env(int argc, char **argv)
 {
 	char	**environ;
 
-	if (argv == NULL)
+	(void)argc;
+	if (argv == NULL || argv[0] == NULL)
 		return (FT_ERROR);
-	if (argv[0] != NULL)
+	if (argv[1] != NULL)
 	{
 		ft_putstr_fd("env with arguments is not supported", STDERR_FILENO);
 		return (FT_ERROR);
