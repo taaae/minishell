@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tokenize.c                                         :+:      :+:    :+:   */
+/*   tokenizer.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 13:24:45 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/18 15:06:06 by lporoshi         ###   ########.fr       */
+/*   Created: 2023/12/11 18:15:04 by lporoshi          #+#    #+#             */
+/*   Updated: 2023/12/19 15:06:33 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,15 @@ t_list	*tokenize(char *line)
 			line++;
 	}
 	return (token_list);
+}
+
+t_list	*line_to_tokens(char *line)
+{
+	t_list	*tokens;
+
+	tokens = tokenize(line);
+	if (tokens == NULL)
+		return (tokens);
+	expand_all_stars(&tokens);
+	return (tokens);
 }

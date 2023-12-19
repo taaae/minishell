@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:15:35 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/19 13:06:37 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/19 15:15:26 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,45 +48,22 @@ typedef struct s_token {
 }	t_token;
 
 /**
- * @brief Breaks a line into tokens and returns linked list of them
+ * @brief Take a bash command and split it into t_list of t_token tokens
+ *
  *
  * @param line
- * @return t_token*
+ * @return t_list* 
  */
-t_list	*tokenize(char *line);
-t_token	*tok_str_to_token(char *tok_str);
-t_list	*token_to_list_entry(t_token *token);
-
-/**
- * @brief Get the next tok len object
- *
- * Cant possibly get ' ' or '\0'!
- * @param line
- * @return int
- */
-int		get_next_tok_len(char *line);
-
+t_list	*line_to_tokens(char *line);
 int		count_files_in_cur_dir(void);
+int		get_next_tok_len(char *line);
 void	scan_files_in_dir(char ***files, int files_count, \
 DIR *d, struct dirent *dir);
-char	*str_to_tok_str(char **line);
-t_list	*line_to_tokens(char *line);
-int		expand_all_vars(t_list **tokens);
 int		match_wildcard(char *str, char *pattern);
-
-/**
- * @brief Takes tok list, returns tok list with all stars expanded
- *
- * Every time it finds a token node that has * in its str_repr,
- * it expands it to a token list, and replaces the node with this list.
- * It should be able to expand 1st and last node of the list.
- * If it couldn't resolve expansion of a token (no matches) or an error occurred,
- * it just sets the type of existing token to TOK_ERROR.
- * @param tok_lst
- * @return int
- */
 int		expand_all_stars(t_list **tok_lst);
-void	del_token(void *token);
 t_list	*expanded_star_to_token(char *s);
+void	del_token(void *token);
+char	*str_to_tok_str(char **line);
+t_token	*tok_str_to_token(char *tok_str);
 
 #endif

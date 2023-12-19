@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 13:57:24 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/19 13:40:40 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/19 15:18:34 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,32 @@
 #include "builtins.h"
 #include "lexer.h"
 #include "environment.h"
+#include <stdio.h>
+
+// static int	ordered_substrings_match(char *s, char **substrings);
+// int			match_wildcard(char *str, char *pattern);
+// static int	append_expansion_str(char **expansion, char *appendix);
+// char		*compose_expansion_str(char *pattern, char **candidates);
+// char		*expand_string(char *pattern);
+
+int	print_tok_list(t_list *tok)
+{
+	t_token	*t;
+
+	//ft_printf("[");
+	while (tok != NULL && tok->content != NULL)
+	{
+		t = (t_token *)tok->content;
+		//ft_printf("\t[%d]\t", t->token_len);
+		//ft_printf("\t[%d]\t", t->type);
+		ft_printf("%s", t->token_string);
+		ft_printf("\033[31m|\e[0m");
+		tok = tok->next;
+	}
+	ft_printf("\n");
+	return (FT_SUCCESS);
+}
+
 
 void test_setup(void)
 {
@@ -151,9 +177,17 @@ MU_TEST_SUITE(test_suite)
 	MU_RUN_TEST(test_env_error_messages);
 }
 
-int main()
+int main(int argc, char **argv)
 {
+	
+	t_list	*toks;
+
+	(void)argc;
+	toks = line_to_tokens(argv[1]);
+	//print_tok_list(toks);
+	ft_lstclear(&toks, del_token);
 	MU_RUN_SUITE(test_suite);
+	return (0);
 	MU_REPORT();
 	return (MU_EXIT_CODE);
 }

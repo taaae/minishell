@@ -1,29 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_star_expander.c                               :+:      :+:    :+:   */
+/*   test_tokenizer_2.c_                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/15 13:55:33 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/18 15:10:48 by lporoshi         ###   ########.fr       */
+/*   Created: 2023/12/16 13:55:32 by lporoshi          #+#    #+#             */
+/*   Updated: 2023/12/19 15:07:04 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "libft.h"
+#include "lexer.h"
 
 static int	ordered_substrings_match(char *s, char **substrings);
-static int	match_wildcard(char *str, char *pattern);
+int			match_wildcard(char *str, char *pattern);
 static int	append_expansion_str(char **expansion, char *appendix);
 char		*compose_expansion_str(char *pattern, char **candidates);
-char		*expand_star_string(char *pattern);
+char		*expand_string(char *pattern);
+
+int	print_tok_list(t_list *tok)
+{
+	t_token	*t;
+
+	//ft_printf("[");
+	while (tok != NULL && tok->content != NULL)
+	{
+		t = (t_token *)tok->content;
+		//ft_printf("\t[%d]\t", t->token_len);
+		//ft_printf("\t[%d]\t", t->type);
+		ft_printf("%s", t->token_string);
+		ft_printf("\033[31m|\e[0m");
+		tok = tok->next;
+	}
+	ft_printf("\n");
+	return (FT_SUCCESS);
+}
 
 int	main(int argc, char **argv)
 {
 	char	**res;
+	t_list	*toks;
 
-	//printf("[%s]\n", compose_expansion_str(argv[1], argv + 2));
-	printf("[%s]\n", expand_string(argv[1]));
+	//printf("[%s]\n", argv[1]);
+	toks = line_to_tokens(argv[1]);
+	//printf("%p\n", toks);
+	print_tok_list(toks);
 	return (0);
 }
 
