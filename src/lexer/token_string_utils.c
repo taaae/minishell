@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:11:42 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/18 13:13:22 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/19 14:41:05 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ static int	parse_quotes(char *line, const char quote)
 	i = 1;
 	while (line[i] != '\0' && line[i] != quote)
 		i++;
-	if (line[i] != '\0')
-		i++;
+	if (line[i] == '\0')
+		return (0);
+	i++;
 	return (i);
 }
 

@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:15:35 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/18 15:48:59 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/19 13:06:37 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ typedef enum e_token_type {
 	TOK_CLOSE_PARENTH = 12,
 	TOK_EXPANDED_STAR = 13,
 	TOK_VAR = 14,
+	TOK_EXPANDED_VAR = 15,
+	TOK_EXPANDED_VAR_IN_DQOTES = 16,
 }	t_token_type;
 
 typedef struct s_token {

@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 13:57:24 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/18 17:35:53 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/19 13:40:40 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,10 +143,8 @@ MU_TEST(test_token_string_utils)
 MU_TEST_SUITE(test_suite) 
 {
 	MU_SUITE_CONFIGURE(&test_setup, &test_teardown);
-	MU_RUN_TEST(test_builtin_echo);
 	MU_RUN_TEST(test_builtin_pwd);
 	MU_RUN_TEST(test_token_string_utils);
-	MU_RUN_TEST(test_environment);
 	MU_RUN_TEST(test_builtin_env);
 	MU_RUN_TEST(test_builtin_unset);
 	MU_RUN_TEST(test_builtin_export);

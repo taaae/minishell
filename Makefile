@@ -14,7 +14,6 @@ SOURCE_FILES := \
 					lexer/token_composer.c \
 					lexer/token_string_utils.c \
 					lexer/tokenize.c \
-					lexer/var_expand.c
 					builtins/builtin_env.c \
 					builtins/builtin_unset.c \
 					builtins/builtin_export.c \
