@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtin_unset.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 16:54:57 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/17 18:29:32 by trusanov         ###   ########.fr       */
+/*   Updated: 2023/12/19 15:59:38 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,16 @@ static void	invalid_identifier_message(char *name)
 	ft_putstr_fd("': not a valid identifier\n", STDERR_FILENO);
 }
 
-int	builtin_unset(char **argv)
+int	builtin_unset(int argc, char **argv)
 {
 	int	res;
 
-	if (argv == NULL)
+	(void)argc;
+	if (argv == NULL || argv[0] == NULL)
 		return (FT_ERROR);
+	argv++;
 	res = 0;
-	while (*argv)
+	while (*argv != NULL)
 	{
 		if (ft_unsetenv(*argv) == -1)
 		{

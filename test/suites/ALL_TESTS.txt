@@ -1,0 +1,7976 @@
+echo '$'
+echo $	
+echo $\"$\"$ '$'$'$'
+echo ''$''
+echo \$abc$
+eChO \"\"$\"\"	
+"echo \"\$_\"" # As long as you return the last command your good to go
+echo	ls
+echo '\$1337' 
+echo \"\$1337\"
+echo \"\$0\"
+'e'\"c\"'h'o	\"POMS\"
+echo echo
+echo \"\t a\"
+eCHO ''	
+echo	
+echo '\$USER'''
+echo '\$USER'
+echo \"\$USER|'\$USER'\"
+echo مرحبا بالعالم	
+echo \"Salam Alikoum\"		
+echo Salam Alikoum		
+echo 'Salam Alikoum'		
+echo -n Salam Alikoum		
+echo -nn Salam Alikoum	
+echo -n -n -n Salam Alikoum
+echo \"-n\" Salam Alikoum	
+echo -n \"-n\" Salam Alikoum	
+echo \"-nnnn\" Salam Alikoum
+echo \"-nnnn\" -n Salam Alikoum
+echo \"-n -n -n\"-n Salam Alikoum		
+echo \"-n '-n'\" Salam Alikoum
+echo \$string\" | sed -e \"s/^\$prefix//\" -e \"s/\$suffix$//
+echo \$USER
+echo \"\$USER\"		
+echo \"'\$USER'\"		
+echo \" '\$USER' \"	
+echo text\"\$USER\"	
+echo text\"'\$USER'\" ' \$USER '
+echo \"Bensouda\"   \"\$USER\"    \"\$USER\"
+echo '              \$USER          '		
+echo               Bensouda \"\$USER\"            \"\$USER\"Rja F Allah	
+echo ''''''''''\$USER.ME''''''''''	
+echo \"\"\"\"\"\"\"\"\$USER\"\"\"\"\"\"\"\"		
+echo \$USER'\$USER'Once a gunner always a gunner \$USER COYG      \$USER ''	
+echo \$USER '' \$USER \$USER '' \$USER '' \$USER -n \$USER	
+echo \"\$USER\"\"\$USER\"\"\$USER\"		
+echo	guess whos back \"\$USER\"
+echo '"'$USER'"'
+echo \$USER \" \"		
+echo \"\$USER\"\"Users/\$USER/file\"\"'\$USER'\"'\$USER'
+echo \"\$USER\$USER\$USER\"
+echo '\$USER'\"\$USER\"'\$USER'		
+echo '\"\$USER\"''\$USER'\"\"\"\$USER\"	
+echo \" \$USER  \"'\$PWD'
+echo \" \$USER  \$ \"'\$PWD'		
+echo \$USER=4		
+echo \"\$NOT_EXIT POMS\"		
+echo \"\$USER POMS\"		
+echo \"\$USER\"		
+echo \$USER=POMS 
+echo \$USER
+echo \$?	
+echo \$PWD/file		
+echo \"\$PWD/file\"	
+echo \"Nothing\" \"Nothing\$USER_ANA\" ... \"\$USER.ANA\"
+echo \"Nothing\" \"Nothing\$USER9WHO\" ... \"\$USER-9\"
+echo \$PWD\$PWD_FIL\$PWD.HERE
+echo \$\"USER\"
+echo \$\"\"
+\t ls\t-a
+ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls
+env | grep \"_=\"
+env | grep \"SHLVL\"
+echo oui | cat -e
+echo oui | echo non | echo P0MS | grep oui
+echo oui | echo non | echo P0MS | grep non
+echo oui | echo non | echo P0MS | grep P0MS
+cd .. | echo \"P0MS\"
+cd .. | echo \"P0MS\"
+cd / | echo \"P0MS\"
+cd .. | pwd
+ifconfig | grep \":\"
+ifconfig | grep nothing
+whoami | grep \$USER
+whoami | grep \$USER > tmp/file
+whoami | cat -e | cat -e > tmp/file		
+cat Makefile | grep \"FLAGS\"	
+cat Makefile | cat -e | cat -e
+cat Makefile | grep \"FLAGS\" | grep \"FLAGS\" | cat -e	
+export TEST=123 | cat -e | cat -e		
+unset TEST | cat -e	
+echo test | cat -e | cat -e | cat -e	
+whereis ls | cat -e | cat -e > test		
+echo test | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e
+ls -la | grep "."
+whereis grep > tmp/check
+whereis grep > /tmp/check
+ls -la > tmp/check
+exit 1337 1337
+exit -1337 -24
+exit 1337
+exit 1337 53 68
+exit 259
+exit -12030
+exit --1239312
+exit ++++1203020103
+exit +0
+exit ++++++0
+exit -----0
+exit azerty
+exit Benguerir
+exit a
+exit z
+exit \"1\"
+exit \"2\"
+exit \"+102\"
+exit \"1230\"
+exit \"+++1230\"
+exit \"1\"23
+exit \"2\"32\"32\"
+exit "'1337'"
+exit '1337'\"1337\"1337
+exit +'1337'\"1337\"1337
+exit -'1337'\"1337\"1337
+exit 922337203685477
+exit 922337203685477
+exit -4
+exit 1
+exit -1
+exit 1337
+exit 0
+exit --000
+exit +++++++000
+exit ++++3193912939
+exit ---31232103012
+exit \"Oh Darling\"
+exit echo
+exit cd ..
+exit 0 0
+exit 1337 1337 1337 1337 1337
+"exit echo Bensouda"cp
+exit exit exit exit exit exit
+export | grep variable" "export variable=randomtext
+export | grep var_" "export var_=0 var_=1 var_=2 var_=3
+export | grep value" "export value=1 export value+=2 export value+=3
+export | grep \"SHLVL"\
+export | grep \"PWD"\
+export | grep bensouda" "export bensouda=
+export | grep Nothing" "export Nothing
+export | grep export" "export export
+export | grep _____" "export _____=abc
+export | grep __ben_souda_" "export __ben_souda_=Herewego
+export | grep Nothing" "export Nothing=0=""
+export | grep exitstatus" "export exitstatus\$\?=true
+export | grep val\ue" "export val\\\lue=100
+export doesntexist=test \n unset doesntexist \n export | grep doesntexist
+unset PWD \n export | grep PWD
+unset PWD \n export | grep PWD
+unset OLDPWD \N export | grep OLDPWD
+unset PATH \n export | grep PATH
+unset PATH \n export | grep PATH
+unset PATH \n export | grep PATH
+export TES\\\\T=test \n unset TES\\\\T \n export | grep TEST\\\\T
+export _TEST=\"=\\| >> << | '' < > && ||\" \n unset _TEST \n export | grep _TEST
+export TES_T=test \n unset TES_T \n export | grep TES_T
+export TEST_=test \n unset TEST_ \n export | grep TEST_
+export ______=test unset ______ \n export | grep ______
+unset TERM_PROGRAM TERM SHELL TMPDIR Apple_PubSub_Socket_Render COLORFGBG TERM_PROGRAM_VERSION ZDOTDIR ORIGINAL_XDG_CURRENT_DESKTOP MallocNanoZone ITERM_PROFILE ITERM_SESSION_ID LC_TERMINAL  LC_TERMINAL_VERSION NVM_BIN NVM_CD_FLAGS NVM_DIR NVM_INC TERM_SESSION_ID ZSH USER COMMAND_MODE SSH_AUTH_SOCK __CF_USER_TEXT_ENCODING PAGER LSCOLORS PATH PWD LANG VSCODE_GIT_ASKPASS_EXTRA_ARGS XPC_FLAGS XPC_SERVICE_NAME VSCODE_INJECTION SHLVL HOME VSCODE_GIT_ASKPASS_MAIN LESS LOGNAME HOME_BREW VSCODE_GIT_IPC_HANDLE VSCODE_GIT_ASKPASS_NODE GIT_ASKPASS SECURITYSESSIONID COLORTERM \n unset USER \n export
+export TES\$?T \n unset TES\$?T \n export | grep TES\$?T
+cd ~ \n pwd
+cd .. \n pwd 
+cd . \n pwd
+cd /Users 	\n pwd
+cd // 	\n pwd
+cd '//' \n pwd
+cd ////// \n pwd
+cd ./././ \n pwd
+cd / \n pwd
+cd '/etc' \n pwd
+cd '/var' \n pwd
+cd ../../.. \n pwd
+cd .. \n pwd
+cd .. \n pwd
+cd '/' \n pwd
+cd \"doesntexist\" 2>/dev/null \n pwd
+echo '$'
+echo $	
+echo $\"$\"$ '$'$'$'
+echo ''$''
+echo \$abc$
+eChO \"\"$\"\"	
+"echo \"\$_\"" # As long as you return the last command your good to go
+echo	ls
+echo '\$1337' 
+echo \"\$1337\"
+echo \"\$0\"
+'e'\"c\"'h'o	\"POMS\"
+echo echo
+echo \"\t a\"
+eCHO ''	
+echo	
+echo '\$USER'''
+echo '\$USER'
+echo \"\$USER|'\$USER'\"
+echo مرحبا بالعالم	
+echo \"Salam Alikoum\"		
+echo Salam Alikoum		
+echo 'Salam Alikoum'		
+echo -n Salam Alikoum		
+echo -nn Salam Alikoum	
+echo -n -n -n Salam Alikoum
+echo \"-n\" Salam Alikoum	
+echo -n \"-n\" Salam Alikoum	
+echo \"-nnnn\" Salam Alikoum
+echo \"-nnnn\" -n Salam Alikoum
+echo \"-n -n -n\"-n Salam Alikoum		
+echo \"-n '-n'\" Salam Alikoum
+echo \$string\" | sed -e \"s/^\$prefix//\" -e \"s/\$suffix$//
+echo \$USER
+echo \"\$USER\"		
+echo \"'\$USER'\"		
+echo \" '\$USER' \"	
+echo text\"\$USER\"	
+echo text\"'\$USER'\" ' \$USER '
+echo \"Bensouda\"   \"\$USER\"    \"\$USER\"
+echo '              \$USER          '		
+echo               Bensouda \"\$USER\"            \"\$USER\"Rja F Allah	
+echo ''''''''''\$USER.ME''''''''''	
+echo \"\"\"\"\"\"\"\"\$USER\"\"\"\"\"\"\"\"		
+echo \$USER'\$USER'Once a gunner always a gunner \$USER COYG      \$USER ''	
+echo \$USER '' \$USER \$USER '' \$USER '' \$USER -n \$USER	
+echo \"\$USER\"\"\$USER\"\"\$USER\"		
+echo	guess whos back \"\$USER\"
+echo '"'$USER'"'
+echo \$USER \" \"		
+echo \"\$USER\"\"Users/\$USER/file\"\"'\$USER'\"'\$USER'
+echo \"\$USER\$USER\$USER\"
+echo '\$USER'\"\$USER\"'\$USER'		
+echo '\"\$USER\"''\$USER'\"\"\"\$USER\"	
+echo \" \$USER  \"'\$PWD'
+echo \" \$USER  \$ \"'\$PWD'		
+echo \$USER=4		
+echo \"\$NOT_EXIT POMS\"		
+echo \"\$USER POMS\"		
+echo \"\$USER\"		
+echo \$USER=POMS 
+echo \$USER
+echo \$?	
+echo \$PWD/file		
+echo \"\$PWD/file\"	
+echo \"Nothing\" \"Nothing\$USER_ANA\" ... \"\$USER.ANA\"
+echo \"Nothing\" \"Nothing\$USER9WHO\" ... \"\$USER-9\"
+echo \$PWD\$PWD_FIL\$PWD.HERE
+echo \$\"USER\"
+echo \$\"\"
+ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls
+env | grep \"_=\"
+env | grep \"SHLVL\"
+echo oui | cat -e
+echo oui | echo non | echo P0MS | grep oui
+echo oui | echo non | echo P0MS | grep non
+echo oui | echo non | echo P0MS | grep P0MS
+cd .. | echo \"P0MS\"
+cd .. | echo \"P0MS\"
+cd / | echo \"P0MS\"
+cd .. | pwd
+ifconfig | grep \":\"
+ifconfig | grep nothing
+whoami | grep $USER
+whoami | grep $USER > tmp/file
+whoami | cat -e | cat -e > tmp/file		
+cat Makefile | grep "FLAGS"	
+cat Makefile | cat -e | cat -e
+cat Makefile | grep "FLAGS" | grep "FLAGS" | cat -e	
+export TEST=123 | cat -e | cat -e		
+unset TEST | cat -e	
+echo test | cat -e | cat -e | cat -e	
+whereis ls | cat -e | cat -e > test		
+echo test | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e
+ls -la | grep "."
+"whereis grep > tmp/check" # Seg Fault use fsanitizer
+"whereis grep > /tmp/check" # Seg Fault use fsanitizer
+ls -la > tmp/check
+exit 1337 1337
+exit -1337 -24
+exit 1337
+exit 1337 53 68
+exit 259
+exit -12030
+exit --1239312
+exit ++++1203020103
+exit +0
+exit ++++++0
+exit -----0
+exit azerty
+exit Benguerir
+exit a
+exit z
+exit \"1\"
+exit \"2\"
+exit \"+102\"
+exit \"1230\"
+exit \"+++1230\"
+exit \"1\"23
+exit \"2\"32\"32\"
+exit "'1337'"
+exit '1337'\"1337\"1337
+exit +'1337'\"1337\"1337
+exit -'1337'\"1337\"1337
+exit 922337203685477
+exit 922337203685477
+exit -4
+exit 1
+exit -1
+exit 1337
+exit 0
+exit --000
+exit +++++++000
+exit ++++3193912939
+exit ---31232103012
+exit \"Oh Darling\"
+exit echo
+exit cd ..
+exit 0 0
+exit 1337 1337 1337 1337 1337
+exit echo Bensouda
+exit exit exit exit exit exit
+export | grep variable" "export variable=randomtext
+export | grep var_" "export var_=0 var_=1 var_=2 var_=3
+export | grep value" "export value=1 export value+=2 export value+=3
+export | grep \"SHLVL"\
+export | grep \"PWD"\
+export | grep bensouda" "export bensouda=
+export | grep Nothing" "export Nothing
+export | grep export" "export export
+export | grep _____" "export _____=abc
+export | grep __ben_souda_" "export __ben_souda_=Herewego
+export | grep Nothing" "export Nothing=0=""
+export | grep exitstatus" "export exitstatus\$\?=true
+export | grep val\ue" "export val\\\lue=100
+export doesntexist=test \n unset doesntexist \n export | grep doesntexist
+unset PWD \n export | grep PWD
+unset PWD \n export | grep PWD
+unset OLDPWD \N export | grep OLDPWD
+unset PATH \n export | grep PATH
+unset PATH \n export | grep PATH
+unset PATH \n export | grep PATH
+export TES\\\\T=test \n unset TES\\\\T \n export | grep TEST\\\\T
+export _TEST=\"=\\| >> << | '' < > && ||\" \n unset _TEST \n export | grep _TEST
+export TES_T=test \n unset TES_T \n export | grep TES_T
+export TEST_=test \n unset TEST_ \n export | grep TEST_
+export ______=test unset ______ \n export | grep ______
+unset TERM_PROGRAM TERM SHELL TMPDIR Apple_PubSub_Socket_Render COLORFGBG TERM_PROGRAM_VERSION ZDOTDIR ORIGINAL_XDG_CURRENT_DESKTOP MallocNanoZone ITERM_PROFILE ITERM_SESSION_ID LC_TERMINAL  LC_TERMINAL_VERSION NVM_BIN NVM_CD_FLAGS NVM_DIR NVM_INC TERM_SESSION_ID ZSH USER COMMAND_MODE SSH_AUTH_SOCK __CF_USER_TEXT_ENCODING PAGER LSCOLORS PATH PWD LANG VSCODE_GIT_ASKPASS_EXTRA_ARGS XPC_FLAGS XPC_SERVICE_NAME VSCODE_INJECTION SHLVL HOME VSCODE_GIT_ASKPASS_MAIN LESS LOGNAME HOME_BREW VSCODE_GIT_IPC_HANDLE VSCODE_GIT_ASKPASS_NODE GIT_ASKPASS SECURITYSESSIONID COLORTERM \n unset USER \n export
+export TES\$?T \n unset TES\$?T \n export | grep TES\$?T
+cd ~ \n pwd
+cd .. \n pwd 
+cd . \n pwd
+cd /Users 	\n pwd
+cd // 	\n pwd
+cd '//' \n pwd
+cd ////// \n pwd
+cd ./././ \n pwd
+cd / \n pwd
+cd '/etc' \n pwd
+cd '/var' \n pwd
+cd ../../.. \n pwd
+cd .. \n pwd
+cd .. \n pwd
+cd '/' \n pwd
+cd \"doesntexist\" 2>/dev/null \n pwd
+/bin/ls
+/usr/sbin/ac
+/usr/bin/ssh
+\"\"
+                                                                                 l
+echo "\t Poms"
+echo -nnnnn -nnnnn -nnnnn -nnnnn -nnnnn -nnnnn -nnnnn -nnnnn -nnnnn Salam Alikoum -nnnnn
+echo -n Salam Alikoum	
+echo \'\-n\'\  -n -n -n Salam Alikoum		
+exit 1337 42
+exit -1-3-3-7
+exit exit exit +21 exit
+echo '>'
+expr $? + $?
+/bin/ls filethatdoesntexist
+echo '"cat     lol.c | cat > lol.c"' 
+echo '"cat     $FILE | cat > $USER"' 
+echo '"cat     lol.c | cat > lol.c"' 
+echo "\'\$USER\'"
+echo "env"
+echo "env" "|" "grep" \'"$NONEXIT"\'
+echo 00\\\'pp ; echo 00\\\\\'pp
+echo ';;'
+echo ";;;"
+echo 00\\\\'pp' ; echo “./hello”. ; echo ./hello ; echo ello
+Echo ; echo \n ' \n this is the; "first line"' ; echo "and right here;;; 'We have the second'" ; echo and" a fe"'w 'here'; with some slash and quotes   .'   '\' ; echo '\\' ; echo "\\" ; echo    "\"" ; echo   \\ ; echo   \' ; echo   \" "\\"    "\""   \\   \'   \"
+echo /$"123$USER"
+echo | cd .. | pwd
+echo DOET HET NIET > test1 | cat test1
+echo hallo >x1 >x2 >x3 | echo hoi
+echo $1 234
+echo $POEP hallo
+echo "hallo$"
+echo "\poep"
+echo $/
+echo $2$4
+echo $
+echo "123\"456"
+echo $?
+echo $?
+echo $?
+echo \"test\"
+echo"
+echo
+echo $TEST
+echo $PWD ; echo $HOME ; echo "$PWD" ; echo '$PWD' ; echo "$HOME"
+echo > ilovewords.txt count me ; wc ilovewords.txt
+echo 'how are you'
+echo '$PWD'
+echo > "hardesttest.txt"
+echo adding stuff >> working.txt
+echo more stuff >> working.txt
+echo > working.txt
+echo dit > test1 gaat > test2 goed > test3
+echo dit > test1 gaat > test2 goed > test3 > test4
+echo > doethet ; echo hoi >> doethet "of niet" ; echo clear > "doethet" ; echo test > working.txt ; echo > newfile.txt hardertest
+echo hallo daar | echo hoi maran
+echo
+echo hallo daar
+"echo" hallo daar
+echo "hallo daar"
+echo hallo daar | echo hoi maran
+echo hallo daar ; echo hoi maran
+echo hallo >file1 >file2
+echo hallo >file1 >file2 maran
+echo hallo >file1 >file2 >>file3 maran siemons
+echo hallo <file1 >file2
+echo $USER""
+echo $USER"
+echo $USER_
+echo $
+echo 123$USER----
+echo 123$USER----$
+echo abc$USERdef
+echo abc$USER123
+echo abc$POEPdef
+echo $USER "$USER" '$USER'
+echo $POEP
+echo $POEP $MEERPOEP
+echo hallo $POEP
+echo $POEP hallo
+echojhdfjhjdkh
+echo | poep
+ echo | cd .. | pwd
+ echo
+echo
+echo hoi
+echo hallo 'ma\"ran' siemons
+echo hallo 'ma\'ran' siemons
+echo hallo 'ma\'ran'' siemons
+echo 'ma\'									Hij ziet de \ niet als escape, print gewoon \
+echo 'hallo$USER'
+echo 'hallo\$USER'
+echo '\$?'
+echo '$USER'
+echo '\$USER'
+echo '"\$USER"'
+echo "hallo"maran"
+echo "\poep"
+echo \poep
+echo "poep\""
+echo "poep\'"
+echo "poep\"
+echo "hallo\"\poep"
+echo hallo""
+echo "hoi$USERmaran"
+echo "$USER"
+cat working.txt | grep stuff | echo tim
+ls filedoesnotexist | grep notme | echo "TEST"
+echo "'\$USER'"
+echo "\$USER"							
+echo "123\"456"
+echo "\poep"
+echo "123\'456"
+echo "hallo$"
+echo \"
+echo \$?
+echo '$USER'$USER
+echo '$USER'$USER\$USER/"$USER"
+echo hallo"1234"maran"$USER"'/$USER'"/$USER"'poep''poep2'"maran"'ellende'END
+echo "$USER"'/$USER'
+echo 'poep''poep2'"maran"'ellende'END
+echo 'poep2'"maran"'ellende'
+echo 123"hallo$"456
+echo $1234
+echo $_1234
+echo hallo
+echo hallo | echo hoi
+echo hallo ; echo hoi
+echo hallo >x1 >x2 >x3 | echo hoi					
+echo hallo >x1 >x2 >x3 ; echo hoi				
+echo hallo | echo poep >x1 >x2						
+echo hallo ; echo poep >x1 >x2						
+echo hallo | echo hoi | cat
+echo hallo | echo hoi > y1 >y2 | cat -e
+echo hoi > y1 >y2 ; cat -e
+echo hallo | echo hoi > y1 >y2 ; cat -e
+echo $USERhallo
+echo $2$*
+echo $hallo"poep"
+echo /$"123$USER"
+echo $222
+echo hallo$USER***$USER$2$
+echo $a5aap
+echo $_poep
+echo "$####jgklj"
+echo hallo$\abc
+echo hallo$\\abc
+echo hallo$"USER"
+echo hallo$"POEP"
+echo hallo$'USER'
+echo $halllo###
+echo $USER9582309582529
+echo $
+echo $USER
+echo $USER'	
+echo 123$USER----
+echo 123$USER----$		
+echo abc$USERdef
+echo abc$USER123
+echo abc$POEPdef
+echo $%%%%jlkjtwejt				
+echo %%$
+echo $####jgklj$USER
+echo $@@@lkgj
+echo $"USERhallo"
+echo "$2$*"
+echo "$222"
+echo "hallo$USER***$USER$2$"
+echo "$_poep"
+echo "$a5aap"
+echo "$halllo###"
+echo "$USER9582309582529"
+echo "$"						
+echo hallo"$"abc				
+echo hallo"$POEP"abc
+echo hallo"$USER"abc
+echo "$USER"
+echo "$USER'"	
+echo "$USER_"
+echo "abc$USERdef"
+echo "abc$USER123"
+echo "abc$POEPdef"
+echo "$%%%%jlkjtwejt"
+echo "%%$"
+echo "$@@@lkgj"
+echo $"hallo"
+echo $hallo
+echo $hallo"poep"	
+echo "hallo\"\poep"			
+echo $"etet"
+echo "$53535"
+echo “$\hallo”
+echo $"\hallo"
+echo "\\hallo"
+echo "hallo\\hoi"
+echo "\\$USER"
+echo "123\"456"
+echo "123\$456"
+echo "123\`456"
+echo "123\\456"
+echo "123\!456"
+echo "1234"
+echo "12\34"
+echo "1234\"
+echo \"1234"
+echo "1\a234"
+echo \1
+echo "\1234"
+echo "1234" \; echo hoi
+echo "1234\\"
+echo '1234\\'
+echo '1234'
+echo '12\34'
+echo '1234\'
+echo \'1234'
+echo '1\a234'
+echo '\1234'
+echo '1234' \; echo hoi
+echo '1234\\'
+echo '1234\\'
+echo \a
+echo \b
+echo \c
+echo \d
+echo \e
+echo \!
+echo \"
+echo \#
+echo \$
+echo \%
+echo \&
+echo \'
+echo \(
+echo \)
+echo \*
+echo \+
+echo \,
+echo \-
+echo \.
+echo \/
+echo \0
+echo \1
+echo \2
+echo \3
+echo \4
+echo \5
+echo \6
+echo \7
+echo \8
+echo \9
+echo \:
+echo \;
+echo \<
+echo \=
+echo \>
+echo \?
+echo \@
+echo \A
+echo \B
+echo \C
+echo \D
+echo \E
+echo \F
+echo \G
+echo \H
+echo \I
+echo \J
+echo \K
+echo \L
+echo \M
+echo \N
+echo \O
+echo \P
+echo \Q
+echo \R
+echo \S
+echo \T
+echo \U
+echo \V
+echo \W
+echo \X
+echo \Y
+echo \Z
+echo \[
+echo \\
+echo \]
+echo \^
+echo \_
+echo \`
+echo \a
+echo \b
+echo \c
+echo \d
+echo \e
+echo \f
+echo \g
+echo \h
+echo \i
+echo \j
+echo \k
+echo \l
+echo \m
+echo \n
+echo \o
+echo \p
+echo \q
+echo \r
+echo \s
+echo \t
+echo \u
+echo \v
+echo \w
+echo \x
+echo \y
+echo \z
+echo \{
+echo \|
+echo \}
+echo \~
+echo "\!"
+echo "\""
+echo "\#"
+echo "\$"
+echo "\%"
+echo "\&"
+echo "\'"
+echo "\("
+echo "\)"
+echo "\*"
+echo "\+"
+echo "\,"
+echo "\-"
+echo "\."
+echo "\/"
+echo "\0"
+echo "\1"
+echo "\2"
+echo "\3"
+echo "\4"
+echo "\5"
+echo "\6"
+echo "\7"
+echo "\8"
+echo "\9"
+echo "\:"
+echo "\;"
+echo "\<"
+echo "\="
+echo "\>"
+echo "\?"
+echo "\@"
+echo "\A"
+echo "\B"
+echo "\C"
+echo "\D"
+echo "\E"
+echo "\F"
+echo "\G"
+echo "\H"
+echo "\I"
+echo "\J"
+echo "\K"
+echo "\L"
+echo "\M"
+echo "\N"
+echo "\O"
+echo "\P"
+echo "\Q"
+echo "\R"
+echo "\S"
+echo "\T"
+echo "\U"
+echo "\V"
+echo "\W"
+echo "\X"
+echo "\Y"
+echo "\Z"
+echo "\["
+echo "\\"
+echo "\]"
+echo "\^"
+echo "\_"
+echo "\`"
+echo "\a"
+echo "\b"
+echo "\c"
+echo "\d"
+echo "\e"
+echo "\f"
+echo "\g"
+echo "\h"
+echo "\i"
+echo "\j"
+echo "\k"
+echo "\l"
+echo "\m"
+echo "\n"
+echo "\o"
+echo "\p"
+echo "\q"
+echo "\r"
+echo "\s"
+echo "\t"
+echo "\u"
+echo "\v"
+echo "\w"
+echo "\x"
+echo "\y"
+echo "\z"
+echo "\{"
+echo "\|"
+echo "\}"
+echo "\~"
+echo '\!'
+echo '\"'
+echo '\#'
+echo '\$'
+echo '\%'
+echo '\&'
+echo '\''
+echo '\('
+echo '\)'
+echo '\*'
+echo '\+'
+echo '\,'
+echo '\-'
+echo '\.'
+echo '\/'
+echo '\0'
+echo '\1'
+echo '\2'
+echo '\3'
+echo '\4'
+echo '\5'
+echo '\6'
+echo '\7'
+echo '\8'
+echo '\9'
+echo '\:'
+echo '\;'
+echo '\<'
+echo '\='
+echo '\>'
+echo '\?'
+echo '\@'
+echo '\A'
+echo '\B'
+echo '\C'
+echo '\D'
+echo '\E'
+echo '\F'
+echo '\G'
+echo '\H'
+echo '\I'
+echo '\J'
+echo '\K'
+echo '\L'
+echo '\M'
+echo '\N'
+echo '\O'
+echo '\P'
+echo '\Q'
+echo '\R'
+echo '\S'
+echo '\T'
+echo '\U'
+echo '\V'
+echo '\W'
+echo '\X'
+echo '\Y'
+echo '\Z'
+echo '\['
+echo '\\'
+echo '\]'
+echo '\^'
+echo '\_'
+echo '\`'
+echo '\a'
+echo '\b'
+echo '\c'
+echo '\d'
+echo '\e'
+echo '\f'
+echo '\g'
+echo '\h'
+echo '\i'
+echo '\j'
+echo '\k'
+echo '\l'
+echo '\m'
+echo '\n'
+echo '\o'
+echo '\p'
+echo '\q'
+echo '\r'
+echo '\s'
+echo '\t'
+echo '\u'
+echo '\v'
+echo '\w'
+echo '\x'
+echo '\y'
+echo '\z'
+echo '\{'
+echo '\|'
+echo '\}'
+echo '\~'
+echo -n -n -n $potato$orange; unset 
+orange potato; echo $potato$orange
+echo -nn -nnnnnnn -n -nnnn -nnnh
+echo "1234"
+echo "12\34"
+echo "1234\"
+echo \"1234"
+echo "1\a234"
+echo \1
+echo "\1234"
+echo "1234" \; echo hoi
+echo "1234\\"
+echo '1234\\'
+echo '1234'
+echo '12\34'
+echo '1234\'
+echo \'1234'
+echo '1\a234'
+echo '\1234'
+echo '1234' \; echo hoi
+echo '1234\\'
+echo '1234\\'
+echo \a
+echo \b
+echo \c
+echo \d
+echo \e
+echo \!
+echo \"
+echo \#
+echo \$
+echo \%
+echo \&
+echo \'
+echo \(
+echo \)
+echo \*
+echo \+
+echo \,
+echo \-
+echo \.
+echo \/
+echo \0
+echo \1
+echo \2
+echo \3
+echo \4
+echo \5
+echo \6
+echo \7
+echo \8
+echo \9
+echo \:
+echo \;
+echo \<
+echo \=
+echo \>
+echo \?
+echo \@
+echo \A
+echo \B
+echo \C
+echo \D
+echo \E
+echo \F
+echo \G
+echo \H
+echo \I
+echo \J
+echo \K
+echo \L
+echo \M
+echo \N
+echo \O
+echo \P
+echo \Q
+echo \R
+echo \S
+echo \T
+echo \U
+echo \V
+echo \W
+echo \X
+echo \Y
+echo \Z
+echo \[
+echo \\
+echo \]
+echo \^
+echo \_
+echo \`
+echo \a
+echo \b
+echo \c
+echo \d
+echo \e
+echo \f
+echo \g
+echo \h
+echo \i
+echo \j
+echo \k
+echo \l
+echo \m
+echo \n
+echo \o
+echo \p
+echo \q
+echo \r
+echo \s
+echo \t
+echo \u
+echo \v
+echo \w
+echo \x
+echo \y
+echo \z
+echo \{
+echo \|
+echo \}
+echo \~
+echo "\!"
+echo "\""
+echo "\#"
+echo "\$"
+echo "\%"
+echo "\&"
+echo "\'"
+echo "\("
+echo "\)"
+echo "\*"
+echo "\+"
+echo "\,"
+echo "\-"
+echo "\."
+echo "\/"
+echo "\0"
+echo "\1"
+echo "\2"
+echo "\3"
+echo "\4"
+echo "\5"
+echo "\6"
+echo "\7"
+echo "\8"
+echo "\9"
+echo "\:"
+echo "\;"
+echo "\<"
+echo "\="
+echo "\>"
+echo "\?"
+echo "\@"
+echo "\A"
+echo "\B"
+echo "\C"
+echo "\D"
+echo "\E"
+echo "\F"
+echo "\G"
+echo "\H"
+echo "\I"
+echo "\J"
+echo "\K"
+echo "\L"
+echo "\M"
+echo "\N"
+echo "\O"
+echo "\P"
+echo "\Q"
+echo "\R"
+echo "\S"
+echo "\T"
+echo "\U"
+echo "\V"
+echo "\W"
+echo "\X"
+echo "\Y"
+echo "\Z"
+echo "\["
+echo "\\"
+echo "\]"
+echo "\^"
+echo "\_"
+echo "\`"
+echo "\a"
+echo "\b"
+echo "\c"
+echo "\d"
+echo "\e"
+echo "\f"
+echo "\g"
+echo "\h"
+echo "\i"
+echo "\j"
+echo "\k"
+echo "\l"
+echo "\m"
+echo "\n"
+echo "\o"
+echo "\p"
+echo "\q"
+echo "\r"
+echo "\s"
+echo "\t"
+echo "\u"
+echo "\v"
+echo "\w"
+echo "\x"
+echo "\y"
+echo "\z"
+echo "\{"
+echo "\|"
+echo "\}"
+echo "\~"
+echo '\!'
+echo '\"'
+echo '\#'
+echo '\$'
+echo '\%'
+echo '\&'
+echo '\''
+echo '\('
+echo '\)'
+echo '\*'
+echo '\+'
+echo '\,'
+echo '\-'
+echo '\.'
+echo '\/'
+echo '\0'
+echo '\1'
+echo '\2'
+echo '\3'
+echo '\4'
+echo '\5'
+echo '\6'
+echo '\7'
+echo '\8'
+echo '\9'
+echo '\:'
+echo '\;'
+echo '\<'
+echo '\='
+echo '\>'
+echo '\?'
+echo '\@'
+echo '\A'
+echo '\B'
+echo '\C'
+echo '\D'
+echo '\E'
+echo '\F'
+echo '\G'
+echo '\H'
+echo '\I'
+echo '\J'
+echo '\K'
+echo '\L'
+echo '\M'
+echo '\N'
+echo '\O'
+echo '\P'
+echo '\Q'
+echo '\R'
+echo '\S'
+echo '\T'
+echo '\U'
+echo '\V'
+echo '\W'
+echo '\X'
+echo '\Y'
+echo '\Z'
+echo '\['
+echo '\\'
+echo '\]'
+echo '\^'
+echo '\_'
+echo '\`'
+echo '\a'
+echo '\b'
+echo '\c'
+echo '\d'
+echo '\e'
+echo '\f'
+echo '\g'
+echo '\h'
+echo '\i'
+echo '\j'
+echo '\k'
+echo '\l'
+echo '\m'
+echo '\n'
+echo '\o'
+echo '\p'
+echo '\q'
+echo '\r'
+echo '\s'
+echo '\t'
+echo '\u'
+echo '\v'
+echo '\w'
+echo '\x'
+echo '\y'
+echo '\z'
+echo '\{'
+echo '\|'
+echo '\}'
+echo '\~'
+env
+export ; export a="\\" ; export b='\\' ; export c="\b" ; export
+env
+export a=hijdoehet ; export
+export test=working ; export
+export test1
+export
+export test1=
+export
+export 1test
+export _TEST=DOethetwelmetunderscore
+env
+env ; echo ; export a=hijdoehet ; echo ; env ; echo ; export test=working;echo ;env ; echo ; export test1; export; echo ; env ; echo ; export test1= ; echo ; env
+export
+export ZZZ
+export ZZZ=
+export ; export a="\\" ; export b='\\' ; export c="\b" ; export
+export LS="ls -la" ; ls
+export TEST="evenchecken"
+export | grep -e "PWD="
+export | grep -e "HOME="
+export PATH="test:working:multiplepath:directory1:directory2"
+export
+echo hi ; echo ; echo ; echo ; export ; env ; echo ; echo ; echo ; echo working ; echo $PWD
+export kip=ei=koe===melk
+export TEST=/Users/maran/Desktop/minishell
+export TEST_$USER=hallo$LOGNAME
+export
+export ZZZ
+export ZZZ=
+export ZZZ=new_value
+export ZZZ======new
+export ZZZ=new YYY=new2 XXX===new3
+export $USER
+export TEST=$USER4857987345
+export 123$USER---
+export MARANSIEMONS
+export MARANSIEMONS=lief
+export =
+export +=
+export hello=hi hello+=wow
+export $HULLO=there; echo $HULLO
+export potato=tomato orange=doorhinge; 
+export po1=yes po2=no; echo $po1 $po2; 
+/bin/ls
+/bin/pwd
+ls -la
+pwd
+/bin/chmod
+/bin/ls -la
+/bin/ls
+/bin/ls doesnotexist
+ctrl-C
+ctrl-D
+ctrl-\
+asdf ctrl-C
+asdf ctrl-D
+cat ctrl-C
+asdf ctrl-\
+cat ctrl-D
+hoi
+"
+hallo$
+unset a ; env ; unset test ; unset test1 ; env
+unset PATH
+ls
+wc
+awk
+cd ..
+pwd
+/bin/ls
+cd ..
+pwd
+/bin/ls
+cd notworking
+cd .
+cd .. ;pwd;/bin/ls;cd .. ;      pwd    ;/bin/ls;     cd notworking;     cd .
+cd ~
+cd $IETSONBESTAANDS
+cd $GEK ..
+cd $NOTHING $MORENOTHING ..
+pwd
+pwd .
+pwd ..
+cd ../Desktop
+ls -la
+awk '{ print }' /etc/passwd
+cat < test4
+< test4 cat
+> newfile ; > working.txt
+< working.txt
+< notworking.txt
+cat | cat -e | cat
+cd
+cd ~/
+hallo
+hallo
+cd $IETSONBESTAANDS
+cd $IETSONBESTAANDS
+cd $POEP $MEERPOEP ..
+cd poep
+ls
+ls
+test
+/bin/ls
+/binn/ls
+hallo ma\"ran siemons
+Multiple line error
+hallo ma\ran siemons						Hij ziet de \ niet als escape, print gewoon \
+ma\							
+hallo$USER
+hallo\$USER
+\$?
+$USER
+\$USER
+\$USER
+\poep
+poep
+poep"
+poep\'
+hallo"\poep
+hallo
+maran
+$USER
+$USER
+123"456
+\poep
+123\'456
+hallo$
+"
+$USERmaran
+$USERmaran$USER/maran
+hallo1234maranmaran/$USER/maranpoeppoep2maranellendeEND
+maran/$USER
+poeppoep2maranellendeEND
+poep2maranellende
+123hallo$456
+echt bash
+cat x1 | grep Makefile
+ls > x1 ; cat x1 | grep main
+hallo$abc
+hallo$\abc
+halloUSER
+halloPOEP
+halloUSER
+hallo$USER
+hallo$abc
+“$rewtwet”
+$"
+$'
+\hallo
+\hallo
+hallo\hoi
+\maran
+123"456
+123$456
+123`456
+123\456
+123\!456
+mkdir test; cd test; rm -rf ../test; 
+pwd; cd ..
+$TEST$TEST$TEST$TEST
+cp minishell test; chmod u-x test; 
+./test; echo $?
+/bin/ls
+exit a aa a
+echo ";;;;;"
+/bin/pwd
+ls -la
+pwd
+/bin/chmod
+/bin/ls -la
+echo 00\\\'pp ; echo 00\\\\\'pp
+echo 00\\\\'pp' ; echo “./hello”. ; echo ./hello ; echo ello
+Echo ; echo \n ' \n this is the; "first line"' ; echo "and right here;;; 'We have the second'" ; echo and" a fe"'w 'here'; with some slash and quotes   .'   '\' ; echo '\\' ; echo "\\" ; echo    "\"" ; echo   \\ ; echo   \' ; echo   \" "\\"    "\""   \\   \'   \"
+echo /$"123$USER"
+echo | cd .. | pwd
+echo DOET HET NIET > test1 | cat test1
+echo hallo >x1 >x2 >x3 | echo hoi
+echo $POEP hallo
+echo "hallo$"
+echo "\poep"
+echo $/
+echo $
+echo "123\"456"
+exit 123 123 123
+exit 1234
+echo $?
+/bin/ls
+echo $?
+/bin/ls doesnotexist
+echo $?
+echo hi ; echo ; echo ; echo ; export ; env ; echo ; echo ; echo ; echo working ; echo $PWD
+ctrl-C
+ctrl-D
+ctrl-\
+asdf ctrl-C
+asdf ctrl-D
+cat ctrl-C
+asdf ctrl-\
+cat ctrl-D
+echo \"test\"
+echo"
+hoi
+"
+echo
+hallo$
+env
+export ; export a="\\" ; export b='\\' ; export c="\b" ; export
+env
+export a=hijdoehet ; export
+export test=working ; export
+export test1
+export
+export test1=
+export
+export 1test
+export _TEST=DOethetwelmetunderscore
+env
+env ; echo ; export a=hijdoehet ; echo ; env ; echo ; export test=working;echo ;env ; echo ; export test1; export; echo ; env ; echo ; export test1= ; echo ; env
+export
+export ZZZ
+export ZZZ=
+export ; export a="\\" ; export b='\\' ; export c="\b" ; export
+export LS="ls -la" ; ls
+export TEST="evenchecken"
+echo $TEST
+unset a ; env ; unset test ; unset test1 ; env
+unset PATH
+ls
+wc
+awk
+echo $PWD ; echo $HOME ; echo "$PWD" ; echo '$PWD' ; echo "$HOME"
+cd ..
+pwd
+/bin/ls
+cd ..
+pwd
+/bin/ls
+cd notworking
+cd .
+cd .. ;pwd;/bin/ls;cd .. ;      pwd    ;/bin/ls;     cd notworking;     cd .
+cd ~
+cd $IETSONBESTAANDS
+cd $GEK ..
+cd $NOTHING $MORENOTHING ..
+pwd
+pwd .
+pwd ..
+cd ../Desktop
+ls -la
+echo > ilovewords.txt count me ; wc ilovewords.txt
+awk '{ print }' /etc/passwd
+export PATH="test:working:multiplepath:directory1:directory2"
+export
+echo 'how are you'
+echo '$PWD'
+echo > "hardesttest.txt"
+echo adding stuff >> working.txt
+echo more stuff >> working.txt
+echo > working.txt
+echo dit > test1 gaat > test2 goed > test3
+echo dit > test1 gaat > test2 goed > test3 > test4
+cat < test4
+< test4 cat
+> newfile ; > working.txt
+< working.txt
+< notworking.txt
+echo > doethet ; echo hoi >> doethet "of niet" ; echo clear > "doethet" ; echo test > working.txt ; echo > newfile.txt hardertest
+export | grep -e "HOME="
+echo hallo daar | echo hoi maran
+cat working.txt | grep stuff | echo tim
+cat | cat -e | cat
+ls filedoesnotexist | grep notme | echo "TEST"
+export | grep -e "PWD="
+echo
+echo hallo daar
+"echo" hallo daar
+echo "hallo daar"
+echo hallo daar | echo hoi maran
+echo hallo daar ; echo hoi maran
+echo hallo >file1 >file2
+echo hallo >file1 >file2 maran
+echo hallo >file1 >file2 >>file3 maran siemons
+echo hallo <file1 >file2
+echo $USER""
+echo $USER"
+echo $USER_
+cd
+export
+export ZZZ
+export ZZZ=
+export ZZZ=new_value
+export ZZZ======new
+export ZZZ=new YYY=new2 XXX===new3
+export $USER
+export TEST=$USER4857987345
+export 123$USER---
+export MARANSIEMONS
+export MARANSIEMONS=lief
+echo $
+echo 123$USER----
+echo 123$USER----$
+echo abc$USERdef
+echo abc$USER123
+echo abc$POEPdef
+echo $USER "$USER" '$USER'
+export TEST_$USER=hallo$LOGNAME
+echo $POEP
+echo $POEP $MEERPOEP
+echo hallo $POEP
+hallo
+echo $POEP hallo
+hallo
+export TEST=/Users/maran/Desktop/minishell
+cd $IETSONBESTAANDS
+cd $IETSONBESTAANDS
+cd $POEP $MEERPOEP ..
+echojhdfjhjdkh
+echo | poep
+ echo | cd .. | pwd
+ echo
+echo
+echo hoi
+cd poep
+ls
+ls
+test
+exit
+exit 99
+exit 3 a
+exit 55 99
+/bin/ls
+/binn/ls
+echo hallo 'ma\"ran' siemons
+hallo ma\"ran siemons
+echo hallo 'ma\'ran' siemons
+Multiple line error
+echo hallo 'ma\'ran'' siemons
+hallo ma\ran siemons						Hij ziet de \ niet als escape, print gewoon \
+echo 'ma\'									Hij ziet de \ niet als escape, print gewoon \
+ma\
+echo 'hallo$USER'							
+hallo$USER
+echo 'hallo\$USER'
+hallo\$USER
+echo '\$?'
+\$?
+echo '$USER'
+$USER
+echo '\$USER'
+\$USER
+echo '"\$USER"'
+\$USER
+echo "hallo"maran"
+echo "\poep"
+\poep
+echo \poep
+poep
+echo "poep\""
+poep"
+echo "poep\'"
+poep\'
+echo "poep\"
+echo "hallo\"\poep"
+hallo"\poep
+echo hallo""
+hallo
+echo "hoi$USERmaran"
+echo "$USER"
+maran
+echo "'\$USER'"
+$USER
+echo "\$USER"							
+$USER
+echo "123\"456"
+123"456
+echo "\poep"
+\poep
+echo "123\'456"
+123\'456
+echo "hallo$"
+hallo$
+echo \"
+"
+echo \$?
+echo '$USER'$USER
+$USERmaran
+echo '$USER'$USER\$USER/"$USER"
+$USERmaran$USER/maran
+echo hallo"1234"maran"$USER"'/$USER'"/$USER"'poep''poep2'"maran"'ellende'END
+hallo1234maranmaran/$USER/maranpoeppoep2maranellendeEND
+echo "$USER"'/$USER'
+maran/$USER
+echo 'poep''poep2'"maran"'ellende'END
+poeppoep2maranellendeEND
+echo 'poep2'"maran"'ellende'
+poep2maranellende
+echo 123"hallo$"456
+export kip=ei=koe===melk
+echo $_1234
+echo hallo
+echo hallo | echo hoi
+echo hallo ; echo hoi
+echo hallo >x1 >x2 >x3 | echo hoi					
+echo hallo >x1 >x2 >x3 ; echo hoi				
+echo hallo | echo poep >x1 >x2						
+echo hallo ; echo poep >x1 >x2						
+echo hallo | echo hoi | cat
+echo hallo | echo hoi > y1 >y2 | cat -e
+echo hoi > y1 >y2 ; cat -e
+echo hallo | echo hoi > y1 >y2 ; cat -e
+echt bash
+echo "hello | this is some stuff > touch this file" | grep more
+env | leaks
+cat x1 | grep Makefile
+ls > x1 ; cat x1 | grep main
+echo $USERhallo
+echo $hallo"poep"
+echo /$"123$USER"
+echo $a5aap
+echo $_poep
+echo hallo$\abc
+hallo$abc
+echo hallo$\\abc
+hallo$\abc
+echo hallo$"USER"
+halloUSER
+echo hallo$"POEP"
+halloPOEP
+echo hallo$'USER'
+halloUSER
+echo $halllo###
+echo $USER9582309582529
+echo $
+echo $USER
+echo $USER'	
+echo 123$USER----
+echo 123$USER----$		
+echo abc$USERdef
+echo abc$USER123
+echo abc$POEPdef
+echo $%%%%jlkjtwejt				
+echo %%$
+echo $"USERhallo"
+echo "$222"
+echo "hallo$USER***$USER$2$"
+echo "$_poep"
+echo "$a5aap"
+echo "$halllo###"
+echo "$USER9582309582529"
+hallo$USER
+echo "$"						
+echo hallo"$"abc				
+hallo$abc
+echo hallo"$POEP"abc
+echo hallo"$USER"abc
+echo "$USER"
+echo "$USER'"	
+echo "$USER_"
+echo "abc$USERdef"
+echo "abc$USER123"
+echo "abc$POEPdef"
+echo "$%%%%jlkjtwejt"
+echo "%%$"
+echo $"hallo"
+echo $hallo
+echo $hallo"poep"	
+echo "hallo\"\poep"			
+echo $"etet"
+“$rewtwet”
+echo "$53535"
+$"
+$'
+echo “$\hallo”
+echo $"\hallo"
+\hallo
+echo "\\hallo"
+\hallo
+echo "hallo\\hoi"
+hallo\hoi
+echo "\\$USER"
+\maran
+echo "123\"456"
+123"456
+echo "123\$456"
+echo "123\\456"
+123\456
+echo "123\!456"
+123\!456
+echo "1234"
+echo "12\34"
+echo "1234\"
+echo \"1234"
+echo "1\a234"
+echo \1
+echo "\1234"
+echo "1234\\"
+echo '1234\\'
+echo '1234'
+echo '12\34'
+echo '1234\'
+echo \'1234'
+echo '1\a234'
+echo '\1234'
+echo '1234\\'
+echo '1234\\'
+echo \a
+echo \b
+echo \c
+echo \d
+echo \e
+echo \!
+echo \"
+echo \#
+echo \$
+echo \%
+echo \&
+echo \'
+echo \(
+echo \)
+echo \*
+echo \+
+echo \,
+echo \-
+echo \.
+echo \/
+echo \0
+echo \1
+echo \2
+echo \3
+echo \4
+echo \5
+echo \6
+echo \7
+echo \8
+echo \9
+echo \:
+echo \=
+echo \?
+echo \@
+echo \A
+echo \B
+echo \C
+echo \D
+echo \E
+echo \F
+echo \G
+echo \H
+echo \I
+echo \J
+echo \K
+echo \L
+echo \M
+echo \N
+echo \O
+echo \P
+echo \Q
+echo \R
+echo \S
+echo \T
+echo \U
+echo \V
+echo \W
+echo \X
+echo \Y
+echo \Z
+echo \[
+echo \\
+echo \]
+echo \^
+echo \_
+echo \a
+echo \b
+echo \c
+echo \d
+echo \e
+echo \f
+echo \g
+echo \h
+echo \i
+echo \j
+echo \k
+echo \l
+echo \m
+echo \n
+echo \o
+echo \p
+echo \q
+echo \r
+echo \s
+echo \t
+echo \u
+echo \v
+echo \w
+echo \x
+echo \y
+echo \z
+echo \{
+echo \}
+echo \~
+echo "\!"
+echo "\""
+echo "\#"
+echo "\$"
+echo "\%"
+echo "\&"
+echo "\'"
+echo "\("
+echo "\)"
+echo "\*"
+echo "\+"
+echo "\,"
+echo "\-"
+echo "\."
+echo "\/"
+echo "\0"
+echo "\1"
+echo "\2"
+echo "\3"
+echo "\4"
+echo "\5"
+echo "\6"
+echo "\7"
+echo "\8"
+echo "\9"
+echo "\:"
+echo "\<"
+echo "\="
+echo "\>"
+echo "\?"
+echo "\@"
+echo "\A"
+echo "\B"
+echo "\C"
+echo "\D"
+echo "\E"
+echo "\F"
+echo "\G"
+echo "\H"
+echo "\I"
+echo "\J"
+echo "\K"
+echo "\L"
+echo "\M"
+echo "\N"
+echo "\O"
+echo "\P"
+echo "\Q"
+echo "\R"
+echo "\S"
+echo "\T"
+echo "\U"
+echo "\V"
+echo "\W"
+echo "\X"
+echo "\Y"
+echo "\Z"
+echo "\["
+echo "\\"
+echo "\]"
+echo "\^"
+echo "\_"
+echo "\a"
+echo "\b"
+echo "\c"
+echo "\d"
+echo "\e"
+echo "\f"
+echo "\g"
+echo "\h"
+echo "\i"
+echo "\j"
+echo "\k"
+echo "\l"
+echo "\m"
+echo "\n"
+echo "\o"
+echo "\p"
+echo "\q"
+echo "\r"
+echo "\s"
+echo "\t"
+echo "\u"
+echo "\v"
+echo "\w"
+echo "\x"
+echo "\y"
+echo "\z"
+echo "\{"
+echo "\|"
+echo "\}"
+echo "\~"
+echo '\!'
+echo '\"'
+echo '\#'
+echo '\$'
+echo '\%'
+echo '\&'
+echo '\''
+echo '\('
+echo '\)'
+echo '\*'
+echo '\+'
+echo '\,'
+echo '\-'
+echo '\.'
+echo '\/'
+echo '\0'
+echo '\1'
+echo '\2'
+echo '\3'
+echo '\4'
+echo '\5'
+echo '\6'
+echo '\7'
+echo '\8'
+echo '\9'
+echo '\:'
+echo '\<'
+echo '\='
+echo '\>'
+echo '\?'
+echo '\@'
+echo '\A'
+echo '\B'
+echo '\C'
+echo '\D'
+echo '\E'
+echo '\F'
+echo '\G'
+echo '\H'
+echo '\I'
+echo '\J'
+echo '\K'
+echo '\L'
+echo '\M'
+echo '\N'
+echo '\O'
+echo '\P'
+echo '\Q'
+echo '\R'
+echo '\S'
+echo '\T'
+echo '\U'
+echo '\V'
+echo '\W'
+echo '\X'
+echo '\Y'
+echo '\Z'
+echo '\['
+echo '\\'
+echo '\]'
+echo '\^'
+echo '\_'
+echo '\a'
+echo '\b'
+echo '\c'
+echo '\d'
+echo '\e'
+echo '\f'
+echo '\g'
+echo '\h'
+echo '\i'
+echo '\j'
+echo '\k'
+echo '\l'
+echo '\m'
+echo '\n'
+echo '\o'
+echo '\p'
+echo '\q'
+echo '\r'
+echo '\s'
+echo '\t'
+echo '\u'
+echo '\v'
+echo '\w'
+echo '\x'
+echo '\y'
+echo '\z'
+echo '\{'
+echo '\|'
+echo '\}'
+echo '\~'
+echo '\;'
+echo "\;"
+echo '\>'
+echo "\>"
+echo '\<'
+echo "\<"
+echo '\|'
+echo "\|"
+unset a ; env ; unset test ; unset test1 ; env
+unset PATH
+unset po1 1op 2 po2; echo $? $po1 $po2
+(exit)
+(exit "")
+(exit " ")
+(exit a)
+(exit 123123)
+(exit 123 123)
+(exit 123 aaa)
+(exit aaa 123)
+(exit | cat)
+(echo hi && exit)
+(exit && echo hi)
+(cmdnotfound || exit)
+(exit || echo hi)
+(echo hola) && exit
+(echo hola) && exit
+(echo hola && (exit))
+((exit) && echo hola)
+export A="adios" && (export A="hola" && echo $A) && echo $A
+export A="adios" && (unset A) && echo $A
+ls && (unset PATH) && ls
+echo hola&& echo adios
+echo hola &&echo adios
+echo hola && echo adios
+echo a&& b&&echo c&& echo k&& echo z
+echo a && echo b&& echo c &&echo d  &&   echo e   &&echo f&&   echo g@&& with spaces
+ls doesnotexists&& echo adios
+echo hola&& ls doesnotexists
+echo hola|| echo adios
+echo hola ||echo adios
+echo hola || echo adios
+echo a|| b||echo c|| echo k|| echo z
+ls doesnotexists || echo bonjour
+ls doesnotexists|| echo bonjour
+echo hola|| ls doesnotexists
+echo a || echo b|| echo c ||echo d     ||   echo e   ||echo f&&        echo g@|| with spaces
+(echo hola)
+(echo hola )
+( echo hola )
+(echo a && echo b) && echo c
+(echo a || echo b) || echo c
+(ls doesnotexist || echo b) || echo c
+(echo a || ls doesnotexist) || echo c
+echo aa && (echo b && echo c)
+ls doesnotexist || (echo b && echo c)
+(ls && ls)
+(ls doesntexist || ls)
+(ls doesntexist && ls)
+(ls && ls) && echo $?
+echo *
+echo *.txt
+echo fil*
+echo *le*
+touch file1.txt file2.txt;rm *.txt@rm *.txt
+echo *.*
+cat "fil*e"
+echo hola && echo adios || echo noejecuta && echo si ejecuta
+echo hola && echon adios || echo siejecuta && echo fin
+ls | ( cat -e && cat -n ) | cat -n
+(ls | ( cata -e && cat -n ) | cat -e) && echo success
+export A=mivalor && echo $A
+(export A=mivalor) && echo $A
+export A=mivalor && (unset A) && echo$A
+echo hola | (cat -n | (cat -e && echo inception) && echo adios | (cat -n | (cat -e)))@mix () || && and &
+echo "&&"  echo hi
+echo "&&"  echo hi
+echo "||"  echo hi
+echo "|"|  echo hi
+echo " |"|  echo hi
+echo "()|&&))("
+	echo hi		||	echo hi@\\techo hi\\t\\t||\\techo hi
+	echo hi		&&	echo hi@\\techo hi\\t\\t&&\\techo hi
+	echo hi		&&	(		echo hi&&          echo hi)@\\techo hi\\t\\t&&\\t(\\t\\techo hi&&          echo hi)
+< | a
+> | a
+>> | a
+| < a
+| > a
+| >> a
+< && a
+> && a
+>> && a
+< || a
+> || a
+>> || a
+< ) a
+> ) a
+>> ) a
+&& < a
+&& > a
+&& >> a
+&& || a
+&& ) a
+|| < a
+|| > a
+|| >> a
+|| && a
+|| ( a
+|| ) a
+) < a
+) > a
+) >> a
+( ) a
+) && a
+) || a
+) ( a
+() a
+) a
+&&echo
+&& echo
+ && echo
+||echo
+|| echo
+ || echo
+(echo hola)  cat -n
+echo hola | ( cat -n && cat -e) | cat -n
+echo hola | ( catn -n && cat -e) | cat -n
+echo hola | ( echo adios | cat -e) | cat -n
+((echo a) | (echo b) | (echo c | (echo d)))
+echo a | (echo b || echo c && echo d) || echo e | echo f
+echo a | (grep a) | cat | (wc -l)
+(echo a) | (cat -e)
+(echo a) | (cat -e | cat -e)
+echo a | (cat -e | cat -e | cat -e)
+echo a | (cat -e | cat -e | cat -e) | cat -e
+(echo a) | (cat -e | cat -e | cat -e) | cat -e
+(echo a) | (cat -e | cat -e | cat -e) | (cat -e)
+(cat /etc/shells) | (cat -e) | (cat -e) | (cat -e)
+(echo hola) | (cat -n)
+(echo hola) | (cat -n | cat -e)
+(echo hola > file1);cat file1; rm file1@(echo hola > file1)
+(echo hola > file1 > file2 > file3);ls;cat file3;rm file1 file2 file3@(echo hola > file1 > file2 > file3)
+(echo hola | cat -e) > file1;cat file1;rm file1@(echo hola | cat -e) > file1
+(echo hola && echo adios) > file1;cat file1;rm file1@(echo hola && echo adios) > file1
+echo hola && (echo adios) >> file1;cat file1;rm file1@echo hola && (echo adios) >> file1
+(echo hola) > file1;cat file1;rm file1@(echo hola) > file1
+(echo hola) > file1 >> file2 > file3;ls;cat file3;rm file1 file2 file3@(echo hola) > file1 >> file2 > file3
+(echo hola > file1 && echo adios | cat -e) > file1;ls;cat file1@(echo hola > file1 && echo adios | cat -e) > file1 
+(echo hola > file1) > file2;ls;cat file1;rm file1 file2@(echo hola > file1) > file2
+(echo hola > file1 && asdfs) 2> file2;cat file2 | rev | cut -c 1-20 | rev@(echo hola > file1 && asdfs) 2> file2
+(echo hola > file1 && asdfs) 2>file2;cat file2 | rev | cut -c 1-20 | rev@(echo hola > file1 && asdfs) 2>file2
+(echo hola > file1 && asdfs)2> file2;cat file2 | rev | cut -c 1-20 | rev@(echo hola > file1 && asdfs)2> file2
+(echo hola > file1 && asdfs)2>file2;cat file2 | rev | cut -c 1-20 | rev@(echo hola > file1 && asdfs)2>file2
+(echo hola > file1) a> file2@(echo hola > file1) a> file2
+(echo hola > file1)a> file2@(echo hola > file1)a> file2
+(echo hola > file1)a>file2@(echo hola > file1)a>file2
+(echo hola > file1) a>file2@(echo hola > file1) a>file2
+echo hola || 1> file;ls;rm file@echo hola || 1> file
+(" "); echo $?
+(" ")
+(nonexistcmd); echo $?
+(nonexistcmd)
+(/Users/nonexist/directory); echo $?
+(/Users/nonexist/directory)
+(cat /Users/nonexist/directory); echo $?
+(cat /Users/nonexist/directory)
+(cat < noexiste);echo $?
+(cat < noexiste)
+(cat) < noexiste;echo $?
+(cat) < noexiste
+(cat < noperm);echo $?
+(cat < noperm)
+(cat) < noperm;echo $?
+(cat) < noperm
+(cat < noperm && echo hi);echo $?
+(cat < noperm && echo hi)
+(cat < noperm || echo hi);echo $?
+(cat < noperm || echo hi)
+(cat && echo hi) < noperm;echo $?
+(cat && echo hi) < noperm
+(cat || echo hi) < noperm;echo $?
+(cat || echo hi) < noperm;
+(cat || echo hi) < noperm && echo hii;echo $?
+(cat || echo hi) < noperm && echo hii;
+(cat || echo hi) < noperm || echo hii;echo $?
+(cat || echo hi) < noperm || echo hii;
+pwd
+cd;pwd@cd
+pwd;cd "";pwd@cd ""
+cd " "
+cd "" ""
+cd / non_existent
+cd /.
+cd //
+cd ' / '
+pwd
+pwd argument
+pwd argument1 argument2
+cd file
+cd file@cd file (no permission)
+cd file/non_existent
+cd ~;cd non_exist@cd non_exist
+cd ..;pwd@cd ..
+cd ~;pwd@cd ~
+cd ..;cd ~;pwd@cd ~
+cd .
+cd testdirtest;@cd testdirtest(no permision)
+cd 255chars255chars255chars255char255chars255chars255chars255chars255chars255chars255chars255chars255chars255chars255chars255chars255chars255chars255chars255chars255chars255chars255chars255chars255chars255chars255chars255chars255chars255chars255chars255chars@cd maxpathlen
+cd 256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars256chars@cd maxpathlen + 1
+echo
+echo ñ
+echo hi
+/bin/echo hi
+echo $PATH
+echo $NONEXIST
+echoecho
+echo -n
+echo -n hi
+echo --n hi
+echo -nn hi
+echo -n -n hi
+echo hi -n
+echo "-n -n -n" -n hi
+echo this is the buildin gj@check if launch execve
+eCho what u execute bro?;cat ~/echo@check if builtin is not correct
+echo what u execute bro?@EXECVE THE ECHO?
+unset PATH;EcHo how u launch this without PATH??@not builtin without PATH
+env | grep TESTVAR@env with export TESTVAR
+env | grep TESTVAR@env with export TESTVAR=
+env | grep TESTVAR@env with export TESTVAR=""
+env | grep TESTVAR@env with export TESTVAR="value"
+export TESTVAR;env | grep TESTVAR@env with export TESTVAR (in mini)
+export TESTVAR=;env | grep TESTVAR@env with export TESTVAR= (in mini)
+export TESTVAR="";env | grep TESTVAR@env with export TESTVAR="" (in mini)
+export TESTVAR="value";env | grep TESTVAR@env with export TESTVAR"value" (in mini)
+exit
+exit ""
+exit " "
+exit "  "
+exit "	"
+exit 42network
+exit +
+exit ++
+exit -
+exit ---
+exit 0
+exit +0
+exit ++0
+exit -0
+exit --0
+exit 1
+exit +1
+exit ++1
+exit -1
+exit --1
+exit ' 3'
+exit '3 '
+exit 255
+exit -255
+exit 256
+exit -256
+exit 2147483647
+exit 2147483648
+exit -2147483648
+exit -2147483649
+exit 4294967295
+exit 4294967296
+exit -4294967296
+exit -4294967297
+exit 9223372036854775807
+exit 9223372036854775808
+exit -9223372036854775808
+exit -9223372036854775809
+exit 18446744073709551615
+exit 18446744073709551616
+exit -18446744073709551616
+exit -18446744073709551617
+exit 9999999999999999999999
+exit 0000000000000000000000
+exit 0000000000000000000001
+exit 1 2 3
+exit 1 2 3;echo should not exit
+exit 1 not numeric bro
+exit not numeric bro 2
+exit 42 | cat
+Exit 1;echo is not a buildin!
+aaa;exit@not found then exit
+aaa;exit 1@not found then exit 1
+cat file;exit@permission deny then exit
+cat file;exit 1@permission deny then exit 1
+export 1A=value
+export /A=value
+export A/=value
+export 'A=value'
+export ' A=value'
+export 'A =value'
+export TEST=test;export | grep TEST@export TEST=test
+export TEST=test TESTT=test2;export | grep TEST@export TEST=test TESTT=test2
+export TEST=test W:RON:G=wrong TESTT=test2;export | grep TEST wrong@export TEST=test W:RON:G=wrong TESTT=test2
+export EMPTY EMPTY_TOO= NOT_EMPTY=contnent;export | grep EMPTY@export EMPTY EMPTY_TOO= NOT_EMPTY=contnent
+export TEST=value TEST=value2;export | grep TEST@export TEST=value TEST=value2
+export TEST=value;export TEST+=" added value";export | grep TEST@export TEST+=" added value"
+export TEST=value;export | grep TEST@export existing variable
+export correct=correct wrong%=wrong;export | grep correct;export | grep wrong@export correct=correct wrong%=wrong
+export wrong%=wrong correct=correct;export | grep correct;export | grep wrong@export wrong%=wrong correct=correct
+export PATH='/usr/bin'; whoami
+echo hi;echo $?@echo $?
+echo $
+echo hi$
+echo '$ '
+echo $/
+echo "'$'"
+echo $'\\n' | cat -e@echo \$'\\n'
+echo $'\\r' | cat -e@echo \$'\\r'
+echo $'\\t' | cat -e@echo \$'\\t'
+echo $USER
+echo $NONEXIST
+echo $USER$PATH$PWD
+echo "$USER$PATH$PWD"
+echo '$USER$PATH$PWD'
+echo '$USER",$PATH,$PWD'
+echo $USER"$PATH"$PWD"USER"$PATH"$PWD"
+echo $USER'$PATH'$PWD'USER'$PATH'$PWD'
+$NONEXIST
+$NONEXIST $NONEXIST
+export TMPENVVAR;$TMPENVVAR@VAR: export TMPENVVAR
+$TMPENVVAR@VAR: export TMPENVVAR=echo
+$TMPENVVAR@VAR: export TMPENVVAR="  echo"
+$TMPENVVAR@VAR: export TMPENVVAR="    EcHO   hi"
+echo $TMPENVVAR hi@VAR: export TMPENVVAR="-n"
+echo $TMPENVVAR hi@VAR: export TMPENVVAR="-n -n"
+echo $A"$B"$C"A"$B"$C"
+echo $A'$B'$C'A'$B'$C'
+echo $A"$B"$C"A"$B"$C"
+echo $A'$B'$C'A'$B'$C'
+echo $A
+echo $A$B
+echo $A$B$C
+echo $A$B$C$AA
+echo "~"ups
+echo '~'ups
+echo "'$'"
+echo '"$"'
+echo "|$USER|"
+echo "|$USE|"
+echo "|$USER_|"
+echo '|$USER|'
+echo '|$USE|'
+echo '|$USER_|'
+'echo' hi
+'''echo' hi
+echo' 'hi
+echo' 'hi''
+echo' 'hi' '
+"echo" hi
+"""echo" hi
+echo" "hi
+echo" "hi""
+echo" "hi" "
+echo '""""""""""""'
+'echo' "hi"'' " ' "' "' "" ''''''""
+echo hi"hi" hi'h"i'
+echo "hi" "hi"
+echo "hi"  "hi"
+echo "hi"\t"hi"@echo "hi"tab"hi"
+ echo
+ echo
+""echo
+" "echo
+''echo
+' 'echo
+''''''''''echo hi
+""""""""""echo hi
+"e"'c'h"o" hi
+ec""ho hi
+ec""h''o hi
+EcHo hi
+ECHO hi
+"ECHO" hi
+'ECHO' hi
+echo    \t  hi   \t    
+echo "   \t  hi   \t    "
+echo '   \t  hi   \t    '
+echo $"   \t  hi   \t    "
+echo $'   \t  hi   \t    '
+echo $'   \r  hi   \t    '
+echo hi > "fi le";rm "fi le"@echo hi > "fi le"
+echo hi > 'fi le';rm 'fi le'@echo hi > 'fi le'
+echo $ANA_VAR@echo $ANA_VAR with spaces in var value
+echo "$ANA_VAR"@echo "$ANA_VAR" with spaces in var value
+echo '$ANA_VAR'@echo '$ANA_VAR' with spaces in var value
+
+ 
+  
+	echo hi@\\techo hi
+echo	hi@echo\\thi
+	echo	hi@\\techo\\thi
+	echo	hi@\\techo\\thi
+   	echo	hi@  \\techo\\thi
+	echo	   hi@\\techo\\t   hi
+			@many tabs
+            @many spaces
+test
+|test
+ | test
+< | test
+<< | test
+> | test
+>> | test
+| < test
+| << test
+| > test
+| >> test
+| test
+test | >  
+test | >>  
+test | <  
+echo hiecho hi
+echo hi|echo hi
+echo hi |echo hi
+echo hi| echo hi
+echo hi | | echo hi
+echo hi ||| echo hi
+echo >
+echo >>
+echo <
+echo >>>
+echo <<<
+echo hi >< file
+~
+echo hi~
+echo ~
+echo ~/path
+echo ~$USER
+echo ~false
+echo \~
+echo ~$USER/sdfsfsfdsfs
+unset HOME ; echo ~
+echo | /bin/cat
+echo hi | /bin/cat
+cat /etc/shells | head -c 10
+cat -e /etc/shells | head -c 10
+cat -e /etc/shells | cat -e | head -c 10
+cat -e /etc/shells | cat -e | cat -e | head -c 10
+echo hola | cat
+echo hola | cat -e
+echo hola | cat -e | cat -n
+echo hola | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e@echo hola with many pipes cat -e
+ls | cat -e
+ls -l | cat -e
+ls -l | cat -e | cat | cat | cat
+ls -l | cat -e | cat -e | cat -e | cat -e
+echo hola | asdf
+asdf | echo hola
+cat | cat | cat | ls
+sleep 1 | ls | cat -n
+cd folder | pwd
+ ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls |ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls |ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls |ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls |ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls |ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls@ls pipes (255)
+ ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls |ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls |ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls |ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls |ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls |ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls@ls pipes (256)
+ ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls |ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls |ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls |ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls |ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls |ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls@ls pipes (257)
+> no_cmd_file;cat no_cmd_file;rm no_cmd_file@> no_cmd_file
+>> no_cmd_test;cat no_cmd_test;rm no_cmd_test@>> no_cmd_test
+echo hola | > filepipe;cat filepipe;rm filepipe@echo hola | > filepipe
+> file_first | > file_second;cat file_first;cat file_second;rm file_first;rm file_second@> file_first | > file_second
+echo hi > file;cat file;rm file@echo hi > file
+echo hi >> file;echo hi >> file;cat file;rm file@echo hi >> file
+echo hi > *.txt;cat '*.txt';rm '*.txt'@echo hi > *.txt
+echo > file hi;cat file;rm file@echo >> file hi
+echo >> file hi;echo >> file hi;cat file;rm file@echo >> file2 hi
+> file echo hi;cat file;rm file@> file echo hi
+>> file echo hi;>> file echo hi;cat file;rm file@>> file echo hi
+echo hi > file2 > file hi;ls;cat file;rm file file2@echo hi > file2 > file hi
+echo hi >> file2 > file hi;echo hi >> file2 > file hi;ls;cat file;rm file file2@echo hi >> file2 > file hi
+echo hi > file2 >> file hi;echo hi > file2 >> file hi;ls;cat file;rm file file2@echo hi > file2 >> file hi
+echo hi > file2 > file hi;echo hi > file2 > file hi;ls;cat file;rm file file2@echo hi > file2 > file hi
+echo hi >> file2 >> file hi;echo hi >> file2 >> file hi;ls;cat file;rm file file2@echo hi >> file2 >> file hi
+echo hi>file2>file hi;ls;cat file;rm file file2@echo hi>file2>file hi
+echo hi>>file2>>file hi;ls;cat file;rm file file2@echo hi>>file2>>file hi
+echo hi > file3 > file2 > file hi;echo hii > file3 > file2 > file hii;ls;cat file;rm file file2 file3@echo hi > file3 > file2 > file hi
+echo hi > file3 >> file2 > file hi;echo hii > file3 >> file2 > file hii;ls;cat file;rm file file2 file3@echo hi > file3 >> file2 > file hi
+echo hi > file3 > file2 >> file hi;echo hii > file3 > file2 >> file hii;ls;cat file;rm file file2 file3@echo hi > file3 > file2 >> file hi
+echo hi >> file3 > file2 > file hi;echo hii >> file3 > file2 > file hii;ls;cat file;rm file file2 file3@echo hi >> file3 > file2 > file hi
+echo hi >> file3 > file2 >> file hi;echo hii >> file3 > file2 >> file hii;ls;cat file;rm file file2 file3@echo hi >> file3 > file2 >> file hi
+echo hi >> file3 >> file2 > file hi;echo hii >> file3 >> file2 > file hii;ls;cat file;rm file file2 file3@echo hi >> file3 >> file2 > file hi
+echo hi>file3>file2>file hi;ls;cat file;rm file file2 file3@echo hi>file3>file2>file hi
+> file3 echo hi > file2 > file hi;> file3 echo hi > file2 > file hi;ls;cat file;rm file file2 file3@> file3 echo hi > file2 > file hi
+> file3 echo hi > file2 >> file hi;> file3 echo hi > file2 >> file hi;ls;cat file;rm file file2 file3@> file3 echo hi > file2 >> file hi
+>> file3 echo hi > file2 > file hi;>> file3 echo hi > file2 > file hi;ls;cat file;rm file file2 file3@>> file3 echo hi > file2 > file hi
+> file3 echo hi >> file2 > file hi;> file3 echo hi >> file2 > file hi;ls;cat file;rm file file2 file3@> file3 echo hi >> file2 > file hi
+>file3 echo hi>file2>file hi;> file3 echo hi > file2 > file hi;ls;cat file;rm file file2 file3@>file3 echo hi>file2>file hi
+echo hi >filea>fileb>filec hi;echo hi >filea>fileb>filec hi;ls;cat filec;rm filea fileb filec@echo hi >filea>fileb>filec hi
+echo hi >filea>>fileb>filec hi;echo hi >filea>>fileb>filec hi;ls;cat filec;rm filea fileb filec@echo hi >filea>>fileb>filec hi
+echo hi >filea>fileb>>filec hi;echo hi >filea>fileb>>filec hi;ls;cat filec;rm filea fileb filec@echo hi >filea>fileb>>filec hi
+echo hi >>filea>fileb>filec hi;echo hi >>filea>fileb>filec hi;ls;cat filec;rm filea fileb filec@echo hi >>filea>fileb>filec hi
+echo hi > "doble"quote;cat doblequote;rm doblequote@echo hi > "doble"quote
+echo hi >"doble"quote;cat doblequote;rm doblequote@echo hi >"doble"quote
+echo -n hi >>"doble"quote;echo -n hi >>"doble"quote;cat doblequote;rm doblequote@echo -n hi >>"doble"quote
+echo hi > 'simple'quote;cat simplequote;rm simplequote@echo hi > 'simple'quote
+echo hi >'simple'quote;cat simplequote;rm simplequote@echo hi >'simple'quote
+echo -n hi >>'simple'quote;echo -n hi >>'simple'quote;cat simplequote;rm simplequote@echo -n hi >>'simple'quote
+echo hi > 'with spaces';cat 'with spaces';rm 'with spaces'@echo hi > 'with spaces'
+echo hi >>'with spaces';echo hi >>'with spaces';cat 'with spaces';rm 'with spaces'@echo hi >>'with spaces'
+echo hi > "mixed"'file 'name;cat "mixedfile name";rm "mixedfile name"@echo hi > "mixed"'file 'name
+echo hi >> "mixed"'file 'name;echo hi >> "mixed"'file 'name;cat "mixedfile name";rm "mixedfile name"@echo hi >> "mixed"'file 'name
+echo hi 0< file; rm file @echo hi 0> file
+bash 4> outpfile;echo hola >&4;cat outpfile; rm outpfile @4> file
+echo hi > testfolder
+echo hi >> testfolder
+echo hi 2> testfolder
+echo hi 2>> testfolder
+echo hi > testfolder
+echo hi >> testfolder
+echo hi 2> testfolder
+echo hi 2>> testfolder
+echo > file hi;cat file;@echo > file hi (no permision)
+echo >> file2 hi;cat file2;@echo >> file2 hi (no permision)
+> file echo hi;cat file;@> file echo hi (no permision)
+>> file3 echo hi;cat file3;@>> file3 echo hi (no permision)
+cat < file@cat < file
+< file cat < file2@< file cat < file2
+cat < nonexist@cat < nonexist
+cat < $USER@cat < $USER
+cat < file3@cat < file3 (no permision)
+echo hi 2> error_outp < non_exist@echo hi 2> error_outp < non_exist
+echo hi < non_exist > wrong;ls;rm wrong@echo hi < non_exist > wrong
+< non_exist echo hi > wrong;ls;rm wrong@< non_exist echo hi > wrong
+> correct echo hi < non_exist;ls;rm correct@> correct echo hi < non_exist
+echo $SHLVL 'entry value 20'
+echo $SHLVL 'entry value 50'
+echo $SHLVL 'entry value 99'
+echo $SHLVL 'entry value -20'
+echo $SHLVL 'entry value 800'
+echo $SHLVL 'entry value 1000'
+echo $SHLVL 'entry value 5000000'
+echo $SHLVL 'unset SHLVL before ./minishell'
+echo $SLVL 'export SHLVL='' before ./minishell'
+" ";echo $?
+ 
+echo $?
+cat < noexiste;echo $?
+cat < noexiste
+echo hola > noperm ; echo $?
+echo hola > noperm
+echo hola < noperm ; echo $?
+echo hola < noperm
+sleep 1 | ls | cat -n;echo $?
+sleep 1 | ls | cat -n
+sleep 1 | dddd;echo $?
+sleep 1 | dddd
+nonexistcmd; echo $?
+nonexistcmd
+nonexistcmd | echo hi; echo $?
+nonexistcmd | echo hi
+echo hi | nonexistcmd; echo $?
+echo hi | nonexistcmd
+echo hi < nofile | nonexistcmd; echo $?
+echo hi < nofile | nonexistcmd
+echo hi < nofile | echo hii; echo $?
+echo hi < nofile | echo hii
+/Users/nonexist/directory;echo $?
+/Users/nonexist/directory
+cat /Users/nonexist/directory;echo $?
+cat /Users/nonexist/directory
+mkdir testdirtest;cd testdirtest;bash;cd .. && rm -rf testdirtest && exit;pwd;cd .;pwd@rm -rf actual dir and cd .
+exit --
+echo all &> testfile < non_exist_file;rm testfile@echo all &> file
+cd-;@cd - (at start the minishell, OLDPWD should not exist)
+mkdir testdir;cd testdir;pwd;cd ..;pwd;rm -rf testdir; cd -@cd - (deleted old path dir)
+cd;pwd;cd -;pwd;@cd -
+echo ~@echo ~ (without $HOME in env)
+env | grep PWD; cd testdirtest;env | grep PWD; unset PWD; cd ..; env | grep PWD@playing with PWD an OLD
+env | grep PWD; cd testdirtest;env | grep PWD; export PWD=nosensedir; cd ..; env | grep PWD@playing with PWD an OLD
+echo hi <> file;ls;rm file@echo <> file
+echo this is the file > file;echo this is not the file > file2;cat < file 3< file2
+./echo@file with permission named echo
+echo \\a
+echo \\ 
+e\\cho hi
+eC\\ho hi
+e\\Cho hi
+echo \\ hi
+echo hi \\ \\| echo hi
+echo hi \\ \\&\\& echo hi
+echo \\$USER
+echo $\\USER
+echo " \\" "
+echo " \\' "
+echo ' \\" '
+echo ' \\' '
+echo\\ hi
+echo
+echo bonjour
+echo lalalala lalalalal alalalalal alalalala
+echo lalalala                lalalalal      alalalalal alalalala
+"echo " + Config.lorem
+echo -n
+echo -n bonjour
+echo -n lalalala lalalalal alalalalal alalalala
+echo -n lalalala                lalalalal      alalalalal alalalala
+"echo -n " + Config.lorem
+echo bonjour -n
+echo -n bonjour -n
+                        echo                     bonjour             je
+                        echo       -n            bonjour             je
+echo a '' b '' c '' d
+echo a "" b "" c "" d
+echo -n a '' b '' c '' d
+echo -n a "" b "" c "" d
+echo '' '' ''
+Echo bonjour
+eCho bonjour
+ecHo bonjour
+echO bonjour
+EchO bonjour
+eCHo bonjour
+EcHo bonjour
+eChO bonjour
+Echo bonjour
+eCho bonjour
+ecHo bonjour
+echO bonjour
+EchO bonjour
+eCHo bonjour
+EcHo bonjour
+eChO bonjour
+eChO -e 'bonjo\\nur'
+echo -n -n -n -n bonjour
+echo -nnnnnnnnnnnnnnnnnnnnn bonjour
+echo -nnnnnnnnnnnnnnnnnnnnn -n -n -n bonjour -n -n
+export
+export
+export
+export
+export
+export
+export
+export
+export A=a; echo $A
+export A=a B=b C=c; echo $A$B$C
+"export A=a B=b C=c D=d E=e F=f G=g H=h I=i J=j K=k L=l
+export BONJOURJESUIS=a; echo $BONJOURJESUIS
+export bonjourjesuis=a; echo $bonjourjesuis
+export bonjour_je_suis=a; echo $bonjour_je_suis
+export BONJOURJESUIS1=a; echo $BONJOURJESUIS1
+export bO_nJq123o__1ju_je3234sui__a=a; echo $bO_nJq123o__1ju_je3234sui__a
+export a0123456789=a; echo $a0123456789
+export abcdefghijklmnopqrstuvwxyz=a; echo $abcdefghijklmnopqrstuvwxyz
+export ABCDEFGHIJKLMNOPQRSTUVWXYZ=a; echo $ABCDEFGHIJKLMNOPQRSTUVWXYZ
+export __________________________=a; echo $__________________________
+export _bonjour_=a; echo $_bonjour_
+export _=a; echo $_a
+export 1=a
+export BONJOURJESUIS =a
+export BONJOURJESUIS= a
+export BONJOUR\\JESUIS=a
+export BONJOUR\'JESUIS=a
+export BONJOUR\"JESUIS=a
+export BONJOUR\$JESUIS=a
+export BONJOUR\&JESUIS=a
+export BONJOUR\|JESUIS=a
+export BONJOUR\;JESUIS=a
+export BONJOUR\_JESUIS=a
+export BONJOUR\0JESUIS=a
+export \B\O\N\ \ \ \ \ \ \ JOURJESUIS=a
+export A=\B\O\N\ \ \ \ \ \ \ JOURJESUIS; echo $A
+export A='bonjour je suis charles'; echo $A
+export A="bonjour je suis charles"; echo $A
+export A==a; echo $A
+export A===a; echo $A
+export A====a; echo $A
+export A=====a; echo $A
+export A======a; echo $A
+export A=a=a=a=a=a; echo $A
+export A 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf ' C; echo $A$B$C
+export 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf ' C; echo $A$B$C
+export A 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf '; echo $A$B$C
+export A B C; echo $A$B$C
+export A B C; env
+export 'AH@'=nop
+export \"AH'\"=nop
+export 'AH\"'=nop
+export 'AH$'=nop
+export 'AH!'=nop
+export 'AH|'=nop
+export 'AH;'=nop
+export 'AH&'=nop
+export 'AH\\'=nop
+export $TEST
+export BONJOUR\\JESUIS
+export BONJOUR\'JESUIS
+export BONJOUR\"JESUIS
+export BONJOUR\$JESUIS
+export BONJOUR\&JESUIS
+export BONJOUR\|JESUIS
+export BONJOUR\;JESUIS
+export BONJOUR\_JESUIS
+export BONJOUR\0JESUIS
+Export B=bonjour
+exporT B=bonjour
+Export B=bonjour
+exporT B=bonjour
+echo $PWD; echo $OLDPWD; cd .; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ..; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ../..; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ../../..; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ../../../..; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ../../../../..; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ../../../../../..; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd /; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ''; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd '' ''; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd '' '' ''; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ' '; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d ''; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d d; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d ' '; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd $HOME; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd /; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd /.; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd /./; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd /././././; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd //; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ///; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ////; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd //////////////////////////////////////////////////////; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ' /'; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ' / '; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd '                  /'; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd '                  /              '; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ' // '; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd //home; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ' //home'; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd '     //home    '; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd /; echo $PWD; echo $OLDPWD; unset PWD; cd /dev; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd /; echo $PWD; echo $OLDPWD; export PWD=bonjour; cd /dev; echo $OLDPWD
+Cd .
+cD .
+Cd .
+cD .
+unset
+unset A; echo $A
+unset 'A '; echo $A
+unset 'A='; echo $A
+unset A B C; echo $A$B$C
+unset A 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf ' C; echo $A$B$C
+unset 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf ' C; echo $A$B$C
+unset A 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf '; echo $A$B$C
+unset A; echo $A$B$C
+unset C; echo $A$B$C
+unset A B C
+unset A 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf ' C
+unset 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf ' C
+unset A 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf '
+unset A
+unset 'AH@'=nop
+unset \"AH'\"=nop
+unset 'AH\"'=nop
+unset 'AH$'=nop
+unset 'AH!'=nop
+unset 'AH|'=nop
+unset 'AH;'=nop
+unset 'AH&'=nop
+unset 'AH\\'=nop
+Unset TERM
+unseT TERM
+Unset TERM
+unseT TERM
+pwd
+pwd"
+pwd"
+pwd"
+pwd"
+pwd"
+pwd | cat -e
+pwd
+unset PWD; pwd; echo $PWD
+export PWD=foo; pwd; echo $PWD
+Pwd
+pwD
+Pwd
+pwD
+env
+env
+env
+env | cat -e
+Env
+enV
+Env
+enV
+exit
+exit 1
+exit 2
+exit 3
+exit ' 3'
+exit '\t3'
+exit '\t\f\r 3'
+exit '3 '
+exit '3\t'
+"exit '3\r'", hook_status=hooks.platform_status(255, 2)
+"exit '3\t\f\r '", hook_status=hooks.platform_status(255, 2)
+"exit '3     a'", hook_status=hooks.platform_status(255, 2)
+"exit '3\t\t\ta'", hook_status=hooks.platform_status(255, 2)
+exit 0
+exit -0
+exit -1
+exit 255
+exit 256
+exit 2000000
+exit -2000000
+exit 2147483647
+exit -2147483648
+exit 2147483648
+exit -2147483649
+exit 3147483648
+exit -3147483649
+exit 4294967295
+exit 4294967296
+exit -9223372036854775808
+exit 9223372036854775807
+"exit -9223372036854775809", hook_status=hooks.platform_status(255, 2)
+"exit 9223372036854775808", hook_status=hooks.platform_status(255, 2)
+"exit 18446744073709551615", hook_status=hooks.platform_status(255, 2)
+"exit 18446744073709551616", hook_status=hooks.platform_status(255, 2)
+exit +1
+exit +2
+exit +3
+exit +0
+exit +255
+exit +256
+exit +2000000
+exit +2147483647
+"exit ++1", hook_status=hooks.platform_status(255, 2)
+"exit ++2", hook_status=hooks.platform_status(255, 2)
+"exit ++3", hook_status=hooks.platform_status(255, 2)
+"exit ++0", hook_status=hooks.platform_status(255, 2)
+"exit ++255", hook_status=hooks.platform_status(255, 2)
+"exit ++256", hook_status=hooks.platform_status(255, 2)
+"exit ++2000000", hook_status=hooks.platform_status(255, 2)
+"exit ++2147483647", hook_status=hooks.platform_status(255, 2)
+"exit --1", hook_status=hooks.platform_status(255, 2)
+"exit --2", hook_status=hooks.platform_status(255, 2)
+"exit --3", hook_status=hooks.platform_status(255, 2)
+"exit --0", hook_status=hooks.platform_status(255, 2)
+"exit --255", hook_status=hooks.platform_status(255, 2)
+"exit --256", hook_status=hooks.platform_status(255, 2)
+"exit --2000000", hook_status=hooks.platform_status(255, 2)
+"exit --2147483647", hook_status=hooks.platform_status(255, 2)
+"exit bonjour", hook_status=hooks.platform_status(255, 2)
+"exit 0_", hook_status=hooks.platform_status(255, 2)
+"exit _0", hook_status=hooks.platform_status(255, 2)
+exit 0123456789
+exit -0123456789
+exit 00000000000000000000000000000000000000000000001
+"exit 00000000000000000000000000000000000000000000000
+"exit 00000000000000000000000000000000000000000000000
+"exit -00000000000000000000000000000000000000000000000
+"exit -99999999999999999999999999999999999999999999
+"exit 99999999999999999999999999999999999999999999
+exit 0 bonjour
+"exit bonjour 0", hook_status=hooks.platform_status(255, 2)
+exit 0 1
+exit 0 1 2 3 4 5 6 7 8 9
+"exit " + Config.lorem, hook_status=hooks.platform_status(255, 2)
+"exit bonjoru; echo should have exited", hook_status=hooks.platform_status(255, 2)
+"exit 99999999999999999999999999999999999999999999999999999; echo should have exited", hook_status=hooks.platform_status(255, 2)
+exit 9999; echo should have exited
+Exit; echo a
+exiT; echo a
+Exit; echo a
+exiT; echo a
+echo bonjour > test
+echo > test bonjour
+> test echo bonjour
+echo bonjour >> test
+echo >> test bonjour
+>> test echo bonjour
+cat < test"
+echo bonjour > test
+echo > test'sticked' bonjour
+> test'sticked' echo bonjour
+echo bonjour >> test'sticked'
+echo >> test'sticked' bonjour
+>> test'sticked' echo bonjour
+cat < test'sticked'"
+< test'sticked' cat"
+echo > test\"sticked\" bonjour
+> test\"sticked\" echo bonjour
+echo bonjour >> test\"sticked\"
+echo >> test\"sticked\" bonjour
+>> test\"sticked\" echo bonjour
+cat < test\"sticked\""
+< test\"sticked\" cat"
+echo > test'yo'\"sticked\" bonjour
+> test'yo'\"sticked\" echo bonjour
+echo bonjour >> test'yo'\"sticked\"
+echo >> test'yo'\"sticked\" bonjour
+>> test'yo'\"sticked\" echo bonjour
+cat < test'yo'\"sticked\""
+< test'yo'\"sticked\" cat"
+echo bonjour > test > je > suis
+echo > test > je bonjour > suis
+> test echo bonjour > je > suis
+echo bonjour >> test > je >> suis
+echo >> test bonjour > je > suis
+>> test echo > je bonjour > suis
+cat < test < je"
+echo bonjour>test>je>suis
+>test echo bonjour>je>suis
+echo bonjour>>test>je>>suis
+cat<test<je"
+echo bonjour > a'b'c'd'e'f'g'h'i'j'k'l'm'n'o'p'q'r's't'u'v'w'x'y'z'
+echo bonjour > a"b"c"d"e"f"g"h"i"j"k"l"m"n"o"p"q"r"s"t"u"v"w"x"y"z"
+echo bonjour > a\'b\'c"d"e\'f\'g"h"i\'j\'k"l"m\'n\'o"p\'q\'r"s\'t\'u"v"w"x"y\'z\'
+"> file", files=["file"]
+< file"
+>
+>>
+<
+echo >
+echo >>
+echo <
+"> test", files=["test"]
+">> test", files=["test"]
+< test"
+echo foo >>> bar
+echo foo >>>> bar
+echo foo >>>>> bar
+cat << < bar
+cat << << bar
+cat <<<<< bar
+cat < doesnotexist
+echo bonjour >> a
+echo bonjour >> a >> a
+echo bonjour > a
+echo bonjour > a >> a
+notfound
+notfound a b c
+'echo "\\"" >>a"b""c"  ', files=["abc"]
+"echo " + ''.join([chr(i) for i in range(1, 127) if chr(i) not in '\n`"\'()|&><'])
+"echo foo>bar", files=["bar"]
+"echo foo >bar", files=["bar"]
+"echo foo> bar", files=["bar"]
+"echo foo > bar", files=["bar"]
+"echo a as df sad f as df qw e  qwe  as df asd f as df as d fas d f
+"echo " + Config.lorem * 10
+"echo " + Config.lorem * 20
+echo $?
+echo; echo $?
+notfound; echo $?
+cat < doesntexist; echo $?
+cat < noperm; echo $?"
+echo
+notfound
+cat < doesntexist
+cat < noperm"
+ls_path
+ls_path + " -l"
+./bonjour
+./bonjour -l
+./somedir/bonjour -l
+./ls . a b c
+ls . a b c
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+somedir/",   setup="mkdir somedir
+./somedir/
+somedir",    setup="mkdir somedir
+./somedir",  setup="mkdir somedir
+somedir",    setup="mkdir somedir
+somedirsoftlink/",   setup="mkdir somedir; ln -s somedir somedirsoftlink
+./somedirsoftlink/
+somedirsoftlink",    setup="mkdir somedir; ln -s somedir somedirsoftlink
+./somedirsoftlink",  setup="mkdir somedir; ln -s somedir somedirsoftlink
+somedirsoftlink",    setup="mkdir somedir; ln -s somedir somedirsoftlink
+./someremovedlink",  setup="touch somefile; ln -s somefile someremovedlink; rm -f somefile
+./somelink2"
+./somelink3
+./somelink4
+./somelink2ls
+./somelink3ls
+./somelink4ls
+_"
+'-'"
+./_"
+./-"
+./.
+./..
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./Somefile
+./someFILE
+echo bonjour > test
+echo > test bonjour
+> test echo bonjour
+echo bonjour >> test
+echo >> test bonjour
+>> test echo bonjour
+cat < test"
+echo bonjour > test
+echo > test'sticked' bonjour
+> test'sticked' echo bonjour
+echo bonjour >> test'sticked'
+echo >> test'sticked' bonjour
+>> test'sticked' echo bonjour
+cat < test'sticked'"
+< test'sticked' cat"
+echo > test\"sticked\" bonjour
+> test\"sticked\" echo bonjour
+echo bonjour >> test\"sticked\"
+echo >> test\"sticked\" bonjour
+>> test\"sticked\" echo bonjour
+cat < test\"sticked\""
+< test\"sticked\" cat"
+echo > test'yo'\"sticked\" bonjour
+> test'yo'\"sticked\" echo bonjour
+echo bonjour >> test'yo'\"sticked\"
+echo >> test'yo'\"sticked\" bonjour
+>> test'yo'\"sticked\" echo bonjour
+cat < test'yo'\"sticked\""
+< test'yo'\"sticked\" cat"
+echo bonjour > test > je > suis
+echo > test > je bonjour > suis
+> test echo bonjour > je > suis
+echo bonjour >> test > je >> suis
+echo >> test bonjour > je > suis
+>> test echo > je bonjour > suis
+cat < test < je"
+echo bonjour>test>je>suis
+>test echo bonjour>je>suis
+echo bonjour>>test>je>>suis
+cat<test<je"
+echo bonjour > a'b'c'd'e'f'g'h'i'j'k'l'm'n'o'p'q'r's't'u'v'w'x'y'z'
+echo bonjour > a"b"c"d"e"f"g"h"i"j"k"l"m"n"o"p"q"r"s"t"u"v"w"x"y"z"
+echo bonjour > a\'b\'c"d"e\'f\'g"h"i\'j\'k"l"m\'n\'o"p\'q\'r"s\'t\'u"v"w"x"y\'z\'
+"> file", files=["file"]
+< file"
+>
+>>
+<
+echo >
+echo >>
+echo <
+"> test", files=["test"]
+">> test", files=["test"]
+< test"
+echo foo >>> bar
+echo foo >>>> bar
+echo foo >>>>> bar
+cat << < bar
+cat << << bar
+cat <<<<< bar
+cat < doesnotexist
+echo bonjour >> a
+echo bonjour >> a >> a
+echo bonjour > a
+echo bonjour > a >> a
+notfound
+notfound a b c
+'echo "\\"" >>a"b""c"  ', files=["abc"]
+"echo " + ''.join([chr(i) for i in range(1, 127) if chr(i) not in '\n`"\'()|&><'])
+"echo foo>bar", files=["bar"]
+"echo foo >bar", files=["bar"]
+"echo foo> bar", files=["bar"]
+"echo foo > bar", files=["bar"]
+"echo a as df sad f as df qw e  qwe  as df asd f as df as d fas d f
+"echo " + Config.lorem * 10
+"echo " + Config.lorem * 20
+echo $?
+echo; echo $?
+notfound; echo $?
+cat < doesntexist; echo $?
+cat < noperm; echo $?"
+echo
+notfound
+cat < doesntexist
+cat < noperm"
+ls_path
+ls_path + " -l"
+./bonjour
+./bonjour -l
+./somedir/bonjour -l
+./ls . a b c
+ls . a b c
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+./somefile"
+somedir/",   setup="mkdir somedir
+./somedir/
+somedir",    setup="mkdir somedir
+./somedir",  setup="mkdir somedir
+somedir",    setup="mkdir somedir
+somedirsoftlink/",   setup="mkdir somedir; ln -s somedir somedirsoftlink
+./somedirsoftlink/
+somedirsoftlink",    setup="mkdir somedir; ln -s somedir somedirsoftlink
+./somedirsoftlink",  setup="mkdir somedir; ln -s somedir somedirsoftlink
+somedirsoftlink",    setup="mkdir somedir; ln -s somedir somedirsoftlink
+./someremovedlink",  setup="touch somefile; ln -s somefile someremovedlink; rm -f somefile
+./somelink2"
+./somelink3
+./somelink4
+./somelink2ls
+./somelink3ls
+./somelink4ls
+_"
+'-'"
+./_"
+./-"
+./.
+./..
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somefile
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./somedir
+./Somefile
+./someFILE
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $SHLVL
+echo $_
+echo; echo $_
+env; echo $_
+export A=a; echo $_
+unset A; echo $_
+echo a b c d; echo $_
+cat -e /etc/shells; echo $_
+echo a; echo \"$_\"
+echo a; echo '$_'
+echo a; echo \"@$_@\"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+A
+b
+a"
+a"
+a
+a/b
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+echo $PATH
+whoami
+whoami
+whoami
+whoami
+whoami
+whoami
+whoami
+whoami
+whoami
+whoami
+whoami
+"unset PATH; whoami")  # error message explicit enoug
+whoami
+whoami
+whoami
+whoami
+whoami"
+somecmd
+somecmd
+somecmd
+somecmd
+somecmd
+somecmd"
+somecmd
+somecmd
+somecmd
+Whoami
+wHoAMi
+whoami
+whoami
+Whoami
+wHoami
+Whoami
+wHoami
+echo' 'bonjour
+echo' 'je' 'suis' 'charles
+
+
+echo je\'suis\'"charles"
+echo "je"suis\'charles\'
+echo \'je\'"suis"charles
+echo "\\""
+echo "\\$"
+echo "\\\\"
+echo "\\a"
+echo "\\A"
+ls ""
+ls ''
+ls "" "" "" \'\' """"
+ls '' '' '''' ''
+'     echo' bonjour
+'echo     ' bonjour
+"     echo" bonjour
+"echo     " bonjour
+''echo bonjour
+""echo bonjour
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''echo bonjour
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""echo bonjour
+echo'' bonjour
+echo"" bonjour
+echo'''''''''''''''''''''''''''''''''''''''''''''''''''''''''' bonjour
+echo"""""""""""""""""""""""""""""""""""""""""""""""""""""""""" bonjour
+ec''ho bonjour
+ec""ho bonjour
+ec''''''''''''''''''''''''''''''''''''''''''''''''''''''''''ho bonjour
+ec""""""""""""""""""""""""""""""""""""""""""""""""""""""""""ho bonjour
+'''''''e''''''''''c''''''''''''h''''''''o''''''''''''''''''''' bonjour
+"""""""e""""""""""c""""""""""""h""""""""o""""""""""""""""""""" bonjour
+echo '\"'
+echo '\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"'
+echo "\'"
+echo "\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'"
+echo '
+echo "
+echo '''
+echo """
+echo '''''''''''''''''''''''''''''''''''''''''''
+echo """""""""""""""""""""""""""""""""""""""""""
+echo 'AH\\'
+echo "AH\\"
+echo "AH\\""
+echo '\\''
+echo "\\""
+echo "\\\\""
+'echo bonjour > "fi le"', files=['fi le']
+"echo bonjour > 'fi le'", files=['fi le']
+"echo $TEST",             exports={"TEST": "bonjour"}
+"echo $TES",              exports={"TEST": "bonjour"}
+"echo $TEST_",            exports={"TEST": "bonjour"}
+'echo "|$TEST|"',         exports={"TEST": "bonjour"}
+'echo "|$TES|"',          exports={"TEST": "bonjour"}
+'echo "|$TEST_|"',        exports={"TEST": "bonjour"}
+"echo '|$TEST|'",         exports={"TEST": "bonjour"}
+"echo '|$TES|'",          exports={"TEST": "bonjour"}
+"echo '|$TEST_|'",        exports={"TEST": "bonjour"}
+"echo $A$B$C",            exports={"A": "foo", "B": "bar", "C": "baz"}
+'echo "$A$B$C"',          exports={"A": "foo", "B": "bar", "C": "baz"}
+"echo '$A$B$C'",          exports={"A": "foo", "B": "bar", "C": "baz"}
+"echo $A,$B,$C",          exports={"A": "foo", "B": "bar", "C": "baz"}
+'echo "$A,$B,$C"',        exports={"A": "foo", "B": "bar", "C": "baz"}
+"echo '$A,$B,$C'",        exports={"A": "foo", "B": "bar", "C": "baz"}
+echo $A"$B"$C"A"$B"$C"
+echo $A'$B'$C'A'$B'$C'
+echo $A"$B"$C"A"$B"$C"
+echo $A'$B'$C'A'$B'$C'
+echo $A
+echo $A$B
+echo $A$B$C
+echo $A$B$C$D
+echo [$A]
+echo [$A]
+echo [$A]
+echo [$A]
+echo [$A]
+echo [$A]
+echo [$A]
+echo [$A]
+echo [$A]
+echo [$A]
+echo [$A]
+echo \ \ \ \ \ \ \ $A\ \ \ \ \ \ 
+echo \ \ \ \ \ \ \ $A\ \ \ \ \ \ 
+echo \ \ \ \ \ \ \ $A\ \ \ \ \ \ 
+'echo $A',      exports={"A": "bonjour je suis splited"}
+'echo $A',      exports={"A": "bonjour     je     suis    splited"}
+'echo $A',      exports={"A": "   bonjour     je     suis    splited   "}
+'echo [$A]',    exports={"A": "bonjour je suis splited"}
+'echo [$A]',    exports={"A": "bonjour     je     suis    splited"}
+'echo [$A]',    exports={"A": "   bonjour     je     suis    splited   "}
+'echo "[$A]"',  exports={"A": "bonjour je suis splited"}
+'echo "[$A]"',  exports={"A": "bonjour     je     suis    splited"}
+'echo "[$A]"',  exports={"A": "   bonjour     je     suis    splited   "}
+'echo \\ $A',   exports={"A": "bonjour je suis splited"}
+'echo \\ $A',   exports={"A": "bonjour     je     suis    splited"}
+'echo \\ $A',   exports={"A": "   bonjour     je     suis    splited   "}
+'echo $A\\ ',   exports={"A": "bonjour je suis splited"}
+'echo $A\\ ',   exports={"A": "bonjour     je     suis    splited"}
+'echo $A\\ ',   exports={"A": "   bonjour     je     suis    splited   "}
+'echo $A$A$A',  exports={"A": "   bonjour     je     suis    splited   "}
+"echo $A",      exports={"A": "'" + Config.lorem + "'"}
+'echo "$A"',    exports={"A": "'" + Config.lorem + "'"}
+"echo '$A'",    exports={"A": "'" + Config.lorem + "'"}
+"$ECHO $ECHO",  exports={"ECHO": "echo"}
+$A$B bonjour
+$LS",          exports={"LS": "ls -l"}
+echo $
+echo \\$
+echo \\$\\$\\$\\$
+echo \\$$\\$$
+"echo $\\A $\\B",      exports={"A": "a", "B": "b"}
+"echo $\\A$\\B",       exports={"A": "a", "B": "b"}
+"echo $A",             exports={"A": " "}
+"echo $A",             exports={"A": "  "}
+"echo $A",             exports={"A": "   "}
+"echo $A",             exports={"A": "    "}
+"echo $A",             exports={"A": "  a "}
+"echo $A",             exports={"A": "                                "}
+"echo $A",             exports={"A": "                     a          "}
+"echo @$A@",           exports={"A": " "}
+"echo @ $A@",          exports={"A": " "}
+"echo @$A @",          exports={"A": " "}
+"echo @$A@",           exports={"A": "       "}
+"echo '@'$A'@'",       exports={"A": " "}
+"echo '@' $A'@'",      exports={"A": " "}
+"echo '@'$A '@'",      exports={"A": " "}
+'echo "@"$A"@"',       exports={"A": " "}
+'echo "@" $A"@"',      exports={"A": " "}
+'echo "@"$A "@"',      exports={"A": " "}
+'echo @"$A"@',         exports={"A": " "}
+'echo @ "$A"@',        exports={"A": " "}
+'echo @"$A" @',        exports={"A": " "}
+'echo @"$A"@',         exports={"A": "       "}
+"echo '@'\"$A\"'@'",   exports={"A": " "}
+"echo '@' \"$A\"'@'",  exports={"A": " "}
+"echo '@'\"$A\" '@'",  exports={"A": " "}
+'echo "@""$A""@"',     exports={"A": " "}
+'echo "@" "$A""@"',    exports={"A": " "}
+'echo "@""$A" "@"',    exports={"A": " "}
+'echo $A$B$C',         exports={"A": "", "B": "", "C": ""}
+'echo bonjour > $A',   exports={"A": 'file'}, files=['file']
+'echo bonjour > $A',   exports={"A": 'fi le'}, files=['fi le']
+echo bonjour > "$A"
+echo bonjour > '$A'
+echo \a
+\e\c\h\o bonjour
+echo charles\ 
+echo \ \ jesuis\ \ charles
+echo \ \ jesuis\; \ charles
+echo \ \ jesuis\&\& \ charles
+echo \ \ jesuis\|\| \ charles
+echo \ \ jesuis \|\| \ charles
+echo \ \ jesuis\; \ charles
+echo \ \ \ \ \ \ \ \ 
+echo \ \ \ \ \ \ \ \               \ \ \ \ \ \ 
+echo \$PATH
+echo \$\P\A\T\H
+echo\ bonjour
+\ echo bonjour
+ \ echo bonjour
+                 \ echo bonjour
+ \                 echo bonjour
+                 \                    echo bonjour
+/bin/echo " \  "
+/bin/echo " \" "
+/bin/echo " \' "
+/bin/echo " \a "
+/bin/echo " \b "
+/bin/echo " \| "
+/bin/echo " \! "
+/bin/echo " \@ "
+/bin/echo " \$ "
+/bin/echo " \$LESS "
+/bin/echo " \$? "
+/bin/echo " \\ "
+/bin/echo " \\\ "
+/bin/echo " \\\\ "
+/bin/echo " \\\\\ "
+/bin/echo " \\\\\\ "
+/bin/echo " \\\\\\\ "
+/bin/echo " \\\\\\\\ "
+/bin/echo ' \  '
+/bin/echo ' \" '
+/bin/echo ' \a '
+/bin/echo ' \b '
+/bin/echo ' \| '
+/bin/echo ' \! '
+/bin/echo ' \@ '
+/bin/echo ' \$ '
+/bin/echo ' $LESS '
+/bin/echo ' \$? '
+/bin/echo ' \\ '
+/bin/echo ' \\\ '
+echo \\
+echo \"\\\"\"'bonjour'
+echo foo
+echo                    foo
+             echo foo
+echo foo             
+         echo           foo             
+echo\t\t\t\t\t\t\t\t\t\tfoo
+\t\t\t\t\t\techo\tfoo
+echo\tfoo\t\t\t\t\t\t
+\t\t\t\techo\t\t\t\tfoo\t\t\t\t
+\fecho\ffoo
+\necho\nfoo
+\recho\rfoo
+\vecho\vfoo
+\t\r\v\fecho\v\t\r\vfoo
+
+                                          
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+            \t\t\t           \t\t\t       
+echo *.md
+echo built*
+echo oi*
+echo *.supp
+echo 'bye *' bo*s bye
+echo 'bye *' mini* bye
+echo *ME*
+echo "*"
+*
+manual*
+echo * | awk -v RS=" " '{print}' | sort
+<*.txt
+echo 'bye *' t*.c bye
+echo *EMPTY hello READ* world
+cat <README*
+echo "pip*"
+echo *bonus *.supp bonjour
+ls >outfile01 && cat outfile01
+cat <minishell.h&ls
+||
+|| echo oi
+&
+&&
+|& #-> não precisa
+*
+> *
+>> *
+> & # valido para < e >>
+> &&
+> ||
+echo oi || echo tchau
+env | grep USER || grep lucas
+> *
+>> *
+< *
+<< *
+#
+.
+;
+echo hello world
+echo "hello world"
+echo 'hello world'
+echo hello'world'
+echo hello""world
+echo ''
+echo "$PWD"
+echo '$PWD'
+echo "aspas ->'"
+echo "aspas -> ' "
+echo 'aspas ->"'
+echo 'aspas -> " '
+echo "> >> < * ? [ ] | ; [ ] || && ( ) & # $ \ <<"
+echo '> >> < * ? [ ] | ; [ ] || && ( ) & # $ \ <<'
+echo "exit_code ->$? user ->$USER home -> $HOME"
+echo 'exit_code ->$? user ->$USER home -> $HOME'
+echo "$"
+echo '$'
+echo $
+echo $?
+echo $?HELLO
+pwd
+pwd oi
+export hello
+export HELLO=123
+export A-
+export HELLO=123 A
+export HELLO="123 A-"
+export hello world
+export HELLO-=123
+export =
+export 123
+unset
+unset HELLO
+unset HELLO1 HELLO2
+unset HOME
+unset PATH
+unset SHELL
+cd $PWD
+cd $PWD hi
+cd 123123
+exit 123
+exit 298
+exit +100
+exit "+100"
+exit +"100"
+exit -100
+exit "-100"
+exit -"100"
+exit hello
+exit 42 world
+
+$PWD
+$EMPTY
+$EMPTY echo hi
+./test_files/invalid_permission
+./missing.out
+missing.out
+aaa
+test_files
+./test_files
+/test_files
+minishell.h
+$
+$?
+README.md
+unset HELLO=
+unset  A-
+export HELLO=123 A- WORLD=456
+unset  HELLO A- WORLD
+export UNO=1 DOS-2 TRES=3 || env | grep TRES
+export | sort | grep -v SHLVL | grep -v "declare -x _" | grep -v "PS.="
+exit 9223372036854775807
+exit 9223372036854775808
+exit -9223372036854775807
+exit -9223372036854775808
+exit -9223372036854775809
+env | sort | grep -v SHLVL | grep -v ^_
+cat ./test_files/infile_big | grep oi
+cat minishell.h | grep ");"$
+export GHOST=123 | env | grep GHOST
+grep hi <./test_files/infile
+grep hi "<infile" <         ./test_files/infile
+echo hi < ./test_files/infile bye bye
+grep hi <./test_files/infile_big <./test_files/infile
+echo <"./test_files/infile" "bonjour       42"
+cat <"./test_files/file name with spaces"
+cat <./test_files/infile_big ./test_files/infile
+cat <"1""2""3""4""5"
+echo <"./test_files/infile" <missing <"./test_files/infile"
+echo <missing <"./test_files/infile" <missing
+cat <"./test_files/infile"
+echo <"./test_files/infile_big" | cat <"./test_files/infile"
+echo <"./test_files/infile_big" | cat "./test_files/infile"
+echo <"./test_files/infile_big" | echo <"./test_files/infile"
+echo hi | cat <"./test_files/infile"
+echo hi | cat "./test_files/infile"
+cat <"./test_files/infile" | echo hi
+cat <"./test_files/infile" | grep hello
+cat <"./test_files/infile_big" | echo hi
+cat <missing
+cat <missing | cat
+cat <missing | echo oi
+cat <missing | cat <"./test_files/infile"
+echo <123 <456 hi | echo 42
+ls >./outfiles/outfile01
+ls >         ./outfiles/outfile01
+echo hi >         ./outfiles/outfile01 bye
+ls >./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >./test_files/invalid_permission
+ls >"./outfiles/outfile with spaces"
+ls >"./outfiles/outfile""1""2""3""4""5"
+ls >"./outfiles/outfile01" >./test_files/invalid_permission >"./outfiles/outfile02"
+ls >./test_files/invalid_permission >"./outfiles/outfile01" >./test_files/invalid_permission
+cat <"./test_files/infile" >"./outfiles/outfile01"
+echo hi >./outfiles/outfile01 | echo bye
+echo hi >./outfiles/outfile01 >./outfiles/outfile02 | echo bye
+echo hi | echo >./outfiles/outfile01 bye
+echo hi | echo bye >./outfiles/outfile01 >./outfiles/outfile02
+echo hi >./outfiles/outfile01 | echo bye >./outfiles/outfile02
+echo hi >./outfiles/outfile01 >./test_files/invalid_permission | echo bye
+echo hi >./test_files/invalid_permission | echo bye
+echo hi >./test_files/invalid_permission >./outfiles/outfile01 | echo bye
+echo hi | echo bye >./test_files/invalid_permission
+echo hi | >./outfiles/outfile01 echo bye >./test_files/invalid_permission
+echo hi | echo bye >./test_files/invalid_permission >./outfiles/outfile01
+cat <"./test_files/infile" >./test_files/invalid_permission
+cat >./test_files/invalid_permission <"./test_files/infile"
+cat <missing >./outfiles/outfile01
+cat >./outfiles/outfile01 <missing
+cat <missing >./test_files/invalid_permission
+cat >./test_files/invalid_permission <missing
+cat >./outfiles/outfile01 <missing >./test_files/invalid_permission
+ls >>./outfiles/outfile01
+ls >>      ./outfiles/outfile01
+ls >>./outfiles/outfile01 >./outfiles/outfile01
+ls >./outfiles/outfile01 >>./outfiles/outfile01
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >>./outfiles/outfile01 >>./outfiles/outfile02
+ls >>./test_files/invalid_permission
+ls >>./test_files/invalid_permission >>./outfiles/outfile01
+ls >>./outfiles/outfile01 >>./test_files/invalid_permission
+ls >./outfiles/outfile01 >>./test_files/invalid_permission >>./outfiles/outfile02
+ls <missing >>./test_files/invalid_permission >>./outfiles/outfile02
+ls >>./test_files/invalid_permission >>./outfiles/outfile02 <missing
+echo hi >>./outfiles/outfile01 | echo bye
+echo hi >>./outfiles/outfile01 >>./outfiles/outfile02 | echo bye
+echo hi | echo >>./outfiles/outfile01 bye
+echo hi | echo bye >>./outfiles/outfile01 >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./test_files/invalid_permission | echo bye
+echo hi >>./test_files/invalid_permission >./outfiles/outfile01 | echo bye
+echo hi | echo bye >>./test_files/invalid_permission
+echo hi | echo >>./outfiles/outfile01 bye >./test_files/invalid_permission
+cat <minishell.h>./outfiles/outfile
+cat <minishell.h|ls
+|
+| echo oi
+| |
+| $
+| >
+>
+>>
+>>>
+<
+<<
+echo hi <
+cat    <| ls
+echo hi | >
+echo hi | > >>
+echo hi | < |
+echo hi |   |
+echo hi |  "|"
+CTRL+C
+CTRL+D
+CTRL+\
+CTRL+C, CTRL+C, CTRL+C, exit
+CTRL+C, CTRL+C, CTRL+C, Ctrl+D
+
+😈 😈 😈
+mkdir dir; cd dir; pwd
+mkdir dir; cd dir; cd .; pwd
+mkdir dir; cd dir; cd ./; pwd
+mkdir dir; cd dir; cd ..; pwd
+mkdir dir; cd dir; cd ../; pwd
+touch testfile; cd testfile
+cd NO_SUCH_FILE; pwd
+cd hello world; pwd
+cd /; cd ../../akjwyefgjkwveyjfgweyugyuwegf76t273/../../ ;pwd
+mkdir dir; cd dir; cd ../nosuchdir/../dir; pwd
+mkdir hello; cd hello world; pwd
+cd /; pwd
+cd /bin; pwd
+cd /bin/../; pwd
+mkdir dir; cd DIR; pwd
+mkdir DIR; cd dir; pwd
+mkdir dir; chmod 000 dir; cd dir; pwd;chmod 777 dir
+mkdir dir; ln -s dir link; cd link; pwd
+mkdir dir; ln -s dir link; rmdir dir; cd link; pwd
+mkdir dir; cd dir; rmdir ../dir; cd ./; pwd;cd .; pwd; cd ./././././; pwd; cd .////////./; pwd; cd ../; pwd
+mkdir -p a/b/c; cd a/b/c; rm -rf ../../b; cd ./; pwd; cd ../; pwd; cd .////./; pwd
+mkdir -p a/b/c; cd a/b/c; rm -rf ../../b; cd ./; pwd; cd .././.; pwd; cd ./; pwd; cd ../; pwd
+cd ; pwd
+export HOME=; cd ; pwd
+unset HOME; cd ; pwd
+export HOME="./"; cd ; pwd
+export HOME="../../"; cd ; pwd
+export HOME=""; cd ; pwd
+export HOME="/BIN"; cd ; pwd
+export HOME=a; mkdir -p a/b; cd ; pwd
+export HOME=NO_SUCH_FILE; cd ; pwd
+export CDPATH="/"; cd bin; pwd
+export CDPATH="/"; cd ; pwd
+export CDPATH="/"; export HOME=; cd ; pwd
+export CDPATH="/"; unset HOME; cd ; pwd
+export CDPATH=""; mkdir -p a/b; cd b; pwd
+export CDPATH="./"; mkdir dir; cd dir; pwd
+export CDPATH="../a"; mkdir -p a/b/c; cd b; pwd; cd a; pwd; cd b; pwd
+export CDPATH=a; mkdir -p a/b/c; cd b; pwd
+export CDPATH=A; mkdir -p a/b/c; cd b; pwd
+export CDPATH=a; mkdir -p a/b/c; cd ./b; pwd
+export CDPATH=a; mkdir -p a/b/c; cd a; cd ../b; pwd
+export CDPATH=a; mkdir -p a/b/c; cd .; pwd
+export CDPATH=a; mkdir -p a/b/c; cd a; cd ..; pwd
+export CDPATH=a; mkdir -p a/b/c; mkdir b; cd b; pwd
+export CDPATH=a/b; mkdir -p a/b/c; cd c; pwd
+export CDPATH=a:b:a:b; mkdir -p a/test  b/test; mkdir -p a:b/test; cd test; pwd
+export CDPATH=b:a:a:b; mkdir -p a/test  b/test; mkdir -p a:b/test; cd test; pwd
+export CDPATH=a:b:a:b; mkdir -p a/hello  b/hello; mkdir -p a:b/test; cd test; pwd
+export CDPATH=a:b:a:b; mkdir -p a/test  b/test; mkdir -p a:b/test; chmod 000 a/test ;cd test; pwd; cd ../../; chmod 777 a/test
+export CDPATH="/"; cd /; pwd
+export CDPATH="/"; cd /bin; pwd
+export CDPATH="/bin"; cd /bin; pwd
+export CDPATH="/bin"; cd /bin; pwd
+export CDPATH="a"; mkdir a; cd a; pwd
+export CDPATH="a"; mkdir -p a/a; cd a; pwd
+mkdir -p a/b/c/d/e/f/g/h/i/; cd a/b/c/d/../../c/d/e/f/g/h/i/../../../g/h/i/../.././././../g/h/i/../../../../../../../c/d/../d/../d/e/../../d/e/.././././e/f/.//////../f/g/h/i/////../../../; pwd
+export HOME="/"; cd; cd ../../../../../././././../../../././../../../; pwd
+cd //; pwd; cd //bin; pwd
+cd ///; pwd; cd ///bin; pwd
+cd ////; pwd; cd ////bin; pwd
+cd /////; pwd; cd /////bin; pwd
+cd //////; pwd; cd //////bin; pwd
+cd ///////; pwd; cd ///////bin; pwd
+export HOME=//; cd
+export HOME=//bin/..////////////bin/../; cd
+export HOME=///; cd
+export CDPATH=//; cd bin
+export CDPATH=//bin/..////////////bin/../; cd bin
+export CDPATH=///; cd bin
+export CDPATH=":"; cd dir; pwd, mkdir dir
+export CDPATH="hello:"; cd dir; pwd, mkdir dir
+export CDPATH=":/"; cd dir; pwd, mkdir dir
+export CDPATH="::/"; cd bin; pwd, mkdir bin
+export CDPATH="::/:"; cd bin; pwd, mkdir bin
+export CDPATH=""; cd bin; pwd, mkdir bin
+export CDPATH="/:"; cd bin; pwd, mkdir bin
+export CDPATH="//::"; cd bin; pwd, mkdir bin
+echo
+echo a
+echo	tab
+echo "	tab	"
+echo		tab
+echo hello world
+echo -n
+echo -n a
+echo -n hello world
+echo -nnnnnnnn
+echo -nnnnnnnn a
+echo -nnnnnnnn hello world
+echo -nnnnnnnn -nnnnnnnn
+echo -nnnnnnnn -nnnnnnnn a
+echo -nnnnnnnn -nnnnnnnn hello world
+echo -nk hello
+echo -nnnnnnnnnnk hello
+echo -nknknknk hello
+echo hello -n
+echo hello -nnnnnnn
+echo hello -nknknknknk
+echo hello -nnnnnnnnn -nnnnnnnnn
+echo \-n hello
+echo "-n" hello
+echo '-n' hello
+echo "-n" "hello"
+echo '-n' 'hello'
+echo \-\n \h\e\l\l\o
+echo '\-\n' '\h\e\l\l\o'
+echo "\-\n" "\h\e\l\l\o"
+echo $PATH
+echo "$PATH"
+echo '$PATH'
+echo \$PATH
+echo "\$PATH"
+echo '\$PATH'
+echo a "" b "" c
+echo a "$NO_SUCH_ENV" b $NO_SUCH_ENV c, unset NO_SUCH_ENV
+echo		hello
+echo \"$\"
+echo "$ $ $ $ $ $ "
+echo "\$\$USER\\$USER""$USER"
+echo $
+echo \$USER
+echo \\$USER
+echo \\\$USER
+echo \\\\$USER
+env | grep -v -E '^_=' | sort
+env | grep -v -E '^_=' | sort, export A=hello
+cd ../; env | grep -v -E '^_=' | sort
+exit 0
+exit 1
+exit -1
+exit 2147483647
+exit 2147483648
+exit -2147483648
+exit -2147483649
+exit 9223372036854775807
+exit 9223372036854775808
+exit -9223372036854775808
+exit -9223372036854775809
+exit -- 42
+exit "        42           "
+exit -- -- 42
+exit --42
+exit ++42
+exit 42 42
+exit a
+exit 1a
+exit +
+exit -
+exit "          "
+exit 0 0;
+exit 0 0; exit
+exit 0 0; echo "this message should not be displayed" 2> file; ls
+exit 0 0 | echo hello
+export HELLO=hello; echo $HELLO
+export HELLO=hello; echo $hello
+echo $
+echo "$"
+echo  '$'
+echo \$
+echo "\$"
+export HELLO=hello; echo \$HELLO
+export HELLO=hello; echo \\$HELLO
+export HELLO=hello; echo "$HELLO"
+export HELLO=hello; echo "\$HELLO"
+export HELLO=hello; echo "\\$HELLO"
+export HELLO=hello; echo \\"$HELLO"
+export HELLO=hello; echo "\"\"$HELLO"
+export TEST=ech; "$TEST"o hello
+export TEST="echo hello"; $TEST
+export TEST='echo hello'; $TEST
+export TEST="\$\"echo hello\""; $TEST
+export TEST="echo hello"; export TEST2="\$TEST"; $TEST2
+export abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890=hello; echo $abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890
+export TEST="export TEST=echo"; $TEST hello; $TEST hello
+export | grep -v -E '^declare -x _='
+export 1 _+ _OK _2? _OK2=VAR =NG OK3=; export | grep -v -E '^declare -x _='
+export dquote='"' dollar='$' backslash='\' backquote='`' newline='\n'; export | grep -v -E '^declare -x _='
+export APPEND=1; export APPEND+=2; export | grep APPEND
+export APPEND_NONE=1; export APPEND_NONE+=; export | grep APPEND_NONE
+export APPEND_NONE=; export APPEND_NONE=; export APPEND_NONE+=; export | grep APPEND_NONE
+export APPEND_EMPTY=""; export APPEND_EMPTY=""; export APPEND_EMPTY=""; export | grep APPEND_EMPTY
+export OVERWRITE=42; export OVERWRITE=a; export | grep OVERWRITE
+export A=B=C=D; export | grep A
+export PATH; export | grep PATH
+export PWD; export | grep PWD
+export OLDPWD; export | grep OLDPWD
+unset PWD; cd ..; export | grep PWD
+unset OLDPWD; cd ..; export | grep OLDPWD
+unset PWD; cd ..; export PWD=new_value; export | grep PWD
+unset OLDPWD; cd ..; export OLDPWD=new_value; export | grep OLDPWD
+unset PWD; cd ..; export PWD; export | grep PWD
+unset OLDPWD; cd ..; export OLDPWD; export | grep OLDPWD
+export =
+export PATH=":" ; ls , cp /bin/ls .; chmod 000 ls;
+export PATH=":/" ; ls , cp /bin/ls .; chmod 000 ls;
+export PATH="::" ; ls , cp /bin/ls .; chmod 000 ls;
+export PATH="/:" ; ls , cp /bin/ls .; chmod 000 ls;
+export PATH="/bin:" ; ls , cp /bin/ls .; chmod 000 ls;
+export PATH=":/bin" ; ls , cp /bin/ls .; chmod 000 ls;
+export PATH="::/bin::" ; ls , cp /bin/ls .; chmod 000 ls;
+export PATH="/bin:" ; ls , cp /bin/ls .; chmod 000 ls;
+export PATH="hello:" ; ls , cp /bin/ls .; chmod 000 ls;
+export PATH=""; nosuchfile
+export PATH=''; nosuchfile
+unset PATH; nosuchfile
+unset PATH; export PATH; nosuchfile
+unset PATH; export PATH=; nosuchfile
+export PATH=":a:b"; cmd, mkdir a b; printf '#!/bin/bash\necho a' > a/cmd; printf '#!/bin/bash\necho b' > b/cmd; printf '#!/bin/bash\necho cwd' > cmd; chmod +x a/cmd b/cmd cmd
+export PATH="b:a:"; cmd, mkdir a b; printf '#!/bin/bash\necho a' > a/cmd; printf '#!/bin/bash\necho b' > b/cmd; printf '#!/bin/bash\necho cwd' > cmd; chmod +x a/cmd b/cmd cmd
+export PATH="a:b"; cmd, mkdir a b; printf '#!/bin/bash\necho a' > a/cmd; printf '#!/bin/bash\necho b' > b/cmd; printf '#!/bin/bash\necho cwd' > cmd; chmod +x a/cmd b/cmd cmd
+export PATH="no_such_dir:a"; cmd, mkdir a; printf '#!/bin/bash\necho a' > a/cmd; printf '#!/bin/bash\necho cwd' > cmd; chmod +x a/cmd b/cmd cmd
+export PATH="no_such_dir1:no_such_dir2:"; cmd, printf '#!/bin/bash\necho cwd' > cmd; chmod +x a/cmd b/cmd cmd
+echo $OLDPWD
+echo $OLDPWD, export OLDPWD=/
+echo $PWD
+echo $PWD, export PWD=/
+echo $PWD, mkdir dir; ln -s dir symdir; cd symdir
+pwd
+pwd, export PWD=/
+pwd, mkdir dir; ln -s dir symdir; cd symdir
+pwd; echo $PWD; echo $OLDPWD, export PWD=; export OLDPWD=;
+mkdir dir; cd dir; pwd; echo $PWD; echo $OLDPWD, export PWD=; export OLDPWD=;
+mkdir dir; cd dir; cd ..; pwd; echo $PWD; echo $OLDPWD, export PWD=; export OLDPWD=;
+cd; pwd; echo $PWD; echo $OLDPWD, export PWD=; export OLDPWD=;
+mkdir dir; cd dir; rmdir ../dir; cd ./; pwd; echo $PWD; echo $OLDPWD, export PWD=; export OLDPWD=;
+mkdir dir; cd dir; rmdir ../dir; cd ./; cd ././././././//////////./././././././//////./; pwd; echo $PWD; echo $OLDPWD, export PWD=; export OLDPWD=;
+mkdir dir; cd dir; rmdir ../dir; cd ./; cd ../; pwd; echo $PWD; echo $OLDPWD, export PWD=; export OLDPWD=;
+mkdir dir; ln -s dir link; cd link; rmdir ../dir; cd ./; pwd; echo $PWD; echo $OLDPWD, export PWD=; export OLDPWD=;
+mkdir dir; ln -s dir link; cd link; rmdir ../dir; cd ./; cd ../; pwd; echo $PWD; echo $OLDPWD, export PWD=; export OLDPWD=;
+mkdir DIR; cd dir; rmdir ../DIR; cd ./; pwd; echo $PWD; echo $OLDPWD, export PWD=; export OLDPWD=;
+mkdir DIR; cd dir; rmdir ../DIR; cd ./; cd ../; pwd; echo $PWD; echo $OLDPWD, export PWD=; export OLDPWD=;
+mkdir dir; ln -s dir link; cd LINK; rmdir ../dir; cd ./; pwd; echo $PWD; echo $OLDPWD, export PWD=; export OLDPWD=;
+mkdir dir; ln -s dir link; cd LINK; rmdir ../dir; cd ./; cd ../; pwd; echo $PWD; echo $OLDPWD, export PWD=; export OLDPWD=;
+> file
+> file | cat < no_such_file
+echo hello > out1.txt > out2.txt > out3.txt 2> err1.txt 2> err2.txt 2> err3.txt; cat out1.txt out2.txt out3.txt err1.txt err2.txt err3.txt
+echo hello >> out1.txt >> out2.txt >> out3.txt 2>> err1.txt 2>> err2.txt 2>> err3.txt; cat out1.txt out2.txt out3.txt err1.txt err2.txt err3.txt
+ls > out1.txt > out2.txt > out3.txt 2> err1.txt 2> err2.txt 2> err3.txt; cat out1.txt out2.txt out3.txt err1.txt err2.txt err3.txt
+ls >> out1.txt >> out2.txt >> out3.txt 2>> err1.txt 2>> err2.txt 2>> err3.txt; cat out1.txt out2.txt out3.txt err1.txt err2.txt err3.txt
+ls no_such_file > out1.txt > out2.txt > out3.txt 2> err1.txt 2> err2.txt 2> err3.txt; cat out1.txt out2.txt out3.txt err1.txt err2.txt err3.txt
+ls no_such_file >> out1.txt >> out2.txt >> out3.txt 2>> err1.txt 2>> err2.txt 2>> err3.txt; cat out1.txt out2.txt out3.txt err1.txt err2.txt err3.txt
+echo a > out; echo b >> out; echo c >> out; echo d >> out; cat out
+echo a > out; echo b >> out; echo c >> out; echo d > out; cat out
+echo hello 2147483647> file
+echo hello 2147483648> file
+echo a > $NO_ENV | echo b, unset NO_ENV
+./a.out 3> file3 2> file2 1> file1; cat file3 file2 file1, printf '#include<unistd.h>\nint main(){write(1, "fd1\\n", 4);write(2, "fd2\\n", 4);write(3, "fd3\\n", 4);}' > a.c && gcc a.c
+./a.out 1> file1 2> file2 3> file3; cat file1 file2 file3, printf '#include<unistd.h>\nint main(){write(1, "fd1\\n", 4);write(2, "fd2\\n", 4);write(3, "fd3\\n", 4);}' > a.c && gcc a.c
+echo a 1> 1.txt 2> 2.txt 3> 3.txt; ./a.out 1>> 1.txt 2>> 2.txt 3>> 3.txt; cat 1.txt 2.txt 3.txt, printf '#include<unistd.h>\nint main(){write(1, "fd1\\n", 4);write(2, "fd2\\n", 4);write(3, "fd3\\n", 4);}' > a.c && gcc a.c
+echo a 3> 3.txt 2> 2.txt 1> 1.txt 2> 2.txt 3> 3.txt; echo b 1>> 1.txt 2>> 2.txt 3>> 3.txt 2>> 2.txt 1>> 1.txt; ./a.out 1>> 1.txt 2>> 2.txt 3>> 3.txt 2>> 2.txt 1>> 1.txt; cat 1.txt 2.txt 3.txt, printf '#include<unistd.h>\nint main(){write(1, "fd1\\n", 4);write(2, "fd2\\n", 4);write(3, "fd3\\n", 4);}' > a.c && gcc a.c
+echo a > f; echo b >> f; cat f f f >> ff; cat ff ff >> f; cat f
+ls>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f>f;cat f
+ls>a>b>c>d>e>f>g>h>i>j>k>l>m>n>o>p>q>r>s>t>u>v>w>x>y>z>A>B>C>D>E>F>G>H>I>J>K>L>M>N>O>P>Q>R>S>T>U>V>W>X>Y>Z>aa>ab>ac>ad>ae>af>ag>ah>ai>aj>ak>al>am>an>ao>ap>aq>ar>as>at>au>av>aw>ax>ay>az>aA>aB>aC>aD>aE>aF>aG>aH>aI>aJ>aK>aL>aM>aN>aO>aP>aQ>aR>aS>aT>aU>aV;ls
+echo $SHLVL, export SHLVL=0
+echo $SHLVL, export SHLVL=998
+echo $SHLVL, export SHLVL=999
+echo $SHLVL, export SHLVL=1000
+echo $SHLVL, export SHLVL=+42
+echo $SHLVL, export SHLVL=-1
+echo $SHLVL, export SHLVL=4294967295
+echo $SHLVL, export SHLVL=4294967296
+echo $SHLVL, export SHLVL=-4294967296
+echo $SHLVL, export SHLVL=-4294967297
+echo $SHLVL, export SHLVL=a
+echo $SHLVL, export SHLVL=`printf "\t\n\v\f\r 42"`
+echo $SHLVL, export SHLVL=`printf " 42 "`
+echo $SHLVL, export SHLVL=`printf " 42\t"`
+echo $SHLVL, export SHLVL=`printf " 42\v"`
+echo $SHLVL, export SHLVL=`printf " 42\n"`
+echo $SHLVL, export SHLVL=`printf " 42\f"`
+echo $SHLVL, export SHLVL=`printf " 42\r"`
+echo $SHLVL, export SHLVL=0
+echo $SHLVL, export SHLVL=998
+echo $SHLVL, export SHLVL=999
+echo $SHLVL, export SHLVL=1000
+echo $SHLVL, export SHLVL=+42
+echo $SHLVL, export SHLVL=-1
+echo $SHLVL, export SHLVL=4294967295
+echo $SHLVL, export SHLVL=4294967296
+echo $SHLVL, export SHLVL=-4294967296
+echo $SHLVL, export SHLVL=-4294967297
+echo $SHLVL, export SHLVL=a
+echo $SHLVL, export SHLVL=`printf "\t\n\v\f\r 42"`
+echo $SHLVL, export SHLVL=`printf " 42 "`
+echo $SHLVL, export SHLVL=`printf " 42\t"`
+echo $SHLVL, export SHLVL=`printf " 42\v"`
+echo $SHLVL, export SHLVL=`printf " 42\n"`
+echo $SHLVL, export SHLVL=`printf " 42\f"`
+echo $SHLVL, export SHLVL=`printf " 42\r"`
+/bin/ls, touch a .a
+/bin/ls -a, touch a .a
+/bin/ls | /usr/bin/grep a, touch aa ab ac
+/bin/ls | /usr/bin/grep a | /usr/bin/grep c, touch aa ab ac
+ls, touch a .a
+ls -a, touch a .a
+ls | grep a, touch aa ab ac
+ls | grep a | grep c, touch aa ab ac
+echo hello world | cat
+no_such_file
+./no_such_file
+/bin/ls/no_such_file
+/bin/no_such_dir/file
+perm, touch perm; chmod 000 perm
+./perm, touch perm; chmod 000 perm
+perm, touch perm; chmod 100 perm
+./perm, touch perm; chmod 100 perm
+perm, touch perm; chmod 300 perm
+./perm, touch perm; chmod 300 perm
+perm, touch perm; chmod 500 perm
+./perm, touch perm; chmod 500 perm
+./empty, touch empty; chmod +x empty
+dir, mkdir dir
+./dir, mkdir dir
+./exe, printf "#!/bin/bash\necho 42" > exe; chmod +x exe; ln -s exe sym; chmod -h -x sym
+echo a | $NO_ENV | cat, unset NO_ENV
+;
+;;
+;;;
+; ;
+|
+| |
+>
+>>
+>>>
+>>>>
+<
+< >
+| echo
+echo | |
+cat < >
+echo '
+echo "
+unset; env | grep -v -E '^_=' | sort
+unset A; echo $A, export A='test $A'
+unset _A1; echo $_A1, export _A1='test $_A1'
+unset A B C; echo $A$B$C$D, export A=test B=multiple C=var D=hello
+unset A B =invalid C; echo $A$B$C$D, export A=test B=multiple C=var D=hello
+unset PWD; echo $PWD
+unset OLDPWD; echo $OLDPWD
+unset NO_SUCH_ENV; echo $?$NO_SUCH_ENV, unset NO_SUCH_ENV
+unset 1
+unset A=a; echo $A, export A=a
+unset ' \"$&`\n'
+
+cd .a
+echo $?
+cd 
+echo $?
+cd .. 
+echo $?
+cd . 
+echo $?
+cd /Users 
+echo $?
+cd // 
+echo $?
+cd '//' 
+echo $?
+cd ////// 
+echo $?
+cd ./././ 
+echo $?
+cd /
+echo $?
+cd '/etc' 
+echo $?
+cd '/var' 
+echo $?
+cd "$PWD/file_tests" 
+echo $?
+cd "doesntexist" 
+echo $?
+cd "doesntexist">/dev/null 
+echo $?
+cd ../../..
+echo $?
+cd "wtf" >/dev/null 
+cd
+cd ../../../../../../../../../../../../../../..
+echo $?
+echo $?
+cd .. 
+echo $?
+cd ..
+echo $?
+cd ?
+echo $?
+cd +
+echo $?
+cd _
+echo $?
+cd woof
+echo $?
+cd bark bark
+echo $?
+cd '/' 
+echo $?
+cd $PWD/file_tests 
+echo $?
+cd $OLDPWD/something 
+rm tmp1 tmp2 tmp3 tmp4 tmp5
+
+exitecho "'$USER'"
+echo "''"
+echo "'$USER'" "" '' $USER $USERr '"$USER"'
+
+echo $=$=$= $=  $=
+echo $+$+$+  $
+echo -n
+echo $?
+echo -nn
+echo $?
+echo -
+echo $?
+echo --n
+echo $?
+echo "-n"
+echo $?
+echo -n blabla
+echo $?
+echo -nn blabla
+echo $?
+echo - blabla
+echo $?
+echo --n blabla
+echo $?
+echo "-n" blabla
+echo $?
+echo -n ''
+echo $?
+echo -nblabla
+echo $?
+echo""
+echo $?
+echo -n""
+echo $?
+echo hello
+echo $?
+echo exit
+echo $?
+echo -n
+echo $?
+echo
+echo $?
+echo hello blabla
+echo $?
+echo -n -n -n blabla
+echo $?
+echo blabla -n
+echo $?
+echo echo hello
+echo $?
+echo "bla"bla ""''"'''" bla"bla   "'   "  ""  'sdc" ssdsd " sd' s''d s'sd 's'sd ' s' "vd v'd 'v df 'd df' v' dfv' dv' df 'dvf ' df vdf    v'df v' df'v "
+echo $?
+echo $?
+echo $?
+echo echo
+echo $?
+eCho 
+echo $?
+eChO
+echo $?
+eCHO
+echo $?
+ECHO
+echo $?
+echo rhobebou
+echo $?
+echo stop barking
+echo $?
+echo "bonjour"
+echo $?
+echo bonjour
+echo $?
+echo 'bonjour'
+echo $?
+echo -n bonjour
+echo $?
+echo -nn bonjour
+echo $?
+echo -n -n -n bonjour
+echo $?
+echo -n -n -n bonjour
+echo $?
+echo "-n" bonjour
+echo $?
+echo -n"-n" bonjour
+echo $?
+echo "-nnnn" bonjour
+echo $?
+echo "-n -n -n"-n bonjour
+echo $?
+echo "-n '-n'" bonjour
+echo $?
+echo "~"
+echo $?
+echo '~'
+echo $?
+echo $USER
+echo $?
+echo "$USER"
+echo $?
+echo "'$USER'"
+echo $?
+echo " '$USER' "
+echo $?
+echo text"$USER"
+echo $?
+echo text"'$USER'" ' $USER '
+echo $?
+echo "text"   "$USER"    "$USER"
+echo $?
+echo '              $USER          '
+echo $?
+echo               text "$USER"            "$USER"text
+echo $?
+echo ''''''''''$USER''''''''''
+echo $?
+echo """"""""$USER""""""""
+echo $?
+echo $USER'$USER'text oui oui     oui  oui $USER oui      $USER ''
+echo $?
+echo $USER '' $USER $USER '' $USER '' $USER -n $USER
+echo $?
+echo "$USER""$USER""$USER"
+echo $?
+echo text"$USER"test
+echo $?
+echo '$USER' "$USER" "text text"
+echo $?
+echo '$USER'
+echo $?
+echo $USER " "
+echo $?
+echo "$USER""Users/$USER/file""'$USER'"'$USER'
+echo $?
+echo "$USER$USER$USER"
+echo $?
+echo '$USER'"$USER"'$USER'
+echo $?
+echo '"$USER"''$USER'"""$USER"
+echo $?
+echo " $USER  "'$PWD'
+echo $?
+echo " $USER  $ "'$PWD'
+echo $?
+echo $USER=4
+echo $?
+echo $USER=thallard
+echo $?
+echo $USER
+echo $?
+echo $?
+echo $?
+echo $USER213
+echo $?
+echo $USER$12USER$USER=4$USER12
+echo $?
+echo $USER $123456789USER $USER123456789
+echo $?
+echo $USER $9999USER $8888USER $7777USER
+echo $?
+echo $USER $USER9999 $USER8888 $USER7777
+echo $?
+echo $USER $USER9999 $USER8888 $USER7777 "$USER"
+echo $?
+echo "$USER=12$USER"
+echo $?
+echo "$9USER" "'$USER=12$SOMETHING'"
+echo $?
+echo $PWD/file
+echo $?
+echo "$PWD/file"
+echo $?
+echo "text" "text$USER" ... "$USER"
+echo $?
+echo $PWD
+rm tmp1 tmp2 tmp3 tmp4 tmp5
+
+exit
+export $SHLVL=42
+export _=/usr/bin/env
+env | grep USER
+
+export TEST=BLA
+echo test        test
+echo "test"
+echo $TEST
+echo "$TEST"
+echo '$TEST'
+echo "$TEST$TEST$TEST"
+echo "$TEST$TEST=lol$TEST"
+echo "   $TEST lol $TEST"
+echo $TEST$TEST$TEST
+echo $TEST$TEST=lol$TEST""lol
+echo    $TEST lol $TEST
+echo test "" test "" test
+echo "$TEST"
+echo "$=TEST"
+
+echo ----2----
+echo "$ "
+echo ----2----
+echo "$ f"
+echo ----4----
+echo " $ "
+echo ----4----
+echo " $ $USER"
+echo ----5----
+echo ""$
+echo ----6----
+echo $""
+echo ----6----
+echo $''
+
+echo ----0----
+echo X'"$"""'
+echo "$?TEST"
+echo $TEST $TEST
+echo "$1TEST"
+echo "$T1TEST"
+export CHEVRON=">"
+echo bla $CHEVRON yo
+ls
+exit
+
+Le fameux cas impossible :
+echo ----3----
+echo " $"
+
+echo ----1----
+echo "$"
+echo ----7----
+echo "$"""
+echo ----8----
+echo "$"XX""
+echo ----9----
+echo X"$"""
+echo ----9----
+env | env
+echo $?exit 0 0
+exit 42 42
+exit -42 -24
+exit 42
+exit 42 53 68
+exit 259
+exit -12030
+exit --1239312
+exit ++++1203020103
+exit +0
+exit ++++++0
+exit -----0
+exit azerty
+exit kewkwqke
+exit a
+exit z
+exit "1"
+exit "2"
+exit "+102"
+exit "1230"
+exit "+++1230"
+exit "1"23
+exit "2"32"32"
+exit "'42'"
+exit '42'"42"42
+exit +'42'"42"42
+exit -'42'"42"42
+exit 9223372036854775807
+exit 9223372036854775808
+exit 9223372036854775806
+exit 9223372036854775809
+exit -9223372036854775807
+exit -9223372036854775808
+exit -9223372036854775806
+exit -9223372036854775809
+exit -4
+exit wrong
+exit wrong_command 
+exit something
+exit 1 
+exit -1 
+exit 42 
+exit 0 
+exit --000 
+exit +++++++000 
+exit ++++3193912939 
+exit ---31232103012 
+exit "something" 
+exit q 
+exit help 
+exit export 
+exit echo 
+exit cd .. 
+exit 0 0 
+exit something somethingv2 
+exit 42 42 42 42 42 
+exit echo something 
+exit exit
+exitexit exit
+echo $
+
+echo " $ "
+echo " $? "
+echo $''$""$' '$" "$'?'$"?"$'? '$"? "" $ "" $? "
+echo $'USER'
+echo $"USER"
+echo $'USER '
+echo $"USER "
+echo " $ "
+echo " $USER "
+echo $'USERR'
+echo $"USERR"
+echo $'USERR '
+echo $"USERR "
+echo " $ "
+echo " $USERR "
+echo $''$""$' '$" "$'USER'$"USER"$'USER '$"USER "" $ "" $USER "
+echo $?$?$?$?$?$?$?$
+echo $'USER'
+echo $"USER"
+echo '$USER'
+echo "$USER"
+echo "'$USER'"
+echo '"$USER"'
+echo $USER"'"
+echo $USER""
+echo ''$USER
+echo $'USER'$"USER"'$USER'"$USER""'$USER'"'"$USER"'$USER"'"$USER""''$USER
+echo $?$USER
+export 'USER'=YO
+echo $'USER'
+exit
+
+Stranges cases : not supported
+echo $''
+echo $""
+echo $' '
+echo $" "
+echo $'?'
+echo $"?"
+echo $'? '
+echo $"? "
+echo " $"USER
+unset _
+
+export TESTFCGFCSGFC
+echo $?
+export TESTNBKJNLJ='rferfh$re"f'
+echo $?
+export TESTNBKJNLJdgf="'rferfh$ref'"
+echo $?
+export TESTNBKJNLJtcfgvhjbk="rferfh$re'f"
+echo $?
+export =
+echo $?
+export 1TESTHBGUHBUHB=
+echo $?
+export TESTOUHOSIOUNXJKNK 34khh -deded
+echo $?
+export ""=""
+echo $?
+export "="
+echo $?
+export TESTFGCHVJKNLJKHVJGCHFGVJBKNL2='"'
+echo $?
+export TESTFGCHVJKNLJKHVJGCHFGVJBKNL3="'"
+echo $?
+
+export "$"
+echo $?
+export TESTJHBSJCBJHSC111=T=""
+echo $?
+export TESTNJNCKJDCKDCKDJN222+S=T=""
+echo $?
+export TESTKXSLXSLX333=LOL 
+echo $?
+export TESTYGVSBNJKHBXGJHN444=LOL 
+echo $?
+export TESTREDTUHINJO555=LOL
+echo $?
+export TESTYRFTGUIHUJOKL666=lol
+echo $?
+export TESTYRFTGUIHUJOKL666=LOLdfgtgh
+echo $?
+export TESTYTFUGYHIUNJ777="ls       -l     - a" 
+echo $?
+
+export | grep TEST
+env | grep TEST | sort
+
+export arg='"hello"'
+echo $arg
+
+touch ls
+chmod 777 ls
+export ORIGINALPATH=$PATH
+export PATH="$PATH:$PWD"
+ls
+export PATH=$ORIGINALPATH
+export PATH="$PWD:$PATH"
+ls
+rm ls
+
+
+exit
+
+weird case : 
+export TESTFGCHVJKNLJKHVJGCHFGVJBKNL4="$"
+
+echo hello > tmp1
+echo -----1------
+cat << '$USER' > tmp1
+bonjour
+je
+suis
+$USER
+$USER
+$USER
+cat tmp1
+
+echo -----2------
+cat << $USER > tmp1
+bonjour
+je
+suis
+$USER
+$USER
+$USER
+cat tmp1
+
+echo -----3------
+cat << $AAAAAAAA > tmp1
+bonjour
+je
+suis
+$USER
+$USER
+$USER
+$AAAAAAAAAAAAAAAAAA
+$AAAAAAAA
+cat tmp1
+
+echo -----4------
+cat << "hello'ksdcksd'ckdsc'""""""'"kjbsdckj'"fddvdf"vdfvdfv'bsdc > tmp1
+bonjour
+je
+suis
+$USER
+$USER
+$USER
+$AAAAAAAAAAAAAAAAAA
+$AAAAAAAA
+"hello'ksdcksd'ckdsc'""""""'"kjbsdckj'"fddvdf"vdfvdfv'bsdc
+hello'ksdcksd'ckdsc''kjbsdckj"fddvdf"vdfvdfvbsdc
+cat tmp1
+
+
+
+
+echo -----5------
+cat << "b$" > tmp1
+bonjour
+je
+suis
+$USER
+$USER
+$USER
+$AAAAAAAAAAAAAAAAAA
+$AAAAAAAA
+$
+
+$
+b$
+cat tmp1
+rm tmp1
+
+rm tmp1 tmp2 tmp3 tmp4 tmp5
+
+exit
+
+echo YOOOOOOOOOOOOOOoo
+| |
+||
+|||
+ |
+ |
+|||||||||||
+|D||
+<>|<>|<>|<>|<|<>><|><|><>|<|>
+> | <>|<|<>
+> | <
+> |
+echo | smdccsdcds
+| echo hello
+| cat <
+| cat < tester.sh
+echo | echo | $USER<
+>$USER
+> $USER
+
+<<
+
+echo > |
+ls | ls >
+echo > <
+echo $?
+echo << >echo $?
+rm tmp1 tmp2 tmp3 tmp4 tmp5
+echo -------------------000-------------------
+
+echo $?
+sleep 0.1
+echo -------------------00-------------------
+< tmp1 | > tmp1
+ls
+rm tmp1
+echo -------------------0-------------------
+< $SAMEYEE > tmp1
+ls
+rm tmp1
+echo -------------------1-------------------
+sleep 0.1
+echo $?
+echo hello > tmp1
+echo $?
+cat < tmp1 | cat < tmp2
+echo $?
+ls
+echo $?
+/bin/lsa
+echo $?
+echo -------------------2-------------------
+echo $?
+cat < tester.sh | cat < bla | echo hello > tmp2
+echo $?
+cat tmp2
+echo $?
+ls
+echo $?
+
+echo $?
+bla
+echo -------------------3-------------------
+echo $?
+chmod 000 tmp2
+echo $?
+cat tester.sh >> tmp1 > tmp2 > tmp3 | cat tester.sh > tmp1 > tmp3
+echo $?
+ls
+echo $?
+cat tmp3
+echo $?
+
+echo $?
+rm tmp1 tmp2 tmp3
+
+echo "THANKS TO https://github.com/thallard/minishell_tester, tu geres bro !"
+env | grep "SHLVL"
+echo oui | cat -e
+echo oui | echo non | echo something | grep oui
+echo oui | echo non | echo something | grep non
+echo oui | echo non | echo something | grep something
+cd .. | echo "something"
+cd .. | echo "something"
+cd / | echo "something"
+cd .. | pwd
+ifconfig | grep ":"
+ifconfig | grep nothing
+whoami | grep $USER
+cat tmp1
+whoami | grep $USER > tmp1
+cat tmp1
+whoami | cat -e | cat -e > tmp1
+cat tmp1
+whoami | grep "$USER'c'" > tmp1
+cat tmp1
+whoami | grep "$USER''" > tmp1
+cat tmp1
+export TEST=123 | cat -e | cat -e
+unset TEST | cat -e
+echo test | cat -e | cat -e | cat -e
+whereis ls | cat -e | cat -e > tmp2
+cat tmp2
+echo test | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e
+ls  | grep "."
+whereis grep > tmp1
+whereis grep > tmp2
+cat tmp1
+cat tmp2
+ls  > tmp1
+ls  < tmp1
+cat tmp1
+unset PATH
+ls | ls | ls
+rm tmp1 tmp2 tmp3 tmp4 tmp5
+echo -------------------exit-------------------
+echo bla | exit
+echo $?
+echo bla | exit khbsdk
+echo $?
+cat < notexist | exit 42
+echo $?
+exit 42 | cat < notexist
+echo $?
+exit tamere | exit
+echo $?
+exit | exit  1| exit 200
+echo $?
+exitcat tests/test_pipe | grep arcu | cat -e
+echo $?
+echo test | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e| cat -e| cat -e| cat -e| cat -e| cat -e| cat -e| cat -e| cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat
+echo $?
+cat /dev/urandom | head -c 100 | wc -c
+echo $?
+ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls
+echo $?
+rm tmp1 tmp2 tmp3 tmp4 tmp5
+exitrm tmp1 tmp2 sameye
+sleep 0.5
+echo ----1----
+echo jhjbsdc >> tmp1
+cat tmp1
+ls
+cat tmp1
+echo ----2----
+echo kjnsdc sdc sddc > tmp1 knsdc sdc  sdcsdc > tmp1
+cat tmp1
+ls
+cat tmp1
+echo ----3----
+cat < tester.sh < jnsdc ssdjcnnj > tmp2
+ls
+echo ----4----
+cat tmp2
+cat < tester.sh > tmp2
+ls
+echo ----5----
+cat tmp2
+echo ----6----
+cat<tester.sh<jnsdc ssdjcnnj>tmp2
+ls
+rm tmp1 tmp2
+echo ----7----
+> $USER
+>$USER
+< $USER
+echo ----8----
+sleep 0.1
+ls >tmp1 > tmp1 >>tmp1
+cat tmp1
+echo $?
+echo ----9----
+ls >tmp1 > tmp1
+echo $?
+echo ----10----
+ls >tmp1 >> tmp1 >>tmp1
+echo $?
+echo ----11----
+ls >tmp1 > tmp1 <tmp1
+echo $?
+echo ----12----
+echo hello > tmp1
+echo $?
+echo ----13----
+ls >tmp1 >> tmp1 >>tmp1 | cat
+echo $?
+echo $?
+echo ----14----
+rm tmp1 tmp2
+echo hello > tmp1
+echo hhell >> tmp1
+cat tmp1
+echo hell > tmp1
+cat tmp1
+echo hello >> tmp1 | echo bla
+cat tmp1
+echo hello >> tmp1 | echobla
+cat tmp1
+echobla | echo hello >> tmp1
+cat tmp1
+
+rm tmp1 tmp2
+kill -INT 888
+echo hello | kill -INT 888kill -INT 888
+echo "Merci à Sley pour ces tests !! "
+echo --------classic-------
+> test1 echo bla
+echo $?
+>> test1 echo bla
+echo $?
+> test1 << pwd
+echo $?
+bla
+echo $?
+pwd
+echo $?
+cat test1
+
+echo ---------cd----------
+echo $?
+cd ../../../../../..
+pwd
+echo $?
+cd /home/user42/
+pwd
+echo $?
+echo ---1---
+pwd
+echo ---2---
+echo $?
+export HOME=
+echo $?
+echo ---3---
+pwd
+echo $?
+cd too many arguments
+echo $?
+echo ---4---
+cd ./
+echo $?
+echo ---5---
+cd a/b
+cd ..
+echo $?
+echo ---6---
+cd home/..
+echo $?
+
+echo --------echo---------
+echo -n -n -nnnn -nnnnm 	-nnnnm
+echo $?
+echo -n -nnn hello -n 	hello -n
+echo $?
+echo poil | cat -e	poil$
+echo $?
+
+echo --------exit status----------
+cd random_cmd
+echo $?
+cd random_cmd
+echo $?
+cd $?
+echo $?
+./file_that_is_not_an_executable
+echo $?
+cat bla	1
+echo $?
+file_name
+echo $?
+not_cmd
+echo $?
+ls bonjour
+echo $?
+export test=a
+echo $?
+echo $test
+echo $?
+<test1 | <test2
+
+echo --------exit status----------
+$var=test
+echo $?
+export $var=test
+echo $var $a
+echo $?
+
+echo --------parsing---------
+
+echo $?
+echo "\s"
+echo $?
+echo "bip | bip ; coyotte > < "
+echo $?
+echo $USER$var$USER$USER$USERtest$USER user42$USERuser42$USERtestuser42
+echo $USER$var$USER$USER$USERtest$USER
+echo $?
+echo --------1---------
+$
+echo $?
+$LESS$VAR
+echo $?
+..
+echo $?
+echo '"abc"'
+echo $?
+echo "'abc'"
+echo $?
+echo "" bonjour
+echo $?
+echo[TAB]a
+echo $?
+echo\ a
+echo $?
+export ""  et unset ""
+echo $?
+export "test=ici"=coucou
+echo $test
+echo $?
+export var="cat Makefile | grep >"
+echo $var
+echo $?
+
+echo ---------pipe---------
+cat Makefile | grep pr | head -n 5 | cd file_not_exit
+echo $?
+cat Makefile | grep pr | head -n 5 | hello
+echo $?
+ls | exit
+echo $?
+sleep 0.1 | exit
+echo $?
+
+echo ---------redir---------
+<a cat <b <c
+<a cat <b <c
+> test1 | echo blabla
+cat hello > test1
+>test1 cat <test2 >>test3
+>a ls <machin >>c >d
+ls
+>test1
+cat test1
+
+echo --------substitution---------
+export var="truc"
+echo $var
+export var="truc"
+echo $var | cat -e
+echo "$tests""Makefile"
+echo "$tests"Makefile
+echo "$tests" "Makefile"
+$bla
+echo $var bonjour
+export $var
+export test=123
+export var= s\ -la
+l$var
+export var=at
+c$var Makefile
+export loop='bonjour$loop'
+echo $loop
+
+echo --------syntax---------
+echo $?
+echo bonjour
+echo $?
+echo bonjour >  out
+echo $?
+echo bonjour > $test
+echo $?
+echo bonjour > $test w/ test="o1 o2"
+echo $?
+
+echo --------unset---------
+unset PATH
+echo $?
+echo $PATH
+echo $?
+ls
+echo $?
+unset "" test
+echo $?
+unset =
+echo $?
+unset PWD
+echo $?
+echo "END"
+
+
+exit
+
+Tests facultatifs :
+
+echo $test
+export test="  foo    bar  "
+echo $test
+export test="  foo    bar  "
+echo ab$test
+export test="  foo    bar  "
+echo "ab"$test
+export test=" foo   bar "
+echo ab"$test" | cat -e
+export test=" foo   bar "
+echo "$test"
+export test=" foo   bar "
+echo ""$test""
+export test=" foo   bar "
+echo """$test"""export TESTrsxydtcfyvgubhnijomkonjbhiugv=bla
+export TESTtdcvhbknlm="YO"
+export TESTjknmlmklnj='kuhkuhk'
+export TESTjkndfv='"kuhku"hk'
+export TESTjkndfvnj='"ku$?hku"hk'
+
+echo $?
+export | grep TEST
+
+unset TESTtdcvhbknlm | unset TESTjknmlmklnj
+echo $?
+export | grep TEST
+
+unset TESTtdcvhbknlm | TESTjknmlmklnj
+echo $?
+export | grep TEST
+
+unset   TESTjkndfv='"kuhku"hk'
+echo $?
+export | grep TEST
+
+unset   _TESTjkndfv=
+echo $?
+export | grep TEST
+
+unset   __TESTjkndfv=
+echo $?
+export | grep TEST
+
+unset 0
+echo $?
+export | grep TEST
+
+unset   567890RFUYGVHBK | unset 65798uhjnk
+echo $?
+export | grep TEST
+
+unset       "TESTrsxydtcfyvgubhnijomkonjbhiugv"
+echo $?
+export | grep TEST/bin/echo $HALLO42
+env | grep HALLO42
+export HALLO42=42
+/bin/echo $HALLO42
+env | grep HALLO42
+'cat lol.c
+"cat lol.c
+unset PATH
+ls
+unset PATH
+env
+env
+export
+echo $USER
+echo $HOME
+echo $HOME$NOTHING$USER$
+pwd
+unset PATH
+echo $HOME$NOTHING$USER$
+unset PATH
+unset USER
+cd -
+pwd
+echo "no env over here"
+exit asd
+exit 5
+exit 5 asd
+unset OLDPWD
+cd -
+pwd
+cd
+cd ~
+/bin/ls
+cd /bin/
+./ls
+ls
+export T=bazd
+echo "$T" "meg"
+cd /bin/
+ls
+export a="asd" b="de" o= c="hellomi" X
+unset o
+export a="asd" b="de" o= c="hellomi" X
+unset X
+export a="asd" b="de" o= c="hellomi" X
+unset o a X b c
+export a="asd" b="de" o= c="hellomi" X
+unset o asd B x X wqd c
+unset PATH
+cat
+cd ..
+exit
+unset PATH
+pwd
+cd
+pwd
+unset PATH
+pwd
+cd -
+pwd
+exit
+unset PATH
+pwd
+cd ~
+pwd
+unset PATH
+pwd
+cd ~
+pwd
+cd -
+pwd
+/bin/cat Makefile > out >>out1 >out2
+/bin/cat Makefile > out >>out1 >out2
+/bin/rm -rf out
+/bin/rm -rf out1
+/bin/rm -rf out2
+/bin/cat Makefile > out >>out1 >out2 | /bin/cat << stop > out3
+asdsada
+asd
+stop
+/bin/cat Makefile > out >>out1 >out2 | /bin/cat << stop > out3
+123
+123
+12
+stop
+/bin/rm -rf out
+/bin/rm -rf out1
+/bin/rm -rf out2
+/bin/rm -rf out3
+/bin/cat Makefile > out >>out1 >out2 | /bin/cat << stop > out3 | /bin/ls
+testinator
+stop
+/bin/rm -rf out
+/bin/rm -rf out1
+/bin/rm -rf out2
+/bin/rm -rf out3
+/bin/cat Makefile > out >>out1 >out2 | /bin/cat << stop > out3 | /bin/ls > > | /bin/cat << file
+will make you cry
+stop
+/bin/rm -rf out
+/bin/rm -rf out1
+/bin/rm -rf out2
+/bin/rm -rf out3
+cd ..
+pwd
+/bin/cat Makefile > out >>out1 >out2 > out3 >> out4
+/bin/cat Makefile > out >>out1 >out2 > out3 >> out4
+/bin/rm -rf out
+/bin/rm -rf out1
+/bin/rm -rf out2
+/bin/rm -rf out3
+/bin/rm -rf out4
+> out
+/bin/rm -rf out
+< out
+/bin/rm -rf out
+|
+
+
+>> out
+/bin/rm -rf out
+<< out
+where
+is
+MY
+ENV?
+BRING IT BACK!
+out
+i hope you enjoy it
+echo |< echo segf
+echo segf >| echo is this invalid
+echo >          >           < "echo"
+echo >          >         | echo kekw
+echo >          >         | echo super valid
+echo <          <         > echo
+echo <  < <         > ok
+echo <  < | echo ok
+echo <  < |    < ok
+echo <      < |    > echo
+echo >>| echo super valid
+echo >>< "echo"
+echo < < < echo seegf
+echo > > < "echo"
+echo > > | echo kekw
+echo > > | echo super valid
+echo < < > echo
+echo < < < > ok
+echo >>| echo kekw
+echo | < echo segf
+echo <<| echo ok
+echo <<|< ok
+echo <<|> echo
+echo <<> echo
+echo <<<> ok
+echo segfault <"<<<"<<amazing
+.
+amazing
+echo seg < > echo seg
+echo seg > < echo segf
+echo seg < < > echo segf
+echo seg < < < > echo segf
+echo segf > | echo is this invalid
+echo segf < | < echo super valid
+echo < < | echo ok
+echo < < | < ok
+echo < < | > echo
+echo segfault < " < < < " < < amazing
+.
+amazing
+echo seg <  > echo seg
+echo seg >  < echo segf
+echo seg <      < > echo segf
+echo seg <      < <    > echo segf
+echo <      <     < echo seegf
+echo |      < echo segf
+echo segf >     | echo is this invalid
+echo segf <         |        < echo super valid
+echo segfault <"    <   <   <"  <   <   amazing
+.
+amazing
+echo seg <> echo seg
+echo seg >< echo segf
+echo seg <<> echo segf
+echo seg <<<> echo segf
+echo <<< echo seegf
+echo segf <|< echo super valid
+ls | wc -l | xargs echo
+yes "no" | head -n 10
+/bin/echo -e "\033[33mHello, world!\033[0m"
+/bin/echo '\1$42' > tmp_redir_out
+ls -la | grep tmp_redir_out | awk '{print $1 $2}'
+cat -e tmp_redir_out
+rm tmp_redir_out
+sleep 0 | cat | cat | cat | cat | cat | cat | cat | cat | cat | cat | cat
+>tmp_out | echo 1
+cat tmp_out
+rm -f tmp_out
+echo 1 | >tmp_out
+cat tmp_out
+rm -f tmp_out
+grep 1 < filedoesnotexist | echo 1 | grep 1 | head -1 | cat | ls
+/usr/bin/env -i bash -c "env" | wc -l
+export test="arg1	arg2"
+echo 'echo $1' > tmp_test_sh
+bash tmp_test_sh $test
+echo 'echo $2' > tmp_test_sh
+bash tmp_test_sh $test
+rm -f tmp_test_sh
+export pipe_var=1 | echo $pipe_var
+echo $pipe_var
+echo $PATH
+echo $HOME
+unset PATH HOME
+echo $PATH
+echo $HOME
+echo "env | /usr/bin/wc -l" | env -i $MINISHELL_PATH"/"$EXECUTABLE
+echo $?
+echo "ls" | env -i $MINISHELL_PATH"/"$EXECUTABLE
+echo $?
+echo "unset PATH" | env -i $MINISHELL_PATH"/"$EXECUTABLE
+echo $?
+echo Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi imperdiet orci nec quam lobortis scelerisque. Morbi scelerisque leo molestie justo semper condimentum. Proin hendrerit ut nulla in mattis. Curabitur velit turpis, congue ut aliquam id, condimentum at dolor. Quisque ultricies neque in tellus pretium, vitae porta ipsum vestibulum. Vivamus cursus volutpat diam, at interdum erat fringilla ac. In nisl quam, ultrices vitae cursus ut, aliquam sed lacus. Suspendisse ac turpis fermentum, pulvinar risus quis, molestie elit. Mauris faucibus eget est vitae efficitur. Mauris feugiat enim in posuere auctor. Morbi lorem lorem, pellentesque et viverra vitae, ullamcorper a mauris. Cras blandit pulvinar accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean id hendrerit elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi imperdiet orci nec quam lobortis scelerisque. Morbi scelerisque leo molestie justo semper condimentum. Proin hendrerit ut nulla in mattis. Curabitur velit turpis, congue ut aliquam id, condimentum at dolor. Quisque ultricies neque in tellus pretium, vitae porta ipsum vestibulum. Vivamus cursus volutpat diam, at interdum erat fringilla ac. In nisl quam, ultrices vitae cursus ut, aliquam sed lacus. Suspendisse ac turpis fermentum, pulvinar risus quis, molestie elit. Mauris faucibus eget est vitae efficitur. Mauris feugiat enim in posuere auctor. Morbi lorem lorem, pellentesque et viverra vitae, ullamcorper a mauris. Cras blandit pulvinar accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean id hendrerit elit.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi imperdiet orci nec quam lobortis scelerisque. Morbi scelerisque leo molestie justo semper condimentum. Proin hendrerit ut nulla in mattis. Curabitur velit turpis, congue ut aliquam id, condimentum at dolor. Quisque ultricies neque in tellus pretium, vitae porta ipsum vestibulum. Vivamus cursus volutpat diam, at interdum erat fringilla ac. In nisl quam, ultrices vitae cursus ut, aliquam sed lacus. Suspendisse ac turpis fermentum, pulvinar risus quis, molestie elit. Mauris faucibus eget est vitae efficitur. Mauris feugiat enim in posuere auctor. Morbi lorem lorem, pellentesque et viverra vitae, ullamcorper a mauris. Cras blandit pulvinar accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean id hendrerit elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi imperdiet orci nec quam lobortis scelerisque. Morbi scelerisque leo molestie justo semper condimentum. Proin hendrerit ut nulla in mattis. Curabitur velit turpis, congue ut aliquam id, condimentum at dolor. Quisque ultricies neque in tellus pretium, vitae porta ipsum vestibulum. Vivamus cursus volutpat diam, at interdum erat fringilla ac. In nisl quam, ultrices vitae cursus ut, aliquam sed lacus. Suspendisse ac turpis fermentum, pulvinar risus quis, molestie elit. Mauris faucibus eget est vitae efficitur. Mauris feugiat enim in posuere auctor. Morbi lorem lorem, pellentesque et viverra vitae, ullamcorper a mauris. Cras blandit pulvinar accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean id hendrerit elit.
+>
+<
+<<
+> > > > >
+>> >> >> >>
+>>>>>>>>>
+<<<<<<<<<
+~
+< < < < < <
+/bin/cat ><
+/bin/cat <Makefile >
+cat 42 42
+echo >
+echo > <
+.
+..
+echo | |
+EechoE
+.echo.
+>echo>
+/bin/rm -f echo
+<echo<
+/bin/rm -f echo
+>>echo>>
+/bin/rm -f echo
+|echo|
+trying to destroy your minishell
+|
+| test
+| | |
+| | | | test
+| test
+echo > <
+hello world
+||||||||
+cat wouaf wouaf
+>
+> > > >
+>> >> >> >>
+<<
+/
+\\\
+rm -f something
+| echo -n oui
+trying to destroy your minishell
+trying something again echo if you see this message thats not a good new
+qewew
+wtf
+hi im zsolt
+nice to meet you if these tests are green
+your minishell is perfect
+<<| echo wtf
+>>| echo wtf
+>| echo wtf
+/bin/rm -rf echo
+<| echo wtf
+echo "<<| echo wtf"
+echo ">>| echo wtf"
+echo ">| echo wtf"
+echo "<| echo wtf"
+<>
+< >
+unset PATH
+echo $PATH
+/bin/ls
+echo 1
+cd -
+echo 42
+unset PATH
+echo 42
+unset PATH
+unset PATH
+unset PATH
+echo $PATH
+echo 1
+echo 42
+export PATH=""
+echo $PATH
+echo 1
+cd -
+cd .
+cd ~
+cd ~/Desktop/
+pwd
+export PATH=
+echo $PATH
+echo 1
+export PATH=1
+echo $PATH
+echo 1
+env -i ./minishell
+cd /bin/
+ls
+touch tmp_x_file1
+tmp_x_file1
+echo $?
+./tmp_x_file1
+echo $?
+export PATH=$HOME
+echo $PATH
+tmp_x_file1
+echo $?
+./tmp_x_file1
+echo $?
+unset PATH
+tmp_x_file1
+echo $?
+./tmp_x_file1
+echo $?
+echo 42
+/bin/rm -f tmp_x_file1
+cd doesntexist
+export PATH=""
+ls
+/bin/echo
+/bin/echo 1
+/bin/cat 42
+
+   
+    
+		
+			
+/bin/echo hello 42
+/bin/sleep 0
+/bin/echo -n 1
+echo
+echo hello world
+echo -n 42
+echo -n 42 -n
+echo 42 -n
+echo -n -n -n 42
+echo -n -n -n -n 42
+exit
+exit 42
+exit ""
+exit 1 2 3
+exit 42 42
+exit A
+exit A 1
+exit 1 A
+/bin/echo 42
+echo $?
+/bin/cat 42
+echo $?
+/bin/exe42 42
+42 42
+/bin/echo 42
+expr $? + $?
+/bin/cat 42
+expr $? + $?
+echo "Hello World"
+echo "  ""Hello World"
+echo "  "Hello "World "
+"echo" 42
+echo 42
+echo " cat ' lol.c"
+/bin/echo @World"42"Hello
+echo 'Hello World'
+echo '  ' Hello World
+echo '  'Hello 'World '
+'echo' 42
+'e'cho 42
+echo 'cat lol.c << cat > lol.c'
+echo @World'42'Hello
+echo "" ''
+echo """"''""''""
+echo " "" " ' ' " " ' ' " "
+echo 1 '|' echo 2
+echo 1 '&&' echo 2
+echo 1 '||' echo 2
+echo 1 '>' echo 2
+echo 1 '>>' file 2
+'<<' lim echo 1 >>/dev/null
+echo "$USER"
+echo "   $   "
+echo '$USER'
+echo '   $   '
+echo "$HO ME"
+echo '$HO ME'
+echo $"HOME"
+echo $'HOME'
+echo ""$PWD""
+echo ''$PWD''
+echo $USE"R"$HOME
+echo $"HOME"$USER
+echo $"HOM"E$USER
+echo $"'HOM'E"$USER
+echo $'HOM'E$USER
+echo $"HOME"
+echo $'HOME'
+echo $
+echo "$"
+echo '$='
+echo "$""$"
+echo $"$"
+echo $"42$"
+echo "$"$
+echo $'$'
+echo '$'$
+env | grep HOME
+env | grep $USER
+export USER=
+env | grep USER
+export USER="@?/"
+env | grep USER
+export NEW="4 2"
+env | grep NEW
+export NEW="4=2"
+env | grep NEW
+export NEW=4=2
+env | grep 4=2
+export =
+export ''=''
+export ""=""
+export export
+export =============123
+export echo
+unset
+unset env
+unset PATH
+echo $PATH
+unset PATH
+echo $PATH
+unset HOME
+echo $HOME
+export NEW=42
+env | grep NEW
+unset NEW
+env | grep NEW
+unset NEW
+unset NEW
+unset NEW
+unset NEW
+unset NEW
+env | grep NEW
+cd .
+/bin/ls
+cd ..
+/bin/ls
+cd /notsuchdir
+/bin/ls
+cd /////
+/bin/ls
+cd "cmds/"
+/bin/ls
+cd cmds/
+/bin/ls
+cd ./cmds/
+/bin/ls
+mkdir bla_test
+chmod -wrx bla_test
+cd bla_test
+chmod +wrx bla_test
+rm -r bla_test
+pwd
+cd $HOME
+pwd
+pwd pwd
+pwd hello
+unset PATH
+pwd
+unset PATH
+cd /bin
+ls
+unset PATH
+cd /bin/../bin/
+ls
+unset PATH
+cd /bin/../bin/../bin/../bin/../bin/../bin/../bin/../bin/
+../bin/../bin/ls
+unset PATH
+cd /bin/
+sleep 2
+mkdir tmp_path_test1 tmp_path_test2
+gcc tmp_path_test1/test1.c -o tmp_path_test1/a.out
+gcc tmp_path_test2/test2.c -o tmp_path_test2/a.out
+export PATH=tmp_path_test1:tmp_path_test2
+a.out
+export PATH=tmp_path_test2:tmp_path_test1
+a.out
+/bin/rm -rf tmp_path_test1 tmp_path_test2
+/bin/echo $?
+/bin/echo $HOME
+/bin/echo $HOME$USER
+/bin/echo $HOME$NOTHING$USER$
+export a="asd"
+export a="asd" b="de" o= c="hellomi" X
+export miert ne lehetne ezt is
+export a="asd"
+unset a
+export a="asd" b="de" o= c="hellomi" X
+unset o
+export a="asd" b="de" o= c="hellomi" X
+unset X
+export a="asd" b="de" o= c="hellomi" X
+unset o a X b c
+export a="asd" b="de" o= c="hellomi" X
+unset o asd B x X wqd c
+export miert ne lehetne ezt is
+/bin/echo $"HOME"$USER
+/bin/echo $"HOM"E$USER
+/bin/echo $"'HOM'E"$USER
+/bin/echo $'HOM'E$USER
+/bin/echo $"HOME"
+/bin/echo $'HOME'
+/bin/echo $
+/bin/echo "$"
+/bin/echo '$='
+/bin/echo "$""$"
+/bin/echo $"$"
+/bin/echo $"42$"
+/bin/echo "$"$
+/bin/echo $'$'
+/bin/echo '$'$
+/bin/echo "$ "
+/bin/echo '$ '
+/bin/echo $TESTNOTFOUND
+/bin/echo $HOME$TESTNOTFOUND
+/bin/echo $TESTNOTFOUND$HOME
+/bin/echo $TESTNOTFOUND$HOME$
+cd ..$PWD
+mkdir test
+cd $PWD/test
+cd..
+rm -rf test
+/bin/echo $PWD/random_folder
+/bin/echo ""$?""
+/bin/echo " "$?" "
+/bin/echo $?"42"
+/bin/echo ''$?''"42"
+/bin/echo 'HELLO'$?:''"42"
+/bin/echo "$?"
+/bin/echo '$?'
+/bin/echo "'$?'"
+/bin/echo '"$?"'
+mkdir "tmp_test_folder"
+/bin/echo $PWD
+cd "tmp_test_folder"
+/bin/echo $PWD
+cd ..
+/bin/echo $PWD
+rm -rf "tmp_test_folder"
+mkdir "tmp_test folder"
+/bin/echo $PWD
+cd "tmp_test folder"
+/bin/echo $PWD
+cd ..
+/bin/echo $PWD
+rm -rf "tmp_test folder"
+export tmp_test="/bin/echo 42"
+$tmp_test
+$tmp_test 42
+export tmp_test="/bin/echo"
+$tmp_test 42 42
+export tmp_test="/bin/echo 42"
+tmp_test
+export X="  A  B  "
+/bin/echo "1"$X'2'
+export X=" A  B  "
+/bin/echo "1"$X'2'
+export X="A  B  "
+/bin/echo "1"$X'2'
+export X="  A  B "
+/bin/echo "1"$X'2'
+export X="  A  B"
+/bin/echo "1"$X'2'
+export X="  A B  "
+/bin/echo "1"$X'2'
+export X="  AB  "
+/bin/echo "1"$X'2'
+export X="  A  B  "
+/bin/echo $X'2'
+export X="  A  B  "
+/bin/echo $X"1"
+export X=""
+/bin/echo "1"$X'2'
+export X=" "
+/bin/echo "1"$X'2'
+export X="   "
+/bin/echo "1"$X'2'
+export X="  A  B  "
+/bin/echo ?$X'2'
+export X="  A  B  "
+/bin/echo "1"$X?
+export X="  A  B  "
+/bin/echo "1"$X2?
+export test=" * "
+touch "$USER * ?eHallo"
+/bin/echo "$USER "*" ?e"*
+rm -f "$USER * ?eHallo"
+ls
+cat cmds.sh
+/bin/echo test1
+
+touch ""
+touch "  "
+/bin/rm -f "  "
+touch "
+"
+/bin/rm -f "
+"
+mkdir " "
+/bin/rm -rf " "
+asd
+expr $? + $?
+expr 21 + 21
+ls
+cat cmds.sh
+"/bin/echo" test1
+/bin/echo test1
+awk '$1 ~ /^d/ {print $9}'
+awk 'BEGIN{for(i=1;i<=10;i++){for(j=1;j<=10;j++){printf("%4d ",i*j)} printf("\n")}}' /dev/null | tail -n 10
+awk 'BEGIN{for(i=1;i<=1000000;i++)print int(rand()*1000)}' | awk '{sum+=$1} END {print sum/NR}'
+asd
+echo asd
+echo $?
+asd
+pwd
+echo $?
+asd
+unset USER
+asd
+pwd
+asd
+pwd
+asd
+echo asd
+echo $?
+asd
+cd ..
+echo $?
+asd
+unset PATH
+echo $?
+touch whatever
+cat <"./whatever" >"./whatever"
+rm -rf whatever
+ls >"./ with spaces"
+rm -rf " with spaces"
+.
+.ls
+./ls
+"./"ls
+./""ls
+./"''"ls
+3123
+lsa
+/ls
+EechoE
+/ls/
+/bin/
+/bin/cats
+./4242424242.sh
+rm -f something
+| echo -n oui
+| | |
+grep hi <./test_files/infile
+grep hi "<infile" <         ./test_files/infile
+grep hi <./test_files/infile_big <./test_files/infile
+cat <"./test_files/file name with spaces"
+cat <./test_files/infile_big ./test_files/infile
+cat <"1""2""3""4""5"
+cat <"./test_files/infile"
+echo <"./test_files/infile_big" | cat <"./test_files/infile"
+echo <"./test_files/infile_big" | cat "./test_files/infile"
+echo hi | cat <"./test_files/infile"
+echo hi | cat "./test_files/infile"
+cat <"./test_files/infile" | echo hi
+cat <"./test_files/infile" | grep hello
+cat <"./test_files/infile_big" | echo hi
+cat <missing
+cat <missing | cat
+cat <missing | echo oi
+cat <missing | cat <"./test_files/infile"
+echo <123 <456 hi | echo 42
+ls >./outfiles/outfile01
+ls >         ./outfiles/outfile01
+ls >./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >./test_files/invalid_permission
+ls >"./outfiles/outfile with spaces"
+ls >"./outfiles/outfile""1""2""3""4""5"
+ls >"./outfiles/outfile01" >./test_files/invalid_permission >"./outfiles/outfile02"
+ls >./test_files/invalid_permission >"./outfiles/outfile01" >./test_files/invalid_permission
+cat <"./test_files/infile" >"./outfiles/outfile01"
+echo hi >./outfiles/outfile01 | echo bye
+echo hi >./outfiles/outfile01 >./outfiles/outfile02 | echo bye
+echo hi >./outfiles/outfile01 >./test_files/invalid_permission | echo bye
+echo hi >./test_files/invalid_permission | echo bye
+echo hi >./test_files/invalid_permission >./outfiles/outfile01 | echo bye
+cat <"./test_files/infile" >./test_files/invalid_permission
+cat >./test_files/invalid_permission <"./test_files/infile"
+cat <missing >./outfiles/outfile01
+cat >./outfiles/outfile01 <missing
+cat <missing >./test_files/invalid_permission
+cat >./test_files/invalid_permission <missing
+cat >./outfiles/outfile01 <missing >./test_files/invalid_permission
+ls >>./outfiles/outfile01
+ls >>      ./outfiles/outfile01
+ls >>./outfiles/outfile01 >./outfiles/outfile01
+ls >./outfiles/outfile01 >>./outfiles/outfile01
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >>./outfiles/outfile01 >>./outfiles/outfile02
+ls >>./test_files/invalid_permission
+ls >>./test_files/invalid_permission >>./outfiles/outfile01
+ls >>./outfiles/outfile01 >>./test_files/invalid_permission
+ls >./outfiles/outfile01 >>./test_files/invalid_permission >>./outfiles/outfile02
+ls <missing >>./test_files/invalid_permission >>./outfiles/outfile02
+ls >>./test_files/invalid_permission >>./outfiles/outfile02 <missing
+echo hi >>./outfiles/outfile01 | echo bye
+echo hi >>./outfiles/outfile01 >>./outfiles/outfile02 | echo bye
+echo hi >>./test_files/invalid_permission | echo bye
+echo hi >>./test_files/invalid_permission >./outfiles/outfile01 | echo bye
+cat <minishell.h>./outfiles/outfile
+cat <minishell.h|ls
+/bin/echo 42 > tmp_redir_out 42
+cat tmp_redir_out
+rm tmp_redir_out
+/bin/echo "cat this text\n" > tmp_redir_out
+cat <tmp_redir_out
+rm tmp_redir_out
+cat | cat | ls
+cat < /dev/null
+/bin/echo 42 > /dev/null
+/bin/echo 42 >> /dev/null
+/bin/echo 42 > /dev/null > /dev/null > /dev/null > /dev/null > tmp_redir_out
+cat tmp_redir_out
+rm tmp_redir_out
+/bin/echo 42 > tmp_redir_out > tmp_redir_out1 > tmp_redir_out2 > tmp_redir_out3
+/bin/echo 0
+cat tmp_redir_out
+/bin/echo 1
+cat tmp_redir_out1
+/bin/echo 2
+cat tmp_redir_out2
+/bin/echo 3
+cat tmp_redir_out3
+rm tmp_redir_out tmp_redir_out1 tmp_redir_out2 tmp_redir_out3
+/bin/echo 42 > /dev/null > tmp_redir_out
+/bin/echo 2 >> /dev/null >> tmp_redir_out
+cat tmp_redir_out
+rm tmp_redir_out
+touch tmp_redir_out_file1
+chmod -r tmp_redir_out_file1
+/bin/echo 1 > tmp_redir_out tmp_redir_out_file1
+/bin/grep 1 < inputfile
+/bin/grep 1 < NO_SUCH_FILE
+/bin/grep 1 < inputfile < inputfile
+/bin/grep 1 < NO_SUCH_FILE < inputfile
+rm -f tmp_std_outfile
+rm -f tmp_std_outfile
+rm -f tmp_std_outfile
+/bin/echo 1 >/dev/null | /usr/bin/grep 1
+/bin/echo 1 >/dev/null | /bin/echo 2
+/bin/echo >/dev/null 1 | /usr/bin/grep 1
+/bin/echo >/dev/null 1 | /bin/echo 2
+cat << lim
+ "lim"
+HELLO
+42
+ lim
+testing your minishell
+limm
+lim
+<<lim cat
+ "lim"
+HELLO
+42
+ lim
+testing your minishell
+limm
+lim
+cat << lim
+test
+lim
+cat << EOF
+EOF
+!! HELLO
+@42 !!
+ EOF\t\b\n
+testing your minishell :)
+limm
+EOF
+cat << hello
+$USER
+$NOVAR
+$HOME
+hello
+cat << 'lim'
+$USER
+$NOVAR
+$HOME
+lim
+cat << lim''
+$USER
+$NOVAR
+$HOME
+lim
+cat << "lim"
+$USER
+$NOVAR
+$HOME
+lim
+cat << 'lim'
+$USER
+$NOVAR
+$HOME
+lim
+> out
+/bin/rm -f out
+< out
+/bin/rm -f out
+>> out
+/bin/rm -f out
+ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls
+ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls
+env | sort | grep -v SHLVL | grep -v ^_
+cat ./test_files/infile_big | grep oi
+export GHOST=123 | env | grep GHOST
+/bin/echo 1 | grep 1
+/bin/echo 1 | grep 2
+ifconfig | grep ":"
+ifconfig | grep nothing
+cd .. | echo "42"
+echo 42 | cat -e
+echo 42 | echo no | echo smth | grep 42
+echo 42 | echo no | echo smth | grep no
+echo 42 | echo no | echo smth | grep smth
+/bin/env | grep "_="
+/bin/env | grep "SHLVL"
+/bin/echo 1 | kaka
+echo test | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e
+/bin/echo test | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e
+ls -la ../ | grep "."
+unset TEST | cat -e
+cat tmp_lol.c | cat > tmp_lol.c
+rm -rf tmp_lol.c
+/bin/echo 1 > tmp_lol.c
+cat tmp_lol.c | cat > tmp_lol.c
+rm -rf tmp_lol.c
+ls | cat asd
+ls | cat << stop | grep "asd"
+is this good
+stop
+ls | cat << stop | ls -la | cat << stop1
+12
+32232
+23
+stop
+awdaw
+daswd
+stop1
+ls | cat << stop | ls -la | cat << stop1 | ls | cat << stop2 | ls -la | cat << stop3
+$USER
+ad
+as $HOME
+stop
+awd
+wf$PWDdqwdwqd
+stop1
+das
+das
+stop2
+dsq
+wd
+wf$PWDdqwdwqd
+stop3
+ls | cat << stop | ls -la | cat << stop1 | ls | cat << stop2 | ls -la > out | cat << 'stop3'
+$USER
+ad
+stop
+dsa
+stop1
+sad
+stop2
+as $HOME
+stop3
+/bin/rm -f out
+ls | cat << stop | ls -la | cat << stop1 | ls | cat << stop2 | ls -la > > out | cat << stop3
+fe
+wf
+fwe
+f
+stop
+dw
+stop1
+dwasd
+stop2
+cat Makefile | ls > out
+cat out
+/bin/rm -f out
+ls | cat << stop | ls -la > out0| cat << stop1 | ls | cat << stop2 | ls -la >> out | cat << stop3
+fe
+wf
+fwe
+f
+stop
+dw
+stop1
+dw
+stop2
+e
+wf
+stop3
+/bin/rm -f out
+/bin/rm -f out0
+ls > out >> out1 >out3 | cat out1
+ls > out >> out1 >out3 | cat out1
+/bin/rm -f out
+/bin/rm -f out1
+/bin/rm -f out3
+cat < Makefile > out >> out1 | wc -l out1 > out2
+cat < Makefile > out >> out1 | wc -l out1 > out2
+/bin/rm -f out
+/bin/rm -f out1
+/bin/rm -f out2
+|ls | ls
+ls|cat Makefile|ls
+ls|cat Makefile|<wc -l
+ls|cat Makefile|> out
+/bin/rm -f out
+ls|cat Makefile|>> out
+/bin/rm -f out
+ls|cat Makefile|cat<<asd>out
+$USER
+asd
+/bin/rm -f out
+ls|cat Makefile|cat<<'asd'>out
+$USER
+asd
+/bin/rm -f out
+ls|cat Makefile|cat<<"asd">out
+$USER
+asd
+/bin/rm -f out
+pwd
+ls|cat Makefile|>> out|cd ..
+/bin/rm -f out
+pwd
+pwd
+cd .. |ls|cat Makefile|>> out
+pwd
+/bin/rm -f out
+ls -l | awk '$1 ~ /^d/ {print $9}'
+echo cd ~
+echo "cd ~"
+echo ""$?""
+echo $?"42"
+echo ''$?''"42"
+echo '"$USER"'
+echo "'$USER'"
+echo ""'$USER'""
+echo '"'$USER'"'
+echo "''$USER''"
+echo "'"'$USER'"'"
+echo '"'"$USER"'"'
+echo $"HOME"$USER
+echo $"HOM"E$USER
+echo "exit_code ->$? user ->$USER home -> $HOME"
+echo $"HOME"
+echo $"42$"
+echo """"""""$USER""""""""
+echo "$ "
+echo hi >./outfiles/outfile01 | echo bye
+echo <123 <456 hi | echo 42
+echo '$='
+echo '$ '
+echo "$?"
+echo '$?'
+echo "'$?'"
+echo \$USER
+echo \\$USER
+echo \\\$USER
+echo \\\\$USER
+echo \\\\\$USER
+echo \\\\\\\\\$USER
+echo \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$USER \$PATH \\$PWD
+echo "cat lol.c | cat > lol.c"
+echo "cat lol.c '|' cat > lol.c"
+echo '$USER' "$USER" "text  ' text"
+echo $USER =intergalaktikus miaf*szomez
+echo -n"-n" bonjour
+echo "'$USER'"
+echo " '$USER' "
+echo text"$USER"
+echo text"'$USER'" ' $USER '
+echo "text"   "$USER"    "$USER"
+echo '              $USER          '
+echo ''''''''''$USER''''''''''
+echo """"""""$USER""""""""
+echo $USER'$USER'text oui oui     oui  oui $USER oui      $USER ''
+echo "text" "text$USER" ... "$USER"
+echo
+echo ''
+echo ""
+echo '' ""
+echo echo
+echo test1
+echo 'test1'
+echo "echo hallo"
+echo echo"1"
+echo "test1 test2"
+echo "test1  test2" test3
+echo " test1 test2 " 'test3 '
+echo test1		test2
+echo $USER$TESTNOTFOUND$HOME$
+echo $USER$TESTNOTFOUND$HOME$WTF$PWD
+echo -n test1
+echo -n "test1 test2"
+echo -n "test1 test2" test3
+echo -n " test1 test2 " 'test3 '
+echo -n test1		test2
+echo test1 -n
+echo "test1 -n"
+echo -n -n test1
+echo -n -n -n -n -n test1
+echo "  -nn "
+echo "-n test1 -n test2"
+echo "test1 -n test2"
+echo ~42
+echo -n -n -nasd
+echo -n -n -n-nnnnn
+echo -n -nnnnnnn -n -nnn -nnnnn -n-n
+echo -n -nnnnnnn -n -nnn -nnnnn -n feel my pain
+echo -n -n -n-n
+echo "'totally logical'"
+echo 'totally logical'
+echo ''totally logical''
+echo ""'totally logical'""
+eCho
+eChO
+eCHO
+ECHO
+pwd
+cd
+pwd
+pwd
+cd ..
+pwd
+cd ..
+cd $OLDPWD
+pwd
+cd .
+pwd
+pwd
+cd "."
+pwd
+pwd
+cd /Users
+pwd
+pwd
+cd //////
+pwd
+pwd
+cd ./././
+pwd
+pwd
+cd /
+pwd
+pwd
+cd '/////'
+pwd
+pwd
+cd "$PWD/file_tests"
+pwd
+cd '/////' 2>/dev/null
+cd '/etc'
+cd '/var'
+cd "doesntexist" 2>/dev/null
+cd ../../..
+cd "wtf" 2>/dev/null
+cd ?
+cd +
+cd _
+cd woof
+cd bark bark
+cd '/'
+pwd
+cd "doesntexist"
+pwd
+pwd
+cd "doesntexist"
+pwd
+pwd
+cd ../../..
+pwd
+pwd
+cd "wtf"
+pwd
+pwd
+cd ..
+cd ..
+pwd
+pwd
+cd ?
+pwd
+pwd
+cd +
+pwd
+pwd
+cd _
+pwd
+cd ../../
+cd -
+cd -
+pwd
+cd echo
+pwd
+pwd
+cd echo echo
+pwd
+pwd
+cd '/'
+pwd
+pwd
+cd $PWD/file_tests
+pwd
+pwd
+cd $OLDPWD/something
+pwd
+pwd
+cd ~
+cd - ananas dot jpeg
+pwd
+pwd
+cd includes/ djhwbdhwbd wgdyuhgw jdwjdh wuiydjwh
+pwd
+pwd
+cd ~ asd w dd q asd
+pwd
+pwd
+cd ~
+cd -
+pwd
+pwd
+cd -
+pwd
+pwd
+cd ~
+pwd
+pwd
+cd ../libft
+pwd
+pwd
+cd ../libft ojid iowjiojwoid joijd owjoid jwojd
+pwd
+env | grep DOESNT_EXIST
+env | grep HOME
+env | grep USER
+env | wc -l
+env what
+pwd
+pwd
+pwd test42
+pwd 42 42 42
+pwd pwd
+pwd pwd pwd
+/bin/echo $HALLO42
+env | grep HALLO42
+export HALLO42=42
+/bin/echo $HALLO42
+env | grep HALLO42
+/bin/echo $HOME
+env | grep HOME
+export HOME=42
+/bin/echo $HOME
+env | grep HOME
+export =============123
+export
+export =
+export =42
+export ''=''
+export ""=""
+export export
+export echo
+export cd
+export test
+export TEST
+export $?
+export TEST
+export TEST=
+export TEST=123
+export ___TEST=123
+export --TEST=123
+export ''=''
+export "="="="
+export '='='='
+export TE-ST=100
+export -TEST=100
+export TEST-=100
+export _TEST=100
+export ==========
+export 1TEST=
+export ""=""
+export TES=T=""
+export TE+S=T=""
+export TES.T=123
+export TES.T=123
+export TES+T=123
+export TES=T=123
+export TES}T=123
+export TES{T=123
+export TES-T=123
+export -TEST=123
+export _TEST=123
+export TES_T=123
+export TEST_=123
+export TE*ST=123
+export TES@T=123
+export TES!T=123
+export TES$?T=123
+export =============123
+export +++++++=123
+export ________=123
+export TES^T=123
+export TES!T=123
+export TES\~T=123
+export TEST+=100
+export TES_T=123
+/bin/echo $TES_T
+env | grep TES_T
+export HELLO42=T=""
+/bin/echo $HELLO42
+env | grep HELLO42
+env | grep HELLO42=T=
+echo $?
+export ?=hallo
+echo $?
+/bin/echo $test
+export test=42 | echo 99
+/bin/echo $test
+/bin/echo $mini_test
+env | grep mini_test
+export mini_test=
+/bin/echo $mini_test
+env | grep mini_test
+unset
+unset ""
+unset =
+unset "="
+unset ""=
+unset =""
+unset ==
+unset ?
+unset "?"
+unset $
+unset "$"
+unset $""
+export TEST=100
+unset doesntexist
+unset OLDPWD
+unset PATH
+unset PATH
+unset PATH
+unset TES;T
+unset TES.T
+unset TES+T
+unset TES=T
+unset TES}T
+unset TES{T
+unset TES-T
+unset -TEST
+unset _TEST
+unset TES_T
+unset TEST_
+unset TE*ST
+unset TES@T
+unset TES!T
+unset TES$?T
+unset ============
+unset +++++++
+unset ________
+unset export
+unset echo
+unset pwd
+unset cd
+unset unset
+unset sudo
+unset TES^T
+unset TES!T
+unset TES\~T
+/bin/echo $HOME
+unset $HOME
+/bin/echo $HOME
+/bin/echo $HOME
+unset HOME
+/bin/echo $HOME
+/bin/echo $HOME
+unset HOME
+unset HOME
+unset HOME
+/bin/echo $HOME
+/bin/echo $HOME
+unset HOME
+unset HOME
+unset HOME
+unset HOME
+/bin/echo $HOME
+exit 9223372036854775807
+exit something somethingv2
+exit 0 0
+exit
+exit ""
+exit "+100"
+exit "-100"
+exit -9223372036854775805
+exit 0
+exit 10
+exit 42
+exit 1
+exit +++++
+exit ++++++
+exit +1
+exit ++1
+exit ++12560
+exit -----
+exit ------
+exit -1
+exit --1
+exit -12560
+exit --12560
+exit 255
+exit 1 2
+exit 1 2 3
+exit A
+exit A 2 3
+exit "A"
+exit "+++"
+exit ++++3193912939
+exit 01
+exit 001
+exit 0001
+exit +++000
+exit ++++000
+exit ---000
+exit ----000
+exit "something"
+exit x
+exit echo
+exit cd ..
+exit exit
+exit 42 42 42 42 42
+">>" asd
+>">" asd
+/bin/rm -f ">"
+>> '$USER'
+cat $USER
+/bin/rm -f '$USER'
+>> '$USER'
+cat '$USER'
+/bin/rm -f '$USER'
+echo 
+echo -nnnnn
+"ECho" -n -nnn"" "-"nnnnn
+ECHO" "-n
+ECHO '''''-''n'
+echo '' -n
+echo "" "" "" -n -n -n -n
+cat << $USER
+why
+not
+$USER
+export T=">>"
+$T lol
+cat << "$USER"
+why
+not
+$USER
+cat << "$US"E"R"
+because
+we
+love
+bash
+$USER
+>> $HOME
+>> "$H"OM"E"
+cat OME
+/bin/rm -f OME
+>> "$USER'$USER'"
+cat "$USER'$USER'"
+/bin/rm -f "$USER'$USER'"
+>> "$USER"
+cat $USER
+/bin/rm -f $USER
+cd /Users/$USER/Desktop/
+pwd
+cd /Users/"$USER"/Desktop/
+pwd
+cd /Users/"$U"S"ER"/Desktop/
+export T=n
+echo "-"$T$T
+export T=ech
+echo $To
+export T=ech
+echo $T"o"
+export T=ech
+echo $T"o "
+export T=ech
+echo $T"o -n"
+export T=ech
+echo $T"o -n"
+export T=ech
+echo $T'o'
+export T="-n test1 -n test 2"
+echo $T
+export T=ech
+echo $T'o '
+ECHO
+echo
+PWD
+PWD
+echo "-nnnnn "
+ECHO -nn
+ECHO -n -n
+ECHO "-"""n""n""n""n""n""nnnnnn-n
+ECHO "-"""n""n""n""n""n""nnnnnn -n
+export T=nnnnnnnn
+echo "-""$T"nnnnnnnnnnnnn -nnnnnnnn"$T" '-'"$T"
+export T=nnnnnnnn
+echo "-""$T"nnnnnnnnnnnnn -nnnnnnnn"$T" '-''$T'
+export T=nnnnnnnn
+echo "-"'$T'nnnnnnnnnnnnn -nnnnnnnn'$T' '-'"$T "
+export T=nnnnnnnn
+echo "-"'$T'nnnnnnnnnnnnn -nnnnnnnn$T '-''$T '
+export T=e E=c S=h L=o
+$T$E$S$L
+export T=e E=c S=h L=o L=ok
+$T$E$S$L
+export T=e E=c S=h L=o
+$T$E$S$L -n
+export T=E E=c S=h L=o
+$T$E$S$L -n
+export T=E E=c S=h L=o
+$T$E$S$L -nn
+export T=e E=c S=h L=o
+$T$E$S$L -nn
+export T=e E=c S=h L=o
+$T$E"c"$L -nn
+export T=e E=c S=h L=o
+$T$E"C"$L -nn
+export T=e E=c S=h L=o
+$T$E"C"$L "" -""n
+LS
+Ls
+lS
+ls
+PWD
+pWD
+pwd
+pwD
+ENV
+CAT
+EXPORT
+export T="|"
+echo segfault $T grep segfault
+export T='|'
+echo segfault $T grep segfault
+export T=">"
+echo segfault $T grep segfault
+export T='<'
+echo segfault $T grep segfault
+export T="<<"
+echo segfault $T grep segfault
+export T='<<'
+echo segfault $T grep segfault
+export T="|"
+$T$T$T$T$T$T$T
+export T="echo segfault | grep segfault"
+$T
+export T=-nnnnnnnn"nnnnnnn "
+echo $T
+export T=-"n                    "
+Echo $T
+EXIT 123
+Exit
+UNSET USER
+Unset USER
+EXPORT T=LA
+echo $T
+Export T=LA
+echo $T
+"e"'x''p''o''r''t' L=T
+echo $T
+e""""""""""""cho
+export T='|'
+echo $T echo lala $T echo $T echo ?
+export T="<<"
+$T.
+OLDPWD
+USER
+ ls
+ cat
+ echo
+ PWD
+ pwd
+PWD 
+pwd 
+pwd 
+p""''''w''''''""""""''''''''''''''''''''''''''''''''d
+'''''''''''''''' echo ok
+           ''echo ok
+           ""echo ok
+           ""echo"" ok
+           ""'echo'"" ok
+echo "         |       "  | echo maybe
+echo "|"  | echo maybe
+echo '|'  | echo maybe
+echo -nnnnnnnnnnnn
+export L=amazing L=ok L=cool
+echo $L
+export L=amazing L=ok L=cool
+export L=ok
+echo $L
+echo '$'$'$'$'$'
+echo '$'$'$'$'$'$'$'
+echo "$"$'$'$"$"$"$"$'$'
+echo $/ $/
+echo $U/SER
+echo "$/ $/"
+echo $/"$/"
+echo '$/'
+exit 9223372036854775805
+exit 123"123"
+<| echo ok
+>| echo sure
+cd --
+/bin/echo ""$?""
+/bin/echo $?"42"
+/bin/echo ''$?''"42"
+/bin/echo '"$USER"'
+/bin/echo "'$USER'"
+/bin/echo ""'$USER'""
+/bin/echo '"'$USER'"'
+/bin/echo "''$USER''"
+/bin/echo "'"'$USER'"'"
+/bin/echo '"'"$USER"'"'
+/bin/echo $"HOME"$USER
+/bin/echo $"HOM"E$USER
+/bin/echo "exit_code ->$? user ->$USER home -> $HOME"
+/bin/echo $"HOME"
+/bin/echo $"42$"
+/bin/echo "$ "
+/bin/echo hi >./outfiles/outfile01 | /bin/echo bye
+/bin/echo <123 <456 hi | /bin/echo 42
+/bin/echo '$='
+/bin/echo '$ '
+/bin/echo "$?"
+/bin/echo '$?'
+/bin/echo "'$?'"
+/bin/echo \$USER
+/bin/echo \\$USER
+/bin/echo \\\$USER
+/bin/echo \\\\$USER
+/bin/echo \\\\\$USER
+/bin/echo \\\\\\\\\$USER
+/bin/echo \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$USER \$PATH \\$PWD
+/bin/echo "cat lol.c | cat > lol.c"
+/bin/echo "cat lol.c '|' cat > lol.c"
+/bin/echo '$USER' "$USER" "text  ' text"
+/bin/echo $USER =intergalaktikus miaf*szomez
+/bin/echo -n"-n" bonjour
+/bin/echo "'$USER'"
+/bin/echo " '$USER' "
+/bin/echo text"$USER"
+/bin/echo text"'$USER'" ' $USER '
+/bin/echo "text"   "$USER"    "$USER"
+/bin/echo '              $USER          '
+/bin/echo ''''''''''$USER''''''''''
+/bin/echo """"""""$USER""""""""
+/bin/echo '""""""""$USER""""""""'
+/bin/echo ""'""""""$USER""""""'""
+/bin/echo """"""""'$USER'""""""""
+/bin/echo """""""'"$USER"'"""""""
+/bin/echo """"""'""$USER""'""""""
+/bin/echo ""'""'""""$USER""""'""'""
+/bin/echo '""'""'""""$USER""""'""'""'
+/bin/echo $USER'$USER'text oui oui     oui  oui $USER oui      $USER ''
+/bin/echo "text" "text$USER" ... "$USER"
+/bin/echo
+/bin/echo ''
+/bin/echo ""
+/bin/echo '' ""
+/bin/echo /bin/echo
+/bin/echo test1
+/bin/echo 'test1'
+/bin/echo "/bin/echo hallo"
+/bin/echo /bin/echo"1"
+/bin/echo "test1 test2"
+/bin/echo "test1  test2" test3
+/bin/echo " test1 test2 " 'test3 '
+/bin/echo test1		test2
+/bin/echo $USER$TESTNOTFOUND$HOME$
+/bin/echo $USER$TESTNOTFOUND$HOME$WTF$PWD
+/bin/echo -n test1
+/bin/echo -n "test1 test2"
+/bin/echo -n "test1 test2" test3
+/bin/echo -n " test1 test2 " 'test3 '
+/bin/echo -n test1		test2
+/bin/echo test1 -n
+/bin/echo "test1 -n"
+/bin/echo -n -n test1
+/bin/echo -n -n -n -n -n test1
+/bin/echo "  -nn "
+/bin/echo "-n test1 -n test2"
+/bin/echo "test1 -n test2"
+/bin/echo ~42
+/bin/echo -n -n -nasd
+/bin/echo -n -n -n-nnnnn
+/bin/echo -n -nnnnnnn -n -nnn -nnnnn -n-n
+/bin/echo -n -nnnnnnn -n -nnn -nnnnn -n feel my pain
+/bin/echo -n -n -n-n
+/bin/echo "'totally logical'"
+/bin/echo 'totally logical'
+/bin/echo ''totally logical''
+/bin/echo ""'totally logical'""
+echo 42 < in | wc -l && ( /bin/echo 1 2 3 4 > tmp_out || /bin/echo 2 > tmp_out >> tmp_out tmp_out )
+rm -f tmp_out
+grep 42 < in | wc -l && ( /bin/echo 1 2 3 4 > tmp_out || /bin/echo 2 > tmp_out >> tmp_out tmp_out )
+rm -f tmp_out
+(echo 1 && echo 2) | (grep 1 && grep 2)
+(printf "Hello\nWorld\n") | (/usr/bin/read -n 3 && cat)
+(echo 1 && echo 2) | (/usr/bin/read -n 1 && grep 2)
+(echo 1 && echo 2) | (/usr/bin/read -n 1 && grep 1)
+/bin/echo 42 | /bin/echo 42 || (/bin/echo 42)
+/bin/echo 42 | /bin/echo 42 && (/bin/echo 42)
+export bla='||' || echo 42 && echo 43
+export or='||' && export and='&&' && echo 42 $and echo 43 $or echo 43
+/bin/echo 1 && /bin/echo 2 ||
+/bin/echo 1 && /bin/echo 2 |
+/bin/echo 1 && /bin/echo 2 &&
+()
+(/bin/echo 1
+/bin/echo 1)
+(/bin/echo 1))
+(/bin/echo 1) (/bin/echo 2)
+()
+(echo) hi
+(echo) (hi)
+(echo hi && ((echo hi && (echo hi) && echo hi)))
+echo "'$HOME'"
+echo '"$HOME"'
+/usr/bin/printf "%s\n" * | sort
+export ARG="*"
+/usr/bin/printf "%s\n" $ARG | sort
+ls *
+ls 'test'*
+ls "test"*
+touch "*1"
+/usr/bin/printf "%s\n" "*"* | sort
+rm "*1"
+touch "   "
+ls * | grep "   "
+rm "   "
+touch "a" "aa"
+/usr/bin/printf "%s\n" *a | sort
+rm "a" "aa"
+touch "a" "aa" "aaa"
+/usr/bin/printf "%s\n" *a*a | sort
+rm "a" "aa" "aaa"
+/usr/bin/printf "%s\n" "Mak"'e'*'*' | sort
+/usr/bin/printf "%s\n" "Mak"'e'** | sort
+/usr/bin/printf "%s\n" ***"Mak"'e'** | sort
+/usr/bin/printf "%s\n" "."* | sort
+/usr/bin/printf "%s\n" *"." | sort
+/usr/bin/printf "%s\n" *"."* | sort
+/usr/bin/printf "%s\n" "*" | sort
+/usr/bin/printf "%s\n" '*' | sort
+/usr/bin/printf "%s\n" Minishe*l | sort
+/usr/bin/printf "%s\n" minishe*l | sort
+touch minishelxxxl
+/usr/bin/printf "%s\n" minishe*l | sort
+/usr/bin/printf "%s\n" minishel*l | sort
+/usr/bin/printf "%s\n" minishelxxx*l | sort
+/usr/bin/printf "%s\n" minishel*xxx*l | sort
+rm minishelxxxl
+touch tmp_out
+/bin/echo 42 >tmp_o*t*
+rm -f "tmp_out*"
+touch tmp_out1
+touch tmp_out2
+/bin/echo 42 >tmp_out*
+rm -f "tmp_out*"
+/bin/echo 1 && /bin/echo 2
+cat file_does_not_exist && /bin/echo 2
+/bin/echo 1 || /bin/echo 2
+cat file_does_not_exist || /bin/echo 2
+/bin/echo 1 && /bin/echo 2 && /bin/echo 3
+/bin/echo 1 || /bin/echo 2 || /bin/echo 3
+/bin/echo 1 && /bin/echo 2 | /bin/echo 3
+/bin/echo 1 || /bin/echo 2 | /bin/echo 3
+/bin/echo 1 && cat file_does_not_exist | /bin/echo 3
+/bin/echo 1 && /bin/echo 3 | cat file_does_not_exist
+/bin/echo 1 || cat file_does_not_exist | /bin/echo 3
+/bin/echo 1 || /bin/echo 2 | cat file_does_not_exist
+cat file_does_not_exist && /bin/echo 2 | /bin/echo 3
+cat file_does_not_exist || /bin/echo 2 | /bin/echo 3
+/bin/echo 1 | /bin/echo 2 && /bin/echo 3
+/bin/echo 1 | /bin/echo 2 || /bin/echo 3
+/bin/echo 1 | cat file_does_not_exist && /bin/echo 3
+/bin/echo 1 | cat file_does_not_exist || /bin/echo 3
+cat file_does_not_exist | /bin/echo 2 && /bin/echo 3
+cat file_does_not_exist | /bin/echo 2 || /bin/echo 3
+/bin/echo 1 | /bin/echo 2 && cat file_does_not_exist
+/bin/echo 1 | /bin/echo 2 || cat file_does_not_exist
+/bin/echo 1 | /bin/echo 2 && /bin/echo 3 | /bin/echo 4
+/bin/echo 1 | /bin/echo 2 || /bin/echo 3 | /bin/echo 4
+/bin/echo 1 | /bin/echo 2 | /bin/echo 3 && /bin/echo 4 | /bin/echo 5
+/bin/echo 1 | /bin/echo 2 | /bin/echo 3 || /bin/echo 4 | /bin/echo 5
+((echo 1) | (echo 2) | (echo 3 | (echo 4)))
+echo 1 | (echo 2 || echo 3 && echo 4) || echo 5 | echo 6
+echo 1 | (grep 1) | cat | (wc -l)
+(/bin/echo 1 | /bin/echo 2 && ((/bin/echo 3 | /bin/echo 3) | (/bin/echo 4 | /bin/echo 4)))
+(exit 4)
+(sleep 0 && (exit 4))
+(echo 1 | echo 2) | (exit 2)
+- CD part : For next tests, you will need : \\\033[0;33mecho, pwd, unset, redirections (normal and stderror) and semicolons (;).
+cd 
+cd .. 
+cd . 
+cd /Users 
+cd // 
+cd '//' 
+cd ////// 
+cd ./././ 
+cd /
+cd '/////' 2>/dev/null 
+cd '/etc' 
+cd '/var' 
+cd "$PWD/file_tests" 
+cd "doesntexist" 
+cd "doesntexist" 2>/dev/null 
+cd ../../..
+cd "wtf" 2>/dev/null 
+cd .. 
+cd ..
+cd ?
+cd +
+cd _
+cd woof
+cd bark bark
+cd '/' 
+cd $PWD/file_tests 
+cd $OLDPWD/something 
+- Echo part : For next tests, you will need : \\\033[0;33mcd, pwd and semicolons (;).\\\033[0m
+echo
+echo echo
+eCho
+eChO
+eCHO
+ECHO
+echo rhobebou
+echo stop barking
+echo "bonjour"
+echo bonjour
+echo 'bonjour'
+echo -n bonjour
+echo -nn bonjour
+echo -n -n -n bonjour
+echo -n -n -n bonjour
+echo "-n" bonjour
+echo -n"-n" bonjour
+echo "-nnnn" bonjour
+echo "-n -n -n"-n bonjour
+echo "-n '-n'" bonjour
+echo ~
+echo "~"
+echo '~'
+echo ~123
+echo 123~
+echo ~/123
+echo ~/123/456
+echo $USER
+echo "$USER"
+echo "'$USER'"
+echo " '$USER' "
+echo text"$USER"
+echo text"'$USER'" ' $USER '
+echo "text"   "$USER"    "$USER"
+echo '              $USER          '
+echo               text "$USER"            "$USER"text
+echo ''''''''''$USER''''''''''
+echo """"""""$USER""""""""
+echo $USER'$USER'text oui oui     oui  oui $USER oui      $USER ''
+echo $USER '' $USER $USER '' $USER '' $USER -n $USER
+echo ' \' ' \'
+echo '\" ' " \"\""
+echo \\\" \\\" \\\" \\\"\\\"\\\" \\\'\\\'\\\'
+echo "$USER""$USER""$USER"
+echo text"$USER"test
+echo '$USER' "$USER" "text \' text"
+echo '$USER'
+echo $USER " "
+echo "$USER""Users/$USER/file""'$USER'"'$USER'
+echo "$USER$USER$USER"
+echo '$USER'"$USER"'$USER'
+echo '"$USER"''$USER'"""$USER"
+echo " $USER  "'$PWD'
+echo " $USER  \$ "'$PWD'
+echo $USER=4
+echo $USER=thallard
+echo $USER
+echo $?
+echo $USER213
+echo $USER$12USER$USER=4$USER12
+echo $USER $123456789USER $USER123456789
+echo $USER $9999USER $8888USER $7777USER
+echo $USER $USER9999 $USER8888 $USER7777
+echo $USER $USER9999 $USER8888 $USER7777 "$USER"
+echo "$USER=12$USER"
+echo "$9USER" "'$USER=12$SOMETHING'"
+echo $PWD/file
+echo "$PWD/file"
+echo "text" "text$USER" ... "$USER"
+echo $PWD
+- Errors part : For next tests, you will need : \\\033[0;33mall built-in, redirections (normal and stderror) and semicolons (;).
+test
+| test
+echo > <
+echo | |
+<
+|
+| | |
+hello world
+||||||||
+
+cat wouaf wouaf
+>
+>>>>>>>>
+<<<<<<<<<
+> > > >
+>> >> >> >>
+~
+<<
+/Users
+
+.
+..
+/
+\\\
+EechoE
+.echo.
+>echo>
+<echo<
+>>echo>>
+echo
+|echo|
+echo -n
+echo -n
+echo
+echo something
+rm -f something
+cat something
+| echo -n oui
+echo -n oui
+trying to destroy your minishell
+trying something again echo if you see this message thats not a good new
+qewew
+wtf
+hi im thallard
+nice to meet you if these tests are green
+your minishell is perfect
+- Export part : For next tests, you will need : \\\033[0;33m echo and semicolons (;).
+exit 0 0
+exit 42 42
+exit -42 -24
+exit 42
+exit 42 53 68
+exit 259
+exit -12030
+exit --1239312
+exit ++++1203020103
+exit +0
+exit ++++++0
+exit -----0
+exit azerty
+exit kewkwqke
+exit a
+exit z
+exit "1"
+exit "2"
+exit "+102"
+exit "1230"
+exit "+++1230"
+exit "1"23
+exit "2"32"32"
+exit "'42'"
+exit '42'"42"42
+exit +'42'"42"42
+exit -'42'"42"42
+exit 9223372036854775807
+exit 9223372036854775808
+exit -4
+exit wrong
+exit wrong_command
+exit something
+exit 1
+exit -1
+exit 42
+exit 0
+exit --000
+exit +++++++000
+exit ++++3193912939
+exit ---31232103012
+exit "something"
+exit q
+exit help
+exit export
+exit echo
+exit cd ..
+exit 0 0
+exit something somethingv2
+exit 42 42 42 42 42
+exit echo something
+exit exit
+- Export part : For next tests, you will need : \\\033[0;33munset, env, echo, pipes, execve and semicolons (;).
+env | grep "_="
+export | grep "SHLVL"
+export | grep "OLDPWD"
+export | grep "PWD"
+export $?
+export TEST
+export TEST=
+export TEST=123
+export ___TEST=123
+export --TEST=123
+export ""=""
+export ''=''
+export "="="="
+export '='='='
+export TE\\\ST=100
+export TE-ST=100
+export -TEST=100
+export TEST-=100
+export _TEST=100
+export | grep "SHLVL"
+export TEST
+export ==========
+export 1TEST=
+export TEST
+export ""=""
+export TES=T=""
+export TE+S=T=""
+export TES\\\\T=123
+export TES.T=123
+export TES\\\$T=123
+export TES\\\\T
+export TES.T=123
+export TES+T=123
+export TES=T=123
+export TES}T=123
+export TES{T=123
+export TES-T=123
+export -TEST=123
+export _TEST=123
+export TES_T=123
+export TEST_=123
+export TE*ST=123
+export TES#T=123
+export TES@T=123
+export TES!T=123
+export TES$?T=123
+export =============123
+export +++++++=123
+export ________=123
+export export
+export echo
+export pwd
+export cd
+export export
+export unset
+export sudo
+export TES^T=123
+export TES!T=123
+export TES\~T=123
+export TEST+=100
+- Pipes part : For next tests, you will need : \\\033[0;33mall built-in, redirections (normal and stderror) and semicolons (;).
+env | grep "_="
+env | grep "SHLVL"
+echo oui | cat -e
+echo oui | echo non | echo something | grep oui
+echo oui | echo non | echo something | grep non
+echo oui | echo non | echo something | grep something
+cd .. | echo "something"
+cd .. | echo "something"
+cd / | echo "something"
+cd .. | pwd
+ifconfig | grep ":"
+ifconfig | grep nothing
+whoami | grep $USER
+whoami | grep $USER > tmp/file
+whoami | cat -e | cat -e > tmp/file
+cat Makefile | grep "FLAGS"
+cat Makefile | cat -e | cat -e
+cat Makefile | grep "FLAGS" | grep "FLAGS" | cat -e
+export TEST=123 | cat -e | cat -e
+unset TEST | cat -e
+echo test | cat -e | cat -e | cat -e
+whereis ls | cat -e | cat -e > test
+echo test | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e
+ls -la | grep "."
+whereis grep > tmp/file
+whereis grep > tmp/file
+ls -la > tmp/file
+ls -la > tmp/file
+- Unset part : For next tests, you will need : \\\033[0;33m export, echo, cd, execve and semicolons (;).
+unset
+export TEST=100
+unset doesntexist
+unset PWD
+unset PWD
+unset OLDPWD
+unset PATH
+unset PATH
+unset PATH
+unset TES\\\\T
+unset TES;T
+unset TES.T
+unset TES+T
+unset TES=T
+unset TES}T
+unset TES{T
+unset TES-T
+unset -TEST
+unset _TEST
+unset TES_T
+unset TEST_
+unset TE*ST
+unset TES#T
+unset TES@T
+unset TES!T
+unset TES$?T
+unset ============
+unset +++++++
+unset ________
+unset export
+unset echo
+unset pwd
+unset cd
+unset unset
+unset sudo
+unset TES^T
+unset TES!T
+unset TES\~T
+
+ls
+ls -la
+/usr/bin/ls
+usr/bin/ls
+./ls
+hello
+/usr/bin/hello
+./hello
+
+.
+..
+$
+./
+../
+./$D_EXISTS
+../fake_dir/
+./$F_EXISTING
+./nonexistant_file
+./$F_EXECUTABLE
+.$F_EXECUTABLE
+$F_EXECUTABLE
+unset PATH; pwd
+unset PATH; echo hello
+unset PATH; /usr/bin/ls
+unset PATH; usr/bin/ls
+unset PATH; ./ls
+unset PATH; hello
+unset PATH; /usr/bin/hello
+unset PATH; ./hello
+unset PATH; ""
+unset PATH; .
+unset PATH; ..
+unset PATH; $
+unset PATH; ./
+unset PATH; ../
+unset PATH; ./$D_EXISTS
+unset PATH; ../fake_dir/
+unset PATH; ./$F_EXISTING
+unset PATH; ./nonexistant_file
+unset PATH; ./$F_EXECUTABLE
+unset PATH; .$F_EXECUTABLE
+unset PATH; $F_EXECUTABLE
+ls -l | wc -l
+cat $F_IN1 | grep dream
+cat $F_IN1 | grep dream | cat -e
+cat $F_IN1 | grep dream | wc -l
+cat $F_IN1 | grep dream | wc -l | cd x
+cat $F_IN1 | grep dream | wc -l | x
+x | cat $F_IN1 | grep dream | wc -l
+cat $F_IN1 | x | grep dream | wc -l
+cat $F_IN1 | grep dream | x | wc -l
+cat /dev/random | head -c 100 | wc -c
+x | x | x | x | x
+x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x|x
+ls | ls | ls
+ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls
+
+
+						     
+\t\t\t\t\t\t\t\t\t\t      
+\t\n\r\v\f                
+       \t    \t\t\t       
+ls                        
+           ls             
+                        ls
+ls\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\tls\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\tls
+\t\t\t\t            \t\tls
+      ls         -l     -a
+\t\tls\t\t\t\t-l\t\t\t\t-a
+\t    ls\t\t  -l -a\t\t   
+ec""ho test
+ec''ho test
+""echo test
+''echo test
+echo"" test
+echo'' test
+echo "" test
+echo '' test
+echo "" "" "" test
+echo '' '' '' test
+echo """""" test
+echo '''''' test
+echo $USE""R
+echo $USE''R
+echo ""$USER
+echo ''$USER
+echo "$"USER
+echo '$'USER
+echo $""USER
+echo $''USER
+echo $USER"" ''
+echo \"cat $F_IN1 | cat > $F_OUT1\"
+echo 'cat $F_IN1 | cat > $F_OUT1'
+ls ""
+ls '\"
+ls \"\'
+ls " "
+ls \" ' \"
+
+l"s"
+$USER
+ls $HOME
+echo $
+echo $$
+echo $$$
+echo $USER
+echo $USE
+echo $USE_
+echo "$USER"
+echo '\$USER'
+echo "|$USER|"
+echo '|\$USER|'
+echo $USER $USER $USER
+echo $USER$USER$USER
+echo "$USER $USER $USER"
+echo "$USER$USER$USER"
+echo '\$USER \$USER \$USER'
+echo '\$USER\$USER\$USER'
+echo $USERhello
+echo hello$USER
+echo "$USERhello"
+echo "hello$USER"
+echo '\$USERhello'
+echo 'hello\$USER'
+echo hello $USER
+echo hello $NOT_A_VAR $NOT_A_VAR $NOT_A_VAR $USER
+echo $NOT_A_VAR $NOT_A_VAR $NOT_A_VAR $USER
+echo hello $NOT_A_VAR $NOT_A_VAR $NOT_A_VAR
+echo "hello $NOT_A_VAR $NOT_A_VAR $NOT_A_VAR $USER"
+export ECHO=echo; $ECHO $ECHO
+export L="ls -la"; $L
+export L='ls -la'; \$L
+|
+||
+|||
+<
+<<
+<<<<<<
+>
+>>
+>>>
+>>>>>>
+ls |
+ls ||
+ls | |
+| ls
+| ls | cat
+ls | cat |
+ls || cat
+ls | | cat
+fake_cmd |
+| fake_cmd
+fake_cmd || ls
+fake_cmd | | ls
+ls || fake_cmd
+ls | | fake_cmd
+ls >>
+ls >
+ls <
+ls <<
+ls < |
+ls << |
+ls > |
+ls >> |
+ls | <
+ls | <<
+ls | >
+ls | >>
+ls > >
+ls > >>
+ls > <
+ls > <<
+ls >> >
+ls >> >>
+ls >> <
+ls >> <<
+ls < >
+ls < >>
+ls < <
+ls < <<
+ls << >
+ls << >>
+ls << <
+ls << <<
+ls > >> |
+< < $F_IN1 cat
+<< << $F_IN1 cat
+<< < $F_IN1 cat
+< << $F_IN1 cat
+< $FAKE_VAR cat
+cat < $FAKE_VAR
+cat < $123456
+< $USER cat
+echo hello | ;
+ls > <
+ECHO
+Echo
+echo
+echo hello
+echo hello
+echo hello world
+echo hello      world
+echo                      hello world
+echo hello world                
+echo helololollllolllolol loollolllololllol lllol  looololololollllloooolll
+echo helololollllolllolol                                 loollolllololllol                   lllol                looololololollllloooolll
+echo -n
+echo -n hello world
+echo hello      world
+echo                      hello world
+echo -n hello world                
+echo -n helololollllolllolol loollolllololllol lllol  looololololollllloooolll
+echo -n helololollllolllolol                                 loollolllololllol                   lllol                looololololollllloooolll
+echo hello -n
+             echo                 hello                world
+             echo             -n                  hello               world                       
+echo a '' b '' c '' d
+echo a "" b "" c "" d
+echo -n a '' b '' c '' d
+echo -n a "" b "" c "" d
+echo -nhello world
+echo -n -n -n hello world
+echo -n -n -nnnn -nnnnm
+echo a	-nnnnhello
+echo -n -nnn hello -n
+echo a	hello -nhello
+unset PATH; echo hello world
+unset PATH; echo $USER
+unset PATH; echo $PATH
+ENV | sort | grep -v SHLVL | grep -v _=
+Env | sort | grep -v SHLVL | grep -v _=
+env | sort | grep -v SHLVL | grep -v _=
+env | wc -l
+env | grep PATH
+unset PATH; env | grep PATH
+unset PATH; env | grep USER
+unset PATH; env | grep SHELL
+unset PATH; env | grep PWD
+EXPORT
+Export
+export ""
+export 42
+export 42; env | grep 42
+export =
+export =; env | grep = | wc -l
+export A
+export A=; echo $A
+export A=a; echo $A
+export A=a B=b C=c; echo $A$B$C
+export A=a B=b C=c; export A=c B=a C=b; echo $A$B$C
+export A=a B=b C=c D=d E=e F=f G=g H=h I=i J=j K=k L=l M=m N=n O=o P=p Q=q R=r S=s T=t U=u V=v W=w X=x Y=y Z=z; echo $A$B$C$D$E$F$G$H$I$J$K$L$M$N$O$P$Q$R$S$T$U$V$W$X$Y$Z
+export A==a; echo $A
+export A===a; echo $A
+export A====a; echo $A
+export A=====a; echo $A
+export A======a; echo $A
+export A=a=a=a=a=a; echo $A
+export HELLOWORLD=a; echo $HELLOWORLD
+export helloworld=a; echo $helloworld
+export hello_world=a; echo $hello_world
+export HELLOWORLD1=a; echo $HELLOWORLD1
+export H1ELL_0_W123Orld_a=a; echo $H1ELL_0_W123Orld_a
+export a0123456789=a; echo $a0123456789
+export abcdefghijklmnopqrstuvwxyz=a; echo $abcdefghijklmnopqrstuvwxyz
+export __________________________=a; echo $__________________________
+export _hello_=a; echo $_hello_
+export 1
+export 1=
+export 1=a
+export HELLOWORLD =a
+export HELLOWORLD= a
+export HELLO\'WORLD\'=a
+export HELLO\"WORLD\"=a
+export HELLO\$WORLD=a
+export HELLO_WORLD=a
+export A='hello this world is wonderful'; echo \$A
+export A=\"hello this world is wonderful\"; echo \$A
+export A 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf ' C; echo \$A\$B\$C
+export 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf ' C; echo \$A\$B\$C
+export A 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf '; echo \$A\$B\$C
+export A B C; echo \$A\$B\$C
+export 'HELLO@'=hello
+export \"HELLO'\"=hello
+export 'HELLO\"'=hello
+export 'HELLO$'=hello
+export 'HELLO!'=hello
+export 'HELLO|'=hello
+export 'HELLO&'=hello
+export 'HELLO\\'=hello
+export ALPHA="abc def ghi"; echo $ALPHA
+export ALPHA='abc def ghi'; echo \$ALPHA
+export DIGITS="0 1 2 3 4 5 6 7 8 9"; echo $DIGITS
+export DIGITS='0 1 2 3 4 5 6 7 8 9'; echo \$DIGITS
+export DIGITS=0 1 2 3 4 5 6 7 8 9; echo $DIGITS
+unset PATH; export hello=42
+unset PATH; export 42=hello
+unset PATH; export hello=42; echo $hello
+unset PATH; export PATH=/usr/bin:/sbin/; ls
+UNSET
+Unset
+unset
+unset PATH
+unset PATH USER; echo $PATH; echo $USER
+unset PATH; echo $PATH
+unset PATH; ls
+unset NOT_A_VAR
+unset ""
+unset ''
+export A=a; unset A; echo $A
+export A=a A2=a; unset A; echo $A $A2
+export A=a; unset 'A '; echo \$A
+export A=a; unset A=; echo \$A
+export A=a; unset 'A='; echo \$A
+export A=a B=b C=c; unset A B C; echo $A$B$C
+export A=a B=b C=c; unset A 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf ' C
+export A=a B=b C=c; unset A 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf ' C; echo \$A\$B\$C
+export A=a B=b C=c; unset 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf ' C
+export A=a B=b C=c; unset 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf ' C; echo \$A\$B\$C
+export A=a B=b C=c; unset A 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf '
+export A=a B=b C=c; unset A 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf '; echo \$A\$B\$C
+export A=a B=b C=c; unset A
+export A=a B=b C=c; unset A; echo $A$B$C
+export A=a B=b C=c; unset B
+export A=a B=b C=c; unset B; echo $A$B$C
+export A=a B=b C=c; unset C
+export A=a B=b C=c; unset C; echo $A$B$C
+unset 'HELLO@'
+unset \"HELLO'\"
+unset 'HELLO\"'
+unset 'HELLO$'
+unset 'HELLO!'
+unset 'HELLO|'
+unset 'HELLO&'
+unset 'HELLO\\'
+unset PATH
+unset PATH; export hello=42; unset hello
+unset PATH; export hello=42; unset hello; echo $hello
+unset PATH; unset USER
+PWD
+Pwd
+pwd
+'pwd | cat -e'	
+pwd hello
+pwd 123
+pwd 1 2 x 3 hello
+pwd .
+pwd ..
+unset PWD; pwd | cat -e
+unset OLDPWD; pwd | cat -e
+unset PWD OLDPWD; pwd | cat -e
+export PWD='hello/world'; pwd | cat -e
+export PWD='/hello/world/'; pwd | cat -e
+export PWD='/usr/bin/'; pwd | cat -e
+export OLDPWD=abc/def; pwd | cat -e
+export PWD=hello/world OLDPWD=abc/def; pwd | cat -e
+mkdir a a/b; cd a/b; rm -rf ../../a; pwd
+unset PATH; pwd
+unset PATH; pwd
+unset PATH; unset PWD; pwd
+unset PATH; unset OLDPWD; pwd
+unset PATH; unset PWD OLDPWD; pwd
+unset PATH; export PWD='hello/world'; pwd
+unset PATH; export PWD='/hello/world/'; pwd
+unset PATH; export PWD='/usr/bin/'; pwd
+CD
+CD; pwd
+Cd
+Cd; pwd
+cd
+cd; pwd
+cd .
+cd .; pwd
+cd ..
+cd ..; pwd
+cd $D_EXISTS
+cd $D_EXISTS; pwd
+cd /dev
+cd /dev; pwd
+cd /Users
+cd /Users; pwd
+cd fake_dir
+cd fake_dir; pwd
+cd $D_FORBIDDEN
+cd $D_FORBIDDEN; pwd
+cd $F_EXISTING
+cd $F_EXISTING; pwd
+cd $F_FORBIDDEN
+cd $F_FORBIDDEN; pwd
+cd ../../../../../../../../../../../../../../../../../../../../../../
+cd ../../../../../../../../../../../../../../../../../../../../../../; pwd
+cd $HOME
+cd $HOME; pwd
+unset HOME; cd $HOME
+unset HOME; cd $HOME; pwd
+unset HOME; cd
+unset HOME; cd; pwd
+mkdir a a/b; cd a/b; rm -rf ../../a; cd ..
+mkdir a a/b; cd a/b; rm -rf ../../a; unset PWD OLDPWD; cd ..
+unset PATH; cd
+unset PATH; cd; pwd
+unset PATH; cd .
+unset PATH; cd .; pwd
+unset PATH; cd ..
+unset PATH; cd ..; pwd
+unset PATH; cd $D_EXISTS
+unset PATH; cd $D_EXISTS; pwd
+unset PATH; cd /dev
+unset PATH; cd /dev; pwd
+unset PATH; cd /Users
+unset PATH; cd /Users; pwd
+unset PATH; cd fake_dir
+unset PATH; cd fake_dir; pwd
+unset PATH; cd $D_FORBIDDEN
+unset PATH; cd $D_FORBIDDEN; pwd
+unset PATH; cd $F_EXISTING
+unset PATH; cd $F_EXISTING; pwd
+unset PATH; cd $F_FORBIDDEN
+unset PATH; cd $F_FORBIDDEN; pwd
+unset PATH; cd $HOME
+unset PATH; cd $HOME; pwd
+unset PATH; unset HOME; cd $HOME
+unset PATH; unset HOME; cd $HOME; pwd
+unset PATH; unset HOME; cd
+unset PATH; unset HOME; cd; pwd
+exit
+Exit
+EXIT
+exit 42
+exit 42; echo "Should have exited."
+exit 240
+exit +42
+exit -42
+exit 00000000000000000000000000000000000000000000001
+exit 00000000000000000000000000000000000000000000000
+exit -00000000000000000000000000000000000000000000001
+exit -00000000000000000000000000000000000000000000000
+exit abc
+exit abc; echo "Should have exited."
+exit --42
+exit ++42
+exit - 42
+exit + 42
+exit "0"
+exit '0'
+exit ""
+exit ''
+exit " "
+exit ' '
+exit ' 5'
+exit '\t5'
+exit '\t\f\r5'
+exit '5 '
+exit '5\t'
+exit '5\t\f\r'
+exit '5     x'
+exit '5\t\t\tx'
+exit 42 41
+exit 42 abc
+exit abc 42
+exit 2147483647
+exit 2147483648
+exit -2147483648
+exit -2147483649
+exit 9223372036854775807
+exit -9223372036854775808
+exit 9223372036854775808
+exit -9223372036854775810
+exit 9999999999999999999999999999999999999999999999
+exit -9999999999999999999999999999999999999999999999
+exit _0
+exit 0_
+exit 5 < $F_IN1
+exit 1 | exit 0
+exit 0 | exit 1
+ls | exit
+ls | exit 42
+ls | exit 12 abc
+ls | exit abc 12
+exit | ls
+exit 42 | ls
+exit 12 abc | ls
+exit abc 12 | ls
+ "ls > file | exit"
+ "ls -l > x | exit | wc -l"
+unset PATH; exit
+unset PATH; exit 42
+unset PATH; exit 42; echo "Should have exited."
+unset PATH; exit +42
+unset PATH; exit -42
+unset PATH; exit 00000000000000000000000000000000000000000000001
+unset PATH; exit 00000000000000000000000000000000000000000000000
+unset PATH; exit abc
+unset PATH; exit abc; echo "Should have exited."
+unset PATH; exit --42
+unset PATH; exit ++42
+unset PATH; exit - 42
+unset PATH; exit + 42
+unset PATH; exit 9999999999999999999999999999999999999999999999
+unset PATH; exit -9999999999999999999999999999999999999999999999
+< $F_IN1 cat
+<$F_IN1 cat
+cat < $F_IN1
+cat <$F_IN1
+< $F_IN1; echo \$?
+< $F_DOES_NOT_EXIST
+< $F_FORBIDDEN
+cat <
+cat < $F_DOES_NOT_EXIST
+cat < $F_DOES_NOT_EXIST
+< $F_DOES_NOT_EXIST cat
+<$F_DOES_NOT_EXIST cat
+cat < $F_FORBIDDEN
+cat <$F_FORBIDDEN
+< $F_FORBIDDEN cat
+<$F_FORBIDDEN cat
+< $F_DOES_NOT_EXIST < $F_IN1 cat
+cat < $F_IN1 < $F_DOES_NOT_EXIST
+cat < $F_IN1 < $F_IN1 < $F_IN1
+cat < $F_IN1 <
+cat < $F_IN1 < $F_IN2
+<$F_IN1 cat < $F_IN2
+cat << < $F_IN1
+cat << << $F_IN1
+cat <<<< $F_IN1
+cat < $F_FORBIDDEN < $F_IN1
+cat < $F_IN1 < $F_FORBIDDEN
+cat < $F_FORBIDDEN | cat < $F_IN1
+cat < $F_IN1 | cat < $F_FORBIDDEN
+> $F_OUT1; echo \$?
+> $F_FORBIDDEN; echo \$?
+echo hello world >
+echo hello world > $F_OUT1
+echo abcdefghijk >$F_OUT1
+echo hello world> $F_OUT1
+> $F_OUT1 echo abcdefghijk
+>$F_OUT1 echo hello world
+echo hello world > $F_FORBIDDEN
+> $F_OUT1 echo hi | echo bye
+echo ab | echo cde > $F_OUT1
+cat $F_IN1 > $F_OUT1
+cat $F_IN1 | wc -l > $F_OUT1
+cat $F_IN1 | grep dream | sed s/e/../g | sed s/d/X/g > $F_OUT1
+echo abcdefghijk > $F_OUT1 > $F_OUT2
+echo hello world > $F_OUT1 > $F_OUT1
+echo hello world > $F_OUT1 > $F_OUT1 > $F_OUT1 > $F_OUT1 > $F_OUT1 > $F_OUT1
+echo hello world > $F_OUT1 > $F_OUT1 > $F_OUT1 > $F_OUT1 > $F_OUT1 > $F_OUT2
+echo abcdefghijk > $F_FORBIDDEN > $F_OUT1 > $F_OUT2
+echo abcdefghijk > $F_OUT1 > $F_FORBIDDEN > $F_OUT2
+echo abcdefghijk > $F_OUT1 > $F_OUT2 > $F_FORBIDDEN
+echo > $F_OUT1 a b c d e
+echo a > $F_OUT1 b c d e
+echo a b > $F_OUT1 c d e
+echo a b c > $F_OUT1 d e
+echo a b c d > $F_OUT1 e
+echo a b c d e > $F_OUT1
+echo > $F_OUT1 a b c d e > $F_OUT2
+echo a > $F_OUT1 b c d e > $F_OUT2
+echo a b > $F_OUT1 c d e > $F_OUT2
+echo a b c > $F_OUT1 d e > $F_OUT2
+echo a b c d > $F_OUT1 e > $F_OUT2
+echo a b c d e > $F_OUT1 > $F_OUT2
+echo hello > $F_OUT1 | echo world > $F_OUT1
+echo 01234 > $F_OUT1 | echo 56789 > $F_OUT2
+echo hello > $F_OUT1 | echo world > $F_FORBIDDEN
+echo 01234 > $F_FORBIDDEN | echo 56789 > $F_OUT1
+>> $F_OUT1; echo \$?
+>> $F_FORBIDDEN; echo \$?
+echo hello world >>
+echo hello world >> $F_OUT1
+echo abcdefghijk >>$F_OUT1
+echo hello world>> $F_OUT1
+>> $F_OUT1 echo abcdefghijk
+>>$F_OUT1 echo hello world
+echo hello world >> $F_FORBIDDEN
+>> $F_OUT1 echo hi | echo bye
+echo ab | echo cde >> $F_OUT1
+cat $F_IN1 >> $F_OUT1
+cat $F_IN1 | wc -l >> $F_OUT1
+cat $F_IN1 | grep dream | sed s/e/../g | sed s/d/X/g >> $F_OUT1
+echo abcdefghijk >> $F_OUT1 >> $F_OUT2
+echo hello world >> $F_OUT1 >> $F_OUT1
+echo hello world >> $F_OUT1 >> $F_OUT1 >> $F_OUT1 >> $F_OUT1 >> $F_OUT1 >> $F_OUT1
+echo hello world >> $F_OUT1 >> $F_OUT1 >> $F_OUT1 >> $F_OUT1 >> $F_OUT1 >> $F_OUT2
+echo abcdefghijk >> $F_FORBIDDEN >> $F_OUT1 >> $F_OUT2
+echo abcdefghijk >> $F_OUT1 >> $F_FORBIDDEN >> $F_OUT2
+echo abcdefghijk >> $F_OUT1 >> $F_OUT2 >> $F_FORBIDDEN
+echo >> $F_OUT1 a b c d e
+echo a >> $F_OUT1 b c d e
+echo a b >> $F_OUT1 c d e
+echo a b c >> $F_OUT1 d e
+echo a b c d >> $F_OUT1 e
+echo a b c d e >> $F_OUT1
+echo >> $F_OUT1 a b c d e >> $F_OUT2
+echo a >> $F_OUT1 b c d e >> $F_OUT2
+echo a b >> $F_OUT1 c d e >> $F_OUT2
+echo a b c >> $F_OUT1 d e >> $F_OUT2
+echo a b c d >> $F_OUT1 e >> $F_OUT2
+echo a b c d e >> $F_OUT1 >> $F_OUT2
+echo hello >> $F_OUT1 | echo world >> $F_OUT1
+echo 01234 >> $F_OUT1 | echo 56789 >> $F_OUT2
+echo hello >> $F_OUT1 | echo world >> $F_FORBIDDEN
+echo 01234 >> $F_FORBIDDEN | echo 56789 >> $F_OUT1
+< >> >
+< > >>
+> < >>
+> >> <
+>> > <
+>> < >
+echo ABC > $F_OUT1 | echo DEF >> $F_OUT2
+echo GHI >> $F_OUT1 | echo KLM > $F_OUT2
+echo OPQ > $F_OUT1 >> $F_OUT2
+echo RST >> $F_OUT1 > $F_OUT2
+< $F_IN1 cat | echo UVW > $F_OUT1 | echo XYZ >> $F_OUT2
+< $F_IN1 cat > $F_OUT1 | echo ABC >> $F_OUT1 | echo DEF > $F_OUT2
+cat < $F_OUT1 >
+cat < $F_OUT1 >>
+cat < > $F_OUT1
+cat < >> $F_OUT1
+cat > >> $F_OUT1
+cat >> > $F_OUT1
+< $F_OUT1 cat > $F_OUT1
+< $F_OUT1 cat >> $F_OUT1
+cat > $F_OUT1 < $F_OUT1
+cat >> $F_OUT1 < $F_OUT1
+cat < $F_OUT1 > $F_OUT1
+cat < $F_OUT1 >> $F_OUT1
+< $F_IN1 < $F_IN2 cat > $F_OUT1 >> $F_OUT2
+< $F_IN1 < $F_IN2 cat >> $F_OUT1 > $F_OUT2
+< $F_FORBIDDEN < $F_IN2 cat > $F_OUT1 >> $F_OUT2
+< $F_IN1 < $F_FORBIDDEN cat > $F_OUT1 >> $F_OUT2
+< $F_IN1 < $F_IN2 cat > $F_FORBIDDEN >> $F_OUT1
+< $F_IN2 < $F_IN1 cat > $F_OUT1 >> $F_FORBIDDEN
+< $F_IN1 < $F_IN2 cat >> $F_FORBIDDEN > $F_OUT1
+< $F_IN2 < $F_IN1 cat >> $F_OUT1 > $F_FORBIDDEN
+< $F_FORBIDDEN cat > $F_FORBIDDEN >> $F_FORBIDDEN
+< $F_FORBIDDEN cat >> $F_FORBIDDEN > $F_FORBIDDEN
+cat >> $F_FORBIDDEN > $F_FORBIDDEN < $F_FORBIDDEN
+< $F_IN1 cat | grep dream > $F_FORBIDDEN
+< $F_IN2 cat | grep dream >> $F_FORBIDDEN
+< $F_IN1 cat >> $F_FORBIDDEN | wc -l > $F_OUT1
+< $F_IN2 cat > $F_FORBIDDEN | wc -l >> $F_OUT1
+< $F_IN1 cat >> $F_OUT1 | wc -l > $F_FORBIDDEN
+< $F_IN2 cat > $F_OUT1 | wc -l >> $F_FORBIDDEN
+echo $?
+echo; echo $?
+$?
+$? + $?
+$?; echo $?
+fakecmd; echo $?
+cat < $F_DOES_NOT_EXIST; echo \$?
+cat < $F_FORBIDDEN; echo \$?
+./$F_FORBIDDEN; echo \$?
+"cd $D_EXISTS; echo \$?" 
+cd $D_FORBIDDEN; echo \$?
+cd dir_does_not_exist; echo \$?
+cd $F_DOES_NOT_EXIST; echo \$?
+cd $F_IN1; echo \$?
+ls dir_does_not_exist; echo \$?
+echo test tout
+echo test      tout
+echo -n test tout
+echo -n -n -n test tout
+cd .. ; pwd
+cd /Users ; pwd
+cd ; pwd
+mkdir test_dir ; cd test_dir ; rm -rf ../test_dir ; cd . ; pwd ; cd . ; pwd ; cd .. ; pwd
+cat tests/lorem.txt | grep arcu | cat -e
+echo test | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e| cat -e| cat -e| cat -e| cat -e| cat -e| cat -e| cat -e| cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e
+cat /dev/random | head -c 100 | wc -c
+ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls
+ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls|ls
+echo test     \    test
+echo \"test
+echo $TEST
+echo "$TEST"
+echo '$TEST'
+echo "$TEST$TEST$TEST"
+echo "$TEST$TEST=lol$TEST"
+echo "   $TEST lol $TEST"
+echo $TEST$TEST$TEST
+echo $TEST$TEST=lol$TEST""lol
+echo    $TEST lol $TEST
+echo test "" test "" test
+echo "\$TEST"
+echo "$=TEST"
+echo "$"
+echo "$?TEST"
+echo $TEST $TEST
+echo "$1TEST"
+echo "$T1TEST"
+export =
+'export 1TEST= ;' $ENV_SHOW
+'export TEST ;' $EXPORT_SHOW
+'export ""="" ; ' $ENV_SHOW
+'export TES=T="" ;' $ENV_SHOW
+'export TE+S=T="" ;' $ENV_SHOW
+'export TEST=LOL ; echo $TEST ;' $ENV_SHOW
+export TEST=LOL ; echo $TEST$TEST$TEST=lol$TEST
+'export TEST=LOL; export TEST+=LOL ; echo $TEST ;' $ENV_SHOW
+$ENV_SHOW
+$EXPORT_SHOW
+'export TEST="ls       -l     - a" ; echo $TEST ; $LS ; ' $ENV_SHOW
+echo test > ls ; cat ls
+echo test > ls >> ls >> ls ; echo test >> ls; cat ls
+> lol echo test lol; cat lol
+>lol echo > test>lol>test>>lol>test mdr >lol test >test; cat test
+cat < ls
+cat < ls > ls
+echo testing multi ; echo "test 1 ; | and 2" ; cat tests/lorem.txt | grep Lorem
+;; test
+| test
+echo > <
+echo | |
+<
+exit 42
+exit 42 53 68
+exit 259
+exit 9223372036854775807
+exit -9223372036854775808
+exit 9223372036854775808
+exit -9223372036854775810
+exit -4
+exit wrong
+exit wrong_command
+gdagadgag
+ls -Z
+cd gdhahahad
+ls -la | wtf

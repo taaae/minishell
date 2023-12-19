@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:15:35 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/16 13:57:54 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/19 15:15:26 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,11 @@ typedef enum e_token_type {
 	TOK_AND_SYM = 9,
 	TOK_OR_SYM = 10,
 	TOK_OPEN_PARENTH = 11,
-	TOK_CLOSE_PARENTH = 12	
+	TOK_CLOSE_PARENTH = 12,
+	TOK_EXPANDED_STAR = 13,
+	TOK_VAR = 14,
+	TOK_EXPANDED_VAR = 15,
+	TOK_EXPANDED_VAR_IN_DQOTES = 16,
 }	t_token_type;
 
 typedef struct s_token {
@@ -44,46 +48,22 @@ typedef struct s_token {
 }	t_token;
 
 /**
- * @brief Breaks a line into tokens and returns linked list of them
+ * @brief Take a bash command and split it into t_list of t_token tokens
+ *
  *
  * @param line
- * @return t_token*
+ * @return t_list* 
  */
-t_list	*tokenize(char *line);
+t_list	*line_to_tokens(char *line);
+int		count_files_in_cur_dir(void);
+int		get_next_tok_len(char *line);
+void	scan_files_in_dir(char ***files, int files_count, \
+DIR *d, struct dirent *dir);
+int		match_wildcard(char *str, char *pattern);
+int		expand_all_stars(t_list **tok_lst);
+t_list	*expanded_star_to_token(char *s);
 void	del_token(void *token);
 char	*str_to_tok_str(char **line);
 t_token	*tok_str_to_token(char *tok_str);
-t_list	*token_to_list_entry(t_token *token);
-
-/**
- * @brief Get the next tok len object
- *
- * Cant possibly get ' ' or '\0'!
- * @param line
- * @return int
- */
-int		get_next_tok_len(char *line);
-int		parse_double_sym_word(char *line);
-int		parse_quotes(char *line);
-int		parse_dquotes(char *line);
-int		parse_word(char *line);
-int		parse_var(char *line);
-
-int		count_files_in_cur_dir(void);
-void	scan_dir(char ***files, int files_count, DIR *d, struct dirent *dir);
-char	**get_files_in_cur_dir(void);
-
-t_list	*line_to_tokens(char *line);
-int		expand_all_tokens(t_list **tok_lst);
-
-/**
- * @brief Get the token type object
- *
- * TODO
- * @param tok_str
- * @param tok_len
- * @return int
- */
-int		get_token_type(char *tok_str, int tok_len);
 
 #endif

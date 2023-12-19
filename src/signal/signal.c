@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   builtin_env.c                                      :+:      :+:    :+:   */
+/*   signal.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/17 16:16:53 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/19 15:56:36 by lporoshi         ###   ########.fr       */
+/*   Created: 2023/12/17 14:10:06 by lporoshi          #+#    #+#             */
+/*   Updated: 2023/12/17 14:22:17 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <signal.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <readline/readline.h>
+#include <readline/history.h>
 #include "libft.h"
-#include "environment.h"
-#include "builtins.h"
 
-int	builtin_env(int argc, char **argv)
+void	sigint_handler(int sig)
 {
-	char	**environ;
+	if (sig == SIGINT)
+	{
+		rl_redisplay();
+		write(1, "\n", 1);
+		rl_on_new_line();
+		rl_replace_line("", 0);
+		rl_redisplay();
+	}
+	return ;
+}
 
-	(void)argc;
-	if (argv == NULL || argv[0] == NULL)
-		return (FT_ERROR);
-	if (argv[1] != NULL)
-	{
-		ft_putstr_fd("env with arguments is not supported", STDERR_FILENO);
-		return (FT_ERROR);
-	}
-	environ = get_environ();
-	while (*environ != NULL)
-	{
-		ft_printf("%s\n", *environ);
-		environ++;
-	}
-	return (0);
+void	init_signal_handlers(void)
+{
+	rl_catch_signals = 0;
+	signal(SIGINT, sigint_handler);
+	signal(SIGQUIT, SIG_IGN);
 }
