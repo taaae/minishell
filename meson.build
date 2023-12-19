@@ -1,4 +1,4 @@
-project('minishell_test', 'c')
+project('minishell_test', 'c', default_options: ['warning_level=3'])
 
 cc = meson.get_compiler('c')
 libft_dep = cc.find_library('ft', dirs: meson.current_source_dir() + '/libft/')
