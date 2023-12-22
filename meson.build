@@ -28,3 +28,9 @@ executable('environment_test',
            include_directories: inc,
            dependencies: dep,
 )
+
+executable('lexer_test',
+           sources: [src, unity_gen_runner.process('test' / 'lexer_test.c'), 'test/lexer_test.c'],
+           include_directories: inc,
+           dependencies: dep,
+)

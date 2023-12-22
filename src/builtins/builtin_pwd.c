@@ -6,18 +6,19 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 16:30:09 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/11 18:29:00 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/19 16:02:07 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-int	builtin_pwd(char **argv)
+int	builtin_pwd(int argc, char **argv)
 {
 	char	*current_dir;
 
-	if (argv == NULL)
+	(void)argv;
+	if (argv == NULL || argv[0] == NULL)
 		return (FT_ERROR);
 	current_dir = getcwd(NULL, 0);
 	if (current_dir == NULL)

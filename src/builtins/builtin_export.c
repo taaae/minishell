@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtin_export.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:05:42 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/17 18:29:12 by trusanov         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:39:50 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,21 @@ static void	invalid_identifier_message(char *name)
 	ft_putstr_fd("': not a valid identifier\n", STDERR_FILENO);
 }
 
-int	builtin_export(char **argv)
+int	builtin_export(int argc, char **argv)
 {
 	int		res;
 	char	**split_res;
 
-	res = 0;
-	if (argv == NULL)
+	if (argv == NULL || argv[0] == NULL)
 		return (FT_ERROR);
-	if (argv[0] == NULL)
+	(void)argc;
+	res = 0;
+	if (argv[1] == NULL)
 	{
 		ft_putstr_fd("export with no arguments not supported", STDERR_FILENO);
 		return (FT_ERROR);
 	}
+	++argv;
 	while (*argv)
 	{
 		split_res = ft_splitone(*argv, '=');

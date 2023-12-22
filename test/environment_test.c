@@ -45,15 +45,16 @@ void test_environment_core(void) {
 void test_builtin_env(void) {
   char *envp[] = {"PATH=/usr/local/bin:/usr/bin", "COLORTERM=truecolor", NULL};
   ft_initenv(envp);
-  char *empty_argv[] = {NULL};
+  char *empty_argv[] = {NULL, NULL};
+  empty_argv[1] = "argc_0";
   ft_printf("\nbuiltin_env test:\n");
-  builtin_env(empty_argv);
-  empty_argv[0] = "abc";
-  builtin_env(empty_argv);
-  empty_argv[0] = NULL;
+  builtin_env(1, empty_argv);
+  empty_argv[1] = "abc";
+  builtin_env(1, empty_argv);
+  empty_argv[1] = NULL;
   ft_unsetenv("PATH");
   ft_unsetenv("COLORTERM");
-  builtin_env(empty_argv);
+  builtin_env(1, empty_argv);
   free(get_environ());
 }
 
@@ -62,49 +63,50 @@ void test_builtin_unset(void) {
   ft_initenv(envp);
   char *empty_argv[] = {NULL};
   ft_printf("\n\n\nbuiltin_unset test:\n");
-  char *unset_argv[] = {"nonexisting", "er=ror", NULL};
-  TEST_ASSERT_EQUAL(1, builtin_unset(unset_argv));
-  builtin_env(empty_argv);
-  unset_argv[0] = "PATH";
-  unset_argv[1] = "USER";
+  char *unset_argv[] = {"argv[0]", "nonexisting", "er=ror", NULL};
+  TEST_ASSERT_EQUAL(1, builtin_unset(1, unset_argv));
+  builtin_env(1, empty_argv);
+  unset_argv[1] = "PATH";
+  unset_argv[2] = "USER";
   ft_printf("\n");
-  TEST_ASSERT_EQUAL(0, builtin_unset(unset_argv));
-  builtin_env(empty_argv);
-  unset_argv[0] = "";
-  TEST_ASSERT_EQUAL(1, builtin_unset(unset_argv));
-  unset_argv[0] = "COLORTERM";
-  builtin_unset(unset_argv);
+  TEST_ASSERT_EQUAL(0, builtin_unset(1, unset_argv));
+  builtin_env(1, empty_argv);
+  unset_argv[1] = "";
+  TEST_ASSERT_EQUAL(1, builtin_unset(1, unset_argv));
+  TEST_ASSERT_EQUAL(1, builtin_unset(1, unset_argv));
+  unset_argv[1] = "COLORTERM";
+  builtin_unset(1, unset_argv);
   free(get_environ());
 }
 
 void test_builtin_export(void) {
   char *envp[] = {"PATH=/usr/local/bin:/usr/bin", "COLORTERM=truecolor", "USER=root", NULL};
   ft_initenv(envp);
-  char *empty_argv[] = {NULL};
+  char *empty_argv[] = {NULL, NULL};
   ft_printf("\n\n\nbuiltin_export test:\n");
-  char *argv[] = {"aaa=bbb", "ccc", NULL};
-  TEST_ASSERT_EQUAL(0, builtin_export(argv));
-  builtin_env(empty_argv);
-  argv[0] = "PATH";
-  argv[1] = "COLORTERM";
-  builtin_unset(argv);
+  char *argv[] = {"argv[0]", "aaa=bbb", "ccc", NULL};
+  TEST_ASSERT_EQUAL(0, builtin_export(1, argv));
+  builtin_env(1, empty_argv);
+  argv[1] = "PATH";
+  argv[2] = "COLORTERM";
+  builtin_unset(1, argv);
   ft_printf("\n");
-  builtin_env(empty_argv);
-  argv[0] = "USER=grot";
-  argv[1] = "";
-  TEST_ASSERT_EQUAL(1, builtin_export(argv));
+  builtin_env(1, empty_argv);
+  argv[1] = "USER=grot";
+  argv[2] = "";
+  TEST_ASSERT_EQUAL(1, builtin_export(1, argv));
   ft_printf("\n");
-  builtin_env(empty_argv);
+  builtin_env(1, empty_argv);
 }
 
 void test_env_error_messages(void) {
   ft_printf("\n\ntest env error messages:\n");
   ft_printf("for unset:\n");
-  char *argv[] = {" ", "", "a=b", "=2", "=", " a", "2a", "_", "?^@", NULL};
-  builtin_unset(argv);
+  char *argv[] = {"argv[0]", " ", "", "a=b", "=2", "=", " a", "2a", "_", "?^@", NULL};
+  builtin_unset(1, argv);
   ft_printf("\nfor export:\n");
-  char *argv2[] = {" ", "", "2a=b", " a=b", " b", "_a=b=c", " _a", "?^", NULL};
-  builtin_export(argv2);
+  char *argv2[] = {"argv[0]", " ", "", "2a=b", " a=b", " b", "_a=b=c", " _a", "?^", NULL};
+  builtin_export(1, argv2);
   char *empty_argv[] = {NULL};
-  builtin_env(empty_argv);
+  builtin_env(1, empty_argv);
 }
