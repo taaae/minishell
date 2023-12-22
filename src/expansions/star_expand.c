@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 12:55:50 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/22 13:50:00 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/22 14:33:36 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ static char	**compose_expansion_arr(char *pattern, char **candidates)
 	return (expansion_orig);
 }
 
-char	**expand_star_string(char *pattern)
+char	**expand_stars_string(char *pattern)
 {
 	char	**files;
 	char	**expansion;
