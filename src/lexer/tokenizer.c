@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:15:04 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/22 13:04:07 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/22 13:17:35 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,12 @@ bool	check_quotes_validity(char *line)
 		else if (*line == '\"')
 			unclosed_dquotes = !unclosed_dquotes;
 		else if (*line == '(')
-			unclosed_paren += 1;
+			--unclosed_paren;
 		else if (*line == ')')
-			unclosed_paren -= 1;
+			++unclosed_paren;
+		line++;
 	}
-	return (unclosed_quotes || unclosed_dquotes || unclosed_paren);
+	return (!(unclosed_quotes || unclosed_dquotes || unclosed_paren));
 }
 
 void	del_token(void *token)
@@ -97,7 +98,7 @@ t_list	*line_to_tokens(char *line)
 {
 	t_list	*tokens;
 
-	if (line == NULL || check_quotes_validity == false)
+	if (line == NULL || check_quotes_validity(line) == false)
 		return (NULL);
 	tokens = tokenize(line);
 	return (tokens);
