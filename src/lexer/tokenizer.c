@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:15:04 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/22 13:17:35 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/22 13:25:44 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ bool	check_quotes_validity(char *line)
 		else if (*line == '\"')
 			unclosed_dquotes = !unclosed_dquotes;
 		else if (*line == '(')
-			--unclosed_paren;
-		else if (*line == ')')
 			++unclosed_paren;
+		else if (*line == ')')
+			--unclosed_paren;
 		line++;
 	}
 	return (!(unclosed_quotes || unclosed_dquotes || unclosed_paren));
