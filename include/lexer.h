@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:15:35 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/19 15:15:26 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/22 12:36:11 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,7 @@ typedef struct s_token {
  * @return t_list* 
  */
 t_list	*line_to_tokens(char *line);
-int		count_files_in_cur_dir(void);
 int		get_next_tok_len(char *line);
-void	scan_files_in_dir(char ***files, int files_count, \
-DIR *d, struct dirent *dir);
-int		match_wildcard(char *str, char *pattern);
-int		expand_all_stars(t_list **tok_lst);
-t_list	*expanded_star_to_token(char *s);
 void	del_token(void *token);
 char	*str_to_tok_str(char **line);
 t_token	*tok_str_to_token(char *tok_str);

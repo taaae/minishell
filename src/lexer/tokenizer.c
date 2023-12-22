@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:15:04 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/19 15:06:33 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/22 13:04:07 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,29 @@
 #include "lexer.h"
 #include "libft.h"
 #include <stdbool.h>
+
+bool	check_quotes_validity(char *line)
+{
+	bool	unclosed_quotes;
+	bool	unclosed_dquotes;
+	int		unclosed_paren;
+
+	unclosed_quotes = false;
+	unclosed_dquotes = false;
+	unclosed_paren = 0;
+	while (*line)
+	{
+		if (*line == '\'')
+			unclosed_quotes = !unclosed_quotes;
+		else if (*line == '\"')
+			unclosed_dquotes = !unclosed_dquotes;
+		else if (*line == '(')
+			unclosed_paren += 1;
+		else if (*line == ')')
+			unclosed_paren -= 1;
+	}
+	return (unclosed_quotes || unclosed_dquotes || unclosed_paren);
+}
 
 void	del_token(void *token)
 {
@@ -74,9 +97,8 @@ t_list	*line_to_tokens(char *line)
 {
 	t_list	*tokens;
 
+	if (line == NULL || check_quotes_validity == false)
+		return (NULL);
 	tokens = tokenize(line);
-	if (tokens == NULL)
-		return (tokens);
-	expand_all_stars(&tokens);
 	return (tokens);
 }
