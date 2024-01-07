@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 14:10:06 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/19 17:02:26 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/07 12:41:50 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,9 @@ int	get_sig(void)
 	return (sig_storage(-1));
 }
 
-void	set_sig(int sig)
+int	set_sig(int sig)
 {
-	sig_storage(sig);
-	return ;
+	return (sig_storage(sig));
 }
 
 void	sigint_handler(int sig)
