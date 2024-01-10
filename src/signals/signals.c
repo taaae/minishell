@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   signal.c                                           :+:      :+:    :+:   */
+/*   signals.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 14:10:06 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/07 12:41:50 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/10 18:07:01 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <readline/history.h>
 #include "libft.h"
 
-static int	sig_storage(int sig)
+static int	sig_manager(int sig)
 {
 	static int	signal = -1;
 
@@ -28,12 +28,12 @@ static int	sig_storage(int sig)
 
 int	get_sig(void)
 {
-	return (sig_storage(-1));
+	return (sig_manager(-1));
 }
 
 int	set_sig(int sig)
 {
-	return (sig_storage(sig));
+	return (sig_manager(sig));
 }
 
 void	sigint_handler(int sig)
