@@ -1,4 +1,4 @@
-project('minishell_test', 'c', default_options: ['warning_level=3'])
+project('minishell_test', 'c', default_options: ['warning_level=2'])
 
 cc = meson.get_compiler('c')
 libft_dep = cc.find_library('ft', dirs: meson.current_source_dir() + '/libft/')
@@ -25,6 +25,12 @@ executable('example_test',
 
 executable('environment_test',
            sources: [src, unity_gen_runner.process('test' / 'environment_test.c'), 'test/environment_test.c'],
+           include_directories: inc,
+           dependencies: dep,
+)
+
+executable('lexer_test',
+           sources: [src, unity_gen_runner.process('test' / 'lexer_test.c'), 'test/lexer_test.c'],
            include_directories: inc,
            dependencies: dep,
 )

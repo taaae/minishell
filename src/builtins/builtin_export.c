@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:05:42 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/19 15:59:58 by lporoshi         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:39:50 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	builtin_export(int argc, char **argv)
 		ft_putstr_fd("export with no arguments not supported", STDERR_FILENO);
 		return (FT_ERROR);
 	}
+	++argv;
 	while (*argv)
 	{
 		split_res = ft_splitone(*argv, '=');
