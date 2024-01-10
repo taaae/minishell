@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 12:44:11 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/19 12:41:56 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/10 18:13:51 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,11 @@ int		ft_setenv(const char *name, const char *val);
  * @warning ft_initenv should be called before using this function
  */
 int		ft_unsetenv(const char *name);
+
+/**
+ * @brief Clean up the memory of env variables.
+ * @note Should be called right before the probgram is going to be terminated
+ */
+void	ft_terminate_env(void);
 
 #endif
