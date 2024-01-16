@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 18:18:29 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/10 19:17:49 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/16 14:24:14 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ typedef enum e_exec_status
 
 int	validate_exec_full_name(char full_name)
 {
+	if (full_name == NULL)
+		return (FT_ERROR);
 	if (access(full_name, F_OK) == -1)
 		return (FT_EXECNAME_NOFILE);
 	if (access(full_name, X_OK) == -1)
@@ -34,15 +36,39 @@ int	validate_exec_full_name(char full_name)
 
 char	*get_home_dir(void)
 {
-	return (NULL);
+	return (ft_getenv("$HOME"));
 }
 
-char	*get_home_dir()
+int	check_exec(char *path, char *name)
 {
-	return (NULL);
+	char	*full_name;
+	int		result;
+
+	full_name = ft_strjoin(path, name);
+	result = validate_exec_full_name(full_name);
+	free(full_name);
+	return (result);
 }
 
-char	*get_pathvar_dir()
+char	*get_pathvar_dir(char *name)
 {
-	retirn (NULL);
+	char	**paths;
+	char	*result;
+	int		i;
+
+	result = NULL;
+	paths = split_path();
+	if (paths == NULL)
+		return (NULL);
+	i = 0;
+	while (paths[i] != NULL)
+	{
+		if (check_exec(paths[i], name) == FT_EXECNAME_OK)
+		{
+			result = ft_strdup(paths[i]);
+			break ;
+		}
+	}
+	free_str_arr(paths);
+	return (result);
 }
