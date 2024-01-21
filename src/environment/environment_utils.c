@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   environment_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 12:43:11 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/17 15:47:06 by trusanov         ###   ########.fr       */
+/*   Updated: 2024/01/10 18:12:20 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,14 @@ void	extend_environ(void)
 	ft_memmove(new_environ, environ, environ_size * sizeof(char *));
 	free(environ);
 	set_environ(new_environ);
+}
+
+void	ft_terminate_env(void)
+{
+	char	***env_ptr;
+
+	env_ptr = st_get_environ_ptr();
+	if (env_ptr != NULL)
+		free_str_arr(env_ptr);
+	return ;
 }
