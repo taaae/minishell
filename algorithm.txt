@@ -81,3 +81,21 @@ argv=[echo, *, *text, ', Desktop, Library, ']
 5. Evalluate pipelines from left to right
 
 6. Evalluate logic in the order parsed before
+
+1) tokens of type
+	type 1: (
+	type 2: )
+	type 3: && 
+	type 4: ||
+	type 5: paiplain
+2)	Form a data struct from them
+3)	Give this DS to an algo that wil execute paiplains in a specific DS-determined order
+4)	the aforementioned algo for every pipeline does this:
+	5.1) Tokenize cmd to words
+	5.2) Parse the list by the rules:
+		1)Validate that after every <> comes a WORD
+		2)Parse <>, if there's a mistake, complain and terminate current command, but continue the pipe somehow..
+		3)
+		5.2.0)Parse all <> and get rid of them
+		5.2.1)First NOQUOTE_WORD is an executable, all [d][q]words after - args
+		5.2.2)
