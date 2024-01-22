@@ -54,18 +54,18 @@ squote		[text]
 normal		[ $varb*"$varb"]
 
 4.2. Expand variables
+!!! expand only in normal and dquote
 dquote		[ech]
 normal		[o * *]
 squote		[text]
 normal		[ ' * ' ]
 
 4.3. Expand wildcards
-!!! add extra check for wildcards at the end of the string (expand only if the next part is [normal] and have space at the beginning)
+!!! expand only in normal. do not expand wildcards at the end
 example:
-a=" 10"
-echo *$a -> will expand
-echo *"$a" -> won't expand
-echo *" 10" -> won't expand
+echo *" text" -> won't expand
+echo *'   text' -> won't expand
+echo *123 -> won't expand
 
 dquote		[ech]
 normal		[o Desktop Library *]
