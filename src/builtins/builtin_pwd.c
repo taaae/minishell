@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 16:30:09 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/22 11:37:50 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/22 12:01:19 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ int	builtin_pwd(int argc, char **argv)
 {
 	char	*current_dir;
 
-	(void)argv;
-	if (argv == NULL || argv[0] == NULL)
+	if (argc == 0 || argv == NULL || argv[0] == NULL)
 		return (EXIT_FAILURE);
 	current_dir = getcwd(NULL, 0);
 	if (current_dir == NULL)

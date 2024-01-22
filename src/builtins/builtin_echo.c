@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:32:34 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/22 11:46:06 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/22 12:25:34 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ static int	echo_printer(char *s, bool no_nl)
 		return (EXIT_FAILURE);
 	if (ft_putstr_fd(s, STDOUT_FILENO) != ft_strlen(s))
 	{
-		perror("ft_printf error");
 		free(s);
 		return (EXIT_FAILURE);
 	}
@@ -28,7 +27,6 @@ static int	echo_printer(char *s, bool no_nl)
 	{
 		if (ft_putchar_fd('\n', STDOUT_FILENO) != 1)
 		{
-			perror("ft_printf error");
 			free(s);
 			return (EXIT_FAILURE);
 		}
