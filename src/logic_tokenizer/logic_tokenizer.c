@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 20:49:01 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/22 22:12:00 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/22 22:21:08 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,16 +75,19 @@ int	skip_to_script_end(char **s)
 	len = 0;
 	while (1)
 	{
-		if (found_the_end_of_token_or_end_of_line)
-			break;
-		if (!in_q && **s == '\'' || **s == '"')
+		if ((*s)[len] == '\0' || (*s)[len] == '(' \
+			|| (*s)[len] == ')' || \
+			((*s)[len] == '|' && (*s)[len + 1] == '|') || \
+			((*s)[len] == '&' && (*s)[len + 1] == '&'))
+			break ;
+		if (!in_q && (*s)[len] == '\'' || (*s)[len] == '"')
 		{
-			in_q = *((*s)++);
-			while (**s != in_q)
-				(*s)++;
+			in_q = (*s)[len++];
+			while ((*s)[len] != in_q)
+				len++;
 			in_q = 0;
 		}
-		(*s)++;
+		len++;
 	}
 	return (len);
 }
@@ -173,12 +176,30 @@ int	quotes_are_correct(char *line)
 	return (1);
 }
 
+int	parents_are_correct(char *line)
+{
+	int	stack;
+
+	stack = 0;
+	while (*line)
+	{
+		if (*line == '(')
+			stack++;
+		else if (*line == ')')
+			stack--;
+		if (stack < 0)
+			return (0);
+		line++;
+	}
+	return (stack == 0);
+}
+
 t_logic_token	**logic_split(char *line)
 {
 	t_logic_token	*tokens;
 	int				tok_amt;
 
-	if (!quotes_are_correct(line))
+	if (!quotes_are_correct(line) || parents_are_correct(line))
 		return (NULL);
 	tok_amt = alloc_log_toks(tokens, line);
 	if (tokens == NULL)
