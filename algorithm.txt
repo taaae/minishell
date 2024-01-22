@@ -1,0 +1,83 @@
+Input:
+vara="* *"
+* = Desktop Library
+("ech"o $vara'text' | cat && echo *'a') || echo c > file
+
+1. Tokenize
+open-bracket 	(
+command 		"ech"o $vara'text'
+pipe 			|
+command 		cat
+and				&&
+command			echo *'a'
+close-bracket	)
+or				||
+command			echo c
+redirection		>
+command			file
+
+Why not tokenize by pipelines first?
+Because bash will not execute commands unless your pipelines are correct
+
+2. Group
+open_bracket	(
+pipeline		"ech"o $vara'text' | cat	
+			command		"ech"o $vara'text'
+			pipe		|
+			command		cat
+logical_and		&&
+pipeline		echo *'a'
+			command		echo *'a'
+close_bracket	)
+logical_or		||
+pipeline		echo c > file
+			command		echo c
+			redirection >
+			command		file
+
+3. Parse logic (somehow)
+# TODO
+# everything that left is evalluating pipelines
+
+
+4. Expand commands
+Input:
+vara="* *"
+varb=" ' "
+* = Desktop Library
+"ech"o $vara'text' $varb*"$varb"
+
+4.1. Tokenize braces
+dquote		[ech]
+normal		[o $vara]
+squote		[text]
+normal		[ $varb*"$varb"]
+
+4.2. Expand variables
+!!! expand only in normal and dquote
+dquote		[ech]
+normal		[o * *]
+squote		[text]
+normal		[ ' * ' ]
+
+4.3. Expand wildcards
+!!! expand only in normal. do not expand wildcards at the end
+example:
+echo *" text" -> won't expand
+echo *'   text' -> won't expand
+echo *123 -> won't expand
+
+dquote		[ech]
+normal		[o Desktop Library *]
+squote		[text]
+normal		[ ' Desktop Library ' ]
+
+4.4. Concatenate
+command		echo * *text ' Desktop Library '
+
+4.5. Split by spaces and execute
+argv=[echo, *, *text, ', Desktop, Library, ']
+
+5. Evalluate pipelines from left to right
+
+6. Evalluate logic in the order parsed before
