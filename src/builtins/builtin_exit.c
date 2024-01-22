@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:33:30 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/22 13:58:54 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/22 16:48:46 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 //if +sigh: all%256
 //if -sign: (256 - all%256) % 256
-
 int	get_exit_code(char *s)
 {
 	long long	tmp;
@@ -60,5 +59,6 @@ int	builtin_exit(int argc, char **argv)
 		perror(argv[1]);
 		exit_code = 255;
 	}
+	ft_putstr_fd("exit\n", STDERR_FILENO);
 	exit(exit_code);
 }

@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 14:10:06 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/10 18:07:01 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/22 16:39:10 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	sigint_handler(int sig)
 {
 	if (sig == SIGINT)
 	{
-		set_sig(SIGINT);
+		set_sig(130);
 		rl_redisplay();
 		write(1, "\n", 1);
 		rl_on_new_line();

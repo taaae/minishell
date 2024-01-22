@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:05:42 by trusanov          #+#    #+#             */
-/*   Updated: 2023/12/21 15:39:50 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/22 14:07:12 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ static void	invalid_identifier_message(char *name)
 	ft_putstr_fd("': not a valid identifier\n", STDERR_FILENO);
 }
 
+//rework for DEFVAR
 int	builtin_export(int argc, char **argv)
 {
 	int		res;
