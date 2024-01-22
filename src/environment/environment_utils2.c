@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   builtin_env.c                                      :+:      :+:    :+:   */
+/*   environment_utils2.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/17 16:16:53 by trusanov          #+#    #+#             */
-/*   Updated: 2024/01/22 17:15:43 by lporoshi         ###   ########.fr       */
+/*   Created: 2024/01/22 17:17:51 by lporoshi          #+#    #+#             */
+/*   Updated: 2024/01/22 17:18:05 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 #include "environment.h"
-#include "builtins.h"
 
-int	builtin_env(int argc, char **argv)
+int	ft_setenv_defvar(char *name)
 {
-	char	**environ;
+	char	**env;
+	char	*existing_val;
 
-	(void)argc;
-	if (argv == NULL || argv[0] == NULL)
-		return (FT_ERROR);
-	if (argv[1] != NULL)
+	existing_val = ft_getenv(name);
+	if (existing_val != NULL)
+		free(existing_val);
+	else
 	{
-		ft_putstr_fd("env with arguments is not supported", STDERR_FILENO);
-		return (FT_ERROR);
-	}
-	environ = get_environ();
-	while (*environ != NULL)
-	{
-		if (ft_strchr(*environ, '=' != NULL))
-			ft_printf("%s\n", *environ);
-		environ++;
+		extend_environ();
+		env = get_environ();
+		while (*env != NULL)
+			env++;
+		*env = name;
 	}
 	return (0);
 }

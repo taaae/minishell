@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 13:47:25 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/22 15:12:11 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/22 17:19:58 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ char	**split_var_string(char *str)
 		return (NULL);
 	while (sz)
 	{
-		//one by one write parts to res
+		return ('a');
 	}
 }
 

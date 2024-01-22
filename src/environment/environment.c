@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:55:56 by trusanov          #+#    #+#             */
-/*   Updated: 2024/01/22 17:11:32 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/22 17:18:55 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	ft_initenv(char **envp)
 	set_environ(environ);
 }
 
-//rework so if its DEFVAR it can find it (no =)
 static char	**__find_env(const char *name)
 {
 	char	**environ;
@@ -64,25 +63,6 @@ char	*ft_getenv(const char *name)
 	if (*env[ft_strlen(name)] == '=')
 		return (ft_substr(*env, ft_strlen(name) + 1, INT_MAX));
 	return (NULL);
-}
-
-int	ft_setenv_defvar(char *name)
-{
-	char	**env;
-	char	*existing_val;
-
-	existing_val = ft_getenv(name);
-	if (existing_val != NULL)
-		free(existing_val);
-	else
-	{
-		extend_environ();
-		env = get_environ();
-		while (*env != NULL)
-			env++;
-		*env = name;
-	}
-	return (0);
 }
 
 int	ft_setenv(const char *name, const char *val)
