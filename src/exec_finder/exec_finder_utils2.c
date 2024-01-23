@@ -6,16 +6,16 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 16:47:58 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/23 17:33:55 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/23 21:00:12 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
-//expand_exec_name_path
+
 char	**split_path(void)
 {
-	char **s;
+	char	**s;
 
 	s = calloc(11, sizeof(char *));
 	s[0] = ft_strdup("/var/tmp/");
