@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 12:50:38 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/23 14:51:04 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/23 17:36:14 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	skip_to_script_end(char **s)
 			((*s)[len] == '|' && (*s)[len + 1] == '|') || \
 			((*s)[len] == '&' && (*s)[len + 1] == '&'))
 			break ;
-		if (!in_q && (*s)[len] == '\'' || (*s)[len] == '"')
+		if (!in_q && ((*s)[len] == '\'' || (*s)[len] == '"'))
 		{
 			in_q = (*s)[len++];
 			while ((*s)[len] != in_q)

@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 16:40:02 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/23 17:13:46 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/23 17:36:02 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	main(void)
 		NULL
 	};
 	int	i = 0;
-	char	**env_tmp;
 	ft_initenv(environ);
 	while(s[i] != NULL)
 	{

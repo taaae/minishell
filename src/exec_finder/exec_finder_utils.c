@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 18:18:29 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/23 17:08:55 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/23 17:35:34 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <sys/types.h>
 #include <pwd.h>
 
-char	**split_path();
+char	**split_path(void);
 
 typedef enum e_exec_status
 {
@@ -26,7 +26,7 @@ typedef enum e_exec_status
 	FT_EXECNAME_NOFILE = 2
 }	t_exec_status;
 
-int	validate_exec_full_name(char full_name)
+int	validate_exec_full_name(char *full_name)
 {
 	if (full_name == NULL)
 		return (FT_ERROR);
@@ -74,6 +74,6 @@ char	*get_pathvar_dir(char *name)
 		}
 		i++;
 	}
-	free_str_arr(paths);
+	free_str_arr(&paths);
 	return (result);
 }

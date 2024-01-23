@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 13:47:25 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/22 17:19:58 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/23 17:36:48 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	expand_var_string(char **str)
 	char	*val;
 
 	if (str == NULL || *str == NULL)
-		return (NULL);
+		return (FT_ERROR);
 	val = ft_getenv((*str) + 1);
 	if (val == NULL)
 		val = ft_strdup("");
@@ -136,6 +136,6 @@ char	*expand_vars_string(char *str)
 	if (expand_all_vars(&split_str) == FT_ERROR)
 		return (NULL);
 	result = str_arr_cat(split_str);
-	free_str_arr(split_str);
+	free_str_arr(&split_str);
 	return (result);
 }
