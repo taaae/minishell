@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 13:02:58 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/23 14:48:09 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/23 18:03:12 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	show_ltres(t_logic_token **tokens)
 int	main(void)
 {
 	char *s[] = {
+		"",
+		"echo)",
 "echo \"> >> < * ? [ ] | ; [ ] || && ( ) & # $ \\ <<",
 "echo '> >> < * ? [ ] | ; [ ] || && ( ) & # $ \\ <<'",
 "mkdir testdirtest;cd testdirtest;bash;cd .. && rm -rf testdirtest && exit;pwd;cd .;pwd@rm -rf actual dir and cd .",
