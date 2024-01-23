@@ -6,15 +6,18 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 18:18:29 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/16 14:24:14 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/23 17:08:55 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 #include "libft.h"
+#include "environment.h"
 #include <sys/types.h>
 #include <pwd.h>
+
+char	**split_path();
 
 typedef enum e_exec_status
 {
@@ -44,6 +47,7 @@ int	check_exec(char *path, char *name)
 	char	*full_name;
 	int		result;
 
+	ft_printf("%s/%s\n", path, name);
 	full_name = ft_strjoin(path, name);
 	result = validate_exec_full_name(full_name);
 	free(full_name);
@@ -68,6 +72,7 @@ char	*get_pathvar_dir(char *name)
 			result = ft_strdup(paths[i]);
 			break ;
 		}
+		i++;
 	}
 	free_str_arr(paths);
 	return (result);

@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:55:56 by trusanov          #+#    #+#             */
-/*   Updated: 2024/01/22 17:18:55 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/23 17:09:47 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 void	set_environ(char **new_environ);
 void	extend_environ(void);
+int		ft_setenv_defvar(char *name);
 
 void	ft_initenv(char **envp)
 {

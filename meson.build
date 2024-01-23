@@ -40,3 +40,9 @@ executable('logic_tok_test',
            include_directories: inc,
            dependencies: dep,
 )
+
+executable('find_exec_test',
+           sources: [src, 'test/find_exec_test.c'],
+           include_directories: inc,
+           dependencies: dep,
+)

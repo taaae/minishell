@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 18:18:29 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/16 14:27:10 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/23 16:59:40 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 #include "libft.h"
 #include <sys/types.h>
 #include <pwd.h>
+
+char	*get_home_dir(void);
+char	*get_pathvar_dir(char *name);
+char	*expand_exec_name_pathvar(char *name);
+
 
 char	*expand_exec_name_relative(char *name)
 {
@@ -55,7 +60,7 @@ char	*expand_exec_name_pathvar(char *name)
 	return (full_name);
 }
 
-static char	*expand_exec_name(char *name)
+char	*expand_exec_name(char *name)
 {
 	if (name == NULL)
 		return (NULL);
@@ -66,5 +71,5 @@ static char	*expand_exec_name(char *name)
 	else if (name[0] == '~')
 		return (expand_exec_name_home(name));
 	else
-		return (expand_exec_name_path(name));
+		return (expand_exec_name_pathvar(name));
 }

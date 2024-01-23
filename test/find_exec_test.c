@@ -1,35 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   environment_utils2.c                               :+:      :+:    :+:   */
+/*   find_exec_test.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 17:17:51 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/23 16:51:03 by lporoshi         ###   ########.fr       */
+/*   Created: 2024/01/23 16:40:02 by lporoshi          #+#    #+#             */
+/*   Updated: 2024/01/23 17:13:46 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 #include "environment.h"
 
-void	extend_environ(void);
+char	*expand_exec_name(char *name);
 
-int	ft_setenv_defvar(char *name)
+extern char	**environ;
+
+int	main(void)
 {
-	char	**env;
-	char	*existing_val;
-
-	existing_val = ft_getenv(name);
-	if (existing_val != NULL)
-		free(existing_val);
-	else
+	char	*s[] = {
+		"ls",
+		"git",
+		"meson",
+		"bgirgbwrgwrg",
+		"test",
+		"~/Documents/",
+		"~/Documents/minishell/a.out",
+		"/var/tmp/",
+		"/home/lporoshi/Documents/minishell/a.out",
+		"./a.out",
+		NULL
+	};
+	int	i = 0;
+	char	**env_tmp;
+	ft_initenv(environ);
+	while(s[i] != NULL)
 	{
-		extend_environ();
-		env = get_environ();
-		while (*env != NULL)
-			env++;
-		*env = name;
+		ft_printf("[%s\t->\t%s]\n", s[i], expand_exec_name(s[i]));
+		i++;
 	}
-	return (0);
+	ft_terminate_env();
 }
