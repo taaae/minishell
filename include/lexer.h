@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:15:35 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/22 12:36:11 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/22 20:13:59 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,27 @@
 # define TWO_SYM_WORDS "|&<>"
 # define WORD_CHARS "&|<>()\"\'"
 # define CONTROL_CHARS "|"
+
+typedef struct s_command {
+	char				*execname;
+	char				**argv;
+	int					argc;
+	int					stdout_substitute;
+	int					stdin_substitute;
+	struct s_command	*next;
+}	t_command;
+
+typedef struct s_pipeline {
+	t_command			*commands;
+	struct s_pipeline	*next;
+}	t_pipeline;
+
+typedef struct s_cmdline {
+	t_pipeline			*pipelines;
+	struct s_command	*next;
+}	t_cmdline;
+//^
+//int exec_cmdline(t_cmdline line)
 
 typedef enum e_token_type {
 	TOK_ERROR = 0,
