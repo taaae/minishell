@@ -34,3 +34,9 @@ executable('lexer_test',
            include_directories: inc,
            dependencies: dep,
 )
+
+executable('parser_test',
+           sources: [src, 'test/logic_error_parser_test.c'],
+           include_directories: inc,
+           dependencies: dep,
+)
