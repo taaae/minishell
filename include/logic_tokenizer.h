@@ -6,12 +6,12 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 20:46:15 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/22 21:22:37 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/23 13:09:07 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LOGIC_TOKENIZER
-# define LOGIC_TOKENIZER
+#ifndef LOGIC_TOKENIZER_H
+# define LOGIC_TOKENIZER_H
 
 typedef enum e_logic_tok_type{
 	OPEN_PAR = 1,
@@ -26,6 +26,7 @@ typedef struct s_logic_token {
 	char				*strrepr;
 }	t_logic_token;
 
-#endif
+t_logic_token	**logic_split(char *line);
+void			show_ltres(t_logic_token **tokens);
 
-**
+#endif

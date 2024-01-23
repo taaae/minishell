@@ -34,3 +34,9 @@ executable('lexer_test',
            include_directories: inc,
            dependencies: dep,
 )
+
+executable('logic_tok_test',
+           sources: [src, 'test/logic_tok_test.c'],
+           include_directories: inc,
+           dependencies: dep,
+)
