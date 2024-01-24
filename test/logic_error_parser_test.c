@@ -59,6 +59,6 @@ int main()
             NULL,
     };
     for (int i = 0; s[i] != NULL; i++) {
-        printf("input: %s\n result: %s\n\n", s[i], parse_check(logic_split(s[i])));
+        printf("input: %s\n result: %s\n\n", s[i], logic_parse_check(logic_split(s[i])));
     }
 }

@@ -20,15 +20,14 @@ const char    *token_error(const t_logic_token *token)
     return ft_strdup("minishell: unexptected token type");
 }
 
-const char    *parse_check_expr(t_logic_token ***token);
-const char    *parse_check_term(t_logic_token ***token);
+static const char    *parse_check_expr(t_logic_token ***token);
+static const char    *parse_check_term(t_logic_token ***token);
 
 // Expr -> Term{('&&', '||')Expr}
-// Term -> '(' Expr ')' | script_str
+// Term -> '(' Expr ')' | pipeline
 // Pass first element of NULL terminated token array from logic_split func
 // Returns NULL on success or dynamically allocated string with error description if fail
-#include <stdio.h>
-const char    *parse_check(t_logic_token **token)
+const char    *logic_parse_check(t_logic_token **token)
 {
     const char    *res;
 
@@ -42,7 +41,7 @@ const char    *parse_check(t_logic_token **token)
     return (NULL);
 }
 
-const char    *parse_check_expr(t_logic_token ***token)
+static const char    *parse_check_expr(t_logic_token ***token)
 {
     const char    *res;
 
@@ -59,7 +58,7 @@ const char    *parse_check_expr(t_logic_token ***token)
     return (NULL);
 }
 
-const char    *parse_check_term(t_logic_token ***token)
+static const char    *parse_check_term(t_logic_token ***token)
 {
     const char    *res;
 
@@ -67,7 +66,9 @@ const char    *parse_check_term(t_logic_token ***token)
         return (token_error(NULL));
     if ((**token)->type == SCRIPT_STR)
     {
-        // here should be parse_check_pipeline
+        res = pipeline_parse_check((**token)->strrepr);
+        if (res != NULL)
+            return (res);
         (*token)++;
         return (NULL);
     }
