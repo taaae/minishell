@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 18:18:29 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/23 16:59:40 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/23 21:17:07 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 char	*get_home_dir(void);
 char	*get_pathvar_dir(char *name);
 char	*expand_exec_name_pathvar(char *name);
-
 
 char	*expand_exec_name_relative(char *name)
 {
@@ -55,7 +54,8 @@ char	*expand_exec_name_pathvar(char *name)
 	current_dir = get_pathvar_dir(name);
 	if (current_dir == NULL)
 		return (NULL);
-	full_name = ft_strjoin(current_dir, name);
+	full_name = ft_strjoin(current_dir, "/");
+	full_name = ft_strjoin(full_name, name);
 	free(current_dir);
 	return (full_name);
 }
