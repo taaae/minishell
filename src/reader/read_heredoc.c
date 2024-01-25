@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 23:48:45 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/25 16:11:50 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/25 17:38:16 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,21 +46,63 @@ char	*create_heredoc_file(char *delim)
 	return (pathname);
 }
 
-int	scan_and_write_heredoc(t_token *arrow_tok, t_token delim_tok)
+//TODO
+int	read_heredoc_content(char *delim, int fd)
 {
-	//1. Create file for storage function
-	//2. Call a function for reading a heredoc
-		//1. readline() with '>' prompt (don't update history)
-		//2. strcmp(what I read, delim_tok)
-		//3. 	If not equal, write a line to the file
-		//4. 		Go to step 2
-		//5. 	if equal, wrap up the FD and return full path filename
-	//3. If return NULL, error. If return a string, then continue
-	//4. arrow_tok -> change type to INFILE, tok_str and tok len to match "<"
-	//5. delim_tok -> change type to word, tok_str/tok_len to match full path to temp file
-	//6. return 1;
+	char	*line;
+
+	while (1)
+	{
+		line = readline(">");
+		if (line == NULL)
+			continue ;
+		if (line[0] == '\0')
+		{
+			free(line);
+			continue ;
+		}
+		line = ft_strtrim(line, "\n");
+		if (strcmp(line, delim))
+		{
+			free(line);
+			return (EXIT_SUCCESS);
+		}
+		ft_putstr_fd(line, fd);
+		ft_putchar_fd("\n", fd);
+		free(line);
+		continue ;
+	}
+	return (EXIT_SUCCESS);
 }
 
+int	read_heredoc_to_file(char *delim, char *storage)
+{
+	int	fd;
+	int	exit_code;
+
+	fd = open(storage, O_WRONLY);
+	exit_code = read_heredoc_content(delim, fd);
+	close(fd);
+	return (exit_code);
+}
+
+int	scan_and_write_heredoc(t_token *arrow_tok, t_token *delim_tok)
+{
+	char	*heredoc_file;
+
+	heredoc_file = create_heredoc_file(delim_tok->token_string);
+	if (read_heredoc_to_file(delim_tok->token_string, heredoc_file)
+		!= EXIT_SUCCESS)
+	{
+		arrow_tok->type = TOK_ERROR;
+		free(heredoc_file);
+		return (EXIT_FAILURE);
+	}
+	arrow_tok->type = TOK_READ_FROM_FILE_SYM;
+	delim_tok->type = TOK_WORD;
+	delim_tok->token_string = heredoc_file;
+	return (EXIT_SUCCESS);
+}
 
 int	check_heredoc_delim_chars(char *delim)
 {
