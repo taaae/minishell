@@ -52,3 +52,9 @@ executable('logic_exec_test',
            include_directories: inc,
            dependencies: dep,
 )
+
+executable('pipeline_lexer_test',
+           sources: [src, 'test/pipeline_lexer_test.c'],
+           include_directories: inc,
+           dependencies: dep,
+)
