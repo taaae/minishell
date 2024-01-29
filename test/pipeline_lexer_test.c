@@ -31,5 +31,7 @@ static void print_pipeline_tokens(t_pipeline_token *pipeline)
 
 int main()
 {
-    print_pipeline_tokens(tokenize_pipeline("ls -l | grep \"pattern\" > > < < out.txt && cat < out.txt"));
+//    print_pipeline_tokens(tokenize_pipeline("ls -l | grep \"pattern\" > > < < out.txt && cat < out.txt"));
+    char *line = "abc | \"def'\"| e";
+    printf("%s\n%s\n", line, pipeline_parse_check(line));
 }

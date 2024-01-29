@@ -5,7 +5,7 @@
 
 const char  *logic_parse_check(t_logic_token **token);
 int         exec_logic(t_logic_token **token);
-const char  *pipeline_parse_check(const char *command);
+const char  *pipeline_parse_check(char *command);
 int         exec_pipeline(const char *command);
 
 typedef enum e_pipeline_token_type {
