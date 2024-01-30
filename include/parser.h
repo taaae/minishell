@@ -6,7 +6,7 @@
 const char  *logic_parse_check(t_logic_token **token);
 int         exec_logic(t_logic_token **token);
 const char  *pipeline_parse_check(char *command);
-int         exec_pipeline(const char *command);
+int         exec_pipeline(char *command);
 
 typedef enum e_pipeline_token_type {
     ARG,
@@ -15,7 +15,8 @@ typedef enum e_pipeline_token_type {
     PIPELINE_EOF
 } t_pipeline_token_type;
 
-typedef struct s_pipeline_token {
+typedef struct s_pipeline_token
+{
     t_pipeline_token_type type;
     char *content;
 } t_pipeline_token;
