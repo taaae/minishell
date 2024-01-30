@@ -1,5 +1,7 @@
 #include <stdlib.h>
+#include "libft.h"
 #include "parser.h"
+#include "environment.h"
 
 static int  pipe_num(const t_pipeline_token *pipeline)
 {
@@ -13,16 +15,102 @@ static int  pipe_num(const t_pipeline_token *pipeline)
     return (res);
 }
 
+char    **expand_arg(char *arg)
+{
+    // TODO
+    char **expanded;
+
+    expanded = ft_calloc(2, sizeof(char *));
+    expanded[0] = arg;
+    return (expanded);
+}
+
+char    **add_arg(char **argv, char *arg)
+{
+    int n;
+    int m;
+    char    **new;
+    char    **expanded;
+
+    expanded = expand_arg(arg);
+    n = 0;
+    new = argv;
+    while (*new != NULL)
+    {
+        new++;
+        n++;
+    }
+    m = 0;
+    new = expanded;
+    while (*new != NULL)
+    {
+        new++;
+        m++;
+    }
+    new = ft_calloc(n + m + 1, sizeof(char *));
+    n = 0;
+    while (argv[n] != NULL)
+    {
+        new[n] = argv[n];
+        n++;
+    }
+    m = 0;
+    while (expanded[m] != NULL)
+    {
+        new[n + m] = expanded[m];
+        m++;
+    }
+    free(argv);
+    free(expanded);
+    return (new);
+}
+
+#include <stdio.h>
+int handle_redirection(const t_pipeline_token *pipeline)
+{
+    // TODO
+    if (pipeline->content[0] == '<')
+        fprintf(stderr, "redirecitng from: ");
+    else if (pipeline->content[0] == '>' && pipeline->content[1] == '\0')
+        fprintf(stderr, "redirecting in: ");
+    else if (pipeline->content[0] == '>' && pipeline->content[1] == '>')
+        fprintf(stderr, "appending to: ");
+    pipeline++;
+    fprintf(stderr, "%s\n", pipeline->content);
+    return (0);
+}
+
 #include <stdio.h>
 #include <unistd.h>
-static void exec_command(const t_pipeline_token *pipeline)
+void exec_command(t_pipeline_token *pipeline)
 {
+    int     code;
+    char    **argv;
+    t_pipeline_token *pipeline_to_free;
+
+    pipeline_to_free = pipeline;
+    argv = ft_calloc(1, sizeof(char *));
     while (pipeline->type != PIPELINE_EOF && pipeline->type != PIPE)
     {
-        fprintf(stderr, "%s\n", pipeline->content);
+        if (pipeline->type == REDIRECTION)
+        {
+            code = handle_redirection(pipeline); // expand everything here and output error if fail code probably 1 or 0
+            if (code == 1)
+            {
+//                free_argv(argv);
+                exit(code);
+            }
+            pipeline++;
+        }
+        else
+            argv = add_arg(argv, pipeline->content);
         pipeline++;
     }
-    exit(42);
+    system(argv[1]); // fake
+//    execve(argv[0], argv + 1, get_environ()); // idk if argv + 1 is good, might need to reallocate to size 1 less. also need to execute the actual executable, not its name (search PATH and builtins)
+    free_pipeline(pipeline_to_free);
+    // might need to free more stuff
+    exit(127); // error not always "command not found", check errno for possible errors
 }
 
 int         exec_pipeline(char *command)

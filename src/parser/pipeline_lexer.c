@@ -7,7 +7,8 @@ void    free_pipeline(t_pipeline_token *pipeline)
 
     ptr = pipeline;
     while (ptr->type != PIPELINE_EOF) {
-        free(ptr->content);
+        if (ptr->type != PIPE)
+            free(ptr->content);
         ptr++;
     }
     free(pipeline);
