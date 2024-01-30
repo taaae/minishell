@@ -33,5 +33,5 @@ void exec_command(t_pipeline_token *pipeline);
 int main()
 {
 //    print_pipeline_tokens(tokenize_pipeline("ls -l | grep \"pattern\" > > < < out.txt && cat < out.txt"));
-    (exec_command(tokenize_pipeline("abc > file < file2 >>fil3 def")));
+    (exec_pipeline("ls | >file cat < in b| cat"));
 }

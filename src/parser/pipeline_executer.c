@@ -86,9 +86,7 @@ void exec_command(t_pipeline_token *pipeline)
 {
     int     code;
     char    **argv;
-    t_pipeline_token *pipeline_to_free;
 
-    pipeline_to_free = pipeline;
     argv = ft_calloc(1, sizeof(char *));
     while (pipeline->type != PIPELINE_EOF && pipeline->type != PIPE)
     {
@@ -106,9 +104,8 @@ void exec_command(t_pipeline_token *pipeline)
             argv = add_arg(argv, pipeline->content);
         pipeline++;
     }
-    system(argv[1]); // fake
+    system(argv[0]); // fake
 //    execve(argv[0], argv + 1, get_environ()); // idk if argv + 1 is good, might need to reallocate to size 1 less. also need to execute the actual executable, not its name (search PATH and builtins)
-    free_pipeline(pipeline_to_free);
     // might need to free more stuff
     exit(127); // error not always "command not found", check errno for possible errors
 }
@@ -116,6 +113,7 @@ void exec_command(t_pipeline_token *pipeline)
 int         exec_pipeline(char *command)
 {
     t_pipeline_token    *pipeline;
+    t_pipeline_token    *pipeline_to_free;
     int n;
     int n2;
     int p[2];
@@ -124,6 +122,7 @@ int         exec_pipeline(char *command)
     int pid;
 
     pipeline = tokenize_pipeline(command);
+    pipeline_to_free = pipeline;
     n = pipe_num(pipeline) + 1;
     n2 = n;
     prev_in = STDIN_FILENO;
@@ -152,5 +151,6 @@ int         exec_pipeline(char *command)
     waitpid(pid, &code, 0);
     while (n2--)
         wait(NULL);
+    free_pipeline(pipeline_to_free);
     return (WEXITSTATUS(code));
 }
