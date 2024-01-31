@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 23:48:45 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/31 20:05:18 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/31 20:14:26 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*create_heredoc_file(char *delim)
 	int		fd;
 	char	*pathname;
 
-	pathname = ft_strjoin("/var/tmp/minishell_heredocs_", delim);
+	pathname = ft_strjoin("/tmp/minishell_heredocs_", delim);
 	if (pathname == NULL)
 		return (NULL);
 	fd = open(pathname, O_CREAT | O_TRUNC | O_RDWR, S_IRUSR | S_IWUSR | \
