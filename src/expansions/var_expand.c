@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 13:47:25 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/23 17:36:48 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:12:06 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	expand_all_vars(char ***split_str)
 }
 
 /**
- * @brief tells how many ptrs allocate for split
+ * @brief tells how many ptrs allocate for var split
  * 
  * @param str 
  * @return int 

@@ -46,3 +46,9 @@ executable('find_exec_test',
            include_directories: inc,
            dependencies: dep,
 )
+
+executable('read_heredoc_test',
+           sources: [src, 'test/read_heredoc_test.c'],
+           include_directories: inc,
+           dependencies: dep,
+)

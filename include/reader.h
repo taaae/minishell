@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:48:50 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/22 12:36:06 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:35:02 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,14 @@ void	close_reader(void);
  * @return char* 
  */
 char	*get_line(void);
+
+/**
+ * @brief takes a line, replaces << with <, and correspoiding heredocs
+ * with full absolute paths to temporary files with these heredocs
+ * 
+ * @param line 
+ * @return char* 
+ */
+char	*read_heredocs(char *line);
 
 #endif
