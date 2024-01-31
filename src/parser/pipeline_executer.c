@@ -18,6 +18,11 @@ static int  pipe_num(const t_pipeline_token *pipeline)
 char    **expand_arg(char *arg)
 {
     // TODO
+    // tokenize by normal, double quotes, quotes.
+    // expand vars
+    // expand wildcards
+    // go through the string, split by space if not in quotes/dquotes
+    // merge quoted with everything else
     char **expanded;
 
     expanded = ft_calloc(2, sizeof(char *));

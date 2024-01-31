@@ -58,3 +58,9 @@ executable('pipeline_lexer_test',
            include_directories: inc,
            dependencies: dep,
 )
+
+executable('arg_tokenizer_test',
+           sources: [src, 'test/arg_tokenizer_test.c'],
+           include_directories: inc,
+           dependencies: dep,
+)
