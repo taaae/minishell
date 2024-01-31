@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 23:48:45 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/25 17:42:41 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:56:09 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 // 	что после каждого хердока есь слово которе можно юзать ка кделимитер
 // 	Если нет, то в функции уровнем выше мы выводим ошибку:
 // 	bash: syntax error near unexpected
-//	token `TOKEN_TYPE (if null, then "newline")'  '
+//gi	token `TOKEN_TYPE (if null, then "newline")'  '
 // 1. функция(Засунуть её прямо в ридер), которая идет и если видит хердок то
 // 	смотрит на следующую штуку, раскавычивает, если надо
 // 	Читает хередок во временный файл
-// 	Записывает в текущий токен чтение с файла
+// 	Записывает в текущий токен чтение с файла 
 // 	Записывает в некст токен название хередок созданного файла
 // 2. Функция, которая склеивает токены через пробел strjoin-ом
 // Check how would my program tokenize  "cat <<    $%&&ls"
@@ -173,7 +173,7 @@ int	replace_heredocs(t_list *toks)
 	return (EXIT_SUCCESS);
 }
 
-char	*read_heredoc(char *line)
+char	*read_heredocs(char *line)
 {
 	t_list	*toks;
 	char	*res_line;
@@ -183,4 +183,25 @@ char	*read_heredoc(char *line)
 	res_line = join_tokens(toks);
 	free(line);
 	return (res_line);
+}
+
+char	*join_tokens(t_list *toks)
+{
+	char	*res_line;
+	int		res_len;
+	t_lst	toks_save;
+	int		i;
+
+	res_len = get_toklist_len(toks);
+	res_line = ft_calloc(res_len + 1, sizeof(char));
+	if (res_line == NULL)
+		return (NULL);
+	i = 0;
+	while (toks)
+	{
+		//copy content
+		//i += content_length
+		toks = toks->next;
+	}
+	ft_lstclear(&toks, NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 13:50:32 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/22 15:01:31 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/31 16:59:14 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
  * @brief Take a str with * and return str array with all matches in cur. dir.
  * 
  */
-char	**expand_stars_string(char *pattern);
+char	**s_string(char *pattern);
 char	**get_files_in_cur_dir(void);
 
 /**
