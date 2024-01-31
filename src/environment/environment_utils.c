@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 12:43:11 by trusanov          #+#    #+#             */
-/*   Updated: 2024/01/10 18:12:20 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/31 17:37:45 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,4 @@ void	extend_environ(void)
 	ft_memmove(new_environ, environ, environ_size * sizeof(char *));
 	free(environ);
 	set_environ(new_environ);
-}
-
-void	ft_terminate_env(void)
-{
-	char	***env_ptr;
-
-	env_ptr = st_get_environ_ptr();
-	if (env_ptr != NULL)
-		free_str_arr(env_ptr);
-	return ;
 }

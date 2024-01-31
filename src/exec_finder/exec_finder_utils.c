@@ -6,29 +6,36 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 18:18:29 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/31 17:01:47 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/31 18:45:44 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include "libft.h"
-#include "environment.h"
+#include <sys/stat.h>
 #include <sys/types.h>
 #include <pwd.h>
+#include "exec_find.h"
+#include "libft.h"
+#include "environment.h"
 
-char	**split_path(void);
-
-typedef enum e_exec_status
+char	**split_path(void)
 {
-	FT_EXECNAME_OK = 0,
-	FT_EXECNAME_NOEXEC = 1,
-	FT_EXECNAME_NOFILE = 2
-}	t_exec_status;
+	char	**s;
+	char	*pathvar;
+
+	pathvar = ft_getenv("PATH");
+	s = ft_split(pathvar, ':');
+	free(pathvar);
+	return (s);
+}
 
 int	validate_exec_full_name(char *full_name)
 {
-	if (full_name == NULL)
+	struct stat	file_stats;
+
+	if (full_name == NULL || stat(full_name, &file_stats) != 0 \
+						|| !(S_ISREG(file_stats.st_mode)))
 		return (FT_ERROR);
 	if (access(full_name, F_OK) == -1)
 		return (FT_EXECNAME_NOFILE);
@@ -37,20 +44,17 @@ int	validate_exec_full_name(char *full_name)
 	return (FT_EXECNAME_OK);
 }
 
-char	*get_home_dir(void)
-{
-	return (ft_getenv("$HOME"));
-}
-
 int	check_exec(char *path, char *name)
 {
 	char	*full_name;
+	char	*tmp;
 	int		result;
 
 	full_name = ft_strjoin(path, "/");
+	tmp = full_name;
 	full_name = ft_strjoin(full_name, name);
+	free(tmp);
 	result = validate_exec_full_name(full_name);
-		//ft_printf("%s\n", full_name);
 	free(full_name);
 	return (result);
 }

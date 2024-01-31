@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 16:40:02 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/23 17:36:02 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/01/31 18:39:14 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,18 @@ int	main(void)
 {
 	char	*s[] = {
 		"ls",
+		"cron",
+		"authrestartd",
+		"ptyexec",
+		"python",
+		"python3",
+		"rvictl",
+		"environment_test",
+		"../minishell",
+		"../in.txt",
+		"/Users/lporoshi/Documents/minishell/minishell",
+		"/Users/lporoshi/Documents/minishell/glob.sh",
+		"/Users/lporoshi/Documents/minishell/in.txt",
 		"git",
 		"meson",
 		"bgirgbwrgwrg",
@@ -30,7 +42,7 @@ int	main(void)
 		"~/Documents/minishell/a.out",
 		"/var/tmp/",
 		"/home/lporoshi/Documents/minishell/a.out",
-		"./a.out",
+		"./environment_test",
 		NULL
 	};
 	int	i = 0;
@@ -40,5 +52,5 @@ int	main(void)
 		ft_printf("[%s\t->\t%s]\n", s[i], expand_exec_name(s[i]));
 		i++;
 	}
-	ft_terminate_env();
+	//ft_terminate_env();
 }
