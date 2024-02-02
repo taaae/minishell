@@ -2,6 +2,7 @@
 #include "libft.h"
 #include "parser.h"
 #include "environment.h"
+#include <fcntl.h>
 
 static int  pipe_num(const t_pipeline_token *pipeline)
 {
@@ -17,12 +18,6 @@ static int  pipe_num(const t_pipeline_token *pipeline)
 
 char    **expand_arg(char *arg)
 {
-    // TODO
-    // tokenize by normal, double quotes, quotes.
-    // expand vars
-    // expand wildcards
-    // go through the string, split by space if not in quotes/dquotes
-    // merge quoted with everything else
     char **expanded;
 
     expanded = ft_calloc(2, sizeof(char *));
@@ -70,23 +65,80 @@ char    **add_arg(char **argv, char *arg)
     return (new);
 }
 
-#include <stdio.h>
 int handle_redirection(const t_pipeline_token *pipeline)
 {
-    // TODO
+    int fd;
+
     if (pipeline->content[0] == '<')
-        fprintf(stderr, "redirecitng from: ");
+    {
+        fd = open(pipeline[1].content, O_RDONLY);
+        if (fd == -1)
+        {
+            perror("minishell");
+            return (1);
+        }
+        dup2(fd, STDIN_FILENO);
+        close(fd);
+    }
     else if (pipeline->content[0] == '>' && pipeline->content[1] == '\0')
-        fprintf(stderr, "redirecting in: ");
+    {
+        fd = open(pipeline[1].content, O_WRONLY | O_TRUNC | O_CREAT, 0644);
+        if (fd == -1)
+        {
+            perror("minishell");
+            return (1);
+        }
+        dup2(fd, STDOUT_FILENO);
+        close(fd);
+    }
     else if (pipeline->content[0] == '>' && pipeline->content[1] == '>')
-        fprintf(stderr, "appending to: ");
+    {
+        fd = open(pipeline[1].content, O_WRONLY | O_APPEND | O_CREAT, 0644);
+        if (fd == -1)
+        {
+            perror("minishell");
+            return (1);
+        }
+        dup2(fd, STDOUT_FILENO);
+        close(fd);
+    }
     pipeline++;
-    fprintf(stderr, "%s\n", pipeline->content);
     return (0);
 }
 
-#include <stdio.h>
-#include <unistd.h>
+// temp func
+char* merge_args(char **strings) {
+    // Calculate total length needed
+    int total_length = 0;
+    for (int i = 0; strings[i] != NULL; i++) {
+        total_length += strlen(strings[i]) + 1; // +1 for space or NULL terminator
+    }
+
+    if (total_length == 0) {
+        return NULL; // No strings to merge
+    }
+
+    // Allocate memory for the merged string
+    char *merged = malloc(total_length * sizeof(char));
+    if (merged == NULL) {
+        perror("malloc failed");
+        exit(EXIT_FAILURE);
+    }
+
+    // Initialize the first character to the end of string to support strcat operation
+    merged[0] = '\0';
+
+    // Concatenate strings
+    for (int i = 0; strings[i] != NULL; i++) {
+        strcat(merged, strings[i]);
+        if (strings[i + 1] != NULL) { // Check if not the last string
+            strcat(merged, " "); // Add a space between words
+        }
+    }
+
+    return merged;
+}
+
 void exec_command(t_pipeline_token *pipeline)
 {
     int     code;
@@ -109,7 +161,7 @@ void exec_command(t_pipeline_token *pipeline)
             argv = add_arg(argv, pipeline->content);
         pipeline++;
     }
-    system(argv[0]); // fake
+    system(merge_args(argv)); // fake
 //    execve(argv[0], argv + 1, get_environ()); // idk if argv + 1 is good, might need to reallocate to size 1 less. also need to execute the actual executable, not its name (search PATH and builtins)
     // might need to free more stuff
     exit(127); // error not always "command not found", check errno for possible errors
