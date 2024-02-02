@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 17:35:16 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/02 19:23:39 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/02 20:17:55 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,35 +24,48 @@
 #include "parser.h"
 
 /*
-1. read heredocs
-2. do logic_split
-3. parse logic_split to whatever structure 
-4. give "pipelines" to executor function one by one (if needed, depending on logical &&/|| results)
+1. read heredocs -													char	*read_heredocs(char *line)
+2. do logic_split - 												t_logic_token	**logic_split(char *line)
+3. parse str to pipelines -					 						???		t_list  *tokenize_arg(char *arg)  or idk
+4. give "pipelines" to executor function
+	one by one (if needed, depending on logical &&/|| results)		expand_vars(char **str_ptr)
 5. In the executor:
-	5.x Expand stars
-	5.x Expand variables
-	5.x Tokenize the command to decide what is a pipe, what is an exec name, what is redirect, what is an argument, etc
-	5.x configure file descriptors for reading from files and writing to files
-	5.x Configure pipelines
-	5.x Execute this shit
+	5.x Expand stars												char	**expand_stars_string(char *pattern)  "a*.txt" // if no match then the string itself
+	5.x Expand variables											expand_vars(char **str_ptr)
+	5.x Tokenize the command to decide what							???	t_pipeline_token    *tokenize_pipeline(char *pipeline)
+		is a pipe, what is an exec name,
+		what is redirect, what is an argument, etc					
+	5.x configure file descriptors
+		for reading from files and writing to files					???
+	5.x Configure pipelines											???
+	5.x Execute this thing											???
 */
 int	main(void)
 {
 	char			*line;
-	t_logic_token	**splitted_line;
+	t_logic_token		**pipelines;
+	t_pipeline_token	*pipeline;
 
 	init_signal_handlers();
 	while (1)
 	{
 		line = get_line();
+		ft_printf("Line:\t%s\n", line);
 		if (line == NULL)
 			return (NULL);
-		splitted_line = logic_split(line);
-		while (*splitted_line)
+		pipelines = logic_split(line);
+		while (*pipelines)
 		{
-			ft_printf("%s///", (*splitted_line)->strrepr);
-			splitted_line++;
+			ft_printf("Pipelines:\t%s|\n", (*pipelines)->strrepr);
+			pipeline = tokenize_pipeline((*pipelines)->strrepr);
+			while (pipeline->content != NULL)
+			{
+				ft_printf("\tpipeline part: %s\n", pipeline->content);
+				pipeline++;
+			}
+			pipelines++;
 		}
+		ft_printf("\n");
 		free(line);
 	}
 }

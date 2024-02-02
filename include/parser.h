@@ -1,8 +1,8 @@
 #ifndef MINISHELL_PARSER_H
-#define MINISHELL_PARSER_H
+# define MINISHELL_PARSER_H
 
-#include "logic_tokenizer.h"
-#include "libft.h"
+# include "logic_tokenizer.h"
+# include "libft.h"
 
 const char  *logic_parse_check(t_logic_token **token);
 int         exec_logic(t_logic_token **token);
