@@ -3,7 +3,7 @@
 #include "parser.h"
 #include "logic_tokenizer.h"
 
-const char    *token_error(const t_logic_token *token)
+static char    *token_error(const t_logic_token *token)
 {
     if (token == NULL)
         return ft_strdup("minishell: unexptected empty token");
@@ -20,16 +20,16 @@ const char    *token_error(const t_logic_token *token)
     return ft_strdup("minishell: unexptected token type");
 }
 
-static const char    *parse_check_expr(t_logic_token ***token);
-static const char    *parse_check_term(t_logic_token ***token);
+static char    *parse_check_expr(t_logic_token ***token);
+static char    *parse_check_term(t_logic_token ***token);
 
 // Expr -> Term{('&&', '||')Expr}
 // Term -> '(' Expr ')' | pipeline
 // Pass first element of NULL terminated token array from logic_split func
 // Returns NULL on success or dynamically allocated string with error description if fail
-const char    *logic_parse_check(t_logic_token **token)
+char    *logic_parse_check(t_logic_token **token)
 {
-    const char    *res;
+    char    *res;
 
     if (token == NULL)
         return ft_strdup("minishell: unclosed quote");
@@ -41,9 +41,9 @@ const char    *logic_parse_check(t_logic_token **token)
     return (NULL);
 }
 
-static const char    *parse_check_expr(t_logic_token ***token)
+static char    *parse_check_expr(t_logic_token ***token)
 {
-    const char    *res;
+    char    *res;
 
     res = parse_check_term(token);
     if (res != NULL)
@@ -58,9 +58,9 @@ static const char    *parse_check_expr(t_logic_token ***token)
     return (NULL);
 }
 
-static const char    *parse_check_term(t_logic_token ***token)
+static char    *parse_check_term(t_logic_token ***token)
 {
-    const char    *res;
+    char    *res;
 
     if (**token == NULL)
         return (token_error(NULL));

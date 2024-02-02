@@ -4,9 +4,9 @@
 # include "logic_tokenizer.h"
 # include "libft.h"
 
-const char  *logic_parse_check(t_logic_token **token);
+char        *logic_parse_check(t_logic_token **token);
 int         exec_logic(t_logic_token **token);
-const char  *pipeline_parse_check(char *command);
+char  *pipeline_parse_check(char *command);
 int         exec_pipeline(char *command);
 
 typedef enum e_pipeline_token_type {

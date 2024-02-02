@@ -198,7 +198,8 @@ int         exec_pipeline(char *command)
             }
             exec_command(pipeline);
         }
-        close(prev_in);
+        if (prev_in != STDIN_FILENO)
+            close(prev_in);
         close(p[1]);
         prev_in = p[0];
         while (pipeline->type != PIPELINE_EOF && pipeline->type != PIPE)

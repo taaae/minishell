@@ -1,7 +1,7 @@
 #include "parser.h"
 #include "libft.h"
 
-const char  *pipeline_parse_check(char *line)
+char  *pipeline_parse_check(char *line)
 {
     t_pipeline_token *pipeline;
     t_pipeline_token *pipeline_to_free;
