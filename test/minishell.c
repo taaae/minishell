@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 17:35:16 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/02 20:17:55 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/02 20:25:40 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,15 @@
 	5.x Configure pipelines											???
 	5.x Execute this thing											???
 */
+
+void	execute(char *line)
+{
+	return ;
+}
+
 int	main(void)
 {
-	char			*line;
+	char				*line;
 	t_logic_token		**pipelines;
 	t_pipeline_token	*pipeline;
 
@@ -50,6 +56,7 @@ int	main(void)
 	while (1)
 	{
 		line = get_line();
+		execute(line);
 		ft_printf("Line:\t%s\n", line);
 		if (line == NULL)
 			return (NULL);
