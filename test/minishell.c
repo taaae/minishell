@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 17:35:16 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/02 17:47:07 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/02 17:51:41 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 #include "reader.h"
 #include "signals.h"
 #include "libft.h"
+#include "parser.h"
 
 int	main(void)
 {
