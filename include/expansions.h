@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 13:50:32 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/31 16:59:14 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/02 19:17:35 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ char	**get_files_in_cur_dir(void);
  * @return char* 
  */
 char	*expand_vars_string(char *str);
+
+char	**expand_stars_string(char *pattern);
 
 #endif

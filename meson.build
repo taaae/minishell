@@ -47,6 +47,12 @@ executable('parser_test',
            dependencies: dep,
 )
 
+executable('star_expander_test',
+           sources: [src, 'test/star_expander_test.c'],
+           include_directories: inc,
+           dependencies: dep,
+)
+
 executable('logic_tok_test',
            sources: [src, 'test/logic_tok_test.c'],
            include_directories: inc,
