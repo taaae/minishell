@@ -161,10 +161,10 @@ void exec_command(t_pipeline_token *pipeline)
             argv = add_arg(argv, pipeline->content);
         pipeline++;
     }
-    system(merge_args(argv)); // fake
+    exit (system(merge_args(argv))); // fake
 //    execve(argv[0], argv + 1, get_environ()); // idk if argv + 1 is good, might need to reallocate to size 1 less. also need to execute the actual executable, not its name (search PATH and builtins)
     // might need to free more stuff
-    exit(127); // error not always "command not found", check errno for possible errors
+//    exit(127); // error not always "command not found", check errno for possible errors
 }
 
 int         exec_pipeline(char *command)
