@@ -35,8 +35,38 @@ executable('lexer_test',
            dependencies: dep,
 )
 
+executable('parser_test',
+           sources: [src, 'test/logic_error_parser_test.c'],
+           include_directories: inc,
+           dependencies: dep,
+)
+
 executable('logic_tok_test',
            sources: [src, 'test/logic_tok_test.c'],
+           include_directories: inc,
+           dependencies: dep,
+)
+
+executable('logic_exec_test',
+           sources: [src, 'test/logic_exec_test.c'],
+           include_directories: inc,
+           dependencies: dep,
+)
+
+executable('pipeline_lexer_test',
+           sources: [src, 'test/pipeline_lexer_test.c'],
+           include_directories: inc,
+           dependencies: dep,
+)
+
+executable('arg_tokenizer_test',
+           sources: [src, 'test/arg_tokenizer_test.c'],
+           include_directories: inc,
+           dependencies: dep,
+)
+
+executable('var_expander_test',
+           sources: [src, unity_gen_runner.process('test' / 'var_expander_test.c'), 'test/var_expander_test.c'],
            include_directories: inc,
            dependencies: dep,
 )
