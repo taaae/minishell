@@ -83,3 +83,9 @@ executable('var_expander_test',
            include_directories: inc,
            dependencies: dep,
 )
+
+executable('redirection_test',
+           sources: [src, 'test/redirection_test.c'],
+           include_directories: inc,
+           dependencies: dep,
+)
