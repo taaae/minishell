@@ -40,5 +40,6 @@ typedef struct s_arg_token
 
 t_list  *tokenize_arg(char *arg);
 void    print_token_args(t_list *lst);
+void expand_vars(char **str);
 
 #endif

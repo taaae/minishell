@@ -64,3 +64,9 @@ executable('arg_tokenizer_test',
            include_directories: inc,
            dependencies: dep,
 )
+
+executable('var_expander_test',
+           sources: [src, unity_gen_runner.process('test' / 'var_expander_test.c'), 'test/var_expander_test.c'],
+           include_directories: inc,
+           dependencies: dep,
+)
