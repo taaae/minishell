@@ -71,7 +71,7 @@ static int	read_logic_operator(t_logic_token *token, char **lineptr)
 	}
 	else if ((*lineptr)[0] == '|')
 	{
-		token->type = AND_SYM;
+		token->type = OR_SYM;
 		(*lineptr) += 2;
 		return (2);
 	}
