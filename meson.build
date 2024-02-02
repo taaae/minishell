@@ -16,6 +16,12 @@ src = c.stdout().strip().split('\n')
 inc_dirs = ['include', 'libft']
 inc = include_directories(inc_dirs)
 
+executable('minishell',
+           sources: [src, 'test/minishell.c'],
+           include_directories: inc,
+           dependencies: dep,
+)
+
 # copy-paste these lines, replace 'minishell_test' and 'example_test.c' and 'test/example_test.c'
 executable('example_test',
            sources: [src, unity_gen_runner.process('test' / 'example_test.c'), 'test/example_test.c'],

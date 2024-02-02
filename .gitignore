@@ -58,3 +58,5 @@ minishell
 .idea
 build
 unity
+TODO.txt
+.gitignore
