@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:15:04 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/22 13:25:44 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/03 18:05:18 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ bool	check_quotes_validity(char *line)
 			--unclosed_paren;
 		line++;
 	}
+	if (unclosed_quotes || unclosed_dquotes)
+		ft_putstr_fd("Unclosed quotes", STDERR_FILENO);
+	else if (unclosed_paren)
+		ft_putstr_fd("Unclosed parentheses\n", STDERR_FILENO);
 	return (!(unclosed_quotes || unclosed_dquotes || unclosed_paren));
 }
 
@@ -98,7 +102,7 @@ t_list	*line_to_tokens(char *line)
 {
 	t_list	*tokens;
 
-	if (line == NULL || check_quotes_validity(line) == false)
+	if (line == NULL)
 		return (NULL);
 	tokens = tokenize(line);
 	return (tokens);
