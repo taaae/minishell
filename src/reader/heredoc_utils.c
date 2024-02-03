@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 18:53:26 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/03 19:01:08 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/03 19:03:30 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ char	*create_heredoc_file(char *delim)
 	if (fd == -1)
 	{
 		ft_printf("[%s]\n", strerror(errno));
-		ft_printf("Can not create a temp file [%s]\n", pathname);
+		ft_printf("Can not create a temporary file [%s]\n", pathname);
 		free(pathname);
 		return (NULL);
 	}
