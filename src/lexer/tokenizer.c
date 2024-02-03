@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:15:04 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/22 13:25:44 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/03 18:09:17 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ bool	check_quotes_validity(char *line)
 			--unclosed_paren;
 		line++;
 	}
+	if (unclosed_quotes || unclosed_dquotes)
+		ft_putstr_fd("Minishell: Unclosed quotes\n", STDERR_FILENO);
+	else if (unclosed_paren)
+		ft_putstr_fd("Minishell: Mismatched parentheses\n", STDERR_FILENO);
 	return (!(unclosed_quotes || unclosed_dquotes || unclosed_paren));
 }
 
