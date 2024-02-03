@@ -28,7 +28,6 @@ static int  pipe_num(const t_pipeline_token *pipeline)
 char **expand_arg(char *arg)
 {
     char *expanded_str;
-    char *temp;
     char **res;
     // [0] == " -> expand vars, return substr(1, len - 2)
     // [0] == ' -> return substr(1, len - 2)
@@ -43,11 +42,8 @@ char **expand_arg(char *arg)
     if (arg[0] == '"')
     {
         res = ft_calloc(2, sizeof(char *));
-        expanded_str = ft_strdup(arg);
+        expanded_str = ft_substr(arg, 1, ft_strlen(arg) - 2);
         expand_vars(&expanded_str);
-        temp = expanded_str;
-        expanded_str = ft_substr(arg, 1, ft_strlen(expanded_str) - 2);
-        free(temp);
         res[0] = expanded_str;
         return (res);
     }
