@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 17:35:16 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/02 20:25:40 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/02 20:42:38 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,20 @@
 
 void	execute(char *line)
 {
+	t_logic_token		**pipelines;
+	t_pipeline_token	*pipeline;
+
+	pipelines = logic_split(line);
+	while (*pipelines)
+	{
+		pipeline = tokenize_pipeline((*pipelines)->strrepr);
+		while (pipeline->type != PIPELINE_EOF)
+		{
+			pipeline++;
+		}
+		pipelines++;
+	}
+	free(line);
 	return ;
 }
 
@@ -56,18 +70,21 @@ int	main(void)
 	while (1)
 	{
 		line = get_line();
-		execute(line);
+		//execute(line);
 		ft_printf("Line:\t%s\n", line);
-		if (line == NULL)
-			return (NULL);
 		pipelines = logic_split(line);
 		while (*pipelines)
 		{
 			ft_printf("Pipelines:\t%s|\n", (*pipelines)->strrepr);
 			pipeline = tokenize_pipeline((*pipelines)->strrepr);
-			while (pipeline->content != NULL)
+			while (pipeline->type != PIPELINE_EOF)
 			{
-				ft_printf("\tpipeline part: %s\n", pipeline->content);
+				if (pipeline->type == ARG)
+					ft_printf("\tpipeline part: %s\n", pipeline->content);
+				else if (pipeline->type == REDIRECTION)
+					ft_printf("\tpipeline part: %s\n", "REDIR");
+				else if (pipeline->type == PIPE)
+					ft_printf("\tpipeline part: %s\n", "PIPE");
 				pipeline++;
 			}
 			pipelines++;
