@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 21:46:48 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/03 15:53:13 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/03 16:13:34 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,44 @@
 #include "libft.h"
 
 /*
+For the main program:
+	
 b4 execve:
+	Set sigint and sigquit to SIG_DFL behavior.
 struct sigaction sa;
     sa.sa_handler = customHandler;
     sa.sa_flags = SA_RESTART;
 	tc(s)getattr
 */
 //
-void	sig_handler_children(int signum)
+
+void	init_sigs_child(void)
 {
-	if (signum == SIGINT)
-	{
-		return ;
-	}
+	//tcsetattr(1, TCSAFLUSH, mirror_termios);
+	//what does it do?
+	//ioctl(STDIN_FILENO, TIOCSTI, "\n");
+	//same question
+	rl_catch_signals = 0;
+	sig_handler_ctrl_c();
+	sig_handler_ctrl_bsl();
 }
 
-void	init_sigs_for_child(void)
+void	sig_handler_ctrl_c(void)
 {
-	struct sigaction	sa;
+	struct sigaction	sa_c_c;
 
-	rl_catch_signals = 0;
-	sa.sa_handler = sig_handler_children;
-	sigemptyset(&sa.sa_mask);
-	sigaddset(&sa.sa_mask, SIGHUP);
-	sa.sa_flags = SA_RESTART;
-	sigaction(SIGINT, &sa, NULL);
+	sa_c_c.sa_handler = SIG_DFL;
+	sa_c_c.sa_flags = SA_RESTART;
+	sigemptyset(&sa_c_c.sa_mask);
+	sigaction(SIGINT, &sa_c_c, NULL);
+}
+
+void	sig_handler_ctrl_bsl(void)
+{
+	struct sigaction	sa_c_bsl;
+
+	sa_c_bsl.sa_handler = SIG_DFL;
+	sa_c_bsl.sa_flags = SA_RESTART;
+	sigemptyset(&sa_c_bsl.sa_mask);
+	sigaction(SIGINT, &sa_c_bsl, NULL);
 }

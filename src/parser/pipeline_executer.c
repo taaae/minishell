@@ -189,6 +189,8 @@ int         exec_pipeline(char *command)
             pipe(p);
         pid = fork();
         if (pid == 0) {
+            //call signal handler here
+            //init_sig_child();
             dup2(prev_in, STDIN_FILENO);
             if (prev_in != STDIN_FILENO)
                 close(prev_in);
