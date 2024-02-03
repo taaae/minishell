@@ -2,6 +2,7 @@
 #include "libft.h"
 #include "parser.h"
 #include "environment.h"
+#include "expansions.h"
 #include <fcntl.h>
 
 static int  pipe_num(const t_pipeline_token *pipeline)
@@ -49,7 +50,7 @@ char **expand_arg(char *arg)
     }
     expanded_str = ft_strdup(arg);
     expand_vars(&expanded_str);
-//    expand_wildcards(&expanded_str);
+    expanded_str = expand_stars_string(expanded_str);
     res = ft_split(expanded_str, ' ');
     free(expanded_str);
     return (res);
