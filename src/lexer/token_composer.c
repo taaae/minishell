@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:20:45 by lporoshi          #+#    #+#             */
-/*   Updated: 2023/12/19 14:13:36 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/03 19:00:28 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,10 +86,8 @@ t_token	*tok_str_to_token(char *tok_str)
 	t_token	*token;
 	char	*result_str;
 
-	if (tok_str == NULL)
-		return (NULL);
 	token = (t_token *)ft_calloc(1, sizeof(t_token));
-	if (token == NULL)
+	if (tok_str == NULL || token == NULL)
 	{
 		free(tok_str);
 		return (NULL);
@@ -97,6 +95,8 @@ t_token	*tok_str_to_token(char *tok_str)
 	token->token_len = ft_strlen(tok_str);
 	token->type = get_token_type(tok_str, token->token_len);
 	result_str = tok_str;
+	if (token->type == TOK_WORD_IN_DQUOTES || token->type == TOK_WORD_IN_QUOTES)
+		token->token_len -= 2;
 	if (token->type == TOK_WORD_IN_DQUOTES)
 		result_str = ft_strtrim(tok_str, "\"");
 	else

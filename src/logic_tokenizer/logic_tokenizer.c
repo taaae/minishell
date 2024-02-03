@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 20:49:01 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/23 18:02:22 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:59:47 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,11 @@ t_logic_token	**logic_split(char *line)
 	int				tok_amt;
 
 	if (!quotes_are_correct(line))
+	{
+		write(1, "E", 1);
+		perror("unclosed quotes\n");
 		return (NULL);
+	}
 	tok_amt = alloc_log_toks(&tokens, line);
 	if (tokens == NULL)
 		return (NULL);

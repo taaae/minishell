@@ -17,7 +17,7 @@ inc_dirs = ['include', 'libft']
 inc = include_directories(inc_dirs)
 
 executable('minishell',
-           sources: [src],
+           sources: [src, 'src/minishell.c'],
            include_directories: inc,
            dependencies: dep,
 )

@@ -6,10 +6,14 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 18:53:26 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/03 17:06:17 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/03 19:01:08 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <readline/readline.h>
+#include <readline/history.h>
 #include <fcntl.h>
 #include <errno.h>
 #include "lexer.h"
@@ -26,10 +30,38 @@ char	*alloc_toklist_to_str_mem(t_list *toks)
 	while (toks)
 	{
 		res_len += ((t_token *)(toks->content))->token_len + 1;
+		if (((t_token *)(toks->content))->type == TOK_WORD_IN_QUOTES \
+		|| ((t_token *)(toks->content))->type == TOK_WORD_IN_DQUOTES)
+			res_len += 2;
 		toks = toks->next;
 	}
 	res_mem = ft_calloc(res_len + 1, sizeof(char));
 	return (res_mem);
+}
+
+void	copy_one_token(t_token *token, char *line, int *i)
+{
+	if (token->type == TOK_WORD_IN_QUOTES)
+	{
+		line[(*i)++] = '\'';
+		ft_strncpy(line + (*i), token->token_string, token->token_len);
+		(*i) += token->token_len;
+		line[(*i)++] = '\'';
+	}
+	else if (token->type == TOK_WORD_IN_DQUOTES)
+	{
+		line[(*i)++] = '\"';
+		ft_strncpy(line + (*i), token->token_string, token->token_len);
+		(*i) += token->token_len;
+		line[(*i)++] = '\"';
+	}
+	else
+	{
+		ft_strncpy(line + (*i), token->token_string, token->token_len);
+		(*i) += token->token_len;
+	}
+	line[(*i)++] = ' ';
+	return ;
 }
 
 char	*join_tokens(t_list *toks)
@@ -45,10 +77,7 @@ char	*join_tokens(t_list *toks)
 	toks_save = toks;
 	while (toks)
 	{
-		ft_strncpy(res_line + i, ((t_token *)(toks->content))->token_string, \
-					((t_token *)(toks->content))->token_len);
-		i += ((t_token *)(toks->content))->token_len;
-		res_line[i++] = ' ';
+		copy_one_token((t_token *)(toks->content), res_line, &i);
 		toks = toks->next;
 	}
 	res_line = ft_strtrim(res_line, " \t");
