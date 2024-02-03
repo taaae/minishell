@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 17:35:16 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/02 20:42:38 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/03 16:54:31 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	main(void)
 	t_logic_token		**pipelines;
 	t_pipeline_token	*pipeline;
 
-	init_signal_handlers();
+	init_parent_signals();
 	while (1)
 	{
 		line = get_line();

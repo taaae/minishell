@@ -48,7 +48,7 @@
      (void) argc;
      (void) argv;
      ft_initenv(envp); // TODO: free
-     init_signal_handlers();
+     init_parent_signals();
  	while (1)
  	{
  		line = get_line();

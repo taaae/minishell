@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 18:02:12 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/10 18:06:01 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:02:31 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  * the user interaction.
  *
  */
-void	init_signal_handlers(void);
+void	init_parent_signals(void);
 
 /**
  * @brief Get the current stored sighal
