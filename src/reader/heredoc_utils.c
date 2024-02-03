@@ -6,11 +6,12 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 18:53:26 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/31 19:40:51 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:06:17 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
+#include <errno.h>
 #include "lexer.h"
 
 char	*alloc_toklist_to_str_mem(t_list *toks)
@@ -53,4 +54,59 @@ char	*join_tokens(t_list *toks)
 	res_line = ft_strtrim(res_line, " \t");
 	ft_lstclear(&toks_save, del_token);
 	return (res_line);
+}
+
+char	*create_heredoc_file(char *delim)
+{
+	int		fd;
+	char	*pathname;
+
+	pathname = ft_strjoin("/tmp/minishell_heredocs_", delim);
+	if (pathname == NULL)
+		return (NULL);
+	fd = open(pathname, O_CREAT | O_TRUNC | O_RDWR, S_IRUSR | S_IWUSR | \
+						S_IRGRP | S_IWGRP, S_IROTH | S_IWOTH);
+	if (fd == -1)
+	{
+		ft_printf("[%s]\n", strerror(errno));
+		ft_printf("Can not create a temp file [%s]\n", pathname);
+		free(pathname);
+		return (NULL);
+	}
+	close(fd);
+	return (pathname);
+}
+
+int	read_heredoc_content(char *delim, int fd)
+{
+	char	*line;
+
+	while (1)
+	{
+		line = readline(">");
+		if (line == NULL)
+			continue ;
+		line = ft_strtrim(line, "\n");
+		if (strcmp(line, delim) == 0)
+		{
+			free(line);
+			return (EXIT_SUCCESS);
+		}
+		ft_putstr_fd(line, fd);
+		ft_putchar_fd('\n', fd);
+		free(line);
+		continue ;
+	}
+	return (EXIT_SUCCESS);
+}
+
+int	read_heredoc_to_file(char *delim, char *storage)
+{
+	int	fd;
+	int	exit_code;
+
+	fd = open(storage, O_WRONLY);
+	exit_code = read_heredoc_content(delim, fd);
+	close(fd);
+	return (exit_code);
 }

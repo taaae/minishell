@@ -6,75 +6,18 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 23:48:45 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/31 20:14:26 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:08:46 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <readline/readline.h>
-#include <readline/history.h>
-#include <errno.h>
 #include "lexer.h"
 
-char	*join_tokens(t_list *toks);
-
-char	*create_heredoc_file(char *delim)
-{
-	int		fd;
-	char	*pathname;
-
-	pathname = ft_strjoin("/tmp/minishell_heredocs_", delim);
-	if (pathname == NULL)
-		return (NULL);
-	fd = open(pathname, O_CREAT | O_TRUNC | O_RDWR, S_IRUSR | S_IWUSR | \
-						S_IRGRP | S_IWGRP, S_IROTH | S_IWOTH);
-	if (fd == -1)
-	{
-		ft_printf("[%s]\n", strerror(errno));
-		ft_printf("Can not create a temp file [%s]\n", pathname);
-		free(pathname);
-		return (NULL);
-	}
-	close(fd);
-	return (pathname);
-}
-
-//TODO
-int	read_heredoc_content(char *delim, int fd)
-{
-	char	*line;
-
-	while (1)
-	{
-		line = readline(">");
-		if (line == NULL)
-			continue ;
-		line = ft_strtrim(line, "\n");
-		if (strcmp(line, delim) == 0)
-		{
-			free(line);
-			return (EXIT_SUCCESS);
-		}
-		ft_putstr_fd(line, fd);
-		ft_putchar_fd('\n', fd);
-		free(line);
-		continue ;
-	}
-	return (EXIT_SUCCESS);
-}
-
-int	read_heredoc_to_file(char *delim, char *storage)
-{
-	int	fd;
-	int	exit_code;
-
-	fd = open(storage, O_WRONLY);
-	exit_code = read_heredoc_content(delim, fd);
-	close(fd);
-	return (exit_code);
-}
+int		read_heredoc_to_file(char *delim, char *storage);
+int		read_heredoc_content(char *delim, int fd);
+char	*create_heredoc_file(char *delim);
 
 int	scan_and_write_heredoc(t_token *arrow_tok, t_token *delim_tok)
 {
@@ -164,24 +107,4 @@ int	replace_heredocs(t_list *toks)
 		toks = toks->next;
 	}
 	return (EXIT_SUCCESS);
-}
-
-char	*read_heredocs(char *line)
-{
-	t_list	*toks;
-	char	*res_line;
-
-	if (line[0] == '\0')
-		return (ft_strdup(""));
-	toks = line_to_tokens(line);
-	if (toks == NULL)
-		return (NULL);
-	if (replace_heredocs(toks) == EXIT_FAILURE)
-	{
-		ft_lstclear(&toks, del_token);
-		return (NULL);
-	}
-	res_line = join_tokens(toks);
-	free(line);
-	return (res_line);
 }
