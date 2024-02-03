@@ -16,13 +16,43 @@ static int  pipe_num(const t_pipeline_token *pipeline)
     return (res);
 }
 
-char    **expand_arg(char *arg)
-{
-    char **expanded;
+//char    **expand_arg(char *arg)
+//{
+//    char **expanded;
+//
+//    expanded = ft_calloc(2, sizeof(char *));
+//    expanded[0] = arg;
+//    return (expanded);
+//}
 
-    expanded = ft_calloc(2, sizeof(char *));
-    expanded[0] = arg;
-    return (expanded);
+char **expand_arg(char *arg)
+{
+    char *expanded_str;
+    char **res;
+    // [0] == " -> expand vars, return substr(1, len - 2)
+    // [0] == ' -> return substr(1, len - 2)
+    // else -> expand vars, expand wildcards, return split
+    if (arg[0] == '\'')
+    {
+        res = ft_calloc(2, sizeof(char *));
+        expanded_str = ft_substr(arg, 1, ft_strlen(arg) - 2);
+        res[0] = expanded_str;
+        return (res);
+    }
+    if (arg[0] == '"')
+    {
+        res = ft_calloc(2, sizeof(char *));
+        expanded_str = ft_substr(arg, 1, ft_strlen(arg) - 2);
+        expand_vars(&expanded_str);
+        res[0] = expanded_str;
+        return (res);
+    }
+    expanded_str = ft_strdup(arg);
+    expand_vars(&expanded_str);
+//    expand_wildcards(&expanded_str);
+    res = ft_split(expanded_str, ' ');
+    free(expanded_str);
+    return (res);
 }
 
 char    **add_arg(char **argv, char *arg)
@@ -161,7 +191,9 @@ void exec_command(t_pipeline_token *pipeline)
             argv = add_arg(argv, pipeline->content);
         pipeline++;
     }
-    exit (system(merge_args(argv))); // fake
+//    exit (system(merge_args(argv))); // fake
+    write(2, merge_args(argv), strlen(merge_args(argv)));
+    exit(0);
 //    execve(argv[0], argv + 1, get_environ()); // idk if argv + 1 is good, might need to reallocate to size 1 less. also need to execute the actual executable, not its name (search PATH and builtins)
     // might need to free more stuff
 //    exit(127); // error not always "command not found", check errno for possible errors
