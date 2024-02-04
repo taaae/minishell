@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 18:53:26 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/03 19:03:30 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/03 21:07:55 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,7 @@
 #include <errno.h>
 #include "lexer.h"
 
-char	*alloc_toklist_to_str_mem(t_list *toks)
-{
-	char	*res_mem;
-	int		res_len;
-
-	res_len = 0;
-	res_mem = NULL;
-	if (toks == NULL)
-		return (NULL);
-	while (toks)
-	{
-		res_len += ((t_token *)(toks->content))->token_len + 1;
-		if (((t_token *)(toks->content))->type == TOK_WORD_IN_QUOTES \
-		|| ((t_token *)(toks->content))->type == TOK_WORD_IN_DQUOTES)
-			res_len += 2;
-		toks = toks->next;
-	}
-	res_mem = ft_calloc(res_len + 1, sizeof(char));
-	return (res_mem);
-}
+char	*alloc_toklist_to_str_mem(t_list *toks);
 
 void	copy_one_token(t_token *token, char *line, int *i)
 {
