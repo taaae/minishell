@@ -16,6 +16,7 @@
 #include "environment.h"
 #include "expansions.h"
 #include <fcntl.h>
+#include "exec_find.h"
 
 static int  pipe_num(const t_pipeline_token *pipeline)
 {
@@ -205,8 +206,9 @@ void exec_command(t_pipeline_token *pipeline)
 		pipeline++;
 	}
 //    exit (system(merge_args(argv))); // fake
-	write(2, merge_args(argv), strlen(merge_args(argv)));
-	exit(0);
+    launch_executable(argv);
+//	write(2, merge_args(argv), strlen(merge_args(argv)));
+//	exit(0);
 //    execve(argv[0], argv + 1, get_environ()); // idk if argv + 1 is good, might need to reallocate to size 1 less. also need to execute the actual executable, not its name (search PATH and builtins)
 	// might need to free more stuff
 //    exit(127); // error not always "command not found", check errno for possible errors
@@ -214,6 +216,7 @@ void exec_command(t_pipeline_token *pipeline)
 
 int         exec_pipeline(char *command)
 {
+    // TODO: make it without subshell if no pipes
 	t_pipeline_token	*pipeline;
 	t_pipeline_token	*pipeline_to_free;
 	int					n;
