@@ -2,7 +2,7 @@ NAME := minishell
 CC := cc
 SRCDIR := src
 INCDIR := include
-CFLAGS := -Wall -g
+CFLAGS := -Wall -Wextra -Werror -g
 # CFLAGS := -Wall -Wextra -Werror -g -ggdb -fsanitize=address
 SOURCE_FILES := \
 			builtins/builtin_cd.c \

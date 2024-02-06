@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:20:45 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/06 14:57:10 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 14:59:10 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,6 @@ t_token	*tok_str_to_token(char *tok_str)
 	}
 	token->token_len = ft_strlen(tok_str);
 	token->type = get_token_type(tok_str, token->token_len);
-	result_str = tok_str;
 	if (token->type == TOK_WORD_IN_DQUOTES || token->type == TOK_WORD_IN_QUOTES)
 		token->token_len -= 2;
 	if (token->type == TOK_WORD_IN_DQUOTES)

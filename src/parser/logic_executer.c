@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:03:13 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/05 14:06:12 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 15:33:12 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,16 @@
 
 static t_logic_token	**skip_term(t_logic_token **token);
 static t_logic_token	**skip_expr(t_logic_token **token);
+
+void	del_logic_token(void *tok_vptr)
+{
+	t_logic_token *tok_ptr;
+
+	tok_ptr = (t_logic_token *)tok_vptr;
+	free(tok_ptr->strrepr);
+	free(tok_ptr);
+	return ;
+}
 
 // before executing this function execute
 //	logic_parse_check to make sure the tokenstream is valid

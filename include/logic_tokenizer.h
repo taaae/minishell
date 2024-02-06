@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 20:46:15 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/23 17:36:19 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 15:35:07 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ typedef struct s_logic_token {
 
 t_logic_token	**logic_split(char *line);
 void			show_ltres(t_logic_token **tokens);
+void			del_logic_token(void *tok_vptr);
 
 #endif

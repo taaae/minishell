@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 15:15:07 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/03 19:04:04 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 14:53:30 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,21 @@ char	*read_heredocs(char *line)
 	char	*res_line;
 
 	if (line[0] == '\0')
-		return (ft_strdup(""));
+	{
+		res_line = ft_strdup("");
+		free(line);
+		return (res_line);
+	}
 	toks = line_to_tokens(line);
 	if (toks == NULL)
+	{
+		free(line);
 		return (NULL);
+	}
 	if (replace_heredocs(toks) == EXIT_FAILURE)
 	{
 		ft_lstclear(&toks, del_token);
+		free(line);
 		return (NULL);
 	}
 	res_line = join_tokens(toks);

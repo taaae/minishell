@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 23:48:45 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/03 17:08:46 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 15:20:26 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "lexer.h"
+#include "config.h"
 
 int		read_heredoc_to_file(char *delim, char *storage);
 int		read_heredoc_content(char *delim, int fd);
@@ -63,20 +64,20 @@ int	check_heredoc_delimiter(t_list *toks)
 	cur_tok = toks->content;
 	if (toks->next != NULL)
 		next_tok = toks->next->content;
-	else
-		return (0);
-	if (toks->next == NULL || (\
-			next_tok->type != TOK_WORD && \
+	if (toks->next == NULL || (next_tok->type != TOK_WORD && \
 			next_tok->type != TOK_WORD_IN_QUOTES && \
 			next_tok->type != TOK_WORD_IN_DQUOTES && \
 			next_tok->type != TOK_VAR))
 	{
-		cur_tok->type = TOK_ERROR;
+		if (toks->next == NULL)
+			ft_printf(HEREDOC_ERR_NL);
+		else
+			ft_printf(HEREDOC_ERR_TOK);
 		return (0);
 	}
 	if (!check_heredoc_delim_chars(next_tok->token_string))
 	{
-		cur_tok->type = TOK_ERROR;
+		ft_printf(HEREDOC_ERR_DELIM);
 		return (0);
 	}
 	return (1);
