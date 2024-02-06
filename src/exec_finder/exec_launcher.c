@@ -6,7 +6,7 @@
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:50:21 by trusanov          #+#    #+#             */
-/*   Updated: 2024/02/06 17:56:44 by trusanov         ###   ########.fr       */
+/*   Updated: 2024/02/06 18:01:30 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,15 @@ static int	launch_builtin(char **argv)
 	return (NOT_BUILTIN);
 }
 
+static void	command_not_found_err(char **argv)
+{
+	write(STDERR_FILENO, "minishell: ", ft_strlen("minishell: "));
+	write(STDERR_FILENO, argv[0], ft_strlen(argv[0]));
+	write(STDERR_FILENO, ": command not found\n",
+		ft_strlen(": command not found\n"));
+	exit(127);
+}
+
 /**
 	* search launches executable and returns its return code.
 	forks if custom executable,
@@ -73,21 +82,13 @@ int	launch_executable(char **argv)
 	}
 	code = launch_builtin(argv);
 	if (code != NOT_BUILTIN)
-	{
 		return (code);
-	}
 	pid = fork();
 	if (pid == 0)
 	{
 		exec_path = expand_exec_name(argv[0]);
 		if (exec_path == NULL)
-		{
-			write(STDERR_FILENO, "minishell: ", ft_strlen("minishell: "));
-			write(STDERR_FILENO, argv[0], ft_strlen(argv[0]));
-			write(STDERR_FILENO, ": command not found\n",
-				ft_strlen(": command not found\n"));
-			exit(127);
-		}
+			command_not_found_err(argv);
 		execve(exec_path, argv, get_environ());
 		perror("minishell");
 		exit(126);
