@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 16:16:53 by trusanov          #+#    #+#             */
-/*   Updated: 2024/01/22 17:15:43 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 13:30:41 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	builtin_env(int argc, char **argv)
 	environ = get_environ();
 	while (*environ != NULL)
 	{
-		if (ft_strchr(*environ, '=' != NULL))
+		if (ft_strchr(*environ, '=') != NULL)
 			ft_printf("%s\n", *environ);
 		environ++;
 	}
