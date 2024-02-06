@@ -183,7 +183,7 @@ char	*merge_args(char **strings) {
 	return merged;
 }
 
-void exec_command(t_pipeline_token *pipeline)
+int exec_command(t_pipeline_token *pipeline)
 {
 	int		code;
 	char	**argv;
@@ -206,7 +206,7 @@ void exec_command(t_pipeline_token *pipeline)
 		pipeline++;
 	}
 //    exit (system(merge_args(argv))); // fake
-    launch_executable(argv);
+    return (launch_executable(argv));
 //	write(2, merge_args(argv), strlen(merge_args(argv)));
 //	exit(0);
 //    execve(argv[0], argv + 1, get_environ()); // idk if argv + 1 is good, might need to reallocate to size 1 less. also need to execute the actual executable, not its name (search PATH and builtins)
@@ -216,7 +216,6 @@ void exec_command(t_pipeline_token *pipeline)
 
 int         exec_pipeline(char *command)
 {
-    // TODO: make it without subshell if no pipes
 	t_pipeline_token	*pipeline;
 	t_pipeline_token	*pipeline_to_free;
 	int					n;
@@ -229,6 +228,9 @@ int         exec_pipeline(char *command)
 	pipeline = tokenize_pipeline(command);
 	pipeline_to_free = pipeline;
 	n = pipe_num(pipeline) + 1;
+    if (n == 1) {
+        return exec_command(pipeline);
+    }
 	n2 = n;
 	prev_in = STDIN_FILENO;
 	while (n--)
@@ -246,7 +248,7 @@ int         exec_pipeline(char *command)
 				dup2(p[1], STDOUT_FILENO);
 				close(p[1]);
 			}
-			exec_command(pipeline);
+			exit(exec_command(pipeline));
 		}
 		if (prev_in != STDIN_FILENO)
 			close(prev_in);

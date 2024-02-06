@@ -32,6 +32,6 @@ typedef enum e_exec_status
  */
 char	*expand_exec_name(char *name);
 char	**split_path(void);
-void	launch_executable(char **argv);
+int	launch_executable(char **argv);
 
 #endif
