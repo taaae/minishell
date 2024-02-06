@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:36:34 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/06 13:29:46 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 21:03:20 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	builtin_cd(int argc, char **argv)
 	}
 	if (chdir(argv[1]) != EXIT_SUCCESS)
 	{
-		ft_putstr_fd("Problem updating the directory\n", STDERR_FILENO);
+		perror("cd");
 		return (EXIT_FAILURE);
 	}
 	if (update_env_pwd() != EXIT_SUCCESS)
