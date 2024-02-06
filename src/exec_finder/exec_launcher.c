@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:50:21 by trusanov          #+#    #+#             */
-/*   Updated: 2024/02/06 20:01:23 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 20:02:37 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,8 @@
 #include "exec_find.h"
 #include "libft.h"
 
-<<<<<<< HEAD
-=======
 #define NOT_BUILTIN -42
 
->>>>>>> d19d2dc6a855e685293e5fa16d5c378ae125b049
 static int	argv_size(char **argv)
 {
 	int	res;
@@ -69,16 +66,10 @@ static void	command_not_found_err(char **argv)
 	forks if custom executable,
 	doesnt work if builtn
  * @param argv - dinamically allocated, argv[0] is executable name
-<<<<<<< HEAD
- * @return checks errno if execve fails, 0 if size of argv is 0, otherwise return code of execve
-*/
-void	launch_executable(char **argv)
-=======
  * @return checks errno if execve fails, 0 if size of argv is 0,
 	otherwise return code of execve
  */
 int	launch_executable(char **argv)
->>>>>>> d19d2dc6a855e685293e5fa16d5c378ae125b049
 {
 	char	*exec_path;
 	int		code;
