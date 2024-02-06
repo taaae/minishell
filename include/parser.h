@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 14:10:06 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/06 15:33:43 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 18:21:37 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_pipeline_token
 }	t_pipeline_token;
 
 t_pipeline_token	*tokenize_pipeline(char *pipeline);
+t_pipeline_token	next_token(char **str);
 void				free_pipeline(t_pipeline_token *pipeline);
 
 typedef enum e_arg_token_type

@@ -6,7 +6,7 @@
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:03:15 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/06 17:52:44 by trusanov         ###   ########.fr       */
+/*   Updated: 2024/02/06 18:48:43 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,14 +144,18 @@ int	exec_command(t_pipeline_token *pipeline)
 {
 	int		code;
 	char	**argv;
+	int		orig_stdin;
+	int		orig_stdout;
 
+	orig_stdin = dup(STDIN_FILENO);
+	orig_stdout = dup(STDOUT_FILENO);
 	argv = ft_calloc(1, sizeof(char *));
 	while (pipeline->type != PIPELINE_EOF && pipeline->type != PIPE)
 	{
 		if (pipeline->type == REDIRECTION)
 		{
 			code = handle_redirection(pipeline);
-			if (code == 1)
+			if (code != 0)
 				exit(code);
 			pipeline++;
 		}
@@ -159,7 +163,10 @@ int	exec_command(t_pipeline_token *pipeline)
 			argv = add_arg(argv, pipeline->content);
 		pipeline++;
 	}
-	return (launch_executable(argv));
+	code = launch_executable(argv);
+	dup2(orig_stdin, STDIN_FILENO);
+	dup2(orig_stdout, STDOUT_FILENO);
+	return (code);
 }
 
 int	exec_pipeline(char *command)
