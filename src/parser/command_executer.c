@@ -6,7 +6,7 @@
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 19:13:24 by trusanov          #+#    #+#             */
-/*   Updated: 2024/02/06 19:42:10 by trusanov         ###   ########.fr       */
+/*   Updated: 2024/02/06 19:46:50 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,22 +74,11 @@ static char	**add_arg(char **argv, char *arg)
 	return (new);
 }
 
-static int	handle_redirection(const t_pipeline_token *pipeline)
+static int	handle_redirection_in_file(const t_pipeline_token *pipeline)
 {
 	int	fd;
 
-	if (pipeline->content[0] == '<')
-	{
-		fd = open(pipeline[1].content, O_RDONLY);
-		if (fd == -1)
-		{
-			perror("minishell");
-			return (1);
-		}
-		dup2(fd, STDIN_FILENO);
-		close(fd);
-	}
-	else if (pipeline->content[0] == '>' && pipeline->content[1] == '\0')
+	if (pipeline->content[0] == '>' && pipeline->content[1] == '\0')
 	{
 		fd = open(pipeline[1].content, O_WRONLY | O_TRUNC | O_CREAT, 0644);
 		if (fd == -1)
@@ -110,6 +99,29 @@ static int	handle_redirection(const t_pipeline_token *pipeline)
 		}
 		dup2(fd, STDOUT_FILENO);
 		close(fd);
+	}
+	return (0);
+}
+
+static int	handle_redirection(const t_pipeline_token *pipeline)
+{
+	int	fd;
+
+	if (pipeline->content[0] == '<')
+	{
+		fd = open(pipeline[1].content, O_RDONLY);
+		if (fd == -1)
+		{
+			perror("minishell");
+			return (1);
+		}
+		dup2(fd, STDIN_FILENO);
+		close(fd);
+	}
+	else
+	{
+		if (handle_redirection_in_file(pipeline) == 1)
+			return (1);
 	}
 	pipeline++;
 	return (0);
