@@ -41,7 +41,7 @@ int	execute(char *line)
 	}
 	code = exec_logic(logic_tokens);
 	ptr_arr_free_complex((void ***)&logic_tokens, del_logic_token);
-	ft_terminate_env();
+//	ft_terminate_env();
 	return (code);
 }
 
