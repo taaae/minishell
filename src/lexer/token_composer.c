@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:20:45 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/03 19:00:28 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 14:57:10 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ t_token	*tok_str_to_token(char *tok_str)
 	token = (t_token *)ft_calloc(1, sizeof(t_token));
 	if (tok_str == NULL || token == NULL)
 	{
-		free(tok_str);
+		free(token);
 		return (NULL);
 	}
 	token->token_len = ft_strlen(tok_str);

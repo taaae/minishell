@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:03:15 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/05 14:07:56 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 14:49:49 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,8 +185,8 @@ char	*merge_args(char **strings) {
 
 void exec_command(t_pipeline_token *pipeline)
 {
-	int     code;
-	char    **argv;
+	int		code;
+	char	**argv;
 
 	argv = ft_calloc(1, sizeof(char *));
 	while (pipeline->type != PIPELINE_EOF && pipeline->type != PIPE)
