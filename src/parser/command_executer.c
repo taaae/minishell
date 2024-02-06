@@ -6,7 +6,7 @@
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 19:13:24 by trusanov          #+#    #+#             */
-/*   Updated: 2024/02/06 19:16:32 by trusanov         ###   ########.fr       */
+/*   Updated: 2024/02/06 19:42:10 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,31 +56,19 @@ static char	**add_arg(char **argv, char *arg)
 	expanded = expand_arg(arg);
 	n = 0;
 	new = argv;
-	while (*new != NULL)
-	{
-		new ++;
+	while (*(new++) != NULL)
 		n++;
-	}
 	m = 0;
 	new = expanded;
-	while (*new != NULL)
-	{
-		new ++;
+	while (*(new++) != NULL)
 		m++;
-	}
 	new = ft_calloc(n + m + 1, sizeof(char *));
 	n = 0;
-	while (argv[n] != NULL)
-	{
-		new[n] = argv[n];
-		n++;
-	}
+	while (argv[n] != NULL && ++n)
+		new[n - 1] = argv[n - 1];
 	m = 0;
-	while (expanded[m] != NULL)
-	{
-		new[n + m] = expanded[m];
-		m++;
-	}
+	while (expanded[m] != NULL && ++m)
+		new[n + m - 1] = expanded[m - 1];
 	free(argv);
 	free(expanded);
 	return (new);
