@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_launcher.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:50:21 by trusanov          #+#    #+#             */
-/*   Updated: 2024/02/06 20:02:37 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 20:54:59 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ int	launch_executable(char **argv)
 	pid = fork();
 	if (pid == 0)
 	{
+		signal(SIGINT, SIG_DFL);
 		exec_path = expand_exec_name(argv[0]);
 		if (exec_path == NULL)
 			command_not_found_err(argv);

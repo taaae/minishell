@@ -6,7 +6,7 @@
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 14:10:06 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/06 17:50:03 by trusanov         ###   ########.fr       */
+/*   Updated: 2024/02/06 20:57:38 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	execute(char *line)
 	char			*logic_parse_err;
 	int				code;
 
+	signal(SIGINT, SIG_IGN);
 	logic_tokens = logic_split(line);
 	logic_parse_err = logic_parse_check(logic_tokens);
 	if (logic_parse_err != NULL)
@@ -51,9 +52,9 @@ int	main(int argc, char **argv, char **envp)
 	(void)argv;
 	g_return_code = 0;
 	ft_initenv(envp);
-	init_parent_signals();
 	while (1)
 	{
+		init_parent_signals();
 		line = get_line();
 		if (line == NULL)
 			return (0);
