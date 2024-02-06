@@ -6,7 +6,7 @@
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:50:21 by trusanov          #+#    #+#             */
-/*   Updated: 2024/02/06 17:50:22 by trusanov         ###   ########.fr       */
+/*   Updated: 2024/02/06 17:56:44 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ static int	launch_builtin(char **argv)
 }
 
 /**
-
-	* search launches executable and returns its return code. forks if custom executable,
+	* search launches executable and returns its return code.
+	forks if custom executable,
 	doesnt work if builtn
  * @param argv - dinamically allocated, argv[0] is executable name
  * @return checks errno if execve fails, 0 if size of argv is 0,
