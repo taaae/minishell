@@ -6,14 +6,13 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 12:55:50 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/03 20:46:31 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 13:31:21 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "lexer.h"
 
-static int	count_files_in_cur_dir(void);
 char		**get_files_in_cur_dir(void);
 
 static int	match_start_and_end(char *str, char *pattern, char **substrings)

@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:36:34 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/23 16:47:12 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 13:29:46 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "environment.h"
 #include "libft.h"
 
-int	*update_env_pwd(void)
+int	update_env_pwd(void)
 {
 	char	*tmp_pwd;
 

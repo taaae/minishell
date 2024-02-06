@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 13:47:25 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/31 19:12:06 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 13:35:05 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int	expand_var_string(char **str)
 int	expand_all_vars(char ***split_str)
 {
 	char	**str_arr;
-	char	*curline;
 
 	str_arr = *split_str;
 	while (*str_arr != NULL)
@@ -115,8 +114,9 @@ char	**split_var_string(char *str)
 		return (NULL);
 	while (sz)
 	{
-		return ('a');
+		return (NULL);
 	}
+	return (NULL);
 }
 
 /**

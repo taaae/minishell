@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 18:53:26 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/03 21:07:55 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 13:34:10 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	copy_one_token(t_token *token, char *line, int *i)
 char	*join_tokens(t_list *toks)
 {
 	char	*res_line;
-	t_lst	*toks_save;
+	t_list	*toks_save;
 	int		i;
 
 	res_line = alloc_toklist_to_str_mem(toks);
