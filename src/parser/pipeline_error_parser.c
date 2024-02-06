@@ -6,18 +6,41 @@
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:03:19 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/06 17:59:08 by trusanov         ###   ########.fr       */
+/*   Updated: 2024/02/06 18:17:00 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "parser.h"
 
+static char	*unexpected_pipe(t_pipeline_token *pipeline_to_free)
+{
+	free_pipeline(pipeline_to_free);
+	return (ft_strdup("minishell: syntax error "
+			"near unexpected token `|'"));
+}
+
+static char	*unexpected_newline(t_pipeline_token *pipeline_to_free)
+{
+	free_pipeline(pipeline_to_free);
+	return (ft_strdup("minishell: syntax error "
+			"near unexpected token `newline'"));
+}
+
+static char	*unexpected_tok(t_pipeline_token *pipeline_to_free, const char *tok)
+{
+	char	*res;
+
+	res = ft_strjoin("minishell: syntax error "
+			"near unexpected token: ", tok);
+	free_pipeline(pipeline_to_free);
+	return (res);
+}
+
 char	*pipeline_parse_check(char *line)
 {
 	t_pipeline_token	*pipeline;
 	t_pipeline_token	*pipeline_to_free;
-	char				*res;
 
 	pipeline = tokenize_pipeline(line);
 	pipeline_to_free = pipeline;
@@ -25,22 +48,11 @@ char	*pipeline_parse_check(char *line)
 	{
 		if (pipeline->type == PIPE && (pipeline[1].type == PIPELINE_EOF
 				|| pipeline[1].type == PIPE))
-		{
-			free_pipeline(pipeline_to_free);
-			return (ft_strdup("minishell: syntax error near unexpected token `|'"));
-		}
+			return (unexpected_pipe(pipeline_to_free));
 		if (pipeline->type == REDIRECTION && pipeline[1].type == PIPELINE_EOF)
-		{
-			free_pipeline(pipeline_to_free);
-			return (ft_strdup("minishell: syntax error near unexpected token `newline'"));
-		}
+			return (unexpected_newline(pipeline_to_free));
 		if (pipeline->type == REDIRECTION && pipeline[1].type == REDIRECTION)
-		{
-			res = ft_strjoin("minishell: syntax error near unexpected token: ",
-					pipeline[1].content);
-			free_pipeline(pipeline_to_free);
-			return (res);
-		}
+			return (unexpected_tok(pipeline_to_free, pipeline[1].content));
 		pipeline++;
 	}
 	free_pipeline(pipeline_to_free);
