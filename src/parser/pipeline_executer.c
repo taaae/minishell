@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipeline_executer.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:03:15 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/06 20:01:37 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 20:34:33 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,8 @@ void	exec_in_fork(int prev_in, int p[2], t_pipeline_token *pipeline, int n)
 	exit(exec_command(pipeline));
 }
 
-<<<<<<< HEAD
-void launch_executable(t_pipeline_token *pipeline)
-=======
 // returns pid of the last one
 int	actually_exec_pipeline(int n, t_pipeline_token *pipeline, int prev_in)
->>>>>>> d19d2dc6a855e685293e5fa16d5c378ae125b049
 {
 	int	p[2];
 	int	pid;
