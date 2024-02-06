@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # The directory to start searching from, replace '/path/to/your/directory' with your actual directory path
-root_dir="~/Desktop/minishell/src"
+root_dir="$HOME/Desktop/minishell/src"
 
 # Iterate over each file found by find
 find "$root_dir" -type f | while read file; do
