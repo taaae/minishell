@@ -6,7 +6,7 @@
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 14:10:06 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/06 18:21:37 by trusanov         ###   ########.fr       */
+/*   Updated: 2024/02/06 19:01:11 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ typedef struct s_arg_token
 }	t_arg_token;
 
 t_list				*tokenize_arg(char *arg);
-void				print_token_args(t_list *lst);
 void				expand_vars(char **str);
 
 #endif
