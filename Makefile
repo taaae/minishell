@@ -41,7 +41,8 @@ SOURCE_FILES := \
 			reader/read_heredoc.c \
 			reader/reader.c \
 			signals/signals.c \
-			signals/signals_child.c
+			signals/signals_child.c \
+			global_code.c
 SOURCES := $(addprefix $(SRCDIR)/,$(SOURCE_FILES))
 MAINSOURCE := $(SRCDIR)/minishell.c
 

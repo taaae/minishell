@@ -6,7 +6,7 @@
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 14:10:06 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/06 20:57:38 by trusanov         ###   ########.fr       */
+/*   Updated: 2024/02/06 21:20:18 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 #include "lexer.h"
 #include "libft.h"
 #include "logic_tokenizer.h"
-#include "minishell.h"
 #include "parser.h"
 #include "reader.h"
 #include "signals.h"
+#include "global_code.h"
 
 int	execute(char *line)
 {
@@ -50,7 +50,7 @@ int	main(int argc, char **argv, char **envp)
 
 	(void)argc;
 	(void)argv;
-	g_return_code = 0;
+	set_return_code(0);
 	ft_initenv(envp);
 	while (1)
 	{
@@ -58,7 +58,7 @@ int	main(int argc, char **argv, char **envp)
 		line = get_line();
 		if (line == NULL)
 			return (0);
-		g_return_code = execute(line);
+		set_return_code(execute(line));
 		free(line);
 	}
 }

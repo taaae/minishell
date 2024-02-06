@@ -6,13 +6,13 @@
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:01:19 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/06 19:09:42 by trusanov         ###   ########.fr       */
+/*   Updated: 2024/02/06 21:21:47 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "environment.h"
 #include "libft.h"
-#include "minishell.h"
+#include "global_code.h"
 #include "parser.h"
 
 // return start (before first var) and moves ptr to first $ occurrence
@@ -50,7 +50,7 @@ static void	var_name_to_res(char **var_name)
 	char	*res;
 
 	if (ft_strcmp(*var_name, "?") == 0)
-		res = ft_itoa(g_return_code);
+		res = ft_itoa(get_return_code());
 	else
 		res = ft_getenv(*var_name);
 	free(*var_name);
