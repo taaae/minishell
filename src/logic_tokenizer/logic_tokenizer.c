@@ -13,8 +13,8 @@
 #include "libft.h"
 #include "logic_tokenizer.h"
 
-int		alloc_log_toks(t_logic_token ***tokens, char *line);
-void	fill_log_toks(t_logic_token **tokens, int tok_amt, char *line);
+int				alloc_log_toks(t_logic_token ***tokens, char *line);
+void			fill_log_toks(t_logic_token **tokens, int tok_amt, char *line);
 
 static int	quotes_are_correct(char *line)
 {

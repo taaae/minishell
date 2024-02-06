@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_find.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 18:41:16 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/06 14:47:33 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 19:56:37 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ typedef enum e_exec_status
  */
 char	*expand_exec_name(char *name);
 char	**split_path(void);
-void	launch_executable(char **argv);
+int		launch_executable(char **argv);
 
 #endif

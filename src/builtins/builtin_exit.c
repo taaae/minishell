@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   builtin_exit.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:33:30 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/06 15:24:38 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 17:53:24 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 #include <unistd.h>
-#include "libft.h"
 
-//if +sigh: all%256
-//if -sign: (256 - all%256) % 256
+// if +sigh: all%256
+// if -sign: (256 - all%256) % 256
 int	get_exit_code(char *s)
 {
 	long long	tmp;
@@ -43,8 +43,9 @@ int	get_exit_code(char *s)
 	return (tmp % 256);
 }
 
-//If piped, doesn't output anything, even though pipe should redirect only stdin
-//not stderr. Idk how to fix it for now.
+// If piped, doesn't output anything,
+// even though pipe should redirect only stdin
+// not stderr. Idk how to fix it for now.
 int	builtin_exit(int argc, char **argv)
 {
 	int	exit_code;
@@ -58,7 +59,6 @@ int	builtin_exit(int argc, char **argv)
 	exit_code = get_exit_code(argv[1]);
 	if (exit_code == -1)
 	{
-
 		perror(argv[1]);
 		exit_code = 255;
 	}

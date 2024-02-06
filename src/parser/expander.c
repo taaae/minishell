@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   expander.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:01:19 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/05 14:02:36 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 19:09:42 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "parser.h"
 #include "environment.h"
+#include "libft.h"
+#include "minishell.h"
+#include "parser.h"
 
 // return start (before first var) and moves ptr to first $ occurrence
 static char	*eat_start(char **str_ptr)
@@ -44,12 +45,25 @@ static int	closest_delim(char *str)
 		return (ft_strchr(str, ' ') - str);
 }
 
+static void	var_name_to_res(char **var_name)
+{
+	char	*res;
+
+	if (ft_strcmp(*var_name, "?") == 0)
+		res = ft_itoa(g_return_code);
+	else
+		res = ft_getenv(*var_name);
+	free(*var_name);
+	if (res == NULL)
+		res = ft_strdup("");
+	*var_name = res;
+}
+
 // return expanded var (or $ if it is just $)
 // and moves ptr to next $ occurrence or to the string end or to the next space
 static char	*eat_var(char **str_ptr)
 {
 	char	*var_name;
-	char	*res;
 	int		var_pos;
 
 	if ((*str_ptr)[1] == '\0' || (*str_ptr)[1] == '$')
@@ -68,11 +82,8 @@ static char	*eat_var(char **str_ptr)
 		var_name = ft_substr(*str_ptr, 1, var_pos - 1);
 		*str_ptr += var_pos;
 	}
-	res = ft_getenv(var_name);
-	free(var_name);
-	if (res == NULL)
-		return (ft_strdup(""));
-	return (res);
+	var_name_to_res(&var_name);
+	return (var_name);
 }
 
 void	expand_vars(char **str_ptr)
@@ -92,6 +103,6 @@ void	expand_vars(char **str_ptr)
 		res = ft_strjoin(res, eat_var(&str));
 		free(tmp);
 	}
-	free (*str_ptr);
+	free(*str_ptr);
 	*str_ptr = res;
 }

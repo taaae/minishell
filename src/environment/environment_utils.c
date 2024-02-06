@@ -51,5 +51,5 @@ void	extend_environ(void)
 void	ft_terminate_env(void)
 {
 	free_str_arr(st_get_environ_ptr());
-	return ;	
+	return ;
 }

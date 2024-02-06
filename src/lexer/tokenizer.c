@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   tokenizer.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:15:04 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/03 20:18:01 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 19:02:45 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "config.h"
 #include "lexer.h"
 #include "libft.h"
 #include <stdbool.h>
+#include <stdlib.h>
 
 bool	check_quotes_validity(char *line)
 {
@@ -75,7 +75,7 @@ t_list	*token_to_list_entry(t_token *token)
 t_list	*tokenize(char *line)
 {
 	t_list	*token_list;
-	t_list	*current_entry;
+	t_list	*cur_e;
 
 	if (line == NULL)
 		return (NULL);
@@ -84,14 +84,13 @@ t_list	*tokenize(char *line)
 	token_list = NULL;
 	while (*line != '\0')
 	{
-		current_entry = token_to_list_entry (\
-		tok_str_to_token(str_to_tok_str(&line)));
-		if (current_entry == NULL)
+		cur_e = token_to_list_entry(tok_str_to_token(str_to_tok_str(&line)));
+		if (cur_e == NULL)
 		{
 			ft_lstclear(&token_list, del_token);
 			return (NULL);
 		}
-		ft_lstadd_back(&token_list, current_entry);
+		ft_lstadd_back(&token_list, cur_e);
 		while (ft_isspace(*line))
 			line++;
 	}

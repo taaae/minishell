@@ -10,15 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <readline/readline.h>
-#include <readline/history.h>
-#include <stdbool.h>
-#include "libft.h"
-#include "reader.h"
 #include "config.h"
 #include "lexer.h"
+#include "libft.h"
+#include "reader.h"
+#include <readline/history.h>
+#include <readline/readline.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 int		replace_heredocs(t_list *toks);
 char	*join_tokens(t_list *toks);
@@ -63,7 +63,7 @@ void	close_reader(void)
 
 char	*get_line(void)
 {
-	char			*line;
+	char	*line;
 
 	while (1)
 	{

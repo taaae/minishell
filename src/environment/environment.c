@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-#include "libft.h"
 #include "environment.h"
+#include "libft.h"
+#include <limits.h>
 
-void	set_environ(char **new_environ);
-void	extend_environ(void);
+void		set_environ(char **new_environ);
+void		extend_environ(void);
 
 void	ft_initenv(char **envp)
 {

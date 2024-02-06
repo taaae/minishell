@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <pwd.h>
-#include "exec_find.h"
 #include "environment.h"
+#include "exec_find.h"
 #include "libft.h"
+#include <pwd.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
 
 char	*get_pathvar_dir(char *name);
 char	*expand_exec_name_pathvar(char *name);
@@ -69,13 +69,13 @@ char	*expand_exec_name_pathvar(char *name)
 
 /**
  * @brief Takes exec name from shell and expands it to full path+name of exec
- * 
+ *
  * Searches $PATH, handles relative path, absolute path, ~/...
  * Does not free "name"'s memory
  * Ensures that the file exists and is executable
  * Otherwise returns NULL
- * @param name 
- * @return char* 
+ * @param name
+ * @return char*
  */
 char	*expand_exec_name(char *name)
 {

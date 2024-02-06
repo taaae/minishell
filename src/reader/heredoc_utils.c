@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "lexer.h"
+#include <errno.h>
+#include <fcntl.h>
+#include <readline/history.h>
+#include <readline/readline.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <readline/readline.h>
-#include <readline/history.h>
-#include <fcntl.h>
-#include <errno.h>
-#include "lexer.h"
 
 char	*alloc_toklist_to_str_mem(t_list *toks);
 
@@ -74,8 +74,8 @@ char	*create_heredoc_file(char *delim)
 	pathname = ft_strjoin("/tmp/minishell_heredocs_", delim);
 	if (pathname == NULL)
 		return (NULL);
-	fd = open(pathname, O_CREAT | O_TRUNC | O_RDWR, S_IRUSR | S_IWUSR | \
-						S_IRGRP | S_IWGRP, S_IROTH | S_IWOTH);
+	fd = open(pathname, O_CREAT | O_TRUNC | O_RDWR,
+			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP, S_IROTH | S_IWOTH);
 	if (fd == -1)
 	{
 		ft_printf("[%s]\n", strerror(errno));

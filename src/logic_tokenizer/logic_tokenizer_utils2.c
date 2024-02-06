@@ -22,10 +22,9 @@ static int	skip_to_script_end(char **s)
 	len = 0;
 	while (1)
 	{
-		if ((*s)[len] == '\0' || (*s)[len] == '(' \
-			|| (*s)[len] == ')' || \
-			((*s)[len] == '|' && (*s)[len + 1] == '|') || \
-			((*s)[len] == '&' && (*s)[len + 1] == '&'))
+		if ((*s)[len] == '\0' || (*s)[len] == '(' || (*s)[len] == ')'
+			|| ((*s)[len] == '|' && (*s)[len + 1] == '|') || ((*s)[len] == '&'
+				&& (*s)[len + 1] == '&'))
 			break ;
 		if (!in_q && ((*s)[len] == '\'' || (*s)[len] == '"'))
 		{
@@ -87,10 +86,8 @@ static int	read_tok(t_logic_token *token, char **lineptr)
 {
 	while (ft_isspace((*lineptr)[0]))
 		(*lineptr)++;
-	if ((*lineptr)[0] == '(' || \
-		(*lineptr)[0] == ')' || \
-		(((*lineptr)[0] == '|' || (*lineptr)[0] == '&') && \
-			(*lineptr)[0] == (*lineptr)[1]))
+	if ((*lineptr)[0] == '(' || (*lineptr)[0] == ')' || (((*lineptr)[0] == '|'
+				|| (*lineptr)[0] == '&') && (*lineptr)[0] == (*lineptr)[1]))
 		return (read_logic_operator(token, lineptr));
 	else if ((*lineptr)[0] != '\0')
 	{

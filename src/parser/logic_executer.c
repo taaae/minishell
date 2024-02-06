@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdbool.h>
-#include "parser.h"
 #include "logic_tokenizer.h"
+#include "parser.h"
+#include <stdbool.h>
 
 #define SUCCESS 0
 
@@ -21,7 +21,7 @@ static t_logic_token	**skip_expr(t_logic_token **token);
 
 void	del_logic_token(void *tok_vptr)
 {
-	t_logic_token *tok_ptr;
+	t_logic_token	*tok_ptr;
 
 	tok_ptr = (t_logic_token *)tok_vptr;
 	free(tok_ptr->strrepr);

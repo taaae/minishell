@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <dirent.h>
 #include "lexer.h"
 #include "libft.h"
+#include <dirent.h>
 
 static int	count_files_in_cur_dir(void)
 {
@@ -34,8 +34,8 @@ static int	count_files_in_cur_dir(void)
 	return (i);
 }
 
-static void	scan_files_in_dir(char ***files, int files_count, \
-DIR *d, struct dirent *dir)
+static void	scan_files_in_dir(char ***files, int files_count, DIR *d,
+		struct dirent *dir)
 {
 	int	i;
 

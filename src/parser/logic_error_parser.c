@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
-#include "parser.h"
 #include "logic_tokenizer.h"
+#include "parser.h"
+#include <stddef.h>
 
 static char	*token_error(const t_logic_token *token)
 {
@@ -30,7 +30,7 @@ static char	*token_error(const t_logic_token *token)
 		return (ft_strdup("minishell: syntax error near \
 							unexpected token `&&'"));
 	if (token->type == SCRIPT_STR)
-		return (ft_strjoin("minishell: syntax error near unexpected token: ", \
+		return (ft_strjoin("minishell: syntax error near unexpected token: ",
 				token->strrepr));
 	return (ft_strdup("minishell: unexptected token type"));
 }
@@ -41,7 +41,7 @@ static char	*parse_check_term(t_logic_token ***token);
 // Expr -> Term{('&&', '||')Expr}
 // Term -> '(' Expr ')' | pipeline
 // Pass first element of NULL terminated token array from logic_split func
-// Returns NULL on success or dynamically 
+// Returns NULL on success or dynamically
 // 		allocated string with error description if fail
 char	*logic_parse_check(t_logic_token **token)
 {

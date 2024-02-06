@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   arg_tokenizer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 13:58:25 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/05 13:59:25 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 19:01:03 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parser.h"
 #include "libft.h"
+#include "parser.h"
 
 static t_arg_token	*get_squoted(char **arg_ptr)
 {
@@ -90,24 +90,4 @@ t_list	*tokenize_arg(char *arg)
 			ft_lstadd_back(&lst, ft_lstnew(get_normal(&arg)));
 	}
 	return (lst);
-}
-
-static void	print_node(void *content)
-{
-	t_arg_token	*tok;
-
-	tok = content;
-	if (tok->type == SQUOTED)
-		ft_printf("SQ: ");
-	else if (tok->type == DQUOTED)
-		ft_printf("DQ: ");
-	else
-		ft_printf("N: ");
-	ft_printf("%s, ", tok->content);
-}
-
-void	print_token_args(t_list *lst)
-{
-	ft_lstiter(lst, print_node);
-	ft_printf("\n");
 }

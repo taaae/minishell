@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <pwd.h>
+#include "environment.h"
 #include "exec_find.h"
 #include "libft.h"
-#include "environment.h"
+#include <pwd.h>
+#include <stdlib.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <unistd.h>
 
 char	**split_path(void)
 {
@@ -34,8 +34,8 @@ int	validate_exec_full_name(char *full_name)
 {
 	struct stat	file_stats;
 
-	if (full_name == NULL || stat(full_name, &file_stats) != 0 \
-						|| !(S_ISREG(file_stats.st_mode)))
+	if (full_name == NULL || stat(full_name, &file_stats) != 0
+		|| !(S_ISREG(file_stats.st_mode)))
 		return (FT_ERROR);
 	if (access(full_name, F_OK) == -1)
 		return (FT_EXECNAME_NOFILE);
