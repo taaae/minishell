@@ -51,6 +51,7 @@ int	main(int argc, char **argv, char **envp)
 
 	(void) argc;
 	(void) argv;
+    g_return_code = 0;
 	ft_initenv(envp); // TODO: free
 	init_parent_signals();
 	while (1)
@@ -58,7 +59,7 @@ int	main(int argc, char **argv, char **envp)
 		line = get_line();
 		if (line == NULL)
 			return (0);
-		execute(line);
+		g_return_code = execute(line);
 		free(line);
 	}
 }

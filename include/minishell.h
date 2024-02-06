@@ -13,4 +13,6 @@
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
+int g_return_code;
+
 #endif

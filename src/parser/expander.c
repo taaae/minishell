@@ -13,6 +13,7 @@
 #include "libft.h"
 #include "parser.h"
 #include "environment.h"
+#include "minishell.h"
 
 // return start (before first var) and moves ptr to first $ occurrence
 static char	*eat_start(char **str_ptr)
@@ -69,6 +70,9 @@ static char	*eat_var(char **str_ptr)
 		*str_ptr += var_pos;
 	}
 	res = ft_getenv(var_name);
+    if (ft_strcmp(var_name, "?") == 0) {
+        res = ft_itoa(g_return_code);
+    }
 	free(var_name);
 	if (res == NULL)
 		return (ft_strdup(""));

@@ -8,7 +8,7 @@ unity_subproject = subproject('unity')
 unity_dependency = unity_subproject.get_variable('unity_dep')
 unity_gen_runner = unity_subproject.get_variable('gen_test_runner')
 
-dep = [readline_dep, libft_dep, unity_dependency]
+dep = [readline_dep, libft_dep]
 
 c = run_command('glob.sh')
 src = c.stdout().strip().split('\n')
