@@ -6,7 +6,7 @@
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 14:10:06 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/06 19:01:11 by trusanov         ###   ########.fr       */
+/*   Updated: 2024/02/06 19:19:43 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ typedef struct s_pipeline_token
 	t_pipeline_token_type	type;
 	char					*content;
 }	t_pipeline_token;
+
+int					exec_command(t_pipeline_token *pipeline);
 
 t_pipeline_token	*tokenize_pipeline(char *pipeline);
 t_pipeline_token	next_token(char **str);
