@@ -25,8 +25,8 @@ char	*alloc_toklist_to_str_mem(t_list *toks)
 	while (toks)
 	{
 		res_len += ((t_token *)(toks->content))->token_len + 1;
-		if (((t_token *)(toks->content))->type == TOK_WORD_IN_QUOTES \
-		|| ((t_token *)(toks->content))->type == TOK_WORD_IN_DQUOTES)
+		if (((t_token *)(toks->content))->type == TOK_WORD_IN_QUOTES
+			|| ((t_token *)(toks->content))->type == TOK_WORD_IN_DQUOTES)
 			res_len += 2;
 		toks = toks->next;
 	}

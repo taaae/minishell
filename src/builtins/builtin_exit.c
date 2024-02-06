@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 #include <unistd.h>
-#include "libft.h"
 
-//if +sigh: all%256
-//if -sign: (256 - all%256) % 256
+// if +sigh: all%256
+// if -sign: (256 - all%256) % 256
 int	get_exit_code(char *s)
 {
 	long long	tmp;
@@ -43,9 +43,9 @@ int	get_exit_code(char *s)
 	return (tmp % 256);
 }
 
-//If piped, doesn't output anything, 
-//even though pipe should redirect only stdin
-//not stderr. Idk how to fix it for now.
+// If piped, doesn't output anything,
+// even though pipe should redirect only stdin
+// not stderr. Idk how to fix it for now.
 int	builtin_exit(int argc, char **argv)
 {
 	int	exit_code;
@@ -59,7 +59,6 @@ int	builtin_exit(int argc, char **argv)
 	exit_code = get_exit_code(argv[1]);
 	if (exit_code == -1)
 	{
-
 		perror(argv[1]);
 		exit_code = 255;
 	}

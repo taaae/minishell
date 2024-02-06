@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "config.h"
 #include "lexer.h"
 #include "libft.h"
 #include <stdbool.h>
+#include <stdlib.h>
 
 bool	check_quotes_validity(char *line)
 {
@@ -84,8 +84,7 @@ t_list	*tokenize(char *line)
 	token_list = NULL;
 	while (*line != '\0')
 	{
-		current_entry = token_to_list_entry (\
-		tok_str_to_token(str_to_tok_str(&line)));
+		current_entry = token_to_list_entry(tok_str_to_token(str_to_tok_str(&line)));
 		if (current_entry == NULL)
 		{
 			ft_lstclear(&token_list, del_token);

@@ -16,12 +16,12 @@
 #include "exec_find.h"
 #include "expansions.h"
 #include "lexer.h"
+#include "libft.h"
 #include "logic_tokenizer.h"
 #include "minishell.h"
+#include "parser.h"
 #include "reader.h"
 #include "signals.h"
-#include "libft.h"
-#include "parser.h"
 
 int	execute(char *line)
 {
@@ -47,9 +47,9 @@ int	main(int argc, char **argv, char **envp)
 {
 	char	*line;
 
-	(void) argc;
-	(void) argv;
-    g_return_code = 0;
+	(void)argc;
+	(void)argv;
+	g_return_code = 0;
 	ft_initenv(envp);
 	init_parent_signals();
 	while (1)

@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdbool.h>
 #include "libft.h"
+#include <stdbool.h>
+#include <stdlib.h>
 
 static int	echo_printer(char *s, bool no_nl)
 {

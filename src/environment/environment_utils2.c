@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "environment.h"
+#include <stdlib.h>
 
 void	extend_environ(void);
 

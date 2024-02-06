@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "environment.h"
 #include "builtins.h"
+#include "environment.h"
+#include "libft.h"
 
 static void	invalid_identifier_message(char *name)
 {

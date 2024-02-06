@@ -10,18 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdbool.h>
-#include "libft.h"
-#include "expansions.h"
 #include "environment.h"
+#include "expansions.h"
+#include "libft.h"
+#include <stdbool.h>
 
 /**
  * @brief Takes a ptr to a string with a varname (with $ sign), expands it,
  * frees the prev memory.
- * 
+ *
  * If varname is incorrect, empty string is the result
- * @param str 
- * @return int 
+ * @param str
+ * @return int
  */
 int	expand_var_string(char **str)
 {
@@ -41,9 +41,9 @@ int	expand_var_string(char **str)
 
 /**
  * @brief Takes strarr, expands all strs in it that are varnames
- * 
- * @param split_str 
- * @return int 
+ *
+ * @param split_str
+ * @return int
  */
 int	expand_all_vars(char ***split_str)
 {
@@ -64,9 +64,9 @@ int	expand_all_vars(char ***split_str)
 
 /**
  * @brief tells how many ptrs allocate for var split
- * 
- * @param str 
- * @return int 
+ *
+ * @param str
+ * @return int
  */
 int	count_var_split_sz(char *str)
 {
@@ -98,10 +98,10 @@ int	count_var_split_sz(char *str)
 /**
  * @brief takes str, and splits it to 2 types of substrings
  * either smth between the varname and ^$, or the varname
- * 
+ *
  * returns string array
- * @param str 
- * @return char** 
+ * @param str
+ * @return char**
  */
 char	**split_var_string(char *str)
 {
@@ -121,9 +121,9 @@ char	**split_var_string(char *str)
 
 /**
  * @brief Return str with all vars expanded, don't free the original string.
- * 
- * @param str 
- * @return char* 
+ *
+ * @param str
+ * @return char*
  */
 char	*expand_vars_string(char *str)
 {

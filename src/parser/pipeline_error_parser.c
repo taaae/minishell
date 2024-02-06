@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parser.h"
 #include "libft.h"
+#include "parser.h"
 
 char	*pipeline_parse_check(char *line)
 {
@@ -23,7 +23,8 @@ char	*pipeline_parse_check(char *line)
 	pipeline_to_free = pipeline;
 	while (pipeline->type != PIPELINE_EOF)
 	{
-		if (pipeline->type == PIPE && (pipeline[1].type == PIPELINE_EOF || pipeline[1].type == PIPE))
+		if (pipeline->type == PIPE && (pipeline[1].type == PIPELINE_EOF
+				|| pipeline[1].type == PIPE))
 		{
 			free_pipeline(pipeline_to_free);
 			return (ft_strdup("minishell: syntax error near unexpected token `|'"));
@@ -35,7 +36,8 @@ char	*pipeline_parse_check(char *line)
 		}
 		if (pipeline->type == REDIRECTION && pipeline[1].type == REDIRECTION)
 		{
-			res = ft_strjoin("minishell: syntax error near unexpected token: ", pipeline[1].content);
+			res = ft_strjoin("minishell: syntax error near unexpected token: ",
+					pipeline[1].content);
 			free_pipeline(pipeline_to_free);
 			return (res);
 		}

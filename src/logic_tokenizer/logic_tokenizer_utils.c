@@ -21,15 +21,13 @@ static int	skip_token(char **lineptr)
 		(*lineptr)++;
 	if ((*lineptr)[0] == '(' || (*lineptr)[0] == ')')
 		(*lineptr)++;
-	else if (((*lineptr)[0] == '|' || (*lineptr)[0] == '&') \
-			&& (*lineptr)[1] == (*lineptr)[0])
+	else if (((*lineptr)[0] == '|' || (*lineptr)[0] == '&')
+		&& (*lineptr)[1] == (*lineptr)[0])
 		(*lineptr) += 2;
 	else
-		while ((*lineptr)[0] && \
-				(*lineptr)[0] != '(' && \
-				(*lineptr)[0] != ')' && \
-				!(((*lineptr)[0] == '|' || (*lineptr)[0] == '&') \
-						&& (*lineptr)[1] == (*lineptr)[0]))
+		while ((*lineptr)[0] && (*lineptr)[0] != '(' && (*lineptr)[0] != ')'
+			&& !(((*lineptr)[0] == '|' || (*lineptr)[0] == '&')
+				&& (*lineptr)[1] == (*lineptr)[0]))
 			(*lineptr)++;
 	while (ft_isspace((*lineptr)[0]))
 		(*lineptr)++;

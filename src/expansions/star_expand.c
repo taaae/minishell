@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "lexer.h"
+#include "libft.h"
 
 char		**get_files_in_cur_dir(void);
 
@@ -21,16 +21,16 @@ static int	match_start_and_end(char *str, char *pattern, char **substrings)
 	int		i;
 
 	cur_substr = substrings[0];
-	if (pattern[0] != '*' && \
-		ft_strncmp(str, cur_substr, ft_strlen(cur_substr)) != 0)
+	if (pattern[0] != '*' && ft_strncmp(str, cur_substr,
+			ft_strlen(cur_substr)) != 0)
 		return (FT_FALSE);
 	i = 0;
 	while (substrings[i + 1] != NULL)
 		i++;
 	cur_substr = substrings[i];
-	if (pattern[ft_strlen(pattern) - 1] != '*' && \
-		ft_strncmp(str + ft_strlen(str) - ft_strlen(cur_substr), \
-				cur_substr, ft_strlen(cur_substr)) != 0)
+	if (pattern[ft_strlen(pattern) - 1] != '*' && ft_strncmp(str
+			+ ft_strlen(str) - ft_strlen(cur_substr), cur_substr,
+			ft_strlen(cur_substr)) != 0)
 		return (FT_FALSE);
 	return (FT_TRUE);
 }

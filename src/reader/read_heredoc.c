@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "config.h"
+#include "lexer.h"
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "lexer.h"
-#include "config.h"
 
 int		read_heredoc_to_file(char *delim, char *storage);
 int		read_heredoc_content(char *delim, int fd);
@@ -27,8 +27,8 @@ int	scan_and_write_heredoc(t_token *arrow_tok, t_token *delim_tok)
 	heredoc_file = create_heredoc_file(delim_tok->token_string);
 	if (heredoc_file == NULL)
 		return (EXIT_FAILURE);
-	if (read_heredoc_to_file(delim_tok->token_string, heredoc_file)
-		!= EXIT_SUCCESS)
+	if (read_heredoc_to_file(delim_tok->token_string,
+			heredoc_file) != EXIT_SUCCESS)
 	{
 		arrow_tok->type = TOK_ERROR;
 		free(heredoc_file);
@@ -64,10 +64,10 @@ int	check_heredoc_delimiter(t_list *toks)
 	cur_tok = toks->content;
 	if (toks->next != NULL)
 		next_tok = toks->next->content;
-	if (toks->next == NULL || (next_tok->type != TOK_WORD && \
-			next_tok->type != TOK_WORD_IN_QUOTES && \
-			next_tok->type != TOK_WORD_IN_DQUOTES && \
-			next_tok->type != TOK_VAR))
+	if (toks->next == NULL || (next_tok->type != TOK_WORD
+			&& next_tok->type != TOK_WORD_IN_QUOTES
+			&& next_tok->type != TOK_WORD_IN_DQUOTES
+			&& next_tok->type != TOK_VAR))
 	{
 		if (toks->next == NULL)
 			ft_printf(HEREDOC_ERR_NL);

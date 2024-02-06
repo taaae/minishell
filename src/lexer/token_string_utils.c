@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "lexer.h"
+#include "libft.h"
 
 static int	parse_two_sym_word(char *line)
 {
@@ -38,8 +38,8 @@ static int	parse_word(char *line)
 	int	i;
 
 	i = 1;
-	while (line[i] != '\0' && !ft_isspace(line[i]) \
-		&& !ft_in(line[i], WORD_CHARS))
+	while (line[i] != '\0' && !ft_isspace(line[i]) && !ft_in(line[i],
+			WORD_CHARS))
 		i++;
 	return (i);
 }
@@ -51,8 +51,7 @@ static int	parse_var(char *line)
 	i = 1;
 	if (line[i] == '?')
 		return (2);
-	while (line[i] != '\0' && (ft_isalnum(line[i]) \
-		|| line[i] == '_'))
+	while (line[i] != '\0' && (ft_isalnum(line[i]) || line[i] == '_'))
 		i++;
 	return (i);
 }

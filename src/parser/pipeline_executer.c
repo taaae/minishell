@@ -10,18 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "environment.h"
+#include "exec_find.h"
+#include "expansions.h"
 #include "libft.h"
 #include "parser.h"
-#include "environment.h"
-#include "expansions.h"
 #include <fcntl.h>
-#include "exec_find.h"
+#include <stdlib.h>
 
-static int  pipe_num(const t_pipeline_token *pipeline)
+static int	pipe_num(const t_pipeline_token *pipeline)
 {
-	int res = 0;
+	int	res;
 
+	res = 0;
 	while (pipeline->type != PIPELINE_EOF)
 	{
 		res += (pipeline->type == PIPE);
@@ -34,6 +35,7 @@ char	**expand_arg(char *arg)
 {
 	char	*expanded_str;
 	char	**res;
+
 	if (arg[0] == '\'')
 	{
 		res = ft_calloc(2, sizeof(char *));
@@ -69,14 +71,14 @@ char	**add_arg(char **argv, char *arg)
 	new = argv;
 	while (*new != NULL)
 	{
-		new++;
+		new ++;
 		n++;
 	}
 	m = 0;
 	new = expanded;
 	while (*new != NULL)
 	{
-		new++;
+		new ++;
 		m++;
 	}
 	new = ft_calloc(n + m + 1, sizeof(char *));
@@ -138,7 +140,7 @@ int	handle_redirection(const t_pipeline_token *pipeline)
 	return (0);
 }
 
-int exec_command(t_pipeline_token *pipeline)
+int	exec_command(t_pipeline_token *pipeline)
 {
 	int		code;
 	char	**argv;
@@ -157,10 +159,10 @@ int exec_command(t_pipeline_token *pipeline)
 			argv = add_arg(argv, pipeline->content);
 		pipeline++;
 	}
-    return (launch_executable(argv));
+	return (launch_executable(argv));
 }
 
-int         exec_pipeline(char *command)
+int	exec_pipeline(char *command)
 {
 	t_pipeline_token	*pipeline;
 	t_pipeline_token	*pipeline_to_free;
@@ -174,9 +176,10 @@ int         exec_pipeline(char *command)
 	pipeline = tokenize_pipeline(command);
 	pipeline_to_free = pipeline;
 	n = pipe_num(pipeline) + 1;
-    if (n == 1) {
-        return exec_command(pipeline);
-    }
+	if (n == 1)
+	{
+		return (exec_command(pipeline));
+	}
 	n2 = n;
 	prev_in = STDIN_FILENO;
 	while (n--)
@@ -184,11 +187,13 @@ int         exec_pipeline(char *command)
 		if (n != 0)
 			pipe(p);
 		pid = fork();
-		if (pid == 0) {
+		if (pid == 0)
+		{
 			dup2(prev_in, STDIN_FILENO);
 			if (prev_in != STDIN_FILENO)
 				close(prev_in);
-			if (n != 0) {
+			if (n != 0)
+			{
 				dup2(p[1], STDOUT_FILENO);
 				close(p[1]);
 			}

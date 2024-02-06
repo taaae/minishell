@@ -10,15 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parser.h"
 #include "libft.h"
+#include "parser.h"
 
-void    free_pipeline(t_pipeline_token *pipeline)
+void	free_pipeline(t_pipeline_token *pipeline)
 {
-	t_pipeline_token *ptr;
+	t_pipeline_token	*ptr;
 
 	ptr = pipeline;
-	while (ptr->type != PIPELINE_EOF) {
+	while (ptr->type != PIPELINE_EOF)
+	{
 		if (ptr->type != PIPE)
 			free(ptr->content);
 		ptr++;
@@ -26,15 +27,15 @@ void    free_pipeline(t_pipeline_token *pipeline)
 	free(pipeline);
 }
 
-static void pipeline_append(t_pipeline_token **arr, t_pipeline_token new)
+static void	pipeline_append(t_pipeline_token **arr, t_pipeline_token new)
 {
-	size_t i;
-	t_pipeline_token *res;
+	size_t				i;
+	t_pipeline_token	*res;
 
 	i = 0;
 	while ((*arr)[i].type != PIPELINE_EOF)
 		i++;
-	res = (t_pipeline_token  *)malloc((i + 2) * sizeof(t_pipeline_token));
+	res = (t_pipeline_token *)malloc((i + 2) * sizeof(t_pipeline_token));
 	i = 0;
 	while ((*arr)[i].type != PIPELINE_EOF)
 	{
@@ -48,10 +49,10 @@ static void pipeline_append(t_pipeline_token **arr, t_pipeline_token new)
 	*arr = res;
 }
 
-static char *string_append(char *str, char c)
+static char	*string_append(char *str, char c)
 {
-	char *to_append;
-	char *res;
+	char	*to_append;
+	char	*res;
 
 	to_append = malloc(2);
 	to_append[0] = c;
@@ -62,12 +63,12 @@ static char *string_append(char *str, char c)
 	return (res);
 }
 
-t_pipeline_token next_token(char **str)
+t_pipeline_token	next_token(char **str)
 {
-	char *p;
-	t_pipeline_token token;
-	char *content;
-	char quote_type;
+	char				*p;
+	t_pipeline_token	token;
+	char				*content;
+	char				quote_type;
 
 	p = *str;
 	if (*p == '|')
@@ -101,7 +102,8 @@ t_pipeline_token next_token(char **str)
 	token.type = ARG;
 	quote_type = '\0';
 	content = ft_calloc(1, 1);
-	while (quote_type != '\0' || (*p != '\0' && !ft_isspace(*p) && *p != '|' && *p != '>' && *p != '<'))
+	while (quote_type != '\0' || (*p != '\0' && !ft_isspace(*p) && *p != '|'
+			&& *p != '>' && *p != '<'))
 	{
 		content = string_append(content, *p);
 		if (*p == quote_type)
@@ -117,10 +119,10 @@ t_pipeline_token next_token(char **str)
 	return (token);
 }
 
-t_pipeline_token    *tokenize_pipeline(char *pipeline)
+t_pipeline_token	*tokenize_pipeline(char *pipeline)
 {
-	t_pipeline_token *res;
-	t_pipeline_token next;
+	t_pipeline_token	*res;
+	t_pipeline_token	next;
 
 	res = malloc(sizeof(t_pipeline_token));
 	res[0].type = PIPELINE_EOF;
@@ -130,7 +132,7 @@ t_pipeline_token    *tokenize_pipeline(char *pipeline)
 		while (ft_isspace(*pipeline))
 			pipeline++;
 		if (*pipeline == '\0')
-			break;
+			break ;
 		next = next_token(&pipeline);
 		pipeline_append(&res, next);
 	}
