@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:03:15 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/06 14:49:49 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 16:14:29 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,7 +183,7 @@ char	*merge_args(char **strings) {
 	return merged;
 }
 
-void exec_command(t_pipeline_token *pipeline)
+void launch_executable(t_pipeline_token *pipeline)
 {
 	int		code;
 	char	**argv;

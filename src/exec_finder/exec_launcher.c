@@ -3,7 +3,7 @@
 #include "exec_find.h"
 #include "builtins.h"
 
-static int argv_size(char **argv)
+static int	argv_size(char **argv)
 {
 	int res;
 
@@ -16,7 +16,7 @@ static int argv_size(char **argv)
 	return (res);
 }
 
-static void launch_builtin(char **argv)
+static void	launch_builtin(char **argv)
 {
 	int argc;
 
@@ -42,7 +42,7 @@ static void launch_builtin(char **argv)
  * @param argv - dinamically allocated, argv[0] is executable name
  * @return checks errno if execve fails, 0 if size of argv is 0, otherwise return code of execve
 */
-void     launch_executable(char **argv)
+void	launch_executable(char **argv)
 {
 	char *exec_path;
 	if (argv[0] == NULL)
