@@ -6,7 +6,7 @@
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 18:20:49 by trusanov          #+#    #+#             */
-/*   Updated: 2024/02/06 18:40:47 by trusanov         ###   ########.fr       */
+/*   Updated: 2024/02/06 18:51:21 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ t_pipeline_token	next_token(char **str)
 {
 	char				*p;
 	t_pipeline_token	token;
-	char				*content;
 	char				quote_type;
 
 	p = *str;
@@ -68,11 +67,11 @@ t_pipeline_token	next_token(char **str)
 		return (handle_symbols(str, p));
 	token.type = ARG;
 	quote_type = '\0';
-	content = ft_calloc(1, 1);
+	token.content = ft_calloc(1, 1);
 	while (quote_type != '\0' || (*p != '\0' && !ft_isspace(*p) && *p != '|'
 			&& *p != '>' && *p != '<'))
 	{
-		content = string_append(content, *p);
+		token.content = string_append(token.content, *p);
 		if (*p == quote_type)
 			quote_type = '\0';
 		else if (*p == '"' && quote_type == '\0')
@@ -81,7 +80,6 @@ t_pipeline_token	next_token(char **str)
 			quote_type = '\'';
 		p++;
 	}
-	token.content = content;
 	*str = p;
 	return (token);
 }
