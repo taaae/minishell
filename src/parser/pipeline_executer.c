@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipeline_executer.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:03:15 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/06 14:49:49 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 17:52:44 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,22 +30,10 @@ static int  pipe_num(const t_pipeline_token *pipeline)
 	return (res);
 }
 
-//char    **expand_arg(char *arg)
-//{
-//    char **expanded;
-//
-//    expanded = ft_calloc(2, sizeof(char *));
-//    expanded[0] = arg;
-//    return (expanded);
-//}
-
 char	**expand_arg(char *arg)
 {
 	char	*expanded_str;
 	char	**res;
-	// [0] == " -> expand vars, return substr(1, len - 2)
-	// [0] == ' -> return substr(1, len - 2)
-	// else -> expand vars, expand wildcards, return split
 	if (arg[0] == '\'')
 	{
 		res = ft_calloc(2, sizeof(char *));
@@ -150,39 +138,6 @@ int	handle_redirection(const t_pipeline_token *pipeline)
 	return (0);
 }
 
-// temp func
-char	*merge_args(char **strings) {
-	// Calculate total length needed
-	int total_length = 0;
-	for (int i = 0; strings[i] != NULL; i++) {
-		total_length += strlen(strings[i]) + 1; // +1 for space or NULL terminator
-	}
-
-	if (total_length == 0) {
-		return NULL; // No strings to merge
-	}
-
-	// Allocate memory for the merged string
-	char *merged = malloc(total_length * sizeof(char));
-	if (merged == NULL) {
-		perror("malloc failed");
-		exit(EXIT_FAILURE);
-	}
-
-	// Initialize the first character to the end of string to support strcat operation
-	merged[0] = '\0';
-
-	// Concatenate strings
-	for (int i = 0; strings[i] != NULL; i++) {
-		strcat(merged, strings[i]);
-		if (strings[i + 1] != NULL) { // Check if not the last string
-			strcat(merged, " "); // Add a space between words
-		}
-	}
-
-	return merged;
-}
-
 int exec_command(t_pipeline_token *pipeline)
 {
 	int		code;
@@ -193,25 +148,16 @@ int exec_command(t_pipeline_token *pipeline)
 	{
 		if (pipeline->type == REDIRECTION)
 		{
-			code = handle_redirection(pipeline); // expand everything here and output error if fail code probably 1 or 0
+			code = handle_redirection(pipeline);
 			if (code == 1)
-			{
-//                free_argv(argv);
 				exit(code);
-			}
 			pipeline++;
 		}
 		else
 			argv = add_arg(argv, pipeline->content);
 		pipeline++;
 	}
-//    exit (system(merge_args(argv))); // fake
     return (launch_executable(argv));
-//	write(2, merge_args(argv), strlen(merge_args(argv)));
-//	exit(0);
-//    execve(argv[0], argv + 1, get_environ()); // idk if argv + 1 is good, might need to reallocate to size 1 less. also need to execute the actual executable, not its name (search PATH and builtins)
-	// might need to free more stuff
-//    exit(127); // error not always "command not found", check errno for possible errors
 }
 
 int         exec_pipeline(char *command)
@@ -239,8 +185,6 @@ int         exec_pipeline(char *command)
 			pipe(p);
 		pid = fork();
 		if (pid == 0) {
-			//call signal handler here
-			//init_sig_child();
 			dup2(prev_in, STDIN_FILENO);
 			if (prev_in != STDIN_FILENO)
 				close(prev_in);
