@@ -2,7 +2,7 @@ NAME := minishell
 CC := cc
 SRCDIR := src
 INCDIR := include
-CFLAGS := -Wall -Wextra -Werror -g
+CFLAGS := -Wall -Wextra -Werror
 # CFLAGS := -Wall -Wextra -Werror -g -ggdb -fsanitize=address
 SOURCE_FILES := \
 			builtins/builtin_cd.c \
@@ -28,12 +28,14 @@ SOURCE_FILES := \
 			logic_tokenizer/logic_tokenizer_utils.c \
 			logic_tokenizer/logic_tokenizer_utils2.c \
 			parser/arg_tokenizer.c \
+			parser/command_executer.c \
 			parser/expander.c \
 			parser/logic_error_parser.c \
 			parser/logic_executer.c \
 			parser/pipeline_error_parser.c \
 			parser/pipeline_executer.c \
 			parser/pipeline_lexer.c \
+			parser/pipeline_lexer_next_token.c \
 			reader/heredoc_utils.c \
 			reader/heredoc_utils2.c \
 			reader/read_heredoc.c \
