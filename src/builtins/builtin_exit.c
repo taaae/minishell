@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtin_exit.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:33:30 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/06 17:53:24 by trusanov         ###   ########.fr       */
+/*   Updated: 2024/02/06 21:28:45 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,9 @@ int	get_exit_code(char *s)
 		s++;
 	while (ft_isdigit(*s))
 	{
-		tmp += *s - '0';
 		tmp *= 10;
+		tmp += *s - '0';
+		s++;
 	}
 	if (*s != '\0')
 		return (-1);
@@ -59,7 +60,7 @@ int	builtin_exit(int argc, char **argv)
 	exit_code = get_exit_code(argv[1]);
 	if (exit_code == -1)
 	{
-		perror(argv[1]);
+		ft_printf("bash: exit: %s: numeric argument required\n", argv[1]);
 		exit_code = 255;
 	}
 	ft_putstr_fd("exit\n", STDERR_FILENO);
