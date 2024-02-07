@@ -19,7 +19,7 @@
 #include <fcntl.h>
 #include <stdlib.h>
 
-int	print_signal_idenfifier(int code)
+int	print_signal_idenfifier(int code, int is_in_pipe)
 {
 	if (WIFSIGNALED(code))
 	{
@@ -31,13 +31,14 @@ int	print_signal_idenfifier(int code)
 	}
 	else
 	{
+        if (!is_in_pipe)
+            return (code);
 		if (WEXITSTATUS(code) == 131)
 			write(2, "Quit: 3\n", 8);
 		else if (WEXITSTATUS(code) == 130)
 			write(2, "\n", 1);
 		return (WEXITSTATUS(code));
 	}
-	return (WEXITSTATUS(code));
 }
 
 static int	pipe_num(const t_pipeline_token *pipeline)
@@ -102,14 +103,15 @@ int	exec_pipeline(char *command)
 	pipeline = tokenize_pipeline(command);
 	n = pipe_num(pipeline) + 1;
 	if (n == 1)
-		code = exec_command(pipeline);
+		code = print_signal_idenfifier(exec_command(pipeline), 0);
 	else
 	{
 		prev_in = STDIN_FILENO;
 		waitpid(actually_exec_pipeline(n, pipeline, prev_in), &code, 0);
+        code = print_signal_idenfifier(code, 1);
 		while (n--)
 			wait(NULL);
 		free_pipeline(pipeline);
 	}
-	return (print_signal_idenfifier(code));
+    return (code);
 }
