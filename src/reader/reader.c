@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 15:15:07 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/06 14:53:30 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/06 22:05:28 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ char	*get_line(void)
 		line = readline(SHELL_PROMPT);
 		if (line == NULL)
 			return (NULL);
+		line = ft_strtrim(line, " \t\v\f\r");
 		if (line[0] == '\0')
 		{
 			free(line);
