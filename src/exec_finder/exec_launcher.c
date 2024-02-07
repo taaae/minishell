@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:50:21 by trusanov          #+#    #+#             */
-/*   Updated: 2024/02/07 15:50:13 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/07 17:10:16 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ int	launch_executable(char **argv)
 		exit(126);
 	}
 	waitpid(pid, &code, 0);
-	ft_printf("%d->%d\n", pid, WEXITSTATUS(code));
+	if (WIFSIGNALED(code))
+		return (128 + WTERMSIG(code));
 	return (WEXITSTATUS(code));
 }
