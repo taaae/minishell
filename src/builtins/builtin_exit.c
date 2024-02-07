@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:33:30 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/06 21:28:45 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/07 18:12:23 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	builtin_exit(int argc, char **argv)
 	exit_code = get_exit_code(argv[1]);
 	if (exit_code == -1)
 	{
-		ft_printf("bash: exit: %s: numeric argument required\n", argv[1]);
+		ft_printf("minishell: exit: %s: numeric argument required\n", argv[1]);
 		exit_code = 255;
 	}
 	ft_putstr_fd("exit\n", STDERR_FILENO);

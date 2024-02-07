@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:03:15 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/07 17:20:43 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/07 18:09:36 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	print_signal_idenfifier(int code)
 	}
 	else
 	{
-		if (WEXITSTATUS(code) == 131 && get_sig() == 131)
+		if (WEXITSTATUS(code) == 131)
 			write(2, "Quit: 3\n", 8);
 		else if (WEXITSTATUS(code) == 130)
 			write(2, "\n", 1);

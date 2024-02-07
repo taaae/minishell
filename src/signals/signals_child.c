@@ -6,13 +6,14 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 21:46:48 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/07 16:32:25 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/07 18:04:03 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <signal.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include "signals.h"
 
 void	handle_sigint_child(int sig)
 {
