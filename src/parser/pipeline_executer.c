@@ -31,8 +31,8 @@ int	print_signal_idenfifier(int code, int is_in_pipe)
 	}
 	else
 	{
-        if (!is_in_pipe)
-            return (code);
+		if (!is_in_pipe)
+			return (code);
 		if (WEXITSTATUS(code) == 131)
 			write(2, "Quit: 3\n", 8);
 		else if (WEXITSTATUS(code) == 130)
@@ -108,10 +108,10 @@ int	exec_pipeline(char *command)
 	{
 		prev_in = STDIN_FILENO;
 		waitpid(actually_exec_pipeline(n, pipeline, prev_in), &code, 0);
-        code = print_signal_idenfifier(code, 1);
+		code = print_signal_idenfifier(code, 1);
 		while (n--)
 			wait(NULL);
 		free_pipeline(pipeline);
 	}
-    return (code);
+	return (code);
 }

@@ -56,11 +56,11 @@ static char	**add_arg(char **argv, char *arg)
 	expanded = expand_arg(arg);
 	n = 0;
 	new = argv;
-	while (*(new++) != NULL)
+	while (*(new ++) != NULL)
 		n++;
 	m = 0;
 	new = expanded;
-	while (*(new++) != NULL)
+	while (*(new ++) != NULL)
 		m++;
 	new = ft_calloc(n + m + 1, sizeof(char *));
 	n = 0;
@@ -149,7 +149,7 @@ int	exec_command(t_pipeline_token *pipeline)
 			argv = add_arg(argv, pipeline->content);
 		pipeline++;
 	}
-	if (argv != NULL && argv[0] !=  NULL)
+	if (argv != NULL && argv[0] != NULL)
 		code = launch_executable(argv);
 	dup2(orig_stdin, STDIN_FILENO);
 	dup2(orig_stdout, STDOUT_FILENO);

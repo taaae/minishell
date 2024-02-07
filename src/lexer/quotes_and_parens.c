@@ -16,7 +16,6 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-
 int	quotes_are_correct(char *line)
 {
 	while (*line)

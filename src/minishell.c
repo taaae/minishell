@@ -15,13 +15,13 @@
 #include "environment.h"
 #include "exec_find.h"
 #include "expansions.h"
+#include "global_code.h"
 #include "lexer.h"
 #include "libft.h"
 #include "logic_tokenizer.h"
 #include "parser.h"
 #include "reader.h"
 #include "signals.h"
-#include "global_code.h"
 #include <signal.h>
 
 int	execute(char *line)

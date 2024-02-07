@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "signals.h"
 #include <signal.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "signals.h"
 
 void	handle_sigint_child(int sig)
 {
@@ -28,7 +28,6 @@ void	handle_sigquit_child(int sig)
 	write(1, "\\", 1);
 	exit(131);
 }
-
 
 void	init_child_signals(void)
 {

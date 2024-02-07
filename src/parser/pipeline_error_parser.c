@@ -6,7 +6,7 @@
 /*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:03:19 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/06 18:17:00 by trusanov         ###   ########.fr       */
+/*   Updated: 2024/02/07 19:27:41 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ static char	*unexpected_tok(t_pipeline_token *pipeline_to_free, const char *tok)
 	char	*res;
 
 	res = ft_strjoin("minishell: syntax error "
-			"near unexpected token: ", tok);
+			"near unexpected token: ",
+			tok);
 	free_pipeline(pipeline_to_free);
 	return (res);
 }

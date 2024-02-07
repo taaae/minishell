@@ -19,7 +19,7 @@ static int	*get_return_code_ptr(void)
 	return (ptr);
 }
 
-int		get_return_code(void)
+int	get_return_code(void)
 {
 	return (*get_return_code_ptr());
 }
