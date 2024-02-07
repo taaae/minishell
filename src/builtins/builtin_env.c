@@ -23,7 +23,7 @@ int	builtin_env(int argc, char **argv)
 		return (FT_ERROR);
 	if (argv[1] != NULL)
 	{
-		ft_putstr_fd("env with arguments is not supported", STDERR_FILENO);
+		ft_putstr_fd("env with arguments is not supported\n", STDERR_FILENO);
 		return (FT_ERROR);
 	}
 	environ = get_environ();
