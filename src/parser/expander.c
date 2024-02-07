@@ -66,6 +66,8 @@ static char	*eat_var(char **str_ptr)
 	char	*var_name;
 	int		var_pos;
 
+    if (*str_ptr == NULL)
+        return (ft_strdup(""));
 	if ((*str_ptr)[1] == '\0' || (*str_ptr)[1] == '$')
 	{
 		(*str_ptr)++;
