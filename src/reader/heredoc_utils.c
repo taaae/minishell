@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 18:53:26 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/06 13:34:10 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/07 19:32:59 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ char	*create_heredoc_file(char *delim)
 			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP, S_IROTH | S_IWOTH);
 	if (fd == -1)
 	{
-		ft_printf("[%s]\n", strerror(errno));
+		ft_printf("Heredoc critical error: [%s]\n", strerror(errno));
 		ft_printf("Can not create a temporary file [%s]\n", pathname);
 		free(pathname);
 		return (NULL);

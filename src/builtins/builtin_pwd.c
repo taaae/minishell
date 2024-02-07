@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 16:30:09 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/01/22 12:01:19 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/07 19:35:22 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,8 @@ int	builtin_pwd(int argc, char **argv)
 		perror("minishell pwd error");
 		return (EXIT_FAILURE);
 	}
-	if (ft_putstr_fd(current_dir, STDOUT_FILENO) != ft_strlen(current_dir))
-	{
-		perror("ft_printf error");
-		free(current_dir);
-		return (EXIT_FAILURE);
-	}
-	if (ft_putchar_fd('\n', STDOUT_FILENO) != 1)
-	{
-		perror("ft_printf error");
-		free(current_dir);
-		return (EXIT_FAILURE);
-	}
+	ft_putstr_fd(current_dir, STDOUT_FILENO) != ft_strlen(current_dir);
+	ft_putchar_fd('\n', STDOUT_FILENO);
 	free(current_dir);
 	return (EXIT_SUCCESS);
 }
