@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:03:15 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/07 17:15:00 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/07 17:20:43 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,23 @@
 
 int	print_signal_idenfifier(int code)
 {
-	// ft_printf("[%d -> sig %d and ex %d, signaled = %d]\n", code, WTERMSIG(code), WEXITSTATUS(code), WIFSIGNALED(code));
 	if (WIFSIGNALED(code))
 	{
 		if (128 + WTERMSIG(code) == 131)
 			write(2, "Quit: 3\n", 8);
-		// else if (128 + WTERMSIG(code) == 130)
-		// 	write(2, "\n", 1);
+		else if (128 + WTERMSIG(code) == 130)
+			write(2, "\n", 1);
 		return (128 + WTERMSIG(code));
 	}
 	else
 	{
-		if (WEXITSTATUS(code) == 131)
+		if (WEXITSTATUS(code) == 131 && get_sig() == 131)
 			write(2, "Quit: 3\n", 8);
-		else if (WEXITSTATUS(code) == 131)
+		else if (WEXITSTATUS(code) == 130)
 			write(2, "\n", 1);
 		return (WEXITSTATUS(code));
 	}
+	return (WEXITSTATUS(code));
 }
 
 static int	pipe_num(const t_pipeline_token *pipeline)
