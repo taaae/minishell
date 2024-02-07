@@ -2,7 +2,7 @@ NAME := minishell
 CC := cc
 SRCDIR := src
 INCDIR := include
-CFLAGS := -Wall -Wextra -Werror
+CFLAGS := -Wall -Wextra -Werror -g -ggdb
 # CFLAGS := -Wall -Wextra -Werror -g -ggdb -fsanitize=address
 SOURCE_FILES := \
 			builtins/builtin_cd.c \
@@ -21,6 +21,7 @@ SOURCE_FILES := \
 			expansions/star_expand.c \
 			expansions/star_expand_file_utils.c \
 			expansions/var_expand.c \
+			lexer/quotes_and_parens.c \
 			lexer/token_composer.c \
 			lexer/token_string_utils.c \
 			lexer/tokenizer.c \

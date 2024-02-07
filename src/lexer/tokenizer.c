@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:15:04 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/07 17:07:35 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/07 17:55:11 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,33 +16,9 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-bool	check_quotes_validity(char *line)
-{
-	bool	unclosed_quotes;
-	bool	unclosed_dquotes;
-	int		unclosed_paren;
-
-	unclosed_quotes = false;
-	unclosed_dquotes = false;
-	unclosed_paren = 0;
-	while (*line)
-	{
-		if (*line == '\'')
-			unclosed_quotes = !unclosed_quotes;
-		else if (*line == '\"')
-			unclosed_dquotes = !unclosed_dquotes;
-		else if (*line == '(')
-			++unclosed_paren;
-		else if (*line == ')')
-			--unclosed_paren;
-		line++;
-	}
-	if (unclosed_quotes || unclosed_dquotes)
-		ft_putstr_fd("Minishell: Unclosed quotes\n", STDERR_FILENO);
-	else if (unclosed_paren)
-		ft_putstr_fd("Minishell: Mismatched parentheses\n", STDERR_FILENO);
-	return (!(unclosed_quotes || unclosed_dquotes || unclosed_paren));
-}
+int		quotes_are_correct(char *line);
+int		check_paren_validity(t_list *tokens);
+bool	check_quotes_validity(char *line);
 
 void	del_token(void *token)
 {
@@ -101,8 +77,15 @@ t_list	*line_to_tokens(char *line)
 {
 	t_list	*tokens;
 
-	if (line == NULL || check_quotes_validity(line) == false)
+	if (line == NULL)
 		return (NULL);
+	if (check_quotes_validity(line) == false || line[0] == '\0')
+		return (token_to_list_entry(tok_str_to_token(str_to_tok_str(NULL))));
 	tokens = tokenize(line);
+	if (check_paren_validity(tokens) == false)
+	{
+		ft_lstclear(&tokens, del_token);
+		return (token_to_list_entry(tok_str_to_token(str_to_tok_str(NULL))));
+	}
 	return (tokens);
 }

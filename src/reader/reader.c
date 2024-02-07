@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 15:15:07 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/07 14:52:07 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/07 17:57:28 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,11 @@ char	*get_line(void)
 		}
 		add_history(line);
 		line = read_heredocs(line);
+		if (line[0] == '\0')
+		{
+			free(line);
+			continue ;
+		}
 		return (line);
 	}
 }
