@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:50:21 by trusanov          #+#    #+#             */
-/*   Updated: 2024/02/07 17:21:16 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/07 20:09:53 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@
 
 #define NOT_BUILTIN -42
 
-int	make_return_code(int code)
-{
-	if (WIFSIGNALED(code))
-	{
-		set_sig(128 + WTERMSIG(code));
-		return (128 + WTERMSIG(code));
-	}
-	return (WEXITSTATUS(code));
-}
+// int	make_return_code(int code)
+// {
+// 	if (WIFSIGNALED(code))
+// 	{
+// 		set_sig(128 + WTERMSIG(code));
+// 		return (128 + WTERMSIG(code));
+// 	}
+// 	return (WEXITSTATUS(code));
+// }
 
 static int	argv_size(char **argv)
 {
@@ -106,5 +106,5 @@ int	launch_executable(char **argv)
 		exit(126);
 	}
 	waitpid(pid, &code, 0);
-	return (make_return_code(code));
+	return (code);
 }
