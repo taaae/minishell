@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_executer.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 19:13:24 by trusanov          #+#    #+#             */
-/*   Updated: 2024/02/06 19:46:50 by trusanov         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:01:59 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,16 +141,16 @@ int	exec_command(t_pipeline_token *pipeline)
 	{
 		if (pipeline->type == REDIRECTION)
 		{
-			code = handle_redirection(pipeline);
+			code = handle_redirection(pipeline++);
 			if (code != 0)
 				exit(code);
-			pipeline++;
 		}
 		else
 			argv = add_arg(argv, pipeline->content);
 		pipeline++;
 	}
-	code = launch_executable(argv);
+	if (argv != NULL && argv[0] !=  NULL)
+		code = launch_executable(argv);
 	dup2(orig_stdin, STDIN_FILENO);
 	dup2(orig_stdout, STDOUT_FILENO);
 	return (code);
