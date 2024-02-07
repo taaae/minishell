@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 14:10:06 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/06 21:20:18 by trusanov         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:44:11 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 #include "reader.h"
 #include "signals.h"
 #include "global_code.h"
+#include <signal.h>
 
 int	execute(char *line)
 {

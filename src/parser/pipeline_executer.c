@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipeline_executer.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:03:15 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/06 20:34:33 by trusanov         ###   ########.fr       */
+/*   Updated: 2024/02/07 16:00:32 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "expansions.h"
 #include "libft.h"
 #include "parser.h"
+#include "signals.h"
 #include <fcntl.h>
 #include <stdlib.h>
 
@@ -56,7 +57,9 @@ int	actually_exec_pipeline(int n, t_pipeline_token *pipeline, int prev_in)
 			pipe(p);
 		pid = fork();
 		if (pid == 0)
+		{
 			exec_in_fork(prev_in, p, pipeline, n);
+		}
 		if (prev_in != STDIN_FILENO)
 			close(prev_in);
 		close(p[1]);
@@ -84,5 +87,13 @@ int	exec_pipeline(char *command)
 	while (n--)
 		wait(NULL);
 	free_pipeline(pipeline);
-	return (WEXITSTATUS(code));
+	if (WIFEXITED(code))
+		return (WEXITSTATUS(code));
+	if (WIFSIGNALED(code))
+	{
+		if (128 + WTERMSIG(code) == 131)
+			write(2, "Quit: 3\n", 8);
+		return (128 + WTERMSIG(code));
+	}
+	return (EXIT_FAILURE);
 }

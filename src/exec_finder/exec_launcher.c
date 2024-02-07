@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_launcher.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:50:21 by trusanov          #+#    #+#             */
-/*   Updated: 2024/02/06 20:54:59 by trusanov         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:50:13 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "environment.h"
 #include "exec_find.h"
 #include "libft.h"
+#include "signals.h"
 
 #define NOT_BUILTIN -42
 
@@ -86,7 +87,7 @@ int	launch_executable(char **argv)
 	pid = fork();
 	if (pid == 0)
 	{
-		signal(SIGINT, SIG_DFL);
+		init_child_signals();
 		exec_path = expand_exec_name(argv[0]);
 		if (exec_path == NULL)
 			command_not_found_err(argv);
@@ -95,5 +96,6 @@ int	launch_executable(char **argv)
 		exit(126);
 	}
 	waitpid(pid, &code, 0);
+	ft_printf("%d->%d\n", pid, WEXITSTATUS(code));
 	return (WEXITSTATUS(code));
 }
