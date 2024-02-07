@@ -1,0 +1,287 @@
+1.	Varibles in parentheses don't work:
+	Set the USER environment variable.
+	echo "'$USER'" should print the value of the USER variable.
+	echo '"$USER"' should print "$USER".
+	Minishell:$ echo "word1_$TERM "
+	zsh: segmentation fault  ./minishell
+2.	exit inside a pipe should not print "exit" - i don't know how to fix it
+3.	export or='||' && export and='&&' && echo 42 $and echo 43 $or echo 43
+	export: `||': not a valid identifier
+	instead of
+	42 && echo 43 || echo 43z`
+4.	echo 1 | (echo 2 || echo 3 && echo 4) || echo 5 | echo 6
+	minishell: syntax error near unexpected token `|'
+	instead of
+	2
+	4
+5.	<<A \n a \n A -> minishell exits (???)
+6.	< file_that_exists (or heredocs, or a combination of multiple amount of them)
+	exits the shell
+	instead of
+	doing nothing
+7.	
+	ctrl^\ does not return 131 as the return code
+	The same for the ctrl^C and 130
+	As a result: ctrl \ while running cat = no reaction instead of printing "Quit: 3"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+write a valgrind suppressions file to remove readlilne leaks from the reports
+
+
+
+
+
+
+
+
+
+
+Here are the situations where we DON'T create a fork:
+	1. When we have a pipeline that doesn't have any pipes and calls a builtin, we don't need to make a fork
+
+
+
+2. Varible expander: where is it and who wrote it
+3. Memory: for read_heredoc, for logic_tokenizer, and for other things
+4. Check eval page and copy TODOs from there
+
+
+
+
+
+
+
+
+SIGNALS:
+1. Run init_parent_signals in the main() as an initialization of the minishell
+2. Run init_child_signals INSIDE THE FORK before calling execve()
+
+
+
+
+
+
+
+1. parent i.e shell
+	1) init_parent_signals (in shell interactive mode)
+		parent_signal_handler - handle sigint
+			C^C: draw new prompt, change $? to 1
+			C^D: If anything is written in readline(), do nothing. Otherwise quit the shell with the 0 or 127 (abolutely idea why u get one of them both randomly) as the return code
+			C^\: Do Nothing
+	2) init_heredoc_signale (while reading a heredoc)
+		heredoc_signal_handler
+			C^C: draw new prompt, save a command with heredoc in history, return 1 as $?
+			C&D: If anything is written in readline(), do nothing. Otherwise just write the bash prompt without a newine, save a command with heredoc in history, set $? as 0
+			C^\: Do nothing
+	3) init_child_signalls (Whille running a command)
+		child_signal_handler
+			C^C: Write "^C\n" and redisplay the prompt
+			C^D: As I understand it, not our responsibility.
+			C^\: Write "^\Quit: 3" and return 131 as the $?
+
+
+1. expand exec name
+	[x]	1)path
+	[x]	2)Relative path
+	[x]	3)Absolute path
+	[x]	4)home
+	[x]	5)No args
+	[x]	6)Write 20 more Tests
+	[x]	7)Format code like a normal person
+2. Read heredocs
+	[x]	1. expand_var_heredoc_delim
+	[x]	2. what chars should be excluded from heredoc reading
+	[x]	0. alloc_toklist_to_str_mem
+	[x]	1. Delete() function for tokens in list!
+
+
+
+3.
+	1. Test heredoc more
+	2. Create unique files, of do I not need it?
+
+
+
+
+
+
+
+
+
+
+
+
+// TODO:
+// 2. what chars should be excluded from heredoc reading
+
+
+// 0. Функция-checker, которая идёт по списку и проверяет,
+// 	что после каждого хердока есь слово которе можно юзать ка кделимитер
+// 	Если нет, то в функции уровнем выше мы выводим ошибку:
+// 	bash: syntax error near unexpected
+//gi	token `TOKEN_TYPE (if null, then "newline")'  '
+// 1. функция(Засунуть её прямо в ридер), которая идет и если видит хердок то
+// 	смотрит на следующую штуку, раскавычивает, если надо
+// 	Читает хередок во временный файл
+// 	Записывает в текущий токен чтение с файла 
+// 	Записывает в некст токен название хередок созданного файла
+// 2. Функция, которая склеивает токены через пробел strjoin-ом
+// Check how would my program tokenize  "cat <<    $%&&ls"
+
+char	*join_tokens(t_list *toks)
+
+
+
+0. Функция, которая идёт по списку и проверяет, что после каждого хердока есь слово которе можно юзать ка кделимитер
+	Если нет, то в функции уровнем выше мы выводим ошибку  bash: syntax error near unexpected token `TOKEN_TYPE (if null, then "newline")'  '
+1. функция(Засунуть её прямо в ридер), которая идет и если видит хердок то
+	смотрит на следующую штуку, раскавычивает, если надо
+	Читает хередок во временный файл
+	Записывает в текущий токен чтение с файла
+	Записывает в некст токен название хередок созданного файла
+2. Функция, которая склеивает токены через пробел strjoin-ом
+
+
+
+
+	//1. Create file for storage function
+	//2. Call a function for reading a heredoc
+		//1. readline() with '>' prompt (don''t update history)
+		//2. strcmp(what I read, delim_tok)
+		//3. 	If not equal, write a line to the file
+		//4. 		Go to step 2
+		//5. 	if equal, wrap up the FD and return full path filename
+	//3. If return NULL, error. If return a string, then continue
+	//4. arrow_tok -> change type to INFILE, tok_str and tok len to match "<"
+	//5. delim_tok -> change type to word, tok_str/tok_len to match full paqth to temp file
+	//6. return 1;
+
+
+
+
+
+I can expand variables right at the beginning, cause 
+
+
+defonly is stored as "VARNAME" without '=' symbol.
+defonly is returned as NULL when you try to access it
+The only way to determine the existence of defvar is to write "export" w/o args
+
+If we call export on an existing var, change its value
+But if we don't' assign anything (i.e. trying to create DEFONLY var), but the var already exists, it doesn't' change it from content to NULL
+
+
+Tests for:
+	print_export
+	dfdf
+
+
+1. envp should create a null-terminated array, stored in a static char** pointer
+2. get_environ returns null-terminated array that is stored in our memory. Question: Is is a link to the hidden memory, or a copy of it?
+3. ft_getenv() - take variable name, return the value
+	Value if the var exists and has a value 
+	Empty string if the empty string is stored in a variable
+	Ignore symbols in name that are =sym or everything after it
+	NULL if the variable is not found
+	How should we store DEFONLY variables?
+				Maybe return an empty string (but what's' the difference?)
+4. ft_setenv Should be able to take NULL or an empty string as its second argument, but the first should definitely be a non-empty string.
+	Don't' forget: if we try to revert VAR backto DEFVAR, our probgram should not allow us to do it.
+
+Storing:
+1. VAR=VAL
+
+2. VAR= 
+			("")
+3. VAR
+			(NULL var)
+
+
+/**
+ * @brief The ft_getenv() function obtains the current value of the environment
+ * variable, name.
+ * @return value of the variable. Dinamically allocated
+ * and should be freed manually. NULL if not found.
+ * @warning ft_initenv should be called before using this function
+*/
+char	*ft_getenv(const char *name);
+
+/**
+ * @brief The ft_setenv() function inserts or resets the environment variable
+ * name in the current environment list. If the variable name does not exist
+ * in the list, it is inserted with the given value.
+ * If the variable does exist, it is reset to the given value.
+ * @return  0 if successful; -1 if name is invalid
+ * @warning ft_initenv should be called before using this function
+ */
+int		ft_setenv(const char *name, const char *val);
+
+/**
+ * @brief The unsetenv() function deletes an instance of the variable name
+ * pointed to by name from the list.
+ * @note Only the variable name should be given; "NAME=value" will not work.
+ * @return 0 if successful; -1 if name is invalid
+ * @warning ft_initenv should be called before using this function
+ */
+int		ft_unsetenv(const char *name);
+
+/**
+ * @brief Clean up the memory of env variables.
+ * @note Should be called right before the probgram is going to be terminated
+ */
+void	ft_terminate_env(void);
+
+
+
+
+
+
+1. Add DEFVARs to env stuff 
+
+
+[x]	Modify Environment so that it can clear up the memory
+2. Check builtins of all of the other shells and decide if I need to change or enhance their behvr.
+	[x]	PWD
+	[x]	ECHO
+	[x]	CD
+	[x]	ENV:
+		[x]	Diff between NULL and ""!!
+		[x]	When we write "env", it should print "" vars, but not NULL vars.
+	[x]	EXPORT:
+	[x]	UNSET:
+	[x]	EXIT:
+	Запилить функцию ран_билтин, которая по принципу словаря выбирает и запускает билтин как форк
+		Массив строк = названия
+		Массив указателей на функцию = функции сами
+	Запилить функцию, кооторая запускает билтины БЕЗ форка, когда у нас нету пайпов.
+	If so, write a list of changes and implement them
+
+
+3. Decide how variable expanders would look like and write them if they don't exist already'
+4. Write executable name expander (
+	Takes a word which can be file name or path+name.
+	If its name then searches in PATH. either returns full path to 1st occurrence or NULL if not found
+	If its a home path, expands home using ENV and the result is treated like an absolute path
+	If its an absolute path, just return as is
+	If its a relative path that starts with ./, replace ./ with $PWD,
+			using builtin PWD, then appends and treat it as an absolute path
+	If its a relative starting with ../, then just do the same: append $PWD in the beginnig
+		That works because	/home/user1/docsdir/../file_in_home.txt 
+		is equivalent to	/home/user1/file_in_home.txt
+		and to				/home/user1/./file_in_home.txt
+	)
+1. Check what signals to in other shells and finish my signal handler
