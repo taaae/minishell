@@ -6,7 +6,7 @@
 /*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 14:03:15 by lporoshi          #+#    #+#             */
-/*   Updated: 2024/02/07 16:00:32 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/07 17:20:43 by lporoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,27 @@
 #include "signals.h"
 #include <fcntl.h>
 #include <stdlib.h>
+
+int	print_signal_idenfifier(int code)
+{
+	if (WIFSIGNALED(code))
+	{
+		if (128 + WTERMSIG(code) == 131)
+			write(2, "Quit: 3\n", 8);
+		else if (128 + WTERMSIG(code) == 130)
+			write(2, "\n", 1);
+		return (128 + WTERMSIG(code));
+	}
+	else
+	{
+		if (WEXITSTATUS(code) == 131 && get_sig() == 131)
+			write(2, "Quit: 3\n", 8);
+		else if (WEXITSTATUS(code) == 130)
+			write(2, "\n", 1);
+		return (WEXITSTATUS(code));
+	}
+	return (WEXITSTATUS(code));
+}
 
 static int	pipe_num(const t_pipeline_token *pipeline)
 {
@@ -81,19 +102,14 @@ int	exec_pipeline(char *command)
 	pipeline = tokenize_pipeline(command);
 	n = pipe_num(pipeline) + 1;
 	if (n == 1)
-		return (exec_command(pipeline));
-	prev_in = STDIN_FILENO;
-	waitpid(actually_exec_pipeline(n, pipeline, prev_in), &code, 0);
-	while (n--)
-		wait(NULL);
-	free_pipeline(pipeline);
-	if (WIFEXITED(code))
-		return (WEXITSTATUS(code));
-	if (WIFSIGNALED(code))
+		code = exec_command(pipeline);
+	else
 	{
-		if (128 + WTERMSIG(code) == 131)
-			write(2, "Quit: 3\n", 8);
-		return (128 + WTERMSIG(code));
+		prev_in = STDIN_FILENO;
+		waitpid(actually_exec_pipeline(n, pipeline, prev_in), &code, 0);
+		while (n--)
+			wait(NULL);
+		free_pipeline(pipeline);
 	}
-	return (EXIT_FAILURE);
+	return (print_signal_idenfifier(code));
 }
