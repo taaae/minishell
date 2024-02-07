@@ -35,14 +35,16 @@ static char	*eat_start(char **str_ptr)
 
 static int	closest_delim(char *str)
 {
-	if (ft_strchr(str, '$') == NULL)
-		return (ft_strchr(str, ' ') - str);
-	if (ft_strchr(str, ' ') == NULL)
-		return (ft_strchr(str, '$') - str);
-	if (ft_strchr(str, '$') - str < ft_strchr(str, ' ') - str)
-		return (ft_strchr(str, '$') - str);
-	else
-		return (ft_strchr(str, ' ') - str);
+    int res;
+
+    res = INT_MAX;
+    if (ft_strchr(str, ' ') != NULL && res > ft_strchr(str, ' ') - str)
+        res = (int) (ft_strchr(str, ' ') - str);
+    if (ft_strchr(str, '$') != NULL && res > ft_strchr(str, '$') - str)
+        res = (int) (ft_strchr(str, '$') - str);
+    if (ft_strchr(str, '\'') != NULL && res > ft_strchr(str, '\'') - str)
+        res = (int) (ft_strchr(str, '\'') - str);
+    return (res);
 }
 
 static void	var_name_to_res(char **var_name)
@@ -73,7 +75,8 @@ static char	*eat_var(char **str_ptr)
 		(*str_ptr)++;
 		return (ft_strdup("$"));
 	}
-	if (!ft_strchr(*str_ptr + 1, '$') && !ft_strchr(*str_ptr + 1, ' '))
+	if (!ft_strchr(*str_ptr + 1, '$') && !ft_strchr(*str_ptr + 1, ' ')
+        && !ft_strchr(*str_ptr + 1, '\''))
 	{
 		var_name = ft_strdup(*str_ptr + 1);
 		*str_ptr += ft_strlen(*str_ptr);
