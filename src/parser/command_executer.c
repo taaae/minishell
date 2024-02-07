@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_executer.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 19:13:24 by trusanov          #+#    #+#             */
-/*   Updated: 2024/02/07 20:10:08 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/07 21:30:17 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,7 @@ int	exec_command(t_pipeline_token *pipeline)
 		{
 			code = handle_redirection(pipeline++);
 			if (code != 0)
-				exit(code);
+				return ((code & 0xff) << 8);
 		}
 		else
 			argv = add_arg(argv, pipeline->content);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_launcher.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lporoshi <lporoshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: trusanov <trusanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:50:21 by trusanov          #+#    #+#             */
-/*   Updated: 2024/02/07 20:09:53 by lporoshi         ###   ########.fr       */
+/*   Updated: 2024/02/07 21:30:03 by trusanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int	launch_executable(char **argv)
 	}
 	code = launch_builtin(argv);
 	if (code != NOT_BUILTIN)
-		return (code);
+		return ((code & 0xff) << 8);
 	pid = fork();
 	if (pid == 0)
 	{
